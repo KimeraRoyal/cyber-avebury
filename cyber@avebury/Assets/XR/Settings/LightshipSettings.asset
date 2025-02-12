@@ -21,10 +21,10 @@ MonoBehaviour:
   _useLightshipPersistentAnchor: 1
   _useLightshipObjectDetection: 1
   _useLightshipWorldPositioning: 1
-  _locationAndCompassDataSource: 0
+  _locationAndCompassDataSource: 1
   _spoofLocationInfo:
-    _latitude: 37.795322
-    _longitude: -122.39243
+    _latitude: 51.42901
+    _longitude: -1.8548995
     _timestamp: 123456
     _altitude: 16
     _horizontalAccuracy: 10
