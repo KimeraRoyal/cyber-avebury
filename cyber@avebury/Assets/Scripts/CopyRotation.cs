@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class CopyRotation : MonoBehaviour
+namespace CyberAvebury
 {
-    [SerializeField] private Transform m_target;
-
-    private void Update()
+    public class CopyRotation : MonoBehaviour
     {
-        transform.rotation = m_target.rotation;
+        [SerializeField] private Transform m_target;
+
+        private void Update()
+        {
+            transform.rotation = m_target.rotation;
+        }
     }
 }
