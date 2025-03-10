@@ -1,11 +1,11 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace CyberAvebury.Minigame.Mainframe.Rings
+namespace CyberAvebury.Minigames.Mainframe.Rings
 {
     public class RingSpawner : MonoBehaviour
     { 
-        private MinigameBase m_minigameBase;
+        private Minigame m_minigame;
         private RingArea m_ringArea;
 
         [SerializeField] private Ring m_ringPrefab;
@@ -27,10 +27,10 @@ namespace CyberAvebury.Minigame.Mainframe.Rings
 
         private void Awake()
         {
-            m_minigameBase = GetComponentInParent<MinigameBase>();
+            m_minigame = GetComponentInParent<Minigame>();
             m_ringArea = FindAnyObjectByType<RingArea>();
 
-            m_minigameBase.OnDifficultySet += SetDifficulty;
+            m_minigame.OnDifficultySet += SetDifficulty;
         }
 
         private void Start()
@@ -40,7 +40,7 @@ namespace CyberAvebury.Minigame.Mainframe.Rings
 
         private void OnDestroy()
         {
-            m_minigameBase.OnDifficultySet -= SetDifficulty;
+            m_minigame.OnDifficultySet -= SetDifficulty;
         }
 
         private void Update()

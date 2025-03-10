@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace CyberAvebury.Minigame
+namespace CyberAvebury.Minigames
 {
     [Serializable]
     public abstract class DifficultyAdjustedValue<T>

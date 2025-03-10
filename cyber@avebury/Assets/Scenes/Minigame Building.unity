@@ -481,7 +481,7 @@ MonoBehaviour:
   m_initialSpawnTime: 0.1
   m_minSpawnTimeDifficulty:
     m_easiestValue: 1
-    m_hardestValue: 0.25
+    m_hardestValue: 0.1
     m_difficultyCurve:
       serializedVersion: 2
       m_Curve:
@@ -507,8 +507,8 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   m_maxSpawnTimeDifficulty:
-    m_easiestValue: 2
-    m_hardestValue: 0.75
+    m_easiestValue: 1.5
+    m_hardestValue: 0.25
     m_difficultyCurve:
       serializedVersion: 2
       m_Curve:
@@ -534,8 +534,8 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   m_ringMaxSizeDifficulty:
-    m_easiestValue: 2
-    m_hardestValue: 1
+    m_easiestValue: 5
+    m_hardestValue: 2
     m_difficultyCurve:
       serializedVersion: 2
       m_Curve:

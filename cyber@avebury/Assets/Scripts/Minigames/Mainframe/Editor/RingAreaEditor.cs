@@ -1,8 +1,8 @@
-using CyberAvebury.Minigame.Mainframe.Rings;
+using CyberAvebury.Minigames.Mainframe.Rings;
 using UnityEditor;
 using UnityEngine;
 
-namespace CyberAvebury.Minigame.Mainframe.Editor
+namespace CyberAvebury.Minigames.Mainframe.Editor
 {
     [CustomEditor(typeof(RingArea))]
     public class RingAreaEditor : UnityEditor.Editor

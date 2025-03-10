@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
-namespace CyberAvebury.Minigame
+namespace CyberAvebury.Minigames
 {
-    public class MinigameBase : MonoBehaviour
+    public class Minigame : MonoBehaviour
     {
         public UnityAction<float> OnDifficultySet;
         public UnityAction OnBegin;

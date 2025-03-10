@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace CyberAvebury.Minigame.Mainframe.Rings
+namespace CyberAvebury.Minigames.Mainframe.Rings
 {
     public class RingArea : MonoBehaviour
     {

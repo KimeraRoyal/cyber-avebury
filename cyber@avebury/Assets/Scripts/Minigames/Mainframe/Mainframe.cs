@@ -1,11 +1,11 @@
 using UnityEngine;
 
-namespace CyberAvebury.Minigame.Mainframe
+namespace CyberAvebury.Minigames.Mainframe
 {
-    [RequireComponent(typeof(MinigameBase))]
+    [RequireComponent(typeof(Minigame))]
     public class Mainframe : MonoBehaviour
     {
-        private MinigameBase m_minigameBase;
+        private Minigame m_minigame;
 
         [SerializeField] private DifficultyAdjustedFloat m_timeLimitDifficulty = new (15.0f, 10.0f);
         [SerializeField] private DifficultyAdjustedInteger m_targetScoreDifficulty = new (50, 100);
@@ -17,14 +17,14 @@ namespace CyberAvebury.Minigame.Mainframe
 
         private void Awake()
         {
-            m_minigameBase = GetComponent<MinigameBase>();
+            m_minigame = GetComponent<Minigame>();
 
-            m_minigameBase.OnDifficultySet += SetDifficulty;
+            m_minigame.OnDifficultySet += SetDifficulty;
         }
 
         private void OnDestroy()
         {
-            m_minigameBase.OnDifficultySet -= SetDifficulty;
+            m_minigame.OnDifficultySet -= SetDifficulty;
         }
 
         private void SetDifficulty(float _difficulty)
