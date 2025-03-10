@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 
 namespace CyberAvebury.Minigame
 {
-    public class Minigame : MonoBehaviour
+    public class MinigameBase : MonoBehaviour
     {
         public UnityAction<float> OnDifficultySet;
         public UnityAction OnBegin;

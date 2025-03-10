@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Minigame.Mainframe.Rings
+namespace CyberAvebury.Minigame.Mainframe.Rings
 {
     public class Ring : MonoBehaviour
     {

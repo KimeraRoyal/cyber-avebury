@@ -1,12 +1,12 @@
-using CyberAvebury.Minigame;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Minigame.Mainframe.Rings
+namespace CyberAvebury.Minigame.Mainframe.Rings
 {
     public class RingSpawner : MonoBehaviour
     { 
-        private CyberAvebury.Minigame.Minigame m_minigame;
+        private MinigameBase m_minigameBase;
+        private RingArea m_ringArea;
 
         [SerializeField] private Ring m_ringPrefab;
 
@@ -27,9 +27,10 @@ namespace Minigame.Mainframe.Rings
 
         private void Awake()
         {
-            m_minigame = GetComponentInParent<CyberAvebury.Minigame.Minigame>();
+            m_minigameBase = GetComponentInParent<MinigameBase>();
+            m_ringArea = FindAnyObjectByType<RingArea>();
 
-            m_minigame.OnDifficultySet += SetDifficulty;
+            m_minigameBase.OnDifficultySet += SetDifficulty;
         }
 
         private void Start()
@@ -39,7 +40,7 @@ namespace Minigame.Mainframe.Rings
 
         private void OnDestroy()
         {
-            m_minigame.OnDifficultySet -= SetDifficulty;
+            m_minigameBase.OnDifficultySet -= SetDifficulty;
         }
 
         private void Update()
@@ -54,7 +55,8 @@ namespace Minigame.Mainframe.Rings
 
         private void SpawnRing()
         {
-            var ring = Instantiate(m_ringPrefab, transform);
+            var position = m_ringArea.GetRandomPosition();
+            var ring = Instantiate(m_ringPrefab, position, Quaternion.identity, transform);
             
             ring.MaxSize = m_ringMaxSize;
             ring.TotalLifetime = m_ringLifetime;
