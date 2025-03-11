@@ -19,12 +19,22 @@ namespace CyberAvebury.Minigames.Mainframe
         {
             m_minigame = GetComponent<Minigame>();
 
-            m_minigame.OnDifficultySet += SetDifficulty;
+            m_minigame.OnDifficultySet.AddListener(SetDifficulty);
         }
 
         private void OnDestroy()
         {
-            m_minigame.OnDifficultySet -= SetDifficulty;
+            m_minigame.OnDifficultySet.RemoveListener(SetDifficulty);
+        }
+
+        public void AddScore(int _score)
+        {
+            m_currentScore += _score;
+            Debug.Log($"Score: {m_currentScore}/{m_targetScore}");
+            
+            if(m_currentScore < m_targetScore) { return; }
+            
+            m_minigame.Pass();
         }
 
         private void SetDifficulty(float _difficulty)

@@ -1,14 +1,16 @@
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 namespace CyberAvebury.Minigames.Mainframe.Rings
 {
+    [RequireComponent(typeof(RingPool))]
     public class RingSpawner : MonoBehaviour
     { 
         private Minigame m_minigame;
         private RingArea m_ringArea;
 
-        [SerializeField] private Ring m_ringPrefab;
+        private RingPool m_ringPool;
 
         [SerializeField] private float m_initialSpawnTime = 0.1f;
         [SerializeField] private DifficultyAdjustedFloat m_minSpawnTimeDifficulty = new(1.0f, 0.25f);
@@ -25,12 +27,16 @@ namespace CyberAvebury.Minigames.Mainframe.Rings
         private float m_ringMaxSize;
         private float m_ringLifetime;
 
+        public UnityEvent<Ring> OnRingSpawned;
+
         private void Awake()
         {
             m_minigame = GetComponentInParent<Minigame>();
             m_ringArea = FindAnyObjectByType<RingArea>();
 
-            m_minigame.OnDifficultySet += SetDifficulty;
+            m_ringPool = GetComponent<RingPool>();
+    
+            m_minigame.OnDifficultySet.AddListener(SetDifficulty);
         }
 
         private void Start()
@@ -40,7 +46,7 @@ namespace CyberAvebury.Minigames.Mainframe.Rings
 
         private void OnDestroy()
         {
-            m_minigame.OnDifficultySet -= SetDifficulty;
+            m_minigame.OnDifficultySet.RemoveListener(SetDifficulty);
         }
 
         private void Update()
@@ -55,11 +61,13 @@ namespace CyberAvebury.Minigames.Mainframe.Rings
 
         private void SpawnRing()
         {
-            var position = m_ringArea.GetRandomPosition();
-            var ring = Instantiate(m_ringPrefab, position, Quaternion.identity, transform);
+            var ring = m_ringPool.Get();
+            ring.transform.position = m_ringArea.GetRandomPosition();
             
             ring.MaxSize = m_ringMaxSize;
             ring.TotalLifetime = m_ringLifetime;
+            
+            OnRingSpawned?.Invoke(ring);
         }
 
         private void SetDifficulty(float _difficulty)

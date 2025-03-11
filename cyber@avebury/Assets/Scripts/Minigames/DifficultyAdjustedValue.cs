@@ -46,8 +46,8 @@ namespace CyberAvebury.Minigames
     {
         public DifficultyAdjustedInteger(int _easiestValue, int _hardestValue)
             : base(_easiestValue, _hardestValue) { }
-        
+
         protected override int GetAdjustedValue(float _difficulty)
-            => Mathf.CeilToInt(Mathf.Lerp(EasiestValue, HardestValue, _difficulty));
+            => (int)((HardestValue - EasiestValue) * _difficulty) + EasiestValue;
     }
 }

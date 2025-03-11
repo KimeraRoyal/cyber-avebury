@@ -195,8 +195,8 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   m_targetScoreDifficulty:
-    m_easiestValue: 50
-    m_hardestValue: 100
+    m_easiestValue: 25
+    m_hardestValue: 50
     m_difficultyCurve:
       serializedVersion: 2
       m_Curve:
@@ -233,6 +233,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc6e6585cc028dc4e9f193b24e12e4dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDifficultySet:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPassed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  m_difficulty: 0
 --- !u!1 &1429195659
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,6 +354,7 @@ GameObject:
   - component: {fileID: 1450038744}
   - component: {fileID: 1450038746}
   - component: {fileID: 1450038743}
+  - component: {fileID: 1450038747}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -433,6 +450,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_camera: {fileID: 1450038744}
   m_edgeBufferSize: {x: 1, y: 1}
+--- !u!114 &1450038747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450038742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c13a7a13606dfc4f847f343d4a6b128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMouseClicked:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseClickedWorld:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1637233180
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +478,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1637233181}
   - component: {fileID: 1637233182}
+  - component: {fileID: 1637233184}
+  - component: {fileID: 1637233183}
   m_Layer: 0
   m_Name: Rings
   m_TagString: Untagged
@@ -477,11 +514,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95a877dd89fd09b428c119e0d9c0e4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ringPrefab: {fileID: 2973990032750637137, guid: 6048853e51b41044db3bbb49265734d0, type: 3}
   m_initialSpawnTime: 0.1
   m_minSpawnTimeDifficulty:
     m_easiestValue: 1
-    m_hardestValue: 0.1
+    m_hardestValue: 0.25
     m_difficultyCurve:
       serializedVersion: 2
       m_Curve:
@@ -508,7 +544,7 @@ MonoBehaviour:
       m_RotationOrder: 4
   m_maxSpawnTimeDifficulty:
     m_easiestValue: 1.5
-    m_hardestValue: 0.25
+    m_hardestValue: 0.5
     m_difficultyCurve:
       serializedVersion: 2
       m_Curve:
@@ -535,7 +571,7 @@ MonoBehaviour:
       m_RotationOrder: 4
   m_ringMaxSizeDifficulty:
     m_easiestValue: 5
-    m_hardestValue: 2
+    m_hardestValue: 3
     m_difficultyCurve:
       serializedVersion: 2
       m_Curve:
@@ -587,6 +623,60 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+  OnRingSpawned:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1637233183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637233180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a483e19641b5bee4bb84b001f4e86792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_earliestRingScore: 5
+  m_latestRingScore: 1
+  m_ringScoringCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1637233184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637233180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd89ea089404674bd78fc1230ba9bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ringPrefab: {fileID: 2973990032750637137, guid: 6048853e51b41044db3bbb49265734d0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

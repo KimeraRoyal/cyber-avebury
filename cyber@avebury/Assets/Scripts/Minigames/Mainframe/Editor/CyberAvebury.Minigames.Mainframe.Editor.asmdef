@@ -1,8 +1,8 @@
 {
-    "name": "CyberAvebury.Minigame.Mainframe.Editor",
+    "name": "CyberAvebury.Minigames.Mainframe.Editor",
     "rootNamespace": "CyberAvebury",
     "references": [
-        "GUID:67bca5a3a0916e44fb4d1329b5b6a2b3"
+        "GUID:478c09f6306cedd48b13da50928d95ab"
     ],
     "includePlatforms": [
         "Editor"

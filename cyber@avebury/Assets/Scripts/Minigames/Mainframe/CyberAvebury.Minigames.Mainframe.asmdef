@@ -1,5 +1,5 @@
 {
-    "name": "CyberAvebury.Minigame.Mainframe",
+    "name": "CyberAvebury.Minigames.Mainframe",
     "rootNamespace": "CyberAvebury",
     "references": [
         "GUID:13eb272cfd101264a97f9d9c56d27cc5"

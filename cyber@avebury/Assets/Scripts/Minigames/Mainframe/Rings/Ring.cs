@@ -1,5 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace CyberAvebury.Minigames.Mainframe.Rings
 {
@@ -12,9 +13,13 @@ namespace CyberAvebury.Minigames.Mainframe.Rings
         private float m_totalLifetime;
         private float m_currentLifetime;
 
-        public Action OnPressed;
-        public Action OnFailed;
-
+        private bool m_active;
+        
+        public UnityEvent<float> OnPressed;
+        public UnityEvent OnFailed;
+        
+        public UnityEvent OnDeactivated;
+        
         public float StartingSize
         {
             get => m_startingSize;
@@ -44,13 +49,38 @@ namespace CyberAvebury.Minigames.Mainframe.Rings
 
         private void Update()
         {
+            if(!m_active) { return; }
+            
             m_currentLifetime += Time.deltaTime;
             transform.localScale = Vector3.one * CurrentSize;
             
             if(m_currentLifetime < m_totalLifetime) { return; }
             
             OnFailed?.Invoke();
-            Destroy(gameObject);
+            m_active = false;
+            
+            Deactivate();
+        }
+
+        public void Press()
+        {
+            if(!m_active) { return; }
+            
+            OnPressed?.Invoke(Progress);
+            m_active = false;
+            
+            Deactivate();
+        }
+
+        public void Activate()
+        {
+            m_active = true;
+            m_currentLifetime = 0;
+        }
+
+        private void Deactivate()
+        {
+            OnDeactivated?.Invoke();
         }
     }
 }

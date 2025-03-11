@@ -6,19 +6,21 @@ namespace CyberAvebury.Minigames
 {
     public class Minigame : MonoBehaviour
     {
-        public UnityAction<float> OnDifficultySet;
-        public UnityAction OnBegin;
+        public UnityEvent<float> OnDifficultySet;
+        public UnityEvent OnBegin;
         
-        public UnityAction OnPassed;
-        public UnityAction OnFailed;
+        public UnityEvent OnPassed;
+        public UnityEvent OnFailed;
         
-        public UnityAction OnFinished;
+        public UnityEvent OnFinished;
 
-        private float m_difficulty;
+        [SerializeField] [Range(0.0f, 1.0f)] private float m_difficulty;
+
+        private bool m_playing;
 
         private void Start()
         {
-            Begin(Random.Range(0.0f, 1.0f));
+            Begin(m_difficulty);
         }
 
         public void Begin(float _difficulty)
@@ -27,18 +29,28 @@ namespace CyberAvebury.Minigames
             OnDifficultySet?.Invoke(_difficulty);
             
             OnBegin?.Invoke();
+
+            m_playing = true;
         }
 
         public void Pass()
         {
+            if(!m_playing) { return; }
+            
             OnPassed?.Invoke();
             OnFinished?.Invoke();
+
+            m_playing = false;
         }
 
         public void Fail()
         {
+            if(!m_playing) { return; }
+            
             OnFailed?.Invoke();
             OnFinished?.Invoke();
+
+            m_playing = false;
         }
     }
 }
