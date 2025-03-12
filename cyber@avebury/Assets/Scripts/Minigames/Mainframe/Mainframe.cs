@@ -1,4 +1,7 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace CyberAvebury.Minigames.Mainframe
 {
@@ -9,11 +12,18 @@ namespace CyberAvebury.Minigames.Mainframe
 
         [SerializeField] private DifficultyAdjustedFloat m_timeLimitDifficulty = new (15.0f, 10.0f);
         [SerializeField] private DifficultyAdjustedInteger m_targetScoreDifficulty = new (50, 100);
-
-        private float m_timeLimit;
         
         private int m_targetScore;
         private int m_currentScore;
+
+        private float m_timeLimit;
+        private float m_currentTime;
+
+        public float ScoreProgress => (float)m_currentScore / m_targetScore;
+        public float TimerProgress => m_currentTime / m_timeLimit;
+
+        public UnityEvent<int> OnScoreUpdated;
+        public UnityEvent<float> OnTimerUpdated;
 
         private void Awake()
         {
@@ -27,10 +37,20 @@ namespace CyberAvebury.Minigames.Mainframe
             m_minigame.OnDifficultySet.RemoveListener(SetDifficulty);
         }
 
+        private void Update()
+        {
+            m_currentTime += Time.deltaTime;
+            OnTimerUpdated?.Invoke(m_currentTime);
+            
+            if(m_currentTime < m_timeLimit) { return; }
+            
+            m_minigame.Fail();
+        }
+
         public void AddScore(int _score)
         {
             m_currentScore += _score;
-            Debug.Log($"Score: {m_currentScore}/{m_targetScore}");
+            OnScoreUpdated?.Invoke(m_currentScore);
             
             if(m_currentScore < m_targetScore) { return; }
             

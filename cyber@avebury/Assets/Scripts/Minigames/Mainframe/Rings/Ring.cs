@@ -1,12 +1,17 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace CyberAvebury.Minigames.Mainframe.Rings
 {
     public class Ring : MonoBehaviour
     {
+        private Minigame m_minigame;
+        
         [SerializeField] private float m_startingSize = 0.1f;
+            
+        [SerializeField] private DifficultyAdjustedFloat m_maxSizeDifficulty = new (2.0f, 1.0f);
+        [SerializeField] private DifficultyAdjustedFloat m_totalLifetimeDifficulty = new (5.0f, 1.5f);
         
         private float m_maxSize;
         
@@ -14,37 +19,44 @@ namespace CyberAvebury.Minigames.Mainframe.Rings
         private float m_currentLifetime;
 
         private bool m_active;
-        
-        public UnityEvent<float> OnPressed;
-        public UnityEvent OnFailed;
-        
-        public UnityEvent OnDeactivated;
-        
-        public float StartingSize
-        {
-            get => m_startingSize;
-            set => m_startingSize = value;
-        }
-        
-        public float MaxSize
-        {
-            get => m_maxSize;
-            set => m_maxSize = value;
-        }
 
         public float CurrentSize => Mathf.Lerp(m_startingSize, m_maxSize, Progress);
 
-        public float TotalLifetime
-        {
-            get => m_totalLifetime;
-            set => m_totalLifetime = value;
-        }
-
         public float Progress => m_currentLifetime / m_totalLifetime;
+        
+        public UnityEvent<float> OnPressed;
+        public UnityEvent OnFailed;
+        public UnityEvent OnDeactivated;
+
+        public UnityEvent<float> OnLifetimeUpdated;
+
+        private void Awake()
+        {
+            m_minigame = GetComponentInParent<Minigame>();
+    
+        }
 
         private void Start()
         {
+            if(!m_minigame.IsDifficultySet) { return; }
+            SetDifficulty(m_minigame.Difficulty);
+        }
+
+        private void OnEnable()
+        {
             transform.localScale = Vector3.one * m_startingSize;
+            m_currentLifetime = 0.0f;
+            
+            m_minigame.OnDifficultySet.AddListener(SetDifficulty);
+            m_minigame.OnPassed.AddListener(Press);
+            m_minigame.OnFailed.AddListener(Fail);
+        }
+
+        private void OnDisable()
+        {
+            m_minigame.OnDifficultySet.RemoveListener(SetDifficulty);
+            m_minigame.OnPassed.RemoveListener(Press);
+            m_minigame.OnFailed.RemoveListener(Fail);
         }
 
         private void Update()
@@ -52,14 +64,12 @@ namespace CyberAvebury.Minigames.Mainframe.Rings
             if(!m_active) { return; }
             
             m_currentLifetime += Time.deltaTime;
+            OnLifetimeUpdated?.Invoke(m_currentLifetime);
+            
             transform.localScale = Vector3.one * CurrentSize;
             
             if(m_currentLifetime < m_totalLifetime) { return; }
-            
-            OnFailed?.Invoke();
-            m_active = false;
-            
-            Deactivate();
+            Fail();
         }
 
         public void Press()
@@ -67,6 +77,14 @@ namespace CyberAvebury.Minigames.Mainframe.Rings
             if(!m_active) { return; }
             
             OnPressed?.Invoke(Progress);
+            m_active = false;
+            
+            Deactivate();
+        }
+
+        public void Fail()
+        {
+            OnFailed?.Invoke();
             m_active = false;
             
             Deactivate();
@@ -81,6 +99,12 @@ namespace CyberAvebury.Minigames.Mainframe.Rings
         private void Deactivate()
         {
             OnDeactivated?.Invoke();
+        }
+
+        private void SetDifficulty(float _difficulty)
+        {
+            m_maxSize = m_maxSizeDifficulty.GetValue(_difficulty);
+            m_totalLifetime = m_totalLifetimeDifficulty.GetValue(_difficulty);
         }
     }
 }

@@ -34,7 +34,6 @@ namespace CyberAvebury
 
         private int GetRingScore(float _progress)
         {
-            Debug.Log($"Progress: {_progress}");
             var curvedProgress = m_ringScoringCurve.Evaluate(_progress);
             return Mathf.CeilToInt((m_latestRingScore - m_earliestRingScore) * curvedProgress) + m_earliestRingScore;
         }
