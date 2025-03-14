@@ -1,10 +1,7 @@
 {
-    "name": "CyberAvebury.Minigames.Mainframe",
+    "name": "CyberAvebury.ParticlePool",
     "rootNamespace": "CyberAvebury",
-    "references": [
-        "GUID:13eb272cfd101264a97f9d9c56d27cc5",
-        "GUID:6f1dfc0d24bf037498886aa258896537"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

@@ -39,6 +39,8 @@ namespace CyberAvebury.Minigames.Mainframe
 
         private void Update()
         {
+            if(!m_minigame.IsPlaying) { return; }
+            
             m_currentTime += Time.deltaTime;
             OnTimerUpdated?.Invoke(m_currentTime);
             
@@ -49,6 +51,8 @@ namespace CyberAvebury.Minigames.Mainframe
 
         public void AddScore(int _score)
         {
+            if(!m_minigame.IsPlaying) { return; }
+            
             m_currentScore += _score;
             OnScoreUpdated?.Invoke(m_currentScore);
             
