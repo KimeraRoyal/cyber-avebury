@@ -76,18 +76,14 @@ namespace CyberAvebury.Minigames.Mainframe.Rings
         {
             if(!m_active) { return; }
             
-            OnPressed?.Invoke(Progress);
             m_active = false;
-            
-            Deactivate();
+            OnPressed?.Invoke(Progress);
         }
 
         public void Fail()
         {
-            OnFailed?.Invoke();
             m_active = false;
-            
-            Deactivate();
+            OnFailed?.Invoke();
         }
 
         public void Activate()
@@ -96,7 +92,7 @@ namespace CyberAvebury.Minigames.Mainframe.Rings
             m_currentLifetime = 0;
         }
 
-        private void Deactivate()
+        public void Deactivate()
         {
             OnDeactivated?.Invoke();
         }
