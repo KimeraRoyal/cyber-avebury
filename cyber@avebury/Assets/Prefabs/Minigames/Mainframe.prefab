@@ -104,6 +104,8 @@ GameObject:
   - component: {fileID: 638615917153515821}
   - component: {fileID: 1425864685688078964}
   - component: {fileID: 7388867881285551325}
+  - component: {fileID: 6838581392429158564}
+  - component: {fileID: 4659010874661517177}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -169,6 +171,31 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6838581392429158564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2978686630858284281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7105316a3a5527f4280c25c522753a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_fadeTime: 0.5
+--- !u!225 &4659010874661517177
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2978686630858284281}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3493560553315107447
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8100194724461523976
 Transform:
   m_ObjectHideFlags: 0
@@ -672,7 +699,7 @@ GameObject:
   - component: {fileID: 5332859688960805759}
   - component: {fileID: 8568978600862723250}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
