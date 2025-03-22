@@ -1,21 +1,23 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 namespace CyberAvebury
 {
     public class WordGrabber : MonoBehaviour
     {
-        private GraphicRaycaster m_raycaster;
+        private MouseRaycaster m_mouseRaycaster;
 
+        private DummyPool m_dummies;
         private CopyMousePosition m_mousePosition;
 
-        [SerializeField] private RectTransform m_dummy;
+        [SerializeField] private RectTransform m_passwordLine;
         
         private Word m_grabbedWord;
-
+        private WordLine m_hoveredLine;
+        
+        private bool m_wasMouseButtonHeld;
+        private Vector2 m_lastMousePosition;
+        
         public Word GrabbedWord => m_grabbedWord;
 
         public UnityEvent<Word> OnWordGrabbed;
@@ -23,8 +25,9 @@ namespace CyberAvebury
 
         private void Awake()
         {
-            m_raycaster = GetComponentInParent<GraphicRaycaster>();
-
+            m_mouseRaycaster = GetComponentInParent<MouseRaycaster>();
+            
+            m_dummies = GetComponentInChildren<DummyPool>();
             m_mousePosition = GetComponentInChildren<CopyMousePosition>();
         }
 
@@ -32,20 +35,33 @@ namespace CyberAvebury
         {
             Grab();
             Release();
+            Drag();
+            
+            m_wasMouseButtonHeld = Input.GetMouseButton(0);
+            m_lastMousePosition = Input.mousePosition;
         }
-
+ 
         private void Grab()
         {
-            if(!Input.GetMouseButtonDown(0)) { return; }
+            var mouseDown = Input.GetMouseButton(0) && !m_wasMouseButtonHeld;
+            if(!mouseDown) { return; }
             
-            m_grabbedWord = Raycast();
+            m_grabbedWord = m_mouseRaycaster.GetFirstRaycastComponent<Word>();
             if (!m_grabbedWord) { return; }
-
-            var grabbedTransform = m_grabbedWord.transform as RectTransform;
-            if(!grabbedTransform) { return; }
             
-            m_dummy.sizeDelta = grabbedTransform.sizeDelta;
-            Swap(m_grabbedWord.transform as RectTransform, m_dummy);
+            CreatePasswordDummy();
+
+            if (m_grabbedWord.PasswordDummy)
+            {
+                m_grabbedWord.PasswordDummy.SwapWith(m_grabbedWord.RectTransform);
+            }
+            else
+            {
+                var dummy = m_dummies.Get();
+                dummy.Size = m_grabbedWord.RectTransform.sizeDelta;
+                m_grabbedWord.Dummy = dummy;
+                dummy.SwapWith(m_grabbedWord.RectTransform);
+            }
             
             m_grabbedWord.Grab();
             OnWordGrabbed?.Invoke(m_grabbedWord);
@@ -53,9 +69,23 @@ namespace CyberAvebury
 
         private void Release()
         {
-            if(!(Input.GetMouseButtonUp(0) && m_grabbedWord)) { return; }
-            
-            Swap(m_grabbedWord.transform as RectTransform, m_dummy);
+            var mouseUp = !Input.GetMouseButton(0) && m_wasMouseButtonHeld;
+            if(!mouseUp || !m_grabbedWord) { return; }
+
+            if (m_grabbedWord.PasswordDummy)
+            {
+                var dummy = m_grabbedWord.PasswordDummy;
+                dummy.SwapWith(m_grabbedWord.RectTransform);
+            }
+            else
+            {
+                var dummy = m_grabbedWord.Dummy;
+                m_grabbedWord.Dummy = null;
+                dummy.SwapWith(m_grabbedWord.RectTransform);
+                m_dummies.Release(dummy);
+            }
+                
+            ReleasePasswordDummy();
 
             var releasedWord = m_grabbedWord;
             m_grabbedWord = null;
@@ -64,35 +94,39 @@ namespace CyberAvebury
             OnWordReleased?.Invoke(releasedWord);
         }
 
-        private void Swap(RectTransform _a, RectTransform _b)
+        private void Drag()
         {
-            var aParent = _a.parent;
-            var aIndex = _a.GetSiblingIndex();
-            var bIndex = _b.GetSiblingIndex();
+            var didMouseMove = ((Vector2)Input.mousePosition - m_lastMousePosition).magnitude > 0.0001f;
+            if(!m_grabbedWord || !didMouseMove) { return; }
 
-            _a.parent = _b.parent;
-            _b.parent = aParent;
+            if (m_grabbedWord.RectTransform.position.y <= m_passwordLine.position.y)
+            {
+                ReleasePasswordDummy();
+            }
             
-            _a.SetSiblingIndex(bIndex);
-            _b.SetSiblingIndex(aIndex);
+            m_hoveredLine = m_mouseRaycaster.GetFirstRaycastComponent<WordLine>();
+            if (!m_hoveredLine) { return; }
+
+            CreatePasswordDummy();
+            if(!m_grabbedWord.PasswordDummy) { return; }
+            m_grabbedWord.PasswordDummy.transform.parent = m_hoveredLine.transform;
         }
 
-        private Word Raycast()
+        private void CreatePasswordDummy()
         {
-            var eventData = new PointerEventData(null)
-            {
-                position = Input.mousePosition
-            };
+            if(m_grabbedWord.PasswordDummy || m_grabbedWord.RectTransform.position.y < m_passwordLine.position.y) { return; }
 
-            var results = new List<RaycastResult>();
-            m_raycaster.Raycast(eventData, results);
+            var dummy = m_dummies.Get();
+            dummy.Size = m_grabbedWord.RectTransform.sizeDelta;
+            m_grabbedWord.PasswordDummy = dummy;
+        }
 
-            foreach (var result in results)
-            {
-                var word = result.gameObject.GetComponent<Word>();
-                if (word) { return word; }
-            }
-            return null;
+        private void ReleasePasswordDummy()
+        {
+            if(!m_grabbedWord.PasswordDummy) { return; }
+            
+            m_dummies.Release(m_grabbedWord.PasswordDummy);
+            m_grabbedWord.PasswordDummy = null;
         }
     }
 }

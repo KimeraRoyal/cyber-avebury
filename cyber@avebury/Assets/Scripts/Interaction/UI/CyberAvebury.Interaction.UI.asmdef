@@ -1,12 +1,7 @@
 {
-    "name": "CyberAvebury.Minigames.Password",
+    "name": "CyberAvebury.Interaction.UI",
     "rootNamespace": "CyberAvebury",
-    "references": [
-        "GUID:13eb272cfd101264a97f9d9c56d27cc5",
-        "GUID:b3c331a70f031f74c945a0ad71bf4649",
-        "GUID:cadf558670814054398d22cba5d0ff53",
-        "GUID:6055be8ebefd69e48b49212b09b47b2f"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
