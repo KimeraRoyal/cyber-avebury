@@ -5,6 +5,8 @@ namespace KR
     public abstract class FrameAnimator : MonoBehaviour
     {
         [SerializeField] private FrameAnimation m_animation;
+
+        [SerializeField] private float m_speed = 1.0f;
         [SerializeField] private int m_frameOffset;
 
         private float m_frameDuration;
@@ -17,12 +19,28 @@ namespace KR
             get => m_animation;
             set
             {
-                if (m_animation == value) { return; }
-
                 m_animation = value;
                 if (m_animation) { m_frameDuration = 1.0f / m_animation.FPS; }
 
                 ResetAnimation();
+            }
+        }
+
+        public float Speed
+        {
+            get => m_speed;
+            set => m_speed = value;
+        }
+
+        public int FrameOffset
+        {
+            get => m_frameOffset;
+            set
+            {
+                if(m_frameOffset == value) { return; }
+                m_frameOffset = value;
+
+                ChangeFrame(m_currentFrame);
             }
         }
 
@@ -43,9 +61,9 @@ namespace KR
         private void Update()
         {
             if(!m_animation) { return; }
-            
-            m_timer += Time.deltaTime;
 
+            m_timer += Time.deltaTime * m_speed;
+            
             var updateFrame = false;
             while (m_timer >= m_frameDuration)
             {

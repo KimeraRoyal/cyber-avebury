@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed1a7190c1b41b48b23f953e821bb79, type: 3}
   m_Name: B-44
   m_EditorClassIdentifier: 
-  m_portrait: {fileID: 0}
+  m_portraits:
+  - m_idle: {fileID: 11400000, guid: e6bdfb7335af4fb4d827846400a7a006, type: 2}
+    m_talking:
+    - {fileID: 11400000, guid: 7efd5ce48a21f074590adada5df93aee, type: 2}
+    - {fileID: 11400000, guid: f316c5fd140799840bc19917891f009f, type: 2}
   m_letterDuration: 0.065

@@ -1,16 +1,26 @@
-﻿namespace CyberAvebury
+﻿using System;
+using UnityEngine;
+
+namespace CyberAvebury
 {
-    public struct DialogueLine
+    [Serializable]
+    public class DialogueLine
     {
-        private DialogueCharacter m_character;
-        private string m_line;
+        [SerializeField] private DialogueCharacter m_character;
+        [SerializeField] private int m_expression;
+        
+        [SerializeField] private string m_line;
 
         public DialogueCharacter Character => m_character;
+        public int Expression => m_expression;
+        
         public string Line => m_line;
 
-        public DialogueLine(DialogueCharacter _character, string _line)
+        public DialogueLine(DialogueCharacter _character, int _expression, string _line)
         {
             m_character = _character;
+            m_expression = _expression;
+            
             m_line = _line;
         }
     }

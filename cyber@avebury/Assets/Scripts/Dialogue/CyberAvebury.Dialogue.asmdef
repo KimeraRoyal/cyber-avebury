@@ -2,6 +2,7 @@
     "name": "CyberAvebury.Dialogue",
     "rootNamespace": "CyberAvebury",
     "references": [
+        "GUID:d01693a1e4780644494c102fccad341a",
         "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
