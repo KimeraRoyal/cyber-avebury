@@ -25,11 +25,13 @@ namespace CyberAvebury
             }
             if (Input.GetKeyDown(KeyCode.C))
             {
-                m_dialogue.AddLine(m_character, 0, "My third test line. I feel like I've seen this before.");
+                var line1 = new DialogueLineContent(0, "My third test line. It's good, sure. It's just...");
+                var line2 = new DialogueLineContent(1, "Well, I just feel like I've seen this before.");
+                m_dialogue.AddLine(new DialogueLines(m_character, new []{ line1, line2 }));
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
-                m_dialogue.AddLine(m_character, 0, "My fourth test line. Getting a bit sick of these, really.");
+                m_dialogue.AddLine(m_character, 1, "My fourth test line. Getting a bit sick of these, really.");
             }
             if (Input.GetKeyDown(KeyCode.E))
             {

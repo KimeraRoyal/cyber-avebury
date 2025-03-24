@@ -25,14 +25,18 @@ namespace CyberAvebury
 
         private void SetIdlePortrait(string _line)
         {
-            var currentLine = m_dialogue.CurrentLine;
-            m_animator.Animation = currentLine.Character.GetPortrait(currentLine.Expression, false);
+            var currentDialogue = m_dialogue.CurrentDialogue;
+            var expression = currentDialogue.GetExpressionIndex(m_dialogue.CurrentLineIndex);
+            
+            m_animator.Animation = currentDialogue.Character.GetPortrait(expression, false);
         }
 
         private void SetTalkPortrait(string _word)
         {
-            var currentLine = m_dialogue.CurrentLine;
-            m_animator.Animation = currentLine.Character.GetPortrait(currentLine.Expression, true);
+            var currentDialogue = m_dialogue.CurrentDialogue;
+            var expression = currentDialogue.GetExpressionIndex(m_dialogue.CurrentLineIndex);
+            
+            m_animator.Animation = currentDialogue.Character.GetPortrait(expression, true);
         }
     }
 }

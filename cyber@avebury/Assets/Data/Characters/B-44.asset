@@ -17,4 +17,10 @@ MonoBehaviour:
     m_talking:
     - {fileID: 11400000, guid: 7efd5ce48a21f074590adada5df93aee, type: 2}
     - {fileID: 11400000, guid: f316c5fd140799840bc19917891f009f, type: 2}
+    - {fileID: 11400000, guid: 129bd905ae8814845ac577edff3b0684, type: 2}
+  - m_idle: {fileID: 11400000, guid: d4283617b9a9daa4c8b71bf20a8367c3, type: 2}
+    m_talking:
+    - {fileID: 11400000, guid: b88c96b74bdd48a49bfc794296ba3657, type: 2}
+    - {fileID: 11400000, guid: ff88854a8b2fb7f48a8b2b3a0f2d2384, type: 2}
+    - {fileID: 11400000, guid: 51afe0836637a8d41a707cbe617034b1, type: 2}
   m_letterDuration: 0.065

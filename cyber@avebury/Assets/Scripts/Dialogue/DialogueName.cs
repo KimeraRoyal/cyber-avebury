@@ -16,10 +16,10 @@ namespace CyberAvebury
 
             m_text = GetComponent<TMP_Text>();
             
-            m_dialogue.OnNewLine.AddListener(UpdateCharacterName);
+            m_dialogue.OnNewDialogue.AddListener(UpdateCharacterName);
         }
 
-        private void UpdateCharacterName(DialogueLine _line)
+        private void UpdateCharacterName(DialogueLineBase _line)
         {
             m_text.text = _line.Character.name.ToUpper();
         }

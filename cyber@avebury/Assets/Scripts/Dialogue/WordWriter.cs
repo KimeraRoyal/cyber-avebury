@@ -10,6 +10,9 @@ namespace CyberAvebury
     {
         private TMP_Text m_text;
 
+        [SerializeField] private float m_preDialogueWaitDuration = 0.1f;
+        [SerializeField] private float m_postDialogueWaitDuration = 0.1f;
+
         private bool m_isWriting;
 
         private Coroutine m_currentCoroutine;
@@ -42,6 +45,8 @@ namespace CyberAvebury
             OnLineStarted?.Invoke(_line);
             
             var words = _line.Split(' ');
+
+            yield return new WaitForSeconds(m_preDialogueWaitDuration);
             
             var lineText = "";
             foreach (var word in words)
@@ -55,9 +60,11 @@ namespace CyberAvebury
 
                 lineText += " ";
             }
+
+            OnLineFinished?.Invoke(_line);
+            yield return new WaitForSeconds(m_postDialogueWaitDuration);
             
             m_isWriting = false;
-            OnLineFinished?.Invoke(_line);
         }
     }
 }

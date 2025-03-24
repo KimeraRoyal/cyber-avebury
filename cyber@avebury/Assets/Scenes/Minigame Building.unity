@@ -1622,6 +1622,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9397bebdbfc944b40a3b2cbdf43a40ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnNewDialogue:
+    m_PersistentCalls:
+      m_Calls: []
   OnNewLine:
     m_PersistentCalls:
       m_Calls: []
@@ -2363,6 +2366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f893597038f740a1bc1a8d3dcecffb47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_preDialogueWaitDuration: 0.3
+  m_postDialogueWaitDuration: 1
   OnLineStarted:
     m_PersistentCalls:
       m_Calls: []
