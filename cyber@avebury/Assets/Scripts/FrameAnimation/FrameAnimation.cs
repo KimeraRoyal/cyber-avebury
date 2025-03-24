@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace KR
 {
@@ -10,7 +11,9 @@ namespace KR
         {
             None,
             Repeat,
-            PingPong
+            PingPong,
+            Random,
+            RandomNoRepeat
         }
         
         [SerializeField] private int m_fps = 12;
@@ -23,24 +26,31 @@ namespace KR
         public Sprite[] Frames => m_frames;
 
         public Sprite GetFrame(int _currentFrame)
-            => m_frames[m_loopMode switch
+            => m_frames[m_frames.Length <= 1 ? 0 : m_loopMode switch
             {
                 LoopMode.None => Math.Min(_currentFrame, m_frames.Length - 1),
                 LoopMode.Repeat => _currentFrame % m_frames.Length,
                 LoopMode.PingPong => GetPingPongFrameIndex(_currentFrame),
+                LoopMode.Random => Random.Range(0, m_frames.Length),
+                LoopMode.RandomNoRepeat => GetRandomFrameNoRepeat(_currentFrame),
                 _ => throw new ArgumentOutOfRangeException()
             }];
 
         private int GetPingPongFrameIndex(int _currentFrame)
         {
-            if (m_frames.Length <= 1) { return 0; }
-
             var length = m_frames.Length - 1;
             var iteration = _currentFrame / length % 2;
             var loopedIndex = _currentFrame % length;
 
             if (iteration == 1) { return length - loopedIndex; }
             return loopedIndex;
+        }
+
+        private int GetRandomFrameNoRepeat(int _currentFrame)
+        {
+            var randomIndex = Random.Range(0, m_frames.Length - 1);
+            if (randomIndex >= _currentFrame) { randomIndex++; }
+            return randomIndex;
         }
     }
 }

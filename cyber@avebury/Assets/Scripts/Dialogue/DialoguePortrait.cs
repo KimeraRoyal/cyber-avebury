@@ -11,6 +11,8 @@ namespace CyberAvebury
 
         private FrameAnimator m_animator;
 
+        [SerializeField] private FrameAnimation m_static;
+
         private void Awake()
         {
             m_dialogue = GetComponentInParent<Dialogue>();
@@ -18,10 +20,16 @@ namespace CyberAvebury
 
             m_animator = GetComponent<FrameAnimator>();
             
-            m_writer.OnLineStarted.AddListener(SetIdlePortrait);
+            m_dialogue.OnNewDialogue.AddListener(_ => SetStaticPortrait());
+            m_dialogue.OnEndDialogue.AddListener(SetStaticPortrait);
+            
+            m_writer.OnLineStarted.AddListener(_ => SetStaticPortrait());
             m_writer.OnWordWritten.AddListener(SetTalkPortrait);
             m_writer.OnLineFinished.AddListener(SetIdlePortrait);
         }
+
+        private void SetStaticPortrait()
+            => m_animator.Animation = m_static;
 
         private void SetIdlePortrait(string _line)
         {

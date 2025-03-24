@@ -1,12 +1,17 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace CyberAvebury
 {
     public class Dialogue : MonoBehaviour
     {
         private WordWriter m_writer;
+
+        [SerializeField] private float m_openWaitTime = 1.0f;
+        [SerializeField] private float m_closeWaitTime = 1.0f;
         
         private Queue<DialogueLineBase> m_upcomingDialogue;
 
@@ -17,6 +22,8 @@ namespace CyberAvebury
         public int CurrentLineIndex => m_currentLineIndex;
         
         public UnityEvent<DialogueLineBase> OnNewDialogue;
+        public UnityEvent OnEndDialogue;
+        
         public UnityEvent<DialogueLineBase, int> OnNewLine;
         
         public void AddLine(DialogueCharacter _character, int _expression, string _line)
@@ -38,17 +45,8 @@ namespace CyberAvebury
 
         private void Update()
         {
-            if(m_writer.IsWriting) { return; }
-
-            var nextLineIndex = m_currentLineIndex + 1;
-            if (m_currentDialogue == null || nextLineIndex >= m_currentDialogue.GetLineCount())
-            {
-                NextDialogue();
-            }
-            else
-            {
-                ChangeLine(nextLineIndex);
-            }
+            if(m_currentDialogue != null) { return; }
+            NextDialogue();
         }
 
         private void NextDialogue()
@@ -56,8 +54,7 @@ namespace CyberAvebury
             if(m_upcomingDialogue.Count < 1) { return; }
             
             m_currentDialogue = m_upcomingDialogue.Dequeue();
-            OnNewDialogue?.Invoke(m_currentDialogue);
-            ChangeLine(0);
+            StartCoroutine(ShowDialogue());
         }
 
         private void ChangeLine(int _lineIndex)
@@ -65,6 +62,24 @@ namespace CyberAvebury
             m_currentLineIndex = _lineIndex;
             m_writer.Write(m_currentDialogue.GetLine(m_currentLineIndex), m_currentDialogue.Character.LetterDuration);
             OnNewLine?.Invoke(m_currentDialogue, m_currentLineIndex);
+        }
+
+        private IEnumerator ShowDialogue()
+        {
+            OnNewDialogue?.Invoke(m_currentDialogue);
+            yield return new WaitForSeconds(m_openWaitTime);
+
+            var lineCount = m_currentDialogue.GetLineCount();
+            for (var i = 0; i < lineCount; i++)
+            {
+                ChangeLine(i);
+                yield return new WaitUntil(() => !m_writer.IsWriting);
+            }
+            
+            OnEndDialogue?.Invoke();
+            yield return new WaitForSeconds(m_closeWaitTime);
+            
+            m_currentDialogue = null;
         }
     }
 }
