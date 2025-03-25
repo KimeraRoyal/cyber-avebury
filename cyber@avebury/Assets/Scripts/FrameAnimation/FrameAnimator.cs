@@ -55,7 +55,7 @@ namespace KR
 
         private void Start()
         {
-            ResetAnimation();
+            Animation = m_animation;
         }
 
         private void Update()
@@ -65,7 +65,7 @@ namespace KR
             m_timer += Time.deltaTime * m_speed;
             
             var updateFrame = false;
-            while (m_timer >= m_frameDuration)
+            for (var i = 0; i < 10 && m_timer >= m_frameDuration; i++)
             {
                 m_timer -= m_frameDuration;
                 updateFrame = true;

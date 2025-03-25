@@ -3,7 +3,7 @@ using UnityEngine;
 namespace CyberAvebury
 {
     [RequireComponent(typeof(Animator))]
-    public class DialoguePortraitBox : MonoBehaviour
+    public class DialogueAnimator : MonoBehaviour
     {
         private static int s_showVariable = Animator.StringToHash("Show");
 
