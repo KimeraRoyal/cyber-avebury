@@ -7,17 +7,13 @@ namespace CyberAvebury
     {
         private DialogueLineContent[] m_lines;
 
-        public DialogueLines(DialogueCharacter _character, DialogueLineContent[] _lines)
-            : base(_character)
+        public DialogueLines(DialogueLineContent[] _lines)
         {
             m_lines = _lines;
         }
 
-        public override int GetExpressionIndex(int _lineIndex)
-            => m_lines[_lineIndex].Expression;
-
-        public override string GetLine(int _lineIndex)
-            => m_lines[_lineIndex].Line;
+        public override DialogueLineContent GetContent(int _lineIndex)
+            => m_lines[_lineIndex];
 
         public override int GetLineCount()
             => m_lines.Length;

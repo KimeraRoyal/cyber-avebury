@@ -39,6 +39,12 @@ namespace CyberAvebury
             m_currentCoroutine = StartCoroutine(WriteLine(_line, _letterDuration));
         }
 
+        public void Write(DialogueLineContent _content)
+            => Write(_content.Line, _content.Character.LetterDuration);
+
+        public void Write(DialogueLineBase _dialogue, int _lineIndex)
+            => Write(_dialogue.GetContent(_lineIndex));
+        
         private IEnumerator WriteLine(string _line, float _letterDuration)
         {
             m_isWriting = true;

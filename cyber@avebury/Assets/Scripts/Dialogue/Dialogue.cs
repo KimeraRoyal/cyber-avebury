@@ -60,7 +60,7 @@ namespace CyberAvebury
         private void ChangeLine(int _lineIndex)
         {
             m_currentLineIndex = _lineIndex;
-            m_writer.Write(m_currentDialogue.GetLine(m_currentLineIndex), m_currentDialogue.Character.LetterDuration);
+            m_writer.Write(m_currentDialogue.GetLine(m_currentLineIndex), m_currentDialogue.GetCharacter(m_currentLineIndex).LetterDuration);
             OnNewLine?.Invoke(m_currentDialogue, m_currentLineIndex);
         }
 
