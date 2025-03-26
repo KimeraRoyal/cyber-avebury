@@ -50,21 +50,26 @@ namespace CyberAvebury
             m_isWriting = true;
             OnLineStarted?.Invoke(_line);
             
+            // TODO: Maybe handle this per-letter rather than with a substring?
             var words = _line.Split(' ');
 
             yield return new WaitForSeconds(m_preDialogueWaitDuration);
-            
-            var lineText = "";
+
+            var cursor = 0;
             foreach (var word in words)
             {
-                lineText += word;
-                m_text.text = lineText;
+                cursor += word.Length;
+                
+                var lineText = _line[..cursor];
+                var unwrittenText = _line.Substring(cursor, _line.Length - cursor);
+                
+                m_text.text = lineText + "<alpha=#00>" + unwrittenText;
                 OnWordWritten?.Invoke(word);
                 OnLineUpdated?.Invoke(lineText);
                 
                 yield return new WaitForSeconds(_letterDuration * word.Length);
 
-                lineText += " ";
+                cursor++;
             }
 
             OnLineFinished?.Invoke(_line);

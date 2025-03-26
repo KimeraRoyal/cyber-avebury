@@ -9,7 +9,7 @@ namespace CyberAvebury
         [SerializeField] private DialogueCharacter m_character;
         [SerializeField] private int m_expression;
         
-        [SerializeField] private string m_line;
+        [SerializeField] [TextArea(3, 5)] private string m_line;
 
         public DialogueCharacter Character => m_character;
         public int Expression => m_expression;
