@@ -1,0 +1,16 @@
+{
+    "name": "CyberAvebury.Map",
+    "rootNamespace": "CyberAvebury",
+    "references": [
+        "GUID:45a8948d779714135814fc726b8d219f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
