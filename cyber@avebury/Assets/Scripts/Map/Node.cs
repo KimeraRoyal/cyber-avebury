@@ -1,21 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
+using Niantic.Lightship.Maps.Core.Coordinates;
 using UnityEngine;
 
 namespace CyberAvebury
 {
     public class Node : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        private LatLng m_coordinates;
 
-        // Update is called once per frame
-        void Update()
+        public LatLng Coordinates => m_coordinates;
+
+        public void AssignInformation(NodeInformation _information)
         {
-        
+            gameObject.name = _information.Name;
+
+            m_coordinates = _information.Coordinates;
         }
     }
 }

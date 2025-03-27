@@ -205,8 +205,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_spawner: {fileID: 2838289333218337160, guid: c6898ebe75503a84f98544dcbd87d669, type: 3}
-  m_nodeLatitude: 51.429229230409234
-  m_nodeLongitude: -1.856265419006553
+  m_nodeInfo:
+  - m_name: Barn
+    m_longitude: 51.429241734360744
+    m_latitude: -1.8571680104538777
+  - m_name: Gift Shop
+    m_longitude: 51.42883489388088
+    m_latitude: -1.8569321329435267
+  - m_name: The Obelisk
+    m_longitude: 51.42804537118253
+    m_latitude: -1.8533910014268535
 --- !u!1 &636541137
 GameObject:
   m_ObjectHideFlags: 0
