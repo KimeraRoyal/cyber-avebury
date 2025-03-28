@@ -187,34 +187,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &533093500 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4768038641914333778, guid: 2b7dd28dfbff7a745bd9faa3470466a5, type: 3}
-  m_PrefabInstance: {fileID: 6606054613259050601}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &533093504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 533093500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1b744394e30226408d47158c1381b2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spawner: {fileID: 2838289333218337160, guid: c6898ebe75503a84f98544dcbd87d669, type: 3}
-  m_nodeInfo:
-  - m_name: Barn
-    m_longitude: 51.429241734360744
-    m_latitude: -1.8571680104538777
-  - m_name: Gift Shop
-    m_longitude: 51.42883489388088
-    m_latitude: -1.8569321329435267
-  - m_name: The Obelisk
-    m_longitude: 51.42804537118253
-    m_latitude: -1.8533910014268535
 --- !u!1 &636541137
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +417,161 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9178c6779412ec640a84037067045783, type: 3}
+--- !u!1 &1161608551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1161608552}
+  - component: {fileID: 1161608554}
+  - component: {fileID: 1161608553}
+  m_Layer: 0
+  m_Name: Nodes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1161608552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161608551}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1161608553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161608551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b744394e30226408d47158c1381b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_spawner: {fileID: 2838289333218337160, guid: c6898ebe75503a84f98544dcbd87d669, type: 3}
+  m_nodeInfo:
+  - m_name: Barn
+    m_longitude: 51.429241734360744
+    m_latitude: -1.8571680104538777
+  - m_name: Gift Shop
+    m_longitude: 51.42883489388088
+    m_latitude: -1.8569321329435267
+  - m_name: The Obelisk
+    m_longitude: 51.42804537118253
+    m_latitude: -1.8533910014268535
+--- !u!114 &1161608554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161608551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f84ccc57ed9488345b17aff3ad64f9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_linePrefab: {fileID: 6698718233968199980, guid: ffc9d31c510daa54eb3665e237ae778c, type: 3}
+  OnNodeRegistered:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &1276046819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1276046820}
+  - component: {fileID: 1276046823}
+  m_Layer: 0
+  m_Name: Foreground Camera
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1276046820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276046819}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2107544958}
+  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
+--- !u!20 &1276046823
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276046819}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 3
+  m_BackGroundColor: {r: 1, g: 0, b: 0, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 256
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &1457538805
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,9 +881,10 @@ GameObject:
   - component: {fileID: 2107544958}
   - component: {fileID: 2107544957}
   - component: {fileID: 2107544956}
+  - component: {fileID: 2107544959}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -828,13 +956,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107544955}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
+  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
   m_LocalPosition: {x: 0, y: 125, z: -60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1276046820}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
+--- !u!114 &2107544959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107544955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c0fda6004e1574eb2e0e2da96b1640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnUpdated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &6606054613259050601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -910,10 +1054,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4768038641914333778, guid: 2b7dd28dfbff7a745bd9faa3470466a5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 533093504}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b7dd28dfbff7a745bd9faa3470466a5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -927,3 +1068,4 @@ SceneRoots:
   - {fileID: 636541138}
   - {fileID: 1144381936}
   - {fileID: 367239716}
+  - {fileID: 1161608552}

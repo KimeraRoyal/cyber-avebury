@@ -5,7 +5,11 @@ namespace CyberAvebury
 {
     public class Node : MonoBehaviour
     {
+        [SerializeField] private Transform m_lineAnchor;
+        
         private LatLng m_coordinates;
+
+        public Transform LineAnchor => m_lineAnchor;
 
         public LatLng Coordinates => m_coordinates;
 

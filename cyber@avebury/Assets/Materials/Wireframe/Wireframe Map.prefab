@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 872351128827978787, guid: 7b225ba51ee644b78aa995fa9fb357e4, type: 3}
       propertyPath: '_materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: ef291ce624f2ee84eb9af4c08e1a2025, type: 2}
+      objectReference: {fileID: 2100000, guid: 09e258fac69cd954493a6526a40f745d, type: 2}
     - target: {fileID: 2014321496302542454, guid: 7b225ba51ee644b78aa995fa9fb357e4, type: 3}
       propertyPath: m_Name
       value: Wireframe Map

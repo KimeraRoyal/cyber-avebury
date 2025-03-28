@@ -3,12 +3,20 @@ using UnityEngine;
 
 namespace CyberAvebury
 {
+    [RequireComponent(typeof(Nodes))]
     public class NodePlacer : MonoBehaviour
     {
+        private Nodes m_nodes;
+        
         [SerializeField] private LayerGameObjectPlacement m_spawner;
 
         [SerializeField] private NodeInformation[] m_nodeInfo;
-        
+
+        private void Awake()
+        {
+            m_nodes = GetComponent<Nodes>();
+        }
+
         private void Start()
         {
             foreach (var nodeInfo in m_nodeInfo)
@@ -17,6 +25,7 @@ namespace CyberAvebury
                 
                 var placedNode = placedObject.Value.GetComponent<Node>();
                 placedNode.AssignInformation(nodeInfo);
+                m_nodes.RegisterNode(placedNode);
             }
         }
     }
