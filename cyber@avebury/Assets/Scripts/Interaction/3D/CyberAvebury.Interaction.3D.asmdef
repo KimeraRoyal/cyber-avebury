@@ -1,0 +1,16 @@
+{
+    "name": "CyberAvebury.Interaction.3D",
+    "rootNamespace": "CyberAvebury",
+    "references": [
+        "GUID:55bc09f86ffdfec4a9f0f273194fa96a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

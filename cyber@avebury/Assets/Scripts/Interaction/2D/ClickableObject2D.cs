@@ -1,21 +1,18 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace CyberAvebury
 {
     // TODO: Write to work off cast rays, similar to in Parabolic Emotion
     [RequireComponent(typeof(Collider2D))]
-    public class ClickableObject2D : MonoBehaviour
+    public class ClickableObject2D : ClickableObject
     {
-        private Mouse m_mouse;
+        private Mouse2D m_mouse;
         
         private Collider2D m_collider2D;
 
-        public UnityEvent OnClicked;
-
         private void Awake()
         {
-            m_mouse = FindAnyObjectByType<Mouse>();
+            m_mouse = FindAnyObjectByType<Mouse2D>();
             
             m_collider2D = GetComponent<Collider2D>();
         }

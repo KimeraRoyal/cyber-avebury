@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using Niantic.Lightship.Maps.Core.Coordinates;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CyberAvebury
 {
@@ -8,7 +10,6 @@ namespace CyberAvebury
     {
         [SerializeField] private Transform m_lineAnchor;
 
-        // TODO: Make connections two sided
         private HashSet<Node> m_connections;
 
         private NodeInfo m_info;
@@ -20,6 +21,8 @@ namespace CyberAvebury
         public HashSet<Node> Connections => m_connections;
 
         public NodeInfo Info => m_info;
+
+        public static Action<Node, Node> OnNodesConnected;
 
         private void Awake()
         {
@@ -35,7 +38,9 @@ namespace CyberAvebury
 
         public void Connect(Node _node)
         {
-            m_connections.Add(_node);
+            if(!(m_connections.Add(_node) && _node.m_connections.Add(this))) { return; }
+            Debug.Log($"Connected {gameObject.name} to {_node.gameObject.name}");
+            OnNodesConnected?.Invoke(this, _node);
         }
     }
 }
