@@ -428,6 +428,7 @@ GameObject:
   - component: {fileID: 1161608552}
   - component: {fileID: 1161608554}
   - component: {fileID: 1161608553}
+  - component: {fileID: 1161608555}
   m_Layer: 0
   m_Name: Nodes
   m_TagString: Untagged
@@ -464,15 +465,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawner: {fileID: 2838289333218337160, guid: c6898ebe75503a84f98544dcbd87d669, type: 3}
   m_nodeInfo:
-  - m_name: Barn
-    m_longitude: 51.429241734360744
-    m_latitude: -1.8571680104538777
-  - m_name: Gift Shop
-    m_longitude: 51.42883489388088
-    m_latitude: -1.8569321329435267
-  - m_name: The Obelisk
-    m_longitude: 51.42804537118253
-    m_latitude: -1.8533910014268535
+  - {fileID: 11400000, guid: 102f6e05824a42d4c9bcb2efc0cd2036, type: 2}
+  - {fileID: 11400000, guid: 4f943238fe8d84a4682aec7c2576c145, type: 2}
+  - {fileID: 11400000, guid: ad8162e42dd88a14095bac7374aefb40, type: 2}
 --- !u!114 &1161608554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,10 +480,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84ccc57ed9488345b17aff3ad64f9cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_linePrefab: {fileID: 6698718233968199980, guid: ffc9d31c510daa54eb3665e237ae778c, type: 3}
   OnNodeRegistered:
     m_PersistentCalls:
       m_Calls: []
+  OnFinishedRegistering:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1161608555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161608551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c71c7946aa688c4bbf8c765af205287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_linePrefab: {fileID: 6698718233968199980, guid: ffc9d31c510daa54eb3665e237ae778c, type: 3}
 --- !u!1 &1276046819
 GameObject:
   m_ObjectHideFlags: 0

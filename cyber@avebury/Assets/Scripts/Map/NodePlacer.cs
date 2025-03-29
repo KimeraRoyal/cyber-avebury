@@ -10,7 +10,7 @@ namespace CyberAvebury
         
         [SerializeField] private LayerGameObjectPlacement m_spawner;
 
-        [SerializeField] private NodeInformation[] m_nodeInfo;
+        [SerializeField] private NodeInfo[] m_nodeInfo;
 
         private void Awake()
         {
@@ -19,14 +19,18 @@ namespace CyberAvebury
 
         private void Start()
         {
-            foreach (var nodeInfo in m_nodeInfo)
+            var nodes = new Node[m_nodeInfo.Length];
+            for(var i = 0; i < m_nodeInfo.Length; i++)
             {
+                var nodeInfo = m_nodeInfo[i];
+                
                 var placedObject = m_spawner.PlaceInstance(nodeInfo.Coordinates, Quaternion.identity);
                 
                 var placedNode = placedObject.Value.GetComponent<Node>();
                 placedNode.AssignInformation(nodeInfo);
-                m_nodes.RegisterNode(placedNode);
+                nodes[i] = placedNode;
             }
+            m_nodes.RegisterNodes(nodes);
         }
     }
 }

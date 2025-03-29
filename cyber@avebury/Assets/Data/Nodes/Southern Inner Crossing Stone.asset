@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
+  m_Name: Southern Inner Crossing Stone
+  m_EditorClassIdentifier: 
+  m_coordinates: 51.42775126567875, -1.8539464595260546
+  m_connections:
+  - {fileID: 11400000, guid: 4f943238fe8d84a4682aec7c2576c145, type: 2}

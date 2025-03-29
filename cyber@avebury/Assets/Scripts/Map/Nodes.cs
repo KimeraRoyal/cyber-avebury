@@ -6,27 +6,44 @@ namespace CyberAvebury
 {
     public class Nodes : MonoBehaviour
     {
-        private List<Node> m_nodes;
+        private Dictionary<string, Node> m_nodes;
 
-        [SerializeField] private NodeLine m_linePrefab;
+        public IReadOnlyDictionary<string, Node> RegisteredNodes => m_nodes;
 
         public UnityEvent<Node> OnNodeRegistered;
+        public UnityEvent OnFinishedRegistering;
 
         private void Awake()
         {
-            m_nodes = new List<Node>();
+            m_nodes = new Dictionary<string, Node>();
         }
 
-        public void RegisterNode(Node _node)
+        public void RegisterNodes(Node[] _nodes)
         {
-            m_nodes.Add(_node);
-            OnNodeRegistered?.Invoke(_node);
-
-            if (m_nodes.Count < 2) { return; }
-            for (var i = 0; i < m_nodes.Count - 1; i++)
+            foreach (var node in _nodes)
             {
-                var line = Instantiate(m_linePrefab, transform);
-                line.Connect(_node, m_nodes[i]);
+                RegisterNode(node);
+            }
+            ConnectNodes();
+                
+            OnFinishedRegistering?.Invoke();
+        }
+
+        private void RegisterNode(Node _node)
+        {
+            m_nodes.Add(_node.name, _node);
+            OnNodeRegistered?.Invoke(_node);
+        }
+
+        private void ConnectNodes()
+        {
+            foreach (var nodePair in m_nodes)
+            {
+                var node = nodePair.Value; 
+                foreach (var connection in node.Info.Connections)
+                {
+                    node.Connect(m_nodes[connection.name]);
+                }
             }
         }
     }
