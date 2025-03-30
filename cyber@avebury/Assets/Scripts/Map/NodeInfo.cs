@@ -1,4 +1,5 @@
-﻿using Niantic.Lightship.Maps.Core.Coordinates;
+﻿using CyberAvebury.Minigames;
+using Niantic.Lightship.Maps.Core.Coordinates;
 using UnityEngine;
 
 namespace CyberAvebury
@@ -10,6 +11,9 @@ namespace CyberAvebury
         private LatLng? m_storedCoordinates;
 
         [SerializeField] private NodeInfo[] m_connections;
+
+        [SerializeField] private Minigame m_minigame;
+        [SerializeField] private float m_minigameDifficulty = 0.0f;   
         
         public LatLng Coordinates
         {
@@ -21,6 +25,9 @@ namespace CyberAvebury
         }
 
         public NodeInfo[] Connections => m_connections;
+
+        public Minigame Minigame => m_minigame;
+        public float MinigameDifficulty => m_minigameDifficulty;
 
         private void ConvertCoordinates(string _coordinates)
         {

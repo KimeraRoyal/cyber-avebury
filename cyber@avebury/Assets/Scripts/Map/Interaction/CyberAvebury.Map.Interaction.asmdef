@@ -1,10 +1,11 @@
 {
-    "name": "CyberAvebury.Map",
+    "name": "CyberAvebury.Map.Interaction",
     "rootNamespace": "CyberAvebury",
     "references": [
-        "GUID:45a8948d779714135814fc726b8d219f",
-        "GUID:55bc09f86ffdfec4a9f0f273194fa96a",
-        "GUID:13eb272cfd101264a97f9d9c56d27cc5"
+        "GUID:37b55b6d548c1a546a5a29f4d5dc9315",
+        "GUID:93f7b5b5efcb16047b2a158e785ef741",
+        "GUID:13eb272cfd101264a97f9d9c56d27cc5",
+        "GUID:55bc09f86ffdfec4a9f0f273194fa96a"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

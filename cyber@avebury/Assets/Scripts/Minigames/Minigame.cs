@@ -23,11 +23,6 @@ namespace CyberAvebury.Minigames
         public bool IsDifficultySet => m_isDifficultySet;
 
         public bool IsPlaying => m_isPlaying;
-        
-        private void Start()
-        {
-            Begin(m_difficulty);
-        }
 
         public void Begin(float _difficulty)
         {

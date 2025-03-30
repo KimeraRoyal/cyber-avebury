@@ -213,7 +213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8100194724461523976
 Transform:
   m_ObjectHideFlags: 0
@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 6654633322477592209}
   - component: {fileID: 4856832571186486822}
   - component: {fileID: 2829849375050044140}
-  - component: {fileID: 1968360429543872259}
+  - component: {fileID: 8952343645740805606}
   - component: {fileID: 5332859688960805759}
   - component: {fileID: 8568978600862723250}
   m_Layer: 0
@@ -779,7 +779,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5731259033044552142}
   m_Enabled: 1
---- !u!114 &1968360429543872259
+--- !u!114 &8952343645740805606
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -788,7 +788,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5731259033044552142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c13a7a13606dfc4f847f343d4a6b128, type: 3}
+  m_Script: {fileID: 11500000, guid: d48c900d2b8344a2adfc2421eaf24598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnMouseClicked:

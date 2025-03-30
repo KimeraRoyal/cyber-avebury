@@ -263,6 +263,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8906570a5e703042be5c8cdbb04090f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnMinigameLoaded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMinigameUnloaded:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1108926467
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,6 +980,7 @@ GameObject:
   - component: {fileID: 2107544957}
   - component: {fileID: 2107544956}
   - component: {fileID: 2107544959}
+  - component: {fileID: 2107544960}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Player
@@ -1048,14 +1055,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107544955}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3420201, y: -0, z: -0, w: 0.9396927}
+  m_LocalRotation: {x: 0.23670535, y: 0.6782895, z: -0.24687715, w: 0.6503427}
   m_LocalPosition: {x: -77.10929, y: 112.07271, z: 72.169464}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1276046820}
   m_Father: {fileID: 1756425471}
-  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40, y: 92.41, z: 0}
 --- !u!114 &2107544959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,6 +1076,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2107544960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107544955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d42daf58fee13947b9185c2de28d50b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMouseClicked:
+    m_PersistentCalls:
+      m_Calls: []
+  m_targetMask:
+    serializedVersion: 2
+    m_Bits: 256
+  OnObjectClicked:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &6606054613259050601

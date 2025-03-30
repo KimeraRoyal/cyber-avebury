@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
+using CyberAvebury.Minigames;
 using Niantic.Lightship.Maps.Core.Coordinates;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace CyberAvebury
 {
@@ -19,6 +19,9 @@ namespace CyberAvebury
         public LatLng Coordinates => m_info.Coordinates;
 
         public HashSet<Node> Connections => m_connections;
+
+        public Minigame Minigame => m_info.Minigame;
+        public float MinigameDifficulty => m_info.MinigameDifficulty;
 
         public NodeInfo Info => m_info;
 
