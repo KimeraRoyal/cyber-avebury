@@ -29,7 +29,8 @@ namespace CyberAvebury
             
             OnMinigameUnloaded?.Invoke(m_currentMinigame);
             
-            Destroy(m_currentMinigame);
+            Destroy(m_currentMinigame.gameObject);
+            m_currentMinigame = null;
         }
     }
 }
