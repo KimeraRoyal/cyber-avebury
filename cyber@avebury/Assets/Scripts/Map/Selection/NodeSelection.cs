@@ -1,3 +1,4 @@
+using CyberAvebury.Minigames;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +11,7 @@ namespace CyberAvebury
         private Node m_selectedNode;
 
         public UnityEvent<Node> OnNodeSelected;
+        public UnityEvent<Minigame> OnNodeMinigameLoaded;
 
         private void Awake()
         {
@@ -28,6 +30,8 @@ namespace CyberAvebury
             
             var minigame = m_loader.LoadMinigame(m_selectedNode.Minigame);
             if(!minigame) { return; }
+            
+            OnNodeMinigameLoaded?.Invoke(minigame);
             minigame.Begin(m_selectedNode.MinigameDifficulty);
         }
     }

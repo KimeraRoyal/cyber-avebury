@@ -29,10 +29,10 @@ namespace CyberAvebury
 
         protected virtual void Update()
         {
-            if(!Input.GetMouseButtonDown(0)) { return; }
+            if (Locked || !Input.GetMouseButtonDown(0)) { return; }
 
             var mousePos = Input.mousePosition;
-            if(!Locked) { Cast(mousePos); }
+            Cast(mousePos);
             OnMouseClicked?.Invoke(new Vector2Int((int) mousePos.x, (int) mousePos.y));
         }
 
