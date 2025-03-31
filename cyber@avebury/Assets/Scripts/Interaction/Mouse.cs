@@ -8,10 +8,20 @@ namespace CyberAvebury
     {
         private Camera m_camera;
 
+        private int m_lock;
+
         protected Camera Camera => m_camera;
 
-        public UnityEvent<Vector2Int> OnMouseClicked;
+        public bool Locked => m_lock > 0;
         
+        public UnityEvent<Vector2Int> OnMouseClicked;
+
+        public void Lock()
+            => m_lock++;
+
+        public void Unlock()
+            => m_lock--;
+
         protected virtual void Awake()
         {
             m_camera = GetComponent<Camera>();
@@ -22,11 +32,10 @@ namespace CyberAvebury
             if(!Input.GetMouseButtonDown(0)) { return; }
 
             var mousePos = Input.mousePosition;
-            Click(mousePos);
+            if(!Locked) { Cast(mousePos); }
             OnMouseClicked?.Invoke(new Vector2Int((int) mousePos.x, (int) mousePos.y));
-
         }
 
-        protected abstract void Click(Vector3 _mousePos);
+        protected abstract void Cast(Vector3 _mousePos);
     }
 }

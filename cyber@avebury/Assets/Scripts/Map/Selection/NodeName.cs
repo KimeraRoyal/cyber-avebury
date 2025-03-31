@@ -14,7 +14,8 @@ namespace CyberAvebury
             ScrambleIP,
             ChangeLength,
             UnscrambleName,
-            Finished
+            Finished,
+            Scrambling
         }
 
         private const char c_minScrambleCharacter = '!';
@@ -27,9 +28,9 @@ namespace CyberAvebury
         [SerializeField] private float m_showIpDuration = 0.5f;
         [SerializeField] private float m_scrambleTime = 0.1f;
 
-        private string m_currentValue = "192.0.16.1";
+        private string m_currentValue = "192.0.32.1";
         private string m_currentName = "Node";
-        private string m_currentIP = "192.0.16.1";
+        private string m_currentIP = "192.0.24.1";
 
         private int m_scrambleStart = 0;
         private int m_scrambleLength = 0;
@@ -65,6 +66,9 @@ namespace CyberAvebury
                     break;
                 case AnimationState.Finished:
                     return;
+                case AnimationState.Scrambling:
+                    ScrambleCharacters();
+                    return;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -72,6 +76,13 @@ namespace CyberAvebury
 
         private void OnNodeSelected(Node _node)
         {
+            if (!_node)
+            {
+                UpdateText();
+                m_currentState = AnimationState.Scrambling;
+                return;
+            }
+            
             m_currentName = _node.name;
             //TODO: Assign an IP address
 
@@ -79,7 +90,9 @@ namespace CyberAvebury
 
             m_scrambleStart = 0;
             m_scrambleLength = 0;
+            
             m_currentState = AnimationState.ShowIP;
+            m_timer = 0.0f;
             
             UpdateText();
         }
@@ -113,11 +126,12 @@ namespace CyberAvebury
             var distance = m_currentName.Length - m_currentValue.Length;
             if (distance != 0)
             {
-                var length = m_currentValue.Length + Math.Abs(distance);
+                var length = m_currentValue.Length + Math.Sign(distance);
                 m_currentValue = "";
                 for (var i = 0; i < length; i++)
                 {
                     m_currentValue += "A";
+                    m_scrambleLength += 1;
                 }
                 return;
             }

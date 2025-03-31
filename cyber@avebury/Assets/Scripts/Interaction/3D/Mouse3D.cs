@@ -9,11 +9,9 @@ namespace CyberAvebury
 
         public UnityEvent<ClickableObject> OnObjectClicked;
 
-        protected override void Click(Vector3 _mousePos)
+        protected override void Cast(Vector3 _mousePos)
         {
             var ray = Camera.ScreenPointToRay(_mousePos);
-            Debug.DrawRay(ray.origin, ray.direction * Camera.farClipPlane, Color.red, 1.0f);
-            
             if (!Physics.Raycast(ray, out var rayHit, Camera.farClipPlane, m_targetMask)) { return; }
             
             var clickableObject = rayHit.transform.GetComponentInParent<ClickableObject>();

@@ -7,7 +7,7 @@ namespace CyberAvebury
     {
         public UnityEvent<Vector2> OnMouseClickedWorld;
         
-        protected override void Click(Vector3 _mousePos)
+        protected override void Cast(Vector3 _mousePos)
         {
             var worldPos = Camera.ScreenToWorldPoint(_mousePos);
             OnMouseClickedWorld?.Invoke(worldPos);
