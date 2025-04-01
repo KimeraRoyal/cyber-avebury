@@ -171,12 +171,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_segments: 5
-  m_segmentBlendCurve:
+  m_colorCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -184,17 +184,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.5
-      value: 0.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
       time: 1
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -204,3 +195,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  m_lockedMainColor: {r: 0.078431375, g: 0.23529412, b: 0.078431375, a: 1}
+  m_lockedSecondaryColor: {r: 0.039215688, g: 0.15686275, b: 0.039215688, a: 1}
+  m_unlockedMainColor: {r: 0, g: 1, b: 0, a: 1}
+  m_unlockedSecondaryColor: {r: 0, g: 0.39215687, b: 0, a: 1}
+  m_completedMainColor: {r: 1, g: 1, b: 1, a: 1}
+  m_completedSecondaryColor: {r: 0.78431374, g: 1, b: 0.78431374, a: 1}
