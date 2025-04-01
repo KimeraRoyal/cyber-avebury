@@ -2,7 +2,7 @@ Shader "Unlit/Wireframe"
 {
     Properties
     {
-        _WireColor("Wire Color", Color) = (1, 1, 1, 1)
+        _Color("Wire Color", Color) = (1, 1, 1, 1)
         
         _WireframeAliasing("Wireframe Aliasing", Float) = 1.5
     }
@@ -93,7 +93,7 @@ Shader "Unlit/Wireframe"
                 triStream.Append(o);
             }
 
-            half4 _WireColor;
+            half4 _Color;
 
             float _WireframeAliasing;
 
@@ -103,7 +103,7 @@ Shader "Unlit/Wireframe"
                 float3 aliased = smoothstep(float3(0.0, 0.0, 0.0), unitWidth * _WireframeAliasing, i.barycentric);
                 float alpha = 1 - min(aliased.x, min(aliased.y, aliased.z));
                 
-                fixed4 col = fixed4(_WireColor.xyz, alpha);
+                fixed4 col = fixed4(_Color.xyz, alpha);
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 
                 return col;

@@ -12,6 +12,8 @@ namespace CyberAvebury
 
         [SerializeField] private NodeInfo[] m_connections;
 
+        [SerializeField] private NodeState m_defaultState = NodeState.Locked;
+
         [SerializeField] private Minigame m_minigame;
         [SerializeField] private float m_minigameDifficulty = 0.0f;   
         
@@ -25,6 +27,8 @@ namespace CyberAvebury
         }
 
         public NodeInfo[] Connections => m_connections;
+
+        public NodeState DefaultState => m_defaultState;
 
         public Minigame Minigame => m_minigame;
         public float MinigameDifficulty => m_minigameDifficulty;
