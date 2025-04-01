@@ -16,6 +16,8 @@ namespace CyberAvebury
         private void Awake()
         {
             m_loader = FindAnyObjectByType<MinigameLoader>();
+            m_loader.OnMinigameLoaded.AddListener(OnMinigameLoaded);
+            m_loader.OnMinigameUnloaded.AddListener(OnMinigameUnloaded);
         }
 
         public void SelectNode(Node _node)
@@ -30,9 +32,24 @@ namespace CyberAvebury
             
             var minigame = m_loader.LoadMinigame(m_selectedNode.Minigame);
             if(!minigame) { return; }
-            
             OnNodeMinigameLoaded?.Invoke(minigame);
+            
             minigame.Begin(m_selectedNode.MinigameDifficulty);
+        }
+
+        private void OnMinigameLoaded(Minigame _minigame)
+        {
+            _minigame.OnPassed.AddListener(OnMinigamePassed);
+        }
+
+        private void OnMinigameUnloaded(Minigame _minigame)
+        {
+            _minigame.OnPassed.RemoveListener(OnMinigamePassed);
+        }
+
+        private void OnMinigamePassed()
+        {
+            m_selectedNode.Complete();
         }
     }
 }

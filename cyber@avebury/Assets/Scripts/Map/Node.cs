@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using CyberAvebury.Minigames;
 using Niantic.Lightship.Maps.Core.Coordinates;
 using UnityEngine;
@@ -62,6 +63,15 @@ namespace CyberAvebury
         {
             if(!(m_connections.Add(_node) && _node.m_connections.Add(this))) { return; }
             OnNodesConnected?.Invoke(this, _node);
+        }
+
+        public void Complete()
+        {
+            CurrentState = NodeState.Completed;
+            foreach (var connection in m_connections.Where(_connection => _connection.CurrentState == NodeState.Locked))
+            {
+                connection.CurrentState = NodeState.Unlocked;
+            }
         }
     }
 }
