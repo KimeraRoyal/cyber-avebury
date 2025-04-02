@@ -21,7 +21,7 @@ MonoBehaviour:
   _useLightshipPersistentAnchor: 1
   _useLightshipObjectDetection: 1
   _useLightshipWorldPositioning: 1
-  _locationAndCompassDataSource: 1
+  _locationAndCompassDataSource: 0
   _spoofLocationInfo:
     _latitude: 51.42901
     _longitude: -1.8548995

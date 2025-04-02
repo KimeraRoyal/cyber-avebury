@@ -451,6 +451,7 @@ GameObject:
   - component: {fileID: 1108926470}
   - component: {fileID: 1108926469}
   - component: {fileID: 1108926468}
+  - component: {fileID: 1108926472}
   m_Layer: 0
   m_Name: Marker
   m_TagString: Untagged
@@ -546,6 +547,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1756425471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1108926472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108926467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eff025434e0af14f99583394999dfca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lightshipMapView: {fileID: 6606054613259050603}
+  _editorMovementSpeed: 1
+  _camera: {fileID: 2107544957}
 --- !u!1001 &1144381936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2353,16 +2369,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7051333584035776958, guid: 2b7dd28dfbff7a745bd9faa3470466a5, type: 3}
+      propertyPath: _startAtDefaultLocation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051333584035776958, guid: 2b7dd28dfbff7a745bd9faa3470466a5, type: 3}
       propertyPath: '_mapLayers.Array.data[0]'
       value: 
       objectReference: {fileID: 7197425551944019539, guid: c6898ebe75503a84f98544dcbd87d669, type: 3}
     - target: {fileID: 7051333584035776958, guid: 2b7dd28dfbff7a745bd9faa3470466a5, type: 3}
       propertyPath: _defaultLocation._latitude
-      value: 51.42901
+      value: 51.42923711236433
       objectReference: {fileID: 0}
     - target: {fileID: 7051333584035776958, guid: 2b7dd28dfbff7a745bd9faa3470466a5, type: 3}
       propertyPath: _defaultLocation._longitude
-      value: -1.8549
+      value: -1.8572285672076394
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2374,6 +2394,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5071923024278210605, guid: 2b7dd28dfbff7a745bd9faa3470466a5, type: 3}
   m_PrefabInstance: {fileID: 6606054613259050601}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6606054613259050603 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7051333584035776958, guid: 2b7dd28dfbff7a745bd9faa3470466a5, type: 3}
+  m_PrefabInstance: {fileID: 6606054613259050601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0065c20f13fc326408fe756c97b2d701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
