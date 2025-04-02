@@ -11,7 +11,6 @@ namespace CyberAvebury
         private const char c_maxScrambleCharacter = '~';
         
         private Dialogue m_dialogue;
-        private WordWriter m_writer;
 
         private TMP_Text m_text;
 

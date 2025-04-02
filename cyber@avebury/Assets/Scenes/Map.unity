@@ -197,6 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 433974341}
   - component: {fileID: 433974342}
+  - component: {fileID: 433974343}
   m_Layer: 0
   m_Name: Camera Controls
   m_TagString: Untagged
@@ -246,6 +247,24 @@ MonoBehaviour:
     _doubleTapMaxTime: 0.5
   _camera: {fileID: 2107544957}
   _focusObject: {fileID: 1108926467}
+  m_focusOverride: {fileID: 0}
+  m_focusOverrideDistance: 20
+  m_focusOverrideOffset: {x: 0, y: 1.5, z: 0}
+  m_focusBlendTweenDuration: 0.8
+  m_focusBlendTweenEase: 7
+  m_focusBlend: 0
+--- !u!114 &433974343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433974340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be8da1eed0d63142b945dc9954e656a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &618310174
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,39 +599,9 @@ PrefabInstance:
       value: Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
-      propertyPath: m_lines.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
-      propertyPath: m_lines.Array.data[0].m_line
-      value: Could it be possible - a traitor in our midst, ready to betray us?
-      objectReference: {fileID: 0}
-    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
-      propertyPath: m_lines.Array.data[1].m_line
-      value: PERHAPS. But it would NEVER be me. I would NEVER betray anyone. You
-        are all, my FRIENDS. I lover you guys so much :))) I would never ever betray
-        you. EVER.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
-      propertyPath: m_lines.Array.data[2].m_line
-      value: That's... concerning...
-      objectReference: {fileID: 0}
-    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
       propertyPath: m_lines.Array.data[0].m_character
       value: 
-      objectReference: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
-    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
-      propertyPath: m_lines.Array.data[1].m_character
-      value: 
-      objectReference: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
-    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
-      propertyPath: m_lines.Array.data[2].m_character
-      value: 
-      objectReference: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
-    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
-      propertyPath: m_lines.Array.data[2].m_expression
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

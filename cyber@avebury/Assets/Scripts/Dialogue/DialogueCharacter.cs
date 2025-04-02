@@ -28,7 +28,15 @@ namespace CyberAvebury
 
         [SerializeField] private float m_letterDuration = 0.1f;
 
+        [SerializeField] private Vector2 m_portraitSize = Vector2.one * 150;
+        [SerializeField] private Color m_portraitColor = Color.green;
+        [SerializeField] private bool m_portraitMaskable = true;
+
         public float LetterDuration => m_letterDuration;
+
+        public Vector2 PortraitSize => m_portraitSize;
+        public Color PortraitColor => m_portraitColor;
+        public bool PortraitMaskable => m_portraitMaskable;
 
         public FrameAnimation GetPortrait(int _expression, bool _isTalking)
         {

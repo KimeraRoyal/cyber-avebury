@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 7531178987588344534}
   - component: {fileID: 8607446325065859343}
   - component: {fileID: 6664689672929413825}
+  - component: {fileID: 825818235566625016}
   m_Layer: 0
   m_Name: Icon
   m_TagString: Untagged
@@ -71,10 +72,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3858814958733543609}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3314553951426289530
 CanvasRenderer:
@@ -142,6 +143,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_static: {fileID: 11400000, guid: 3f2937959d337104881f1a994131a83e, type: 2}
+--- !u!114 &825818235566625016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255084705949546283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01be6f7f232f402ea3970b48e39c31b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_changeColor: 1
+  m_changeSize: 1
+  m_changeMaskable: 1
 --- !u!1 &1706488264542904717
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +501,7 @@ GameObject:
   - component: {fileID: 2791461496960779967}
   - component: {fileID: 5405058684817030746}
   - component: {fileID: 6828232970132424236}
+  - component: {fileID: 7824158805164035365}
   m_Layer: 0
   m_Name: Icon Box
   m_TagString: Untagged
@@ -510,7 +527,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 115, y: 35}
-  m_SizeDelta: {x: 160, y: 160}
+  m_SizeDelta: {x: 158, y: 158}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2728949740492619606
 CanvasRenderer:
@@ -597,6 +614,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f284cfc8f490e749b8b9a920cb12a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7824158805164035365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3238585809808579570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01be6f7f232f402ea3970b48e39c31b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_changeColor: 1
+  m_changeSize: 0
+  m_changeMaskable: 0
 --- !u!1 &3328818581232091529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,7 +1130,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb81846baf5515448033f19edcf00fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_lines: []
+  m_lines:
+  - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+    m_expression: 0
+    m_line: Could it be possible - a traitor in our midst, ready to betray us?
+  - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
+    m_expression: 0
+    m_line: PERHAPS. But it would NEVER be me. I would NEVER betray anyone. You are
+      all, my FRIENDS. I lover you guys so much :))) I would never ever betray you.
+      EVER.
+  - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+    m_expression: 1
+    m_line: That's... concerning...
 --- !u!1 &7473018598754777549
 GameObject:
   m_ObjectHideFlags: 0

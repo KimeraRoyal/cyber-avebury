@@ -18,3 +18,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: a10c75e1dfa4e564b9abb8dd028d2d25, type: 2}
     - {fileID: 11400000, guid: b4077f467c3146240979a7b102fc7bc3, type: 2}
   m_letterDuration: 0.085
+  m_portraitSize: {x: 150, y: 150}
+  m_portraitColor: {r: 0, g: 1, b: 0, a: 1}
+  m_portraitMaskable: 1

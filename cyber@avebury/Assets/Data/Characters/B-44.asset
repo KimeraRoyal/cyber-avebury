@@ -24,3 +24,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: ff88854a8b2fb7f48a8b2b3a0f2d2384, type: 2}
     - {fileID: 11400000, guid: 51afe0836637a8d41a707cbe617034b1, type: 2}
   m_letterDuration: 0.065
+  m_portraitSize: {x: 150, y: 150}
+  m_portraitColor: {r: 0, g: 1, b: 0, a: 1}
+  m_portraitMaskable: 1
