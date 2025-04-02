@@ -15,7 +15,11 @@ namespace CyberAvebury
         [SerializeField] private NodeState m_defaultState = NodeState.Locked;
 
         [SerializeField] private Minigame m_minigame;
-        [SerializeField] private float m_minigameDifficulty = 0.0f;   
+        [SerializeField] private float m_minigameDifficulty = 0.0f;
+
+        [SerializeField] private DialogueLinesObject m_unlockedLines;
+        [SerializeField] private DialogueLinesObject m_selectedLines;
+        [SerializeField] private DialogueLinesObject m_completedLines;
         
         public LatLng Coordinates
         {
@@ -32,6 +36,10 @@ namespace CyberAvebury
 
         public Minigame Minigame => m_minigame;
         public float MinigameDifficulty => m_minigameDifficulty;
+
+        public DialogueLinesObject UnlockedLines => m_unlockedLines;
+        public DialogueLinesObject SelectedLines => m_selectedLines;
+        public DialogueLinesObject CompletedLines => m_completedLines;
 
         private void ConvertCoordinates(string _coordinates)
         {

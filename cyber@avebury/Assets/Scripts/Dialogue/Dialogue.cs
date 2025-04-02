@@ -33,7 +33,9 @@ namespace CyberAvebury
 
         public void AddLine(DialogueLineBase _line)
         {
+            if(_line is not { CanUse: true }) { return; }
             m_upcomingDialogue.Enqueue(_line);
+            _line.ReportUse();
         }
 
         private void Awake()

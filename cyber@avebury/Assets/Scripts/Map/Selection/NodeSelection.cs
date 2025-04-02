@@ -23,6 +23,8 @@ namespace CyberAvebury
         public void SelectNode(Node _node)
         {
             m_selectedNode = _node;
+            
+            _node?.Select();
             OnNodeSelected?.Invoke(_node);
         }
 

@@ -44,6 +44,8 @@ namespace CyberAvebury
 
         public static Action<Node, Node> OnNodesConnected;
 
+        public UnityEvent OnSelected;
+
         public UnityEvent<NodeState> OnStateChanged;
 
         private void Awake()
@@ -63,6 +65,11 @@ namespace CyberAvebury
         {
             if(!(m_connections.Add(_node) && _node.m_connections.Add(this))) { return; }
             OnNodesConnected?.Invoke(this, _node);
+        }
+
+        public void Select()
+        {
+            OnSelected?.Invoke();
         }
 
         public void Complete()

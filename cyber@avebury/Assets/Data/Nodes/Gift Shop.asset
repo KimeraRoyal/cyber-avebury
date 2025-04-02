@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
-  m_Name: Southern Inner South Stone
+  m_Name: Gift Shop
   m_EditorClassIdentifier: 
-  m_coordinates: 51.42758993453237, -1.853409268294049
+  m_coordinates: 51.428863825033964, -1.8568842242303194
   m_connections:
-  - {fileID: 11400000, guid: ad8162e42dd88a14095bac7374aefb40, type: 2}
+  - {fileID: 11400000, guid: 862dcd1c237ff8c4ea229c7ec9ff6a93, type: 2}
+  - {fileID: 11400000, guid: 0c0dcaa5c58498b4ea078275144e2712, type: 2}
   m_defaultState: 0
   m_minigame: {fileID: 532597550852094343, guid: 6b129d3019a2d07489c61a5e93a987c4, type: 3}
   m_minigameDifficulty: 0

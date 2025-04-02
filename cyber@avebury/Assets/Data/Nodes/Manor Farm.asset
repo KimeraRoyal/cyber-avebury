@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
-  m_Name: Southern Inner South Stone
+  m_Name: Manor Farm
   m_EditorClassIdentifier: 
-  m_coordinates: 51.42758993453237, -1.853409268294049
+  m_coordinates: 51.42828423380096, -1.856558497917131
   m_connections:
-  - {fileID: 11400000, guid: ad8162e42dd88a14095bac7374aefb40, type: 2}
+  - {fileID: 11400000, guid: ca7633183785dba4d8801ad300a728f5, type: 2}
   m_defaultState: 0
   m_minigame: {fileID: 532597550852094343, guid: 6b129d3019a2d07489c61a5e93a987c4, type: 3}
   m_minigameDifficulty: 0
