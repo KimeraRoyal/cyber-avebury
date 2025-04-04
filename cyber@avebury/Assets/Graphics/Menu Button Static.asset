@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae03ad3b28724e24b97b03b09296fa1b, type: 3}
+  m_Name: Menu Button Static
+  m_EditorClassIdentifier: 
+  m_fps: 10
+  m_loopMode: 4
+  m_frames:
+  - {fileID: 763203282, guid: f81cac1873bbdae4e957bea6cd74bbcc, type: 3}
+  - {fileID: 1590725990, guid: f81cac1873bbdae4e957bea6cd74bbcc, type: 3}
+  - {fileID: -1841839031, guid: f81cac1873bbdae4e957bea6cd74bbcc, type: 3}
+  - {fileID: 1418823792, guid: f81cac1873bbdae4e957bea6cd74bbcc, type: 3}

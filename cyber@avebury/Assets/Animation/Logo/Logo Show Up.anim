@@ -1099,3 +1099,24 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 3.8333333
+    functionName: EnableObject
+    data: 
+    objectReferenceParameter: {fileID: 7868089942469685191, guid: 3058f79db5cf0c94398e3e1549fc725f, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 4
+    functionName: EnableObject
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 1
+    messageOptions: 0
+  - time: 4.1666665
+    functionName: EnableObject
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 2
+    messageOptions: 0
