@@ -1,11 +1,12 @@
 using System;
+using NUnit.Framework.Internal;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
 namespace CyberAvebury
 {
-    [RequireComponent(typeof(TMP_Text))]
     public class TextRain : MonoBehaviour
     {
         [Serializable]
@@ -33,15 +34,21 @@ namespace CyberAvebury
                 set => m_maxColumn = value;
             }
 
-            public int CurrentRow => m_currentRow;
-            public int CurrentColumn => m_currentColumn;
+            public int CurrentRow
+            {
+                get => m_currentRow;
+                set => m_currentRow = value;
+            }
+            
+            public int CurrentColumn
+            {
+                get => m_currentColumn;
+                set => m_currentColumn = value;
+            }
 
             public RainColumn(TextRain _rain)
             {
                 m_rain = _rain;
-                
-                Reset();
-                m_currentRow = Random.Range(0, m_rain.m_rowCount);
             }
             
             public void Move()
@@ -69,45 +76,46 @@ namespace CyberAvebury
                 m_movementInterval = Random.Range(m_rain.m_minMovementInterval, m_rain.m_maxMovementInterval);
             }
         }
-        
-        private TMP_Text m_text;
 
+        private Tilemap m_tilemap;
+        
         [SerializeField] private RainColumn[] m_columns;
 
         [SerializeField] private int m_columnCount = 123;
         [SerializeField] private int m_rowCount = 54;
-
+        [SerializeField] private Vector3Int m_offset;
+        
         [SerializeField] private int m_rainCount = 8;
         
+        [SerializeField] private Tile[] m_tilePalette;
         [SerializeField] private byte m_lifetime = 5;
         
         [SerializeField] private float m_minMovementInterval = 0.1f;
         [SerializeField] private float m_maxMovementInterval = 0.1f;
         
-        [SerializeField] private float m_randomizationInterval = 1.0f;
+        [SerializeField] private float m_minRandomizationInterval = 1.0f;
+        [SerializeField] private float m_maxRandomizationInterval = 1.0f;
+        private float m_randomizationInterval = -1.0f;
         private float m_randomizationTimer;
 
-        private string m_display;
         private char[] m_characters;
-        private string[] m_fadeHex;
         private bool m_dirty;
 
         private void Awake()
         {
-            m_text = GetComponent<TMP_Text>();
+            m_tilemap = GetComponent<Tilemap>();
         }
 
         private void Start()
         {
-            GenerateCharacters();
-            GenerateFades();
+            Randomize();
             CreateColumns();
             DrawText();
         }
 
         private void Update()
         {
-            //Randomize();
+            Randomize();
             ScrollText();
             DrawText();
         }
@@ -116,36 +124,31 @@ namespace CyberAvebury
         {
             if(!m_dirty) { return; }
 
-            m_display = "";
-            for(var y = 0; y < m_characters.Length; y++)
+            foreach (var columnRain in m_columns)
             {
-                for (var x = 0; x < m_columnCount; x++)
+                for (var distance = 0; distance <= m_lifetime; distance++)
                 {
-                    var distance = -1;
-                    var hasColumn = false;
+                    var x = columnRain.CurrentColumn;
+                    var y = (columnRain.CurrentRow - distance);
+                    if (y < 0) { y += m_characters.Length; }
                     
-                    foreach (var column in m_columns)
-                    {
-                        if(x != column.CurrentColumn) { continue; }
-                        distance = column.CalculateDistance(y);
-                        hasColumn = true;
-                    }
-
-                    if (hasColumn && distance >= 0 && distance < m_lifetime)
-                    {
-                        m_display += "<alpha=#" + m_fadeHex[distance] + ">" + m_characters[y];
-                    }
-                    else
-                    {
-                        m_display += ' ';
-                    }
+                    var character = m_characters[y];
+                    var tileIndex = distance * 2 + character;
+                    m_tilemap.SetTile(new Vector3Int(x, m_rowCount - y, 0) - m_offset, distance < m_lifetime ? m_tilePalette[tileIndex] : null);
                 }
-
-                m_display += '\n';
             }
-
-            m_text.text = m_display;
             m_dirty = false;
+        }
+
+        private void Randomize()
+        {
+            m_randomizationTimer += Time.deltaTime;
+            if(m_randomizationTimer < m_randomizationInterval) { return; }
+            m_randomizationTimer -= m_randomizationInterval;
+
+            GenerateCharacters();
+            m_randomizationInterval = Random.Range(m_minRandomizationInterval, m_maxRandomizationInterval);
+            m_dirty = true;
         }
 
         private void ScrollText()
@@ -154,16 +157,6 @@ namespace CyberAvebury
             {
                 column.Move();
             }
-        }
-
-        private void Randomize()
-        {
-            m_randomizationTimer += Time.deltaTime;
-            if(m_randomizationTimer < m_randomizationInterval) { return; }
-            m_randomizationTimer -= m_randomizationInterval;
-            
-            GenerateCharacters();
-            m_dirty = true;
         }
 
         private void GenerateCharacters()
@@ -175,22 +168,7 @@ namespace CyberAvebury
             
             for (var y = 0; y < m_characters.Length; y++)
             {
-                m_characters[y] = Random.Range(0, 2) > 0 ? '1' : '0';
-            }
-        }
-
-        private void GenerateFades()
-        {
-            if(m_fadeHex != null && m_fadeHex.Length == m_lifetime) { return; }
-
-            m_fadeHex = new string[m_lifetime];
-            var fadeByte = new byte[1];
-            
-            for (var i = 0; i < m_fadeHex.Length; i++)
-            {
-                var t = 1.0f - i / (float)m_lifetime;
-                fadeByte[0] = (byte)(t * byte.MaxValue);
-                m_fadeHex[i] = BitConverter.ToString(fadeByte);
+                m_characters[y] = (char) Random.Range(0, 2);
             }
         }
 
@@ -206,6 +184,8 @@ namespace CyberAvebury
                     MinColumn = (int)(i * increment),
                     MaxColumn = (int)((i + 1) * increment - 1)
                 };
+                m_columns[i].Reset();
+                m_columns[i].CurrentRow = Random.Range(0, m_rowCount);
             }
 
             m_dirty = true;
