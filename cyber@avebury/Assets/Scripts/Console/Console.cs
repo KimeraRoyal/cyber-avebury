@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 namespace CyberAvebury
 {
+    public enum ReturnBehaviour
+    {
+        None,
+        StartOfLine,
+        EndOfLine
+    }
+    
     [RequireComponent(typeof(TMP_Text))]
     public class Console : MonoBehaviour
     {
-        private enum ReturnBehaviour
-        {
-            None,
-            StartOfLine,
-            EndOfLine
-        }
-        
         private TMP_Text m_text;
 
+        [SerializeField] private string[] m_startingLines;
         [SerializeField] private string m_lines;
         private Queue<string> m_queuedLines;
 
@@ -25,14 +28,29 @@ namespace CyberAvebury
         [SerializeField] private float m_spaceWriteTime = 0.1f;
         [SerializeField] private float m_lineEndHold = 0.1f;
         [SerializeField] private ReturnBehaviour m_returnBehaviour = ReturnBehaviour.None;
-        private bool m_writing;
         
         [SerializeField] private string m_carat = "|";
         [SerializeField] private float m_caratBlinkInterval = 0.1f;
         private float m_caratBlinkTimer;
         private bool m_caratVisible;
 
+        private Coroutine m_writingCoroutine;
+        
         private bool m_dirty;
+
+        public ReturnBehaviour ReturnBehaviour
+        {
+            get => m_returnBehaviour;
+            set => m_returnBehaviour = value;
+        }
+
+        public bool Writing => m_writingCoroutine != null;
+
+        public UnityEvent<string> OnWritingStart;
+        public UnityEvent<string> OnWritingFinish;
+        public UnityEvent<char> OnWriteCharacter;
+
+        public UnityEvent OnCleared;
 
         public void AddLine(string _line)
             => m_queuedLines.Enqueue(_line);
@@ -45,6 +63,15 @@ namespace CyberAvebury
             }
         }
 
+        public void ClearLines()
+        {
+            m_lines = "";
+            if(m_writingCoroutine != null) { StopCoroutine(m_writingCoroutine); }
+            
+            OnCleared?.Invoke();
+            m_dirty = true;
+        }
+
         private void Awake()
         {
             m_text = GetComponent<TMP_Text>();
@@ -54,7 +81,7 @@ namespace CyberAvebury
 
         private void Start()
         {
-            AddLines(new[]{"Boot Sequence Initiated", "Counting Down...", "5", "4", "3", "2", "1", "Got You!"});
+            AddLines(m_startingLines);
         }
 
         private void Update()
@@ -66,14 +93,14 @@ namespace CyberAvebury
 
         private void BeginTyping()
         {
-            if(m_writing || m_queuedLines.Count < 1) { return; }
+            if(Writing || m_queuedLines.Count < 1) { return; }
             var nextLine = m_queuedLines.Dequeue();
-            StartCoroutine(TypeLine(nextLine));
+            m_writingCoroutine = StartCoroutine(TypeLine(nextLine));
         }
 
         private void BlinkCarat()
         {
-            if (m_writing)
+            if (Writing)
             {
                 m_caratBlinkTimer = 0.0f;
                 return;
@@ -87,25 +114,26 @@ namespace CyberAvebury
 
         private void ShowLines()
         {
-            m_text.text = $"{m_lines}{(m_writing || m_caratVisible ? m_carat : "")}";
+            m_text.text = $"{m_lines}{(Writing || m_caratVisible ? m_carat : "")}";
         }
 
         private IEnumerator TypeLine(string _line)
         {
-            m_writing = true;
-
             if (m_lines.Length > 0 && m_returnBehaviour == ReturnBehaviour.StartOfLine) { _line = "\n" + _line; }
             if (m_returnBehaviour == ReturnBehaviour.EndOfLine) { _line += "\n"; }
-            
+
+            OnWritingStart?.Invoke(_line);
             foreach (var character in _line)
             {
                 m_lines += character;
+                OnWriteCharacter?.Invoke(character);
                 yield return new WaitForSeconds(GetCharacterWriteTime(character));
             }
+            OnWritingFinish?.Invoke(_line);
 
             yield return new WaitForSeconds(m_lineEndHold);
             
-            m_writing = false;
+            m_writingCoroutine = null;
         }
 
         private float GetCharacterWriteTime(char _character) =>
