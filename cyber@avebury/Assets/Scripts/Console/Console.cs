@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -20,8 +21,13 @@ namespace CyberAvebury
         private TMP_Text m_text;
 
         [SerializeField] private string[] m_startingLines;
+        [SerializeField] private string[] m_enabledLines;
+        private bool m_addedStartLines;
+        
         [SerializeField] private string m_lines;
         private Queue<string> m_queuedLines;
+        private string m_currentLine;
+        private int m_currentCharacterPosition;
 
         [SerializeField] private float m_minLetterWriteTime = 0.1f;
         [SerializeField] private float m_maxLetterWriteTime = 0.1f;
@@ -38,6 +44,12 @@ namespace CyberAvebury
         
         private bool m_dirty;
 
+        public Color TextColor
+        {
+            get => m_text.color;
+            set => m_text.color = value;
+        }
+        
         public ReturnBehaviour ReturnBehaviour
         {
             get => m_returnBehaviour;
@@ -66,7 +78,8 @@ namespace CyberAvebury
         public void ClearLines()
         {
             m_lines = "";
-            if(m_writingCoroutine != null) { StopCoroutine(m_writingCoroutine); }
+            m_queuedLines.Clear();
+            StopWriting();
             
             OnCleared?.Invoke();
             m_dirty = true;
@@ -82,6 +95,19 @@ namespace CyberAvebury
         private void Start()
         {
             AddLines(m_startingLines);
+            if(!m_addedStartLines) { AddLines(m_enabledLines); }
+            m_addedStartLines = true;
+        }
+
+        private void OnEnable()
+        {
+            if(!m_addedStartLines) { return; }
+            AddLines(m_enabledLines);
+        }
+
+        private void OnDisable()
+        {
+            StopWriting();
         }
 
         private void Update()
@@ -119,27 +145,55 @@ namespace CyberAvebury
 
         private IEnumerator TypeLine(string _line)
         {
-            if (m_lines.Length > 0 && m_returnBehaviour == ReturnBehaviour.StartOfLine) { _line = "\n" + _line; }
+            var skipFirstCharacter = false;
+
+            //TODO: Per-line return behaviour?
+            if (m_lines.Length > 0 && m_returnBehaviour == ReturnBehaviour.StartOfLine)
+            {
+                _line = "\n" + _line;
+                skipFirstCharacter = true;
+            }
             if (m_returnBehaviour == ReturnBehaviour.EndOfLine) { _line += "\n"; }
 
-            OnWritingStart?.Invoke(_line);
-            foreach (var character in _line)
+            m_currentLine = _line;
+            m_currentCharacterPosition = 0;
+            
+            OnWritingStart?.Invoke(m_currentLine);
+            foreach (var character in m_currentLine)
             {
                 m_lines += character;
+                m_currentCharacterPosition++;
                 OnWriteCharacter?.Invoke(character);
+                
+                if (skipFirstCharacter)
+                {
+                    skipFirstCharacter = false;
+                    continue;
+                }
                 yield return new WaitForSeconds(GetCharacterWriteTime(character));
             }
-            OnWritingFinish?.Invoke(_line);
+            OnWritingFinish?.Invoke(m_currentLine);
 
             yield return new WaitForSeconds(m_lineEndHold);
             
             m_writingCoroutine = null;
         }
 
+        private void StopWriting()
+        {
+            if(m_writingCoroutine == null) { return; }
+            
+            StopCoroutine(m_writingCoroutine);
+            m_writingCoroutine = null;
+
+            m_lines += m_currentLine.Substring(m_currentCharacterPosition, m_currentLine.Length - m_currentCharacterPosition);
+        }
+
         private float GetCharacterWriteTime(char _character) =>
             _character switch
             {
                 ' ' => m_spaceWriteTime,
+                '\n' => m_lineEndHold,
                 _ => Random.Range(m_minLetterWriteTime, m_maxLetterWriteTime)
             };
     }

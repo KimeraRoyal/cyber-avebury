@@ -45,7 +45,7 @@ namespace CyberAvebury
 
         private void Update()
         {
-            if(GetScreenSize() == m_lastScreenSize || m_targetSize == m_lastTargetSize && m_roundingBehaviour == m_lastRoundingBehaviour) { return; }
+            if(GetScreenSize() == m_lastScreenSize && m_targetSize == m_lastTargetSize && m_roundingBehaviour == m_lastRoundingBehaviour) { return; }
             
             Scale();
             m_lastScreenSize = GetScreenSize();
