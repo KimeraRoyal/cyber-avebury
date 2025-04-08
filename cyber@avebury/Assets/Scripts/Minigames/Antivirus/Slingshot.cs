@@ -5,10 +5,9 @@ namespace CyberAvebury
     public class Slingshot : MonoBehaviour
     {
         [SerializeField] private Camera m_camera;
-        
-        [SerializeField] private Transform m_anchor;
-        [SerializeField] private Transform m_target;
-        private float m_anchorDistance;
+
+        private ProjectilePool m_pool;
+        private float m_distanceToCamera;
 
         [SerializeField] private AnimationCurve m_distanceCurve = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
         [SerializeField] private Vector3 m_distanceFactor = Vector3.one;
@@ -18,15 +17,24 @@ namespace CyberAvebury
         [SerializeField] private Vector2 m_currentPosition;
         private bool m_aiming;
 
+        private Projectile m_projectile;
+
+        private void Awake()
+        {
+            m_pool = GetComponentInParent<ProjectilePool>();
+        }
+
         private void Start()
         {
-            m_anchorDistance = (m_anchor.position - m_camera.transform.position).magnitude;
+            m_distanceToCamera = (transform.position - m_camera.transform.position).magnitude;
         }
 
         private void Update()
         {
+            if (!m_projectile) { SpawnProjectile(); }
+            
             if(Input.GetMouseButtonDown(0)) { m_aimCenter = GetMouseWorldPosition(); }
-            if(Input.GetMouseButtonUp(0)) { Aim(m_aimCenter); }
+            if(Input.GetMouseButtonUp(0)) { Fire(); }
             m_aiming = Input.GetMouseButton(0);
             
             if(!m_aiming) { return; }
@@ -43,10 +51,25 @@ namespace CyberAvebury
                 normalizedDifference.x * distance * m_distanceFactor.x,
                 normalizedDifference.y * distance * m_distanceFactor.y,
                 distance * m_distanceFactor.z);
-            m_target.position = m_anchor.position + targetOffset;
+            m_projectile.transform.position = transform.position + targetOffset;
+        }
+
+        private void Fire()
+        {
+            if(!m_aiming) { return; }
+
+            var difference = m_projectile.transform.position - transform.position;
+            m_projectile.Fire(-difference.normalized);
+            m_projectile = null;
+        }
+
+        private void SpawnProjectile()
+        {
+            m_projectile = m_pool.Get();
+            m_projectile.transform.position = transform.position;
         }
 
         private Vector2 GetMouseWorldPosition()
-            => m_camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, m_anchorDistance));
+            => m_camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, m_distanceToCamera));
     }
 }

@@ -1,10 +1,7 @@
 {
-    "name": "CyberAvebury.Minigames.Antivirus",
+    "name": "CyberAvebury.Minigames.Antivirus.Projectile",
     "rootNamespace": "CyberAvebury",
-    "references": [
-        "GUID:13eb272cfd101264a97f9d9c56d27cc5",
-        "GUID:58293e28e079a9644a08838808618da9"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
