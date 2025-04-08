@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5689325397378552713}
   - component: {fileID: 2189662656385554458}
   - component: {fileID: 6120782407828132756}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 2003041953, guid: 64f67889ffcb11e499f99ddfec378095, type: 3}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.23529412, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -122,8 +122,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40745bf5aaea7f44588294fec84aeb65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_startingColor: {r: 0, g: 0.23529413, b: 0, a: 1}
-  m_targetColor: {r: 0, g: 1, b: 0, a: 1}
+  m_colorGradient:
+    serializedVersion: 2
+    key0: {r: 0, g: 0.23529413, b: 0, a: 0}
+    key1: {r: 0, g: 1, b: 0, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 1}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 655
+    atime2: 65535
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 3
   m_colorTweenDuration: 1.5
   m_colorTweenEase: 5
 --- !u!1 &4686233826470337637
@@ -137,7 +165,7 @@ GameObject:
   - component: {fileID: 2791978073463740870}
   - component: {fileID: 7569255160010155000}
   - component: {fileID: 2545873695050419998}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,8 +248,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7880515590285383594}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 7.5, z: 25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -241,6 +269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254ac8d90e6ec0d4693d1d6202ead70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_startingPosition: {x: 0, y: 0, z: 0}
   m_movementDuration: 1.5
   m_movementEase: 6
-  m_targetPosition: {x: 0, y: 0, z: 0}
+  OnDespawn:
+    m_PersistentCalls:
+      m_Calls: []
