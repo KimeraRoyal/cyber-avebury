@@ -1,5 +1,4 @@
-using System;
-using CyberAvebury.Minigames.Mainframe;
+using CyberAvebury.Minigames.Timer;
 using UnityEngine;
 
 namespace CyberAvebury
@@ -7,24 +6,24 @@ namespace CyberAvebury
     [RequireComponent(typeof(RectTransform))]
     public class TimerFill : MonoBehaviour
     {
-        private Mainframe m_mainframe;
+        private MinigameTimer m_timer;
         
         private RectTransform m_rectTransform;
 
         private void Awake()
         {
-            m_mainframe = GetComponentInParent<Mainframe>();
+            m_timer = GetComponentInParent<MinigameTimer>();
             
             m_rectTransform = GetComponent<RectTransform>();
             
-            m_mainframe.OnTimerUpdated.AddListener(OnTimerUpdated);
+            m_timer.OnTimerUpdated.AddListener(OnTimerUpdated);
         }
 
         private void Start()
             => UpdateFill(0);
 
         private void OnTimerUpdated(float _time)
-            => UpdateFill(m_mainframe.TimerProgress);
+            => UpdateFill(m_timer.TimerProgress);
 
         private void UpdateFill(float _t)
         {

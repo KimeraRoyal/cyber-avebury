@@ -1,11 +1,9 @@
 {
-    "name": "CyberAvebury.Minigames.Antivirus.Enemy",
+    "name": "CyberAvebury.Minigames.Timer",
     "rootNamespace": "CyberAvebury",
     "references": [
-        "GUID:58293e28e079a9644a08838808618da9",
-        "GUID:6f1dfc0d24bf037498886aa258896537",
-        "GUID:a27cf28b5cd41974499d7d1c149bbb88",
-        "GUID:13eb272cfd101264a97f9d9c56d27cc5"
+        "GUID:13eb272cfd101264a97f9d9c56d27cc5",
+        "GUID:6f1dfc0d24bf037498886aa258896537"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
