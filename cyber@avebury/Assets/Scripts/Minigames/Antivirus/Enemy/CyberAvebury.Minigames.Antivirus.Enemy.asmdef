@@ -1,0 +1,17 @@
+{
+    "name": "CyberAvebury.Minigames.Antivirus.Enemy",
+    "rootNamespace": "CyberAvebury",
+    "references": [
+        "GUID:58293e28e079a9644a08838808618da9",
+        "GUID:6f1dfc0d24bf037498886aa258896537"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
