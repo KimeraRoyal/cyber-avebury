@@ -2178,7 +2178,7 @@ GameObject:
   - component: {fileID: 1783580171}
   - component: {fileID: 1783580172}
   m_Layer: 0
-  m_Name: Aim Anchor
+  m_Name: Slingshot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2215,8 +2215,41 @@ MonoBehaviour:
   m_camera: {fileID: 1633602243}
   m_anchor: {fileID: 1783580171}
   m_target: {fileID: 2074902269}
+  m_distanceCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1.1999999
+      outSlope: 1.1999999
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.75
+      value: 0.9
+      inSlope: 0.56992614
+      outSlope: 0.56992614
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.37078643
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.4000001
+      outSlope: 0.4000001
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   m_distanceFactor: {x: 0.75, y: 0.75, z: -1}
-  m_maxDistance: 1
+  m_maxDistance: 1.25
   m_aimCenter: {x: 0, y: 0}
   m_currentPosition: {x: 0, y: 0}
 --- !u!1 &1856925996

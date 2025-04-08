@@ -9,7 +9,8 @@ namespace CyberAvebury
         [SerializeField] private Transform m_anchor;
         [SerializeField] private Transform m_target;
         private float m_anchorDistance;
-        
+
+        [SerializeField] private AnimationCurve m_distanceCurve = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
         [SerializeField] private Vector3 m_distanceFactor = Vector3.one;
         [SerializeField] private float m_maxDistance = 1.0f;
         
@@ -35,7 +36,7 @@ namespace CyberAvebury
         private void Aim(Vector2 _targetPosition)
         {
             var difference = _targetPosition - m_aimCenter;
-            var distance = Mathf.Min(difference.magnitude, m_maxDistance);
+            var distance = m_distanceCurve.Evaluate(Mathf.Min(difference.magnitude, m_maxDistance) / m_maxDistance) * m_maxDistance;
             var normalizedDifference = difference.normalized;
             
             var targetOffset = new Vector3(
