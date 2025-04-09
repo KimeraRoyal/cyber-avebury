@@ -21,6 +21,7 @@ namespace CyberAvebury
         public int CurrentScore => m_currentScore;
         public float ScoreProgress => (float)m_currentScore / m_targetScore;
 
+        public UnityEvent<int> OnTargetScoreInitialized;
         public UnityEvent<int> OnScoreUpdated;
 
         public void ChangeScore(int _amount)
@@ -47,6 +48,7 @@ namespace CyberAvebury
         private void SetDifficulty(float _difficulty)
         {
             m_targetScore = m_targetScoreDifficulty.GetValue(_difficulty);
+            OnTargetScoreInitialized?.Invoke(m_targetScore);
         }
     }
 }

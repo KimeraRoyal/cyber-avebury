@@ -277,8 +277,8 @@ MonoBehaviour:
   m_failAscendDurationMax: 2.5
   m_failAscendEase: 6
   m_lifetimeDifficulty:
-    m_easiestValue: 5
-    m_hardestValue: 2
+    m_easiestValue: 3.5
+    m_hardestValue: 1.5
     m_difficultyCurve:
       serializedVersion: 2
       m_Curve:

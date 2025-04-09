@@ -976,7 +976,7 @@ GameObject:
   - component: {fileID: 1108926469}
   - component: {fileID: 1108926468}
   - component: {fileID: 1108926472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Marker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1084,7 +1084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lightshipMapView: {fileID: 6606054613259050603}
-  _editorMovementSpeed: 1
+  _editorMovementSpeed: 15
   _camera: {fileID: 2107544957}
 --- !u!1001 &1144381936
 PrefabInstance:

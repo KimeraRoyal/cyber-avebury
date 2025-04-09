@@ -72,7 +72,7 @@ namespace CyberAvebury
 
         private void Update()
         {
-            if(m_flyingOff) { return; }
+            if(!m_target.Hittable || m_flyingOff) { return; }
             
             m_timer += Time.deltaTime;
             if(m_timer < m_lifetime) { return; }
