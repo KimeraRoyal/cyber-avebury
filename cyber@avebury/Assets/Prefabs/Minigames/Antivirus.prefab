@@ -181,7 +181,7 @@ MonoBehaviour:
   m_maxTargetPosition: {x: 2.5, y: 4, z: 1}
   m_spawnTimeDifficulty:
     m_easiestValue: 2
-    m_hardestValue: 0.75
+    m_hardestValue: 1
     m_difficultyCurve:
       serializedVersion: 2
       m_Curve:
@@ -466,7 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_timeLimitDifficulty:
     m_easiestValue: 25
-    m_hardestValue: 15
+    m_hardestValue: 20
     m_difficultyCurve:
       serializedVersion: 2
       m_Curve:
