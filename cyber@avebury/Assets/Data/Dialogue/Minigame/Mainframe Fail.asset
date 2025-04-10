@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mainframe Fail
   m_EditorClassIdentifier: 
   m_lines:
-  - m_maxUses: 0
+  - m_maxUses: -1
     m_uses: 0
     m_lines:
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
@@ -22,7 +22,7 @@ MonoBehaviour:
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: NEXT TIME, CONSIDER WINNING INSTEAD!
-  - m_maxUses: 0
+  - m_maxUses: -1
     m_uses: 0
     m_lines:
     - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}

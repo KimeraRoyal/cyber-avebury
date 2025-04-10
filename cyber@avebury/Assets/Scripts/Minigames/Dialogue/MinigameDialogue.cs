@@ -31,7 +31,7 @@ namespace CyberAvebury
 
         private void Start()
         {
-            if(!m_dialogue.HasDialogue) { return; }
+            if(!m_dialogue.IsWriting) { return; }
             PauseMinigame();
         }
 

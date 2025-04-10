@@ -12,6 +12,7 @@ namespace CyberAvebury
 
         [SerializeField] private Color m_lockedColor;
         [SerializeField] private Color m_unlockedColor;
+        [SerializeField] private Color m_unlockedSubnodeColor;
         [SerializeField] private Color m_completedColor;
 
         [SerializeField] private float m_colorChangeDuration = 0.5f;
@@ -54,8 +55,8 @@ namespace CyberAvebury
             var color = _state switch
             {
                 NodeState.Locked => m_lockedColor,
-                NodeState.Unlocked => m_unlockedColor,
-                NodeState.Completed => m_completedColor,
+                NodeState.Unlocked => m_node.IsSubNode ? m_unlockedSubnodeColor : m_unlockedColor,
+                NodeState.Completed => m_node.IsSubNode ? m_unlockedSubnodeColor : m_completedColor,
                 _ => throw new ArgumentOutOfRangeException(nameof(_state), _state, null)
             };
 

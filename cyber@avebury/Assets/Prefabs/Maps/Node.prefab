@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 4922800401789023942}
   - component: {fileID: 8176522046931327660}
   - component: {fileID: 7255639446713419533}
+  - component: {fileID: 4417038343895045123}
   m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
@@ -189,6 +190,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_materialIndex: 1
   m_propertyName: _Color
+--- !u!114 &4417038343895045123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738479288247569994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46731c79cb4c31a498fe44475afad3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_scaleIfSubnode: {x: 5, y: 5, z: 5}
 --- !u!1 &9061987643114116526
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,6 +253,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_lineAnchor: {fileID: 5970838409457953940}
+  OnSelected:
+    m_PersistentCalls:
+      m_Calls: []
   OnStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -283,7 +300,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_lockedColor: {r: 0.078431375, g: 0.23529412, b: 0.078431375, a: 1}
   m_unlockedColor: {r: 0, g: 1, b: 0, a: 1}
-  m_completedColor: {r: 1, g: 1, b: 1, a: 1}
+  m_unlockedSubnodeColor: {r: 0.27450982, g: 0.5882353, b: 0.27450982, a: 1}
+  m_completedColor: {r: 0, g: 1, b: 0, a: 1}
   m_colorChangeDuration: 0.5
   OnColorUpdated:
     m_PersistentCalls:
@@ -375,6 +393,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2409230445982889649, guid: 0f25e951877a43e498d0b443d7c21b8a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7892976803926827597}
+    - targetCorrespondingSourceObject: {fileID: 2409230445982889649, guid: 0f25e951877a43e498d0b443d7c21b8a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2965226147756973890}
     - targetCorrespondingSourceObject: {fileID: 6791554827598046312, guid: 0f25e951877a43e498d0b443d7c21b8a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3969984841256930197}
@@ -417,6 +438,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {fileID: 0}
+--- !u!114 &2965226147756973890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017102233101001853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46731c79cb4c31a498fe44475afad3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_scaleIfSubnode: {x: 0, y: 0, z: 0}
 --- !u!4 &4182643912496338803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 43591109669488063, guid: 0f25e951877a43e498d0b443d7c21b8a, type: 3}
@@ -495,6 +529,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2409230445982889649, guid: 0f25e951877a43e498d0b443d7c21b8a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4449197521592348333}
     - targetCorrespondingSourceObject: {fileID: 6791554827598046312, guid: 0f25e951877a43e498d0b443d7c21b8a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7254906803927206671}
@@ -541,3 +578,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ad291917ba0cc4e84cff2303527ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7583269199566661414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2409230445982889649, guid: 0f25e951877a43e498d0b443d7c21b8a, type: 3}
+  m_PrefabInstance: {fileID: 5211334903195062679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4449197521592348333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7583269199566661414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46731c79cb4c31a498fe44475afad3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_scaleIfSubnode: {x: 4, y: 4, z: 1}

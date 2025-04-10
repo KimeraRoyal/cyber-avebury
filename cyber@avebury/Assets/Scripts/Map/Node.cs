@@ -16,8 +16,6 @@ namespace CyberAvebury
 
         private HashSet<Node> m_connections;
 
-        private bool m_unlocked;
-
         private NodeInfo m_info;
 
         public Transform LineAnchor => m_lineAnchor;
@@ -39,6 +37,7 @@ namespace CyberAvebury
 
         public Minigame Minigame => m_info.Minigame;
         public float MinigameDifficulty => m_info.MinigameDifficulty;
+        public bool IsSubNode => !Minigame;
 
         public NodeInfo Info => m_info;
 
@@ -72,12 +71,20 @@ namespace CyberAvebury
             OnSelected?.Invoke();
         }
 
+        public void Unlock()
+        {
+            CurrentState = NodeState.Unlocked;
+            
+            if(!IsSubNode) { return; }
+            Complete();
+        }
+
         public void Complete()
         {
             CurrentState = NodeState.Completed;
             foreach (var connection in m_connections.Where(_connection => _connection.CurrentState == NodeState.Locked))
             {
-                connection.CurrentState = NodeState.Unlocked;
+                connection.Unlock();
             }
         }
     }

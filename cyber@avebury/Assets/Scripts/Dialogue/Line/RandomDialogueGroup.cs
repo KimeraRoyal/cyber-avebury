@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 namespace CyberAvebury
@@ -12,5 +13,25 @@ namespace CyberAvebury
 
         public override DialogueLineBase GetLine()
             => GetRandomLines();
+
+#if UNITY_EDITOR
+        private void OnEnable()
+        {
+            EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
+        }
+
+        private void OnDisable()
+        {
+            EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
+        }
+
+        private void OnPlayModeStateChanged(PlayModeStateChange change)
+        {
+            foreach (var lines in m_lines)
+            {
+                lines.ResetUses();
+            }
+        }
+#endif
     }
 }

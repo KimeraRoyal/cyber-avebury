@@ -16,10 +16,12 @@ namespace CyberAvebury
         private Queue<DialogueLineBase> m_upcomingDialogue;
 
         private DialogueLineBase m_currentDialogue;
+        private bool m_isWriting;
         private int m_currentLineIndex;
 
         public DialogueLineBase CurrentDialogue => m_currentDialogue;
         public bool HasDialogue => CurrentDialogue != null;
+        public bool IsWriting => m_isWriting;
         public int CurrentLineIndex => m_currentLineIndex;
         
         public UnityEvent<DialogueLineBase> OnNewDialogue;
@@ -35,6 +37,7 @@ namespace CyberAvebury
         public void AddLine(DialogueLineBase _line)
         {
             if(_line is not { CanUse: true }) { return; }
+            Debug.Log($"Queuing {_line}");
             m_upcomingDialogue.Enqueue(_line);
             _line.ReportUse();
         }
@@ -69,6 +72,7 @@ namespace CyberAvebury
 
         private IEnumerator ShowDialogue()
         {
+            m_isWriting = true;
             OnNewDialogue?.Invoke(m_currentDialogue);
             yield return new WaitForSeconds(m_openWaitTime);
 
@@ -78,7 +82,8 @@ namespace CyberAvebury
                 ChangeLine(i);
                 yield return new WaitUntil(() => !m_writer.IsWriting);
             }
-            
+
+            m_isWriting = false;
             OnEndDialogue?.Invoke();
             yield return new WaitForSeconds(m_closeWaitTime);
             

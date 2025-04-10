@@ -22,7 +22,7 @@ namespace CyberAvebury
 
         private void OnClicked()
         {
-            if(m_node.CurrentState == NodeState.Locked) { return; }
+            if(m_node.IsSubNode || m_node.CurrentState == NodeState.Locked) { return; }
             m_selection.SelectNode(m_node);
         }
     }
