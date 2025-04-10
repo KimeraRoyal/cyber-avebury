@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f9e30898964410ba03f1a2579bf586, type: 3}
+  m_Name: Mainframe Begin
+  m_EditorClassIdentifier: 
+  m_lines:
+    m_maxUses: 1
+    m_uses: 0
+    m_lines:
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: We've got a connection! All right!
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: This'll be simple - you just need to override the mainframe. Just send
+        as much dummy data as you can to it.
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: You'll see rings pop up on your screen - just tap them and it'll push
+        some commands through. Keep doing it, and we'll eventually gain access to
+        the Node.
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: MY ADVICE IS THAT YOU SHOULD CLOSE YOUR EYES AND THROW YOUR PHONE REALLY
+        HARD IN A RANDOM DIRECTION

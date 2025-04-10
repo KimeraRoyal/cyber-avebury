@@ -1,6 +1,6 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
-using Random = UnityEngine.Random;
 
 namespace CyberAvebury.Minigames
 {
@@ -14,15 +14,21 @@ namespace CyberAvebury.Minigames
         
         public UnityEvent OnFinished;
 
+        [SerializeField] [TextArea(3, 5)] private string m_description = "Description of the minigame and how it is played.";
+
         [SerializeField] [Range(0.0f, 1.0f)] private float m_difficulty;
         private bool m_isDifficultySet;
 
         private bool m_isPlaying;
+        private int m_pauseCount;
+
+        public string Description => m_description;
 
         public float Difficulty => m_difficulty;
         public bool IsDifficultySet => m_isDifficultySet;
 
-        public bool IsPlaying => m_isPlaying;
+        public bool IsPlaying => m_isPlaying && !IsPaused;
+        public bool IsPaused => m_pauseCount > 0;
 
         public void Begin(float _difficulty)
         {
@@ -54,5 +60,11 @@ namespace CyberAvebury.Minigames
 
             m_isPlaying = false;
         }
+
+        public void Pause()
+            => m_pauseCount++;
+
+        public void Unpause()
+            => m_pauseCount = Math.Max(0, m_pauseCount - 1);
     }
 }

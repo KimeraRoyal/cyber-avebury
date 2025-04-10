@@ -1,11 +1,12 @@
 ﻿using System;
+using UnityEngine;
 
 namespace CyberAvebury
 {
     [Serializable]
     public class DialogueLines : DialogueLineBase
     {
-        private DialogueLineContent[] m_lines;
+        [SerializeField] private DialogueLineContent[] m_lines;
 
         public DialogueLines(DialogueLineContent[] _lines)
         {

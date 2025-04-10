@@ -394,8 +394,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6855984681249293664}
   - component: {fileID: 2098161506435210981}
-  - component: {fileID: 9035732671732993396}
   - component: {fileID: 3759666389907581951}
+  - component: {fileID: 9035732671732993396}
+  - component: {fileID: -6369568868505763952}
   - component: {fileID: 3111846850808715973}
   m_Layer: 0
   m_Name: Antivirus
@@ -451,50 +452,8 @@ MonoBehaviour:
   OnFinished:
     m_PersistentCalls:
       m_Calls: []
+  m_description: Overpower the system's antivirus protocols to breach its firewall.
   m_difficulty: 0
---- !u!114 &9035732671732993396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7091225429814637652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e87a60a38b94b90836e3ad3c032dc7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_timeLimitDifficulty:
-    m_easiestValue: 25
-    m_hardestValue: 20
-    m_difficultyCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 1
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_finishedBehaviour: 2
-  OnTimerUpdated:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &3759666389907581951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,6 +499,61 @@ MonoBehaviour:
   OnScoreUpdated:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &9035732671732993396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091225429814637652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e87a60a38b94b90836e3ad3c032dc7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_timeLimitDifficulty:
+    m_easiestValue: 25
+    m_hardestValue: 20
+    m_difficultyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_finishedBehaviour: 2
+  OnTimerUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-6369568868505763952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091225429814637652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa0b5bbd7c963749a621cd1fe0894f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3111846850808715973
 MonoBehaviour:
   m_ObjectHideFlags: 0

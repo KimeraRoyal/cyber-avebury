@@ -19,6 +19,7 @@ namespace CyberAvebury
         private int m_currentLineIndex;
 
         public DialogueLineBase CurrentDialogue => m_currentDialogue;
+        public bool HasDialogue => CurrentDialogue != null;
         public int CurrentLineIndex => m_currentLineIndex;
         
         public UnityEvent<DialogueLineBase> OnNewDialogue;
