@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 7198036585036542160}
   - component: {fileID: 2805522883784598132}
   m_Layer: 9
-  m_Name: Antivirus
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
