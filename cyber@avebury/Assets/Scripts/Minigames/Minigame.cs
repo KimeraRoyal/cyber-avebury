@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -18,6 +19,8 @@ namespace CyberAvebury.Minigames
 
         [SerializeField] [Range(0.0f, 1.0f)] private float m_difficulty;
         private bool m_isDifficultySet;
+
+        [SerializeField] private float m_finishedHoldDuration = 1.0f;
 
         private bool m_isPlaying;
         private int m_pauseCount;
@@ -46,9 +49,7 @@ namespace CyberAvebury.Minigames
             if(!m_isPlaying) { return; }
             
             OnPassed?.Invoke();
-            OnFinished?.Invoke();
-
-            m_isPlaying = false;
+            StartCoroutine(Finish());
         }
 
         public void Fail()
@@ -56,9 +57,15 @@ namespace CyberAvebury.Minigames
             if(!m_isPlaying) { return; }
             
             OnFailed?.Invoke();
-            OnFinished?.Invoke();
+            StartCoroutine(Finish());
+        }
 
-            m_isPlaying = false;
+        private IEnumerator Finish()
+        {
+            m_isPlaying = false; 
+
+            yield return new WaitForSeconds(m_finishedHoldDuration);
+            OnFinished?.Invoke();
         }
 
         public void Pause()

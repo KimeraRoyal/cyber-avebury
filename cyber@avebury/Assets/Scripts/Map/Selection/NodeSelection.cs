@@ -10,6 +10,8 @@ namespace CyberAvebury
         
         private Node m_selectedNode;
 
+        private bool m_passedDirty;
+
         public UnityEvent<Node> OnNodeSelected;
         public UnityEvent<Minigame> OnNodeMinigameLoaded;
 
@@ -42,16 +44,27 @@ namespace CyberAvebury
         private void OnMinigameLoaded(Minigame _minigame)
         {
             _minigame.OnPassed.AddListener(OnMinigamePassed);
+            _minigame.OnFinished.AddListener(OnMinigameFinished);
         }
 
         private void OnMinigameUnloaded(Minigame _minigame)
         {
             _minigame.OnPassed.RemoveListener(OnMinigamePassed);
+            _minigame.OnFinished.RemoveListener(OnMinigameFinished);
         }
 
         private void OnMinigamePassed()
         {
+            m_passedDirty = true;
+        }
+    
+        private void OnMinigameFinished()
+        {
+            if(!m_passedDirty) { return; }
+            m_passedDirty = false;
+
             m_selectedNode.Complete();
+            SelectNode(null);
         }
     }
 }
