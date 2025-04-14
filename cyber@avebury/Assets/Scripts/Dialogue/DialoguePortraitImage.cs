@@ -48,10 +48,8 @@ namespace CyberAvebury
 
         private void OnEndDialogue()
         {
-            if(m_changeSize) { m_rect.sizeDelta = m_defaultSize; }
-
-            if (m_changeColor) { m_graphic.color = m_defaultColor; }
-            if(m_changeMaskable) { m_graphic.maskable = true; }
+            if (m_changeSize) { m_rect.sizeDelta = m_defaultSize; }
+            if (m_changeMaskable) { m_graphic.maskable = true; }
         }
 
         private void OnLineStarted(string _line)
@@ -59,7 +57,9 @@ namespace CyberAvebury
             var character = m_dialogue.CurrentDialogue.GetCharacter(m_dialogue.CurrentLineIndex);
             
             if (m_changeColor) { m_graphic.color = character.PortraitColor; }
-            
+            if (m_changeSize) { m_rect.sizeDelta = m_defaultSize; }
+            if (m_changeMaskable) { m_graphic.maskable = true; }
+
             m_newLine = true;
         }
 
