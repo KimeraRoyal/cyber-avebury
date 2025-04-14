@@ -495,7 +495,7 @@ MonoBehaviour:
   _focusObject: {fileID: 1108926467}
   m_focusOverride: {fileID: 0}
   m_focusOverrideDistance: 20
-  m_focusOverrideOffset: {x: 0, y: 1.5, z: 0}
+  m_focusOverrideOffset: {x: 0, y: -2, z: 0}
   m_focusBlendTweenDuration: 0.8
   m_focusBlendTweenEase: 7
   m_focusBlend: 0
