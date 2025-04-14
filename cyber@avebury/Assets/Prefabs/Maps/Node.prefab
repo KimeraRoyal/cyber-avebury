@@ -302,7 +302,7 @@ MonoBehaviour:
   m_unlockedColor: {r: 0, g: 1, b: 0, a: 1}
   m_unlockedSubnodeColor: {r: 0.27450982, g: 0.5882353, b: 0.27450982, a: 1}
   m_completedColor: {r: 0, g: 1, b: 0, a: 1}
-  m_colorChangeDuration: 0.5
+  m_colorChangeDuration: 2
   OnColorUpdated:
     m_PersistentCalls:
       m_Calls: []

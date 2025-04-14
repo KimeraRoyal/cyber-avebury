@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using UnityEngine;
 
@@ -84,6 +85,7 @@ namespace CyberAvebury
             UpdateColors();
         }
 
+        // TODO: Animate this gradient change
         private void UpdateColors()
         {
             if(!m_colorsDirty) { return; }

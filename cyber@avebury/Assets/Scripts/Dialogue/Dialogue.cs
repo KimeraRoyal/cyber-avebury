@@ -60,6 +60,7 @@ namespace CyberAvebury
             if(m_upcomingDialogue.Count < 1) { return; }
             
             m_currentDialogue = m_upcomingDialogue.Dequeue();
+            m_currentLineIndex = 0;
             StartCoroutine(ShowDialogue());
         }
 
