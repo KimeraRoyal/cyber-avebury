@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,6 +13,9 @@ namespace CyberAvebury
 
         public UnityEvent<Node> OnNodeRegistered;
         public UnityEvent OnFinishedRegistering;
+
+        public UnityEvent<Node> OnNodeUnlocked;
+        public UnityEvent<Node> OnNodeCompleted;
 
         private void Awake()
         {
@@ -32,7 +36,24 @@ namespace CyberAvebury
         private void RegisterNode(Node _node)
         {
             m_nodes.Add(_node.name, _node);
+            _node.OnStateChanged.AddListener(_state => OnNodeStateChanged(_node, _state));
+
             OnNodeRegistered?.Invoke(_node);
+        }
+
+        private void OnNodeStateChanged(Node _node, NodeState _state)
+        {
+            switch (_state)
+            {
+                case NodeState.Locked:
+                    break;
+                case NodeState.Unlocked:
+                    OnNodeUnlocked?.Invoke(_node);
+                    break;
+                case NodeState.Completed:
+                    OnNodeCompleted?.Invoke(_node);
+                    break;
+            }
         }
 
         private void ConnectNodes()

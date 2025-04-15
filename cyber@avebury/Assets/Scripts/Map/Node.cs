@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using CyberAvebury.Minigames;
@@ -11,6 +12,7 @@ namespace CyberAvebury
     public class Node : MonoBehaviour
     {
         [SerializeField] private Transform m_lineAnchor;
+        [SerializeField] private float m_completionUnlockDelay = 1.0f;
 
         private NodeState m_currentState;
 
@@ -71,8 +73,10 @@ namespace CyberAvebury
             OnSelected?.Invoke();
         }
 
+        // TODO: It'd be cool to point the camera at nodes and unlock them one by one. But like. lol
         public void Unlock()
         {
+            if (CurrentState != NodeState.Locked) { return; }
             CurrentState = NodeState.Unlocked;
             
             if(!IsSubNode) { return; }
@@ -81,7 +85,14 @@ namespace CyberAvebury
 
         public void Complete()
         {
+            if(CurrentState == NodeState.Completed) { return; }
             CurrentState = NodeState.Completed;
+            StartCoroutine(UnlockNeighbours());
+        }
+
+        private IEnumerator UnlockNeighbours()
+        {
+            yield return new WaitForSeconds(m_completionUnlockDelay);
             foreach (var connection in m_connections.Where(_connection => _connection.CurrentState == NodeState.Locked))
             {
                 connection.Unlock();
