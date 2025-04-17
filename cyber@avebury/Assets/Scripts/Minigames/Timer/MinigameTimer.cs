@@ -29,7 +29,7 @@ namespace CyberAvebury.Minigames.Timer
 
         private void Awake()
         {
-            m_minigame = GetComponent<Minigame>();
+            m_minigame = GetComponentInParent<Minigame>();
 
             m_minigame.OnDifficultySet.AddListener(SetDifficulty);
         }

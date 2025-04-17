@@ -1,0 +1,17 @@
+{
+    "name": "CyberAvebury.Minigames.Twist",
+    "rootNamespace": "CyberAvebury",
+    "references": [
+        "GUID:13eb272cfd101264a97f9d9c56d27cc5",
+        "GUID:a0429aaa7025e854582b056f8edf18a9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
