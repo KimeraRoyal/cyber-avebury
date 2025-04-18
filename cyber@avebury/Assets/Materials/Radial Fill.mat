@@ -11,7 +11,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: 60accfe213794ea4e89bfa799e76c050, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - PIXELSNAP_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -61,7 +62,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - PixelSnap: 0
+    - PixelSnap: 1
     - _Angle: 47
     - _Arc1: 63
     - _Arc2: 0

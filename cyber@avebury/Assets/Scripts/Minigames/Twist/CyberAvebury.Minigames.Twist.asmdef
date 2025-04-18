@@ -3,7 +3,8 @@
     "rootNamespace": "CyberAvebury",
     "references": [
         "GUID:13eb272cfd101264a97f9d9c56d27cc5",
-        "GUID:a0429aaa7025e854582b056f8edf18a9"
+        "GUID:a0429aaa7025e854582b056f8edf18a9",
+        "GUID:6f1dfc0d24bf037498886aa258896537"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,6 +1,4 @@
 using System;
-using NUnit.Framework.Internal;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;

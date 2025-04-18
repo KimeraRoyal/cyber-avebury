@@ -76,9 +76,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 824f5aa83b2fe68428462592ad6179c3, type: 3}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.7058824, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,9 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a77ccc38cc5a642940d4099fc87941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_angle: 90
-  m_arcPoint1: 15
-  m_arcPoint2: 15
+  m_angle: 270
+  m_arcPoint1: 160
+  m_arcPoint2: 160
   m_pixelSnap: 0
 --- !u!114 &4546866784816336
 MonoBehaviour:
@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f62cea4262d85043881f8f99c745839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_colorChangeDuration: 0.5
 --- !u!1 &3032828109988183432
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5624095252194456502}
   - component: {fileID: 1594513872365547738}
+  - component: {fileID: 7500327509297904785}
   m_Layer: 0
   m_Name: BG
   m_TagString: Untagged
@@ -190,7 +192,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 824f5aa83b2fe68428462592ad6179c3, type: 3}
   m_Color: {r: 0, g: 0.23529412, b: 0, a: 1}
   m_FlipX: 0
@@ -202,6 +204,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7500327509297904785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3032828109988183432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecdec433658f46745bc4c2185a8a541c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_passedColor: {r: 0, g: 1, b: 0, a: 1}
+  m_failedColor: {r: 0.39215687, g: 0, b: 0, a: 1}
+  m_colorChangeDuration: 1
 --- !u!1 &4898150212171252697
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,3 +319,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+  OnDegreeRangeChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnActiveChanged:
+    m_PersistentCalls:
+      m_Calls: []
