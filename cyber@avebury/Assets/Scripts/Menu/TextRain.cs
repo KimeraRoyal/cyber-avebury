@@ -87,7 +87,8 @@ namespace CyberAvebury
         
         [SerializeField] private Tile[] m_tilePalette;
         [SerializeField] private byte m_lifetime = 5;
-        
+
+        [SerializeField] private bool m_moveDown = true;
         [SerializeField] private float m_minMovementInterval = 0.1f;
         [SerializeField] private float m_maxMovementInterval = 0.1f;
         
@@ -127,8 +128,11 @@ namespace CyberAvebury
                 for (var distance = 0; distance <= m_lifetime; distance++)
                 {
                     var x = columnRain.CurrentColumn;
-                    var y = (columnRain.CurrentRow - distance);
+                    var y = columnRain.CurrentRow - distance;
+                    if (!m_moveDown) { y = m_characters.Length - y - 1; }
+
                     if (y < 0) { y += m_characters.Length; }
+                    if (y >= m_characters.Length) { y -= m_characters.Length; }
                     
                     var character = m_characters[y];
                     var tileIndex = distance * 2 + character;

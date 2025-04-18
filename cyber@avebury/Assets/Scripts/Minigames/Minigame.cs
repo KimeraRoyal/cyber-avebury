@@ -14,6 +14,7 @@ namespace CyberAvebury.Minigames
         public UnityEvent OnFailed;
         
         public UnityEvent OnFinished;
+        public UnityEvent OnEnd;
 
         [SerializeField] [TextArea(3, 5)] private string m_description = "Description of the minigame and how it is played.";
 
@@ -62,10 +63,11 @@ namespace CyberAvebury.Minigames
 
         private IEnumerator Finish()
         {
-            m_isPlaying = false; 
+            m_isPlaying = false;
+            OnFinished?.Invoke();
 
             yield return new WaitForSeconds(m_finishedHoldDuration);
-            OnFinished?.Invoke();
+            OnEnd?.Invoke();
         }
 
         public void Pause()

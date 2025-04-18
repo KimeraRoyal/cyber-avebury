@@ -16,7 +16,7 @@ namespace CyberAvebury
             if (m_currentMinigame) { return null; }
 
             m_currentMinigame = Instantiate(_minigamePrefab, transform);
-            m_currentMinigame.OnFinished.AddListener(UnloadMinigame);
+            m_currentMinigame.OnEnd.AddListener(UnloadMinigame);
             
             OnMinigameLoaded?.Invoke(m_currentMinigame);
             
@@ -25,7 +25,7 @@ namespace CyberAvebury
 
         private void UnloadMinigame()
         {
-            m_currentMinigame.OnFinished.RemoveListener(UnloadMinigame);
+            m_currentMinigame.OnEnd.RemoveListener(UnloadMinigame);
             
             OnMinigameUnloaded?.Invoke(m_currentMinigame);
             

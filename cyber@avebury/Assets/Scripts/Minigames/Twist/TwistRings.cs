@@ -33,8 +33,7 @@ namespace CyberAvebury
         private void Awake()
         {
             m_minigame = GetComponentInParent<Minigame>();
-            m_minigame.OnPassed.AddListener(OnMinigameFinished);
-            m_minigame.OnFailed.AddListener(OnMinigameFinished);
+            m_minigame.OnFinished.AddListener(OnMinigameFinished);
 
             m_rings = GetComponentsInChildren<TwistRing>();
         }

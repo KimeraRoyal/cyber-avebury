@@ -44,13 +44,13 @@ namespace CyberAvebury
         private void OnMinigameLoaded(Minigame _minigame)
         {
             _minigame.OnPassed.AddListener(OnMinigamePassed);
-            _minigame.OnFinished.AddListener(OnMinigameFinished);
+            _minigame.OnEnd.AddListener(OnMinigameFinished);
         }
 
         private void OnMinigameUnloaded(Minigame _minigame)
         {
             _minigame.OnPassed.RemoveListener(OnMinigamePassed);
-            _minigame.OnFinished.RemoveListener(OnMinigameFinished);
+            _minigame.OnEnd.RemoveListener(OnMinigameFinished);
         }
 
         private void OnMinigamePassed()
