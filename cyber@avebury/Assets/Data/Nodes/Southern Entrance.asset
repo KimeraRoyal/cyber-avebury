@@ -17,7 +17,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4f943238fe8d84a4682aec7c2576c145, type: 2}
   m_defaultState: 0
   m_minigame: {fileID: 2098161506435210981, guid: f1327d47be86b5c4389d553a2f9add2e, type: 3}
-  m_minigameDifficulty: 0.723
+  m_minigameDifficulty: 0.747
   m_unlockedLines: {fileID: 0}
   m_selectedLines: {fileID: 0}
   m_completedLines: {fileID: 0}
