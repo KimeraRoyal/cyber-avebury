@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae03ad3b28724e24b97b03b09296fa1b, type: 3}
+  m_Name: B-44 Bounce
+  m_EditorClassIdentifier: 
+  m_fps: 12
+  m_loopMode: 1
+  m_frames:
+  - {fileID: 167292203, guid: fc77720a9b71f8548b2eeb60f9637ec2, type: 3}
+  - {fileID: 1369320586, guid: fc77720a9b71f8548b2eeb60f9637ec2, type: 3}
+  - {fileID: 2012977004, guid: fc77720a9b71f8548b2eeb60f9637ec2, type: 3}
+  - {fileID: 752633331, guid: fc77720a9b71f8548b2eeb60f9637ec2, type: 3}
+  - {fileID: 1013396667, guid: fc77720a9b71f8548b2eeb60f9637ec2, type: 3}
+  - {fileID: -942696862, guid: fc77720a9b71f8548b2eeb60f9637ec2, type: 3}
+  - {fileID: -1887837628, guid: fc77720a9b71f8548b2eeb60f9637ec2, type: 3}
+  - {fileID: 1198550773, guid: fc77720a9b71f8548b2eeb60f9637ec2, type: 3}
+  - {fileID: 1207833191, guid: fc77720a9b71f8548b2eeb60f9637ec2, type: 3}
+  - {fileID: -1063104090, guid: fc77720a9b71f8548b2eeb60f9637ec2, type: 3}
+  - {fileID: -1837082975, guid: fc77720a9b71f8548b2eeb60f9637ec2, type: 3}
+  - {fileID: 1596928631, guid: fc77720a9b71f8548b2eeb60f9637ec2, type: 3}
+  - {fileID: -280735434, guid: fc77720a9b71f8548b2eeb60f9637ec2, type: 3}
