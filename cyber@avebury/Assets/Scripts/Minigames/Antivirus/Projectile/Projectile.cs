@@ -57,7 +57,7 @@ namespace CyberAvebury
             var ray = new Ray(m_camera.transform.position, (transform.position - m_camera.transform.position).normalized);
             
             Debug.DrawRay(ray.origin, ray.direction * m_camera.farClipPlane, Color.red);
-            if(!Physics.SphereCast(ray, m_radius, out var hitInfo, m_mask)) { return; }
+            if(!Physics.SphereCast(ray, m_radius, out var hitInfo, m_camera.farClipPlane, m_mask)) { return; }
 
             var target = hitInfo.transform.GetComponent<ProjectileTarget>();
             if (!target || !target.Hit(this)) { return; }
