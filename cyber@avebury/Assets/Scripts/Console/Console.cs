@@ -44,6 +44,15 @@ namespace CyberAvebury
         
         private bool m_dirty;
 
+        private Queue<string> QueuedLines
+        {
+            get
+            {
+                if (m_queuedLines == null) { m_queuedLines = new Queue<string>(); }
+                return m_queuedLines;
+            }
+        }
+
         public Color TextColor
         {
             get => m_text.color;
@@ -65,20 +74,20 @@ namespace CyberAvebury
         public UnityEvent OnCleared;
 
         public void AddLine(string _line)
-            => m_queuedLines.Enqueue(_line);
+            => QueuedLines.Enqueue(_line);
 
         public void AddLines(string[] _lines)
         {
             foreach (var line in _lines)
             {
-                m_queuedLines.Enqueue(line);
+                QueuedLines.Enqueue(line);
             }
         }
 
         public void ClearLines()
         {
             m_lines = "";
-            m_queuedLines.Clear();
+            QueuedLines.Clear();
             StopWriting();
             
             OnCleared?.Invoke();
@@ -88,8 +97,6 @@ namespace CyberAvebury
         private void Awake()
         {
             m_text = GetComponent<TMP_Text>();
-
-            m_queuedLines = new Queue<string>();
         }
 
         private void Start()
@@ -119,8 +126,8 @@ namespace CyberAvebury
 
         private void BeginTyping()
         {
-            if(Writing || m_queuedLines.Count < 1) { return; }
-            var nextLine = m_queuedLines.Dequeue();
+            if(Writing || QueuedLines.Count < 1) { return; }
+            var nextLine = QueuedLines.Dequeue();
             m_writingCoroutine = StartCoroutine(TypeLine(nextLine));
         }
 

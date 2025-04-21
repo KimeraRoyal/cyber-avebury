@@ -224,7 +224,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66011978}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d520e410e9e4684f9cac461c8647720, type: 3}
   m_Name: 
@@ -6748,6 +6748,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_menuConsole: {fileID: 1723268363}
   m_command: /display "~/cyber@avebury/credits" --listAll
+--- !u!1001 &1228329763
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4018239429762216943, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018239429762216943, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018239429762216943, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018239429762216943, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018239429762216943, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018239429762216943, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018239429762216943, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018239429762216943, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018239429762216943, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018239429762216943, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6183486961743033104, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_Name
+      value: Loading Screen
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
 --- !u!1 &1230798556
 GameObject:
   m_ObjectHideFlags: 0
@@ -7404,6 +7461,14 @@ PrefabInstance:
     - target: {fileID: 1370024970464027354, guid: 5680efa58bf9a72479dc7de670bf8e1f, type: 3}
       propertyPath: m_minLetterWriteTime
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400641368535545582, guid: 5680efa58bf9a72479dc7de670bf8e1f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -42
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400641368535545582, guid: 5680efa58bf9a72479dc7de670bf8e1f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -19
       objectReference: {fileID: 0}
     - target: {fileID: 3507445514959868833, guid: 5680efa58bf9a72479dc7de670bf8e1f, type: 3}
       propertyPath: m_fontSizeBase
@@ -8066,12 +8131,18 @@ MonoBehaviour:
 
     Cybanin - (C)2021 YutaONEfont (https://booth.pm/ja/items/3566117)
 
+    Yomiyasu
+    Sans Serif - (C)2022 YutaONEfont (https://yutaone.booth.pm/items/3585686)
+
     04B-21,
     04B-25 - (C)1998-2002 Yuji Oshimoto (http://www.dsg4.com/04/extra/bitmap/index.html)
 
+    Bacteria
+    - (C)2025 Somepx (https://somepx.itch.io/pixel-font-bacteria )
 
-    URLs
-    for all credited assets are available on cyber@avebury''s itch.io page (https://kimeraroyal.itch.io/cyber-avebury)'
+
+    URLs for
+    all credited assets are available on cyber@avebury''s itch.io page (https://kimeraroyal.itch.io/cyber-avebury)'
 --- !u!33 &73326227729929578
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8402,3 +8473,4 @@ SceneRoots:
   - {fileID: 54125764}
   - {fileID: 307413868}
   - {fileID: 1067100783}
+  - {fileID: 1228329763}

@@ -293,6 +293,7 @@ MonoBehaviour:
   m_columns: []
   m_columnCount: 46
   m_rowCount: 76
+  m_offset: {x: 0, y: 0, z: 0}
   m_rainCount: 12
   m_tilePalette:
   - {fileID: 11400000, guid: 68127d06860d57a49bb3cacb5f55f295, type: 2}
@@ -312,6 +313,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 550815531d73a1f4cad37422adb51d46, type: 2}
   - {fileID: 11400000, guid: e5993820bd4547441a0b72e612241ac4, type: 2}
   m_lifetime: 8
+  m_moveDown: 1
   m_minMovementInterval: 0.035
   m_maxMovementInterval: 0.2
   m_minRandomizationInterval: 0.2

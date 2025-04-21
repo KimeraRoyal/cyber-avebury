@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -22,16 +23,21 @@ namespace CyberAvebury
         private void Awake()
         {
             m_animator = GetComponent<Animator>();
+
+            var loadingScreens = FindObjectsByType<LoadingScreen>(FindObjectsSortMode.None);
+            if (loadingScreens.Length > 1) { Destroy(gameObject); }
+
+            DontDestroyOnLoad(gameObject);
         }
 
-        public bool ShowScreen(float _duration = 1.0f)
+        public bool ShowScreen(float _duration = 1.0f, Action OnLoad = null)
         {
             if (m_showing) { return false; }
-            StartCoroutine(Present(_duration));
+            StartCoroutine(Present(_duration, OnLoad));
             return true;
         }
 
-        private IEnumerator Present(float _duration)
+        private IEnumerator Present(float _duration, Action OnLoad)
         {
             m_showing = true;
             m_animator.SetBool("Show", true);
@@ -39,6 +45,7 @@ namespace CyberAvebury
 
             yield return new WaitUntil(() => m_opened);
             OnOpened?.Invoke();
+            OnLoad?.Invoke();
             yield return new WaitForSeconds(_duration);
 
             m_animator.SetBool("Show", false);
