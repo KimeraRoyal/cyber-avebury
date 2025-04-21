@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,6 +13,8 @@ namespace CyberAvebury
 
         private PopupInfo m_currentPopup;
 
+        private bool m_willShow;
+
         public PopupInfo CurrentPopup => m_currentPopup;
 
         public UnityEvent<PopupInfo> OnPopupShown;
@@ -23,6 +26,16 @@ namespace CyberAvebury
 
         public void Show(PopupInfo _info)
         {
+            if(m_willShow) { return; }
+            m_willShow = true;
+            StartCoroutine(ShowAfterLoadingScreen(_info));
+        }
+
+        private IEnumerator ShowAfterLoadingScreen(PopupInfo _info)
+        {
+            yield return new WaitUntil(() => !LoadingScreen.Instance.IsOpened);
+            if (!m_willShow) { yield break; }
+
             m_animator.SetBool(c_showVariable, true);
 
             m_currentPopup = _info;
@@ -33,6 +46,7 @@ namespace CyberAvebury
         {
             m_animator.SetBool(c_showVariable, false);
 
+            m_willShow = false;
             m_currentPopup = null;
         }
     }

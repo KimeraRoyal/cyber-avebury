@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3044601212902056293}
   - component: {fileID: 4694351461513372695}
   - component: {fileID: 4546866784816336}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 5624095252194456502}
   - component: {fileID: 1594513872365547738}
   - component: {fileID: 7500327509297904785}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3666369073017265358}
   - component: {fileID: 9006164654768496378}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Twist Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}

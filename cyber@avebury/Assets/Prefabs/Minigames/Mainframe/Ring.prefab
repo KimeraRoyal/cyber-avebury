@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4649132052671152940}
   - component: {fileID: 3047774440224552182}
   - component: {fileID: 4191766416399831055}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 3908218449365789633}
   - component: {fileID: 8135551932826393490}
   - component: {fileID: 2277240401726873186}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

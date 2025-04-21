@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8535082347477851100}
   - component: {fileID: 6479332764170333624}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Released
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5752308627675603072}
   - component: {fileID: 5741895598555096395}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 3458191831087362854}
   - component: {fileID: -6487216516089557423}
   - component: {fileID: 7804594382264865098}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mainframe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,6 +157,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEnd:
     m_PersistentCalls:
       m_Calls: []
   m_description: Overload the system's mainframe with a barrage of commands.
@@ -234,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c5aaa6ca5e01b41bc53bc0fa4b80f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_testOnStart: 0
   m_difficulty: 0
 --- !u!1 &4143921071998852332
 GameObject:
@@ -347,7 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1914845394843658081}
   - component: {fileID: 8007124981522379269}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +446,7 @@ GameObject:
   - component: {fileID: 1278733636774035202}
   - component: {fileID: 2902147998208607242}
   - component: {fileID: 19981313769027971}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +604,7 @@ GameObject:
   - component: {fileID: 8952343645740805606}
   - component: {fileID: 5332859688960805759}
   - component: {fileID: 8568978600862723250}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -661,7 +665,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1056
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -766,7 +770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4147321948473359889}
   - component: {fileID: 1528674517420282078}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pressed
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,7 +1,9 @@
 {
     "name": "CyberAvebury.Minigames",
     "rootNamespace": "CyberAvebury",
-    "references": [],
+    "references": [
+        "GUID:571e5101c2e9872458477a9157438114"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

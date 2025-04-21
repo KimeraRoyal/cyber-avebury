@@ -6798,7 +6798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6183486961743033104, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
       propertyPath: m_Name
-      value: Loading Screen
+      value: Loading Screen 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

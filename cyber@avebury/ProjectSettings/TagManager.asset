@@ -8,14 +8,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - UNUSED1
   - Water
   - UI
-  - 
+  - UNUSED2
   - Background Layer
   - Foreground Layer
   - Enemy
-  - 
+  - Minigame
   - Loading Screen
   - Loading Screen Background
   - 

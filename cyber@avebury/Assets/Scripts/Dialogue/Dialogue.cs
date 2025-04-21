@@ -37,7 +37,6 @@ namespace CyberAvebury
         public void AddLine(DialogueLineBase _line)
         {
             if(_line is not { CanUse: true }) { return; }
-            Debug.Log($"Queuing {_line}");
             m_upcomingDialogue.Enqueue(_line);
             _line.ReportUse();
         }
@@ -74,6 +73,9 @@ namespace CyberAvebury
         private IEnumerator ShowDialogue()
         {
             m_isWriting = true;
+
+            yield return new WaitUntil(() => !LoadingScreen.Instance.IsOpened);
+
             OnNewDialogue?.Invoke(m_currentDialogue);
             yield return new WaitForSeconds(m_openWaitTime);
 

@@ -61,7 +61,7 @@ namespace CyberAvebury.Minigames.Mainframe.Rings
 
         private void Update()
         {
-            if(!m_active) { return; }
+            if (!m_minigame.IsPlaying || !m_active) { return; }
             
             m_currentLifetime += Time.deltaTime;
             OnLifetimeUpdated?.Invoke(m_currentLifetime);

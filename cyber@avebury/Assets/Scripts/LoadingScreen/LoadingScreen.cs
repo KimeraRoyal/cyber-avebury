@@ -8,26 +8,29 @@ namespace CyberAvebury
     [RequireComponent(typeof(Animator))]
     public class LoadingScreen : MonoBehaviour
     {
+        public static LoadingScreen Instance { get; private set; }
+
         private Animator m_animator;
 
         [SerializeField] private bool m_opened;
         private bool m_showing;
+
+        public bool IsOpened => m_opened;
+        public bool IsShowing => m_showing;
 
         public UnityEvent OnShow;
         public UnityEvent OnHide;
 
         public UnityEvent OnOpened;
 
-        // TODO: Only one loading screen in the scene at a time. Just copy the code from the other game.
-
         private void Awake()
         {
             m_animator = GetComponent<Animator>();
 
-            var loadingScreens = FindObjectsByType<LoadingScreen>(FindObjectsSortMode.None);
-            if (loadingScreens.Length > 1) { Destroy(gameObject); }
+            if (Instance) { Destroy(gameObject); }
 
             DontDestroyOnLoad(gameObject);
+            Instance = this;
         }
 
         public bool ShowScreen(float _duration = 1.0f, Action OnLoad = null)

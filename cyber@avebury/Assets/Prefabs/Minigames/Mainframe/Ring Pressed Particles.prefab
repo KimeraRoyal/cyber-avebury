@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4115679433017892882}
   - component: {fileID: 7318236174718214503}
   - component: {fileID: 3427602187826693847}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ring Pressed Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

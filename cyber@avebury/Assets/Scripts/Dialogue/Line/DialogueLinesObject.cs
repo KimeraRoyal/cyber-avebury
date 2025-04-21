@@ -11,7 +11,7 @@ namespace CyberAvebury
         public DialogueLines Lines => m_lines;
 
         public static implicit operator DialogueLines(DialogueLinesObject _linesObject)
-            => _linesObject.Lines;
+            => _linesObject?.Lines;
 
         public override DialogueLineBase GetLine()
             => m_lines;

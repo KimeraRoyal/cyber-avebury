@@ -17,8 +17,13 @@ namespace CyberAvebury
 
             m_currentMinigame = Instantiate(_minigamePrefab, transform);
             m_currentMinigame.OnEnd.AddListener(UnloadMinigame);
-            
-            OnMinigameLoaded?.Invoke(m_currentMinigame);
+            m_currentMinigame.gameObject.SetActive(false);
+
+            LoadingScreen.Instance.ShowScreen(1.0f, () =>
+            {
+                m_currentMinigame.gameObject.SetActive(true);
+                OnMinigameLoaded?.Invoke(m_currentMinigame);
+            });
             
             return m_currentMinigame;
         }
@@ -26,11 +31,13 @@ namespace CyberAvebury
         private void UnloadMinigame()
         {
             m_currentMinigame.OnEnd.RemoveListener(UnloadMinigame);
-            
-            OnMinigameUnloaded?.Invoke(m_currentMinigame);
-            
-            Destroy(m_currentMinigame.gameObject);
-            m_currentMinigame = null;
+
+            LoadingScreen.Instance.ShowScreen(1.0f, () =>
+            {
+                OnMinigameUnloaded?.Invoke(m_currentMinigame);
+                Destroy(m_currentMinigame.gameObject);
+                m_currentMinigame = null;
+            });
         }
     }
 }

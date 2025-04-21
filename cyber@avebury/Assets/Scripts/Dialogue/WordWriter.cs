@@ -68,6 +68,7 @@ namespace CyberAvebury
                 OnLineUpdated?.Invoke(lineText);
                 
                 yield return new WaitForSeconds(_letterDuration * word.Length);
+                yield return new WaitUntil(() => !LoadingScreen.Instance.IsOpened);
 
                 cursor++;
             }

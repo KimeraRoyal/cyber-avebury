@@ -1,4 +1,5 @@
 using CyberAvebury.Minigames;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -33,16 +34,16 @@ namespace CyberAvebury
         public void LoadSelectedMinigame()
         {
             if(!m_selectedNode) { return; }
-            
-            var minigame = m_loader.LoadMinigame(m_selectedNode.Minigame);
-            if(!minigame) { return; }
-            OnNodeMinigameLoaded?.Invoke(minigame);
-            
-            minigame.Begin(m_selectedNode.MinigameDifficulty);
+            m_loader.LoadMinigame(m_selectedNode.Minigame);
         }
 
         private void OnMinigameLoaded(Minigame _minigame)
         {
+            if (!_minigame) { return; }
+            OnNodeMinigameLoaded?.Invoke(_minigame);
+
+            _minigame.Begin(m_selectedNode.MinigameDifficulty);
+
             _minigame.OnPassed.AddListener(OnMinigamePassed);
             _minigame.OnEnd.AddListener(OnMinigameFinished);
         }

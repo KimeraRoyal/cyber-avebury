@@ -31,7 +31,7 @@ namespace CyberAvebury.Minigames
         public float Difficulty => m_difficulty;
         public bool IsDifficultySet => m_isDifficultySet;
 
-        public bool IsPlaying => m_isPlaying && !IsPaused;
+        public bool IsPlaying => m_isPlaying && !IsPaused && !LoadingScreen.Instance.IsOpened;
         public bool IsPaused => m_pauseCount > 0;
 
         public void Begin(float _difficulty)

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6343947565271441593}
   - component: {fileID: 3698400123437326415}
   - component: {fileID: 3704300855439019132}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Marker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 8452192306632108845}
   - component: {fileID: 1676839138445631475}
   - component: {fileID: 8943671930474517329}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1056
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 5134071250986589890}
   - component: {fileID: 5051228930626253067}
   - component: {fileID: 1239745111139276470}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Splicer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7367976293662069374}
   - component: {fileID: 5578273719484507019}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6766134814413277903}
   - component: {fileID: 4869095915694577231}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Twist Ring Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,6 +557,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 2017647807446095210, guid: b4425b3aa4730484c968dad2b9ef5453, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4178426250676840557, guid: b4425b3aa4730484c968dad2b9ef5453, type: 3}
       propertyPath: m_Color.a
       value: 0
@@ -613,6 +617,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Text Rain
       objectReference: {fileID: 0}
+    - target: {fileID: 7335355628565277205, guid: b4425b3aa4730484c968dad2b9ef5453, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8615189699872162367, guid: b4425b3aa4730484c968dad2b9ef5453, type: 3}
       propertyPath: m_offset.x
       value: 14
@@ -636,6 +644,10 @@ PrefabInstance:
     - target: {fileID: 8615189699872162367, guid: b4425b3aa4730484c968dad2b9ef5453, type: 3}
       propertyPath: m_minMovementInterval
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8877695367888416724, guid: b4425b3aa4730484c968dad2b9ef5453, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

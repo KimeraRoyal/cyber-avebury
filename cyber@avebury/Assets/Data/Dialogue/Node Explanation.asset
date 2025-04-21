@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f9e30898964410ba03f1a2579bf586, type: 3}
+  m_Name: Node Explanation
+  m_EditorClassIdentifier: 
+  m_lines:
+    m_maxUses: 1
+    m_uses: 0
+    m_lines:
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: This is a "node". Each uses robust cybersecurity measures to prevent
+        malicious actors from gaining access.
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: You can see what security you'll have to bypass on the node's information
+        box...
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: Oh, and if you fail to breach the node, we can still scramble the firewall.
+        So there's no penalties for failure.
