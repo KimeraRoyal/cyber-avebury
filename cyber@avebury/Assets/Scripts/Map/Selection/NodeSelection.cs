@@ -1,5 +1,4 @@
 using CyberAvebury.Minigames;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,6 +7,9 @@ namespace CyberAvebury
     public class NodeSelection : MonoBehaviour
     {
         private MinigameLoader m_loader;
+        private Player m_player;
+
+        [SerializeField] private float m_maxDistanceMeters = 30.0f;
         
         private Node m_selectedNode;
 
@@ -21,10 +23,14 @@ namespace CyberAvebury
             m_loader = FindAnyObjectByType<MinigameLoader>();
             m_loader.OnMinigameLoaded.AddListener(OnMinigameLoaded);
             m_loader.OnMinigameUnloaded.AddListener(OnMinigameUnloaded);
+
+            m_player = FindAnyObjectByType<Player>();
         }
 
         public void SelectNode(Node _node)
         {
+            if(_node && m_player.GetDistanceToPoint(_node.transform.position) > m_maxDistanceMeters) { return; }
+
             m_selectedNode = _node;
             
             _node?.Select();
