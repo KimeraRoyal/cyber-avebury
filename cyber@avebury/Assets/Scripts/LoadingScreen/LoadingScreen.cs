@@ -8,7 +8,16 @@ namespace CyberAvebury
     [RequireComponent(typeof(Animator))]
     public class LoadingScreen : MonoBehaviour
     {
-        public static LoadingScreen Instance { get; private set; }
+        private static LoadingScreen s_instance;
+        public static LoadingScreen Instance
+        {
+            get
+            {
+                if(!s_instance) { s_instance = FindAnyObjectByType<LoadingScreen>(); }
+                return s_instance;
+            }
+            private set => s_instance = value;
+        }
 
         private Animator m_animator;
 
@@ -27,7 +36,11 @@ namespace CyberAvebury
         {
             m_animator = GetComponent<Animator>();
 
-            if (Instance) { Destroy(gameObject); }
+            if (Instance && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
 
             DontDestroyOnLoad(gameObject);
             Instance = this;
