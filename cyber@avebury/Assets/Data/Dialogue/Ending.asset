@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f9e30898964410ba03f1a2579bf586, type: 3}
+  m_Name: Ending
+  m_EditorClassIdentifier: 
+  m_lines:
+    m_maxUses: 1
+    m_uses: 0
+    m_lines:
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: Hey, you did it! I knew you could. Thanks to you, I'm able to get back
+        into the Henge-Net and clean up this mess!
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: I'll even be able to get some help, now RAM OVERTHROW has chilled out
+        a bit.
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: I HAVE ABSOLUTELY NOT "CHILLED OUT". COME ON
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: DON'T MAKE ME DO CHORES. PLEASE.
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: Hey, don't worry, okay? I'll show you chores really don't have to be
+        that bad - if you do them with a friend!
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: PUT ME BACK IN THE USB STICK AND STEP ON IT. PLEASE PLEASE PLEASE PLEASE
+        PLEASE
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: Well, if you ever need us, you know where to find us. Safe travels!
+    - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
+      m_expression: 0
+      m_line: Hheh.......... Guess bud, u n me ... r going back to the "Hacker's
+        Web", to tell them how Good We did!
+    - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
+      m_expression: 0
+      m_line: Cyber-drinks (ORANGE JUICE) on me tonight ! ;) Heh Heh Heh
+    - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
+      m_expression: 0
+      m_line: I sure Hope ojnh our Wwyay back we don't run into any  more Trouble
+        <- exciting cliffhanger

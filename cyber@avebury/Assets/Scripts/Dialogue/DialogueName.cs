@@ -66,7 +66,7 @@ namespace CyberAvebury
 
         private void UpdateCharacterName(DialogueLineBase _line, int _lineIndex)
         {
-            m_characterName = _line.GetCharacter(_lineIndex).name.ToUpper();
+            m_characterName = _line.GetCharacter(_lineIndex).Name.ToUpper();
             if (m_scramble) { m_scrambledLetters = m_characterName.Length; }
             
             m_text.text = m_scramble || m_scrambledLetters > 0 ? GetScrambledName() : m_characterName;

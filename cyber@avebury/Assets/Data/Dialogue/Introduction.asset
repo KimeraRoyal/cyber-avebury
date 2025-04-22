@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f9e30898964410ba03f1a2579bf586, type: 3}
+  m_Name: Introduction
+  m_EditorClassIdentifier: 
+  m_lines:
+    m_maxUses: 1
+    m_uses: 0
+    m_lines:
+    - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
+      m_expression: 0
+      m_line: hey What's up ir;t's me Son of Cipher did ytou get there OK
+    - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
+      m_expression: 0
+      m_line: OK cool whatever ive got other tstuff to do. gonab geyt you in contact
+        with thGuy Hold On
+    - m_character: {fileID: 11400000, guid: 14a393d4efd55df46b031d4c78713f8e, type: 2}
+      m_expression: 0
+      m_line: ...
+    - m_character: {fileID: 11400000, guid: 14a393d4efd55df46b031d4c78713f8e, type: 2}
+      m_expression: 0
+      m_line: Um, hi there!!
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: My name's B-44! That's short for- well, don't worry about it. Not important...
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: You're part of the "Hacker's Web" right? The elite group of cyberhackers
+        who hacked every ATM to print reverse bills?
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: We, um.. Have a problem, you see. Some dangerous malware has been released
+        into the HN (Henge-Net)
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: Its name? Well it's called-
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: YO WHAT UP CAN I GET UHHHH A LARGE PEPPERONI DOUBLE JALAPENO AND SOME
+        ONIONS OH WRONG NUMBER
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: HEY GUYS WHATS UP WE HAVING FUN. THAT'S AWESOME. WHO'S THE NEW THING
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 1
+      m_line: Th-that's none of your business!!! You're always barging around and
+        causing messes here!
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: MAN WHATEVER THIS PARTY'S LAME. I'M GONNA GO RELEASE SOME TROJANS AND
+        SEE WHAT HAPPENS
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: CYA HAHA (RECORD SCRATCH SOUND) AW WAIT DID I SAY THAT OUT LOUD
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: UGH!!!!!!!!!!!
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: ...So you see, that horrible virus has completely taken over the network
+        and has been causing ALL sorts of trouble!
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: So I asked around and, well, that's why you and your, um, handler have
+        been sent here.
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: It's pretty simple really... First you'll want to go to the "Barn"
+        and touch one of those glowing spheres.

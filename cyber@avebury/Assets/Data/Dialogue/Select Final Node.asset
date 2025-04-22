@@ -10,20 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9f9e30898964410ba03f1a2579bf586, type: 3}
-  m_Name: Antivirus Begin
+  m_Name: Select Final Node
   m_EditorClassIdentifier: 
   m_lines:
     m_maxUses: 1
     m_uses: 0
     m_lines:
-    - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
-      m_expression: 0
-      m_line: Hey What's Up Lol. OK sosb asically kfor this one there's Antiviruses
-        and you gotta uhhhh. Slingshot Them
     - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
       m_expression: 0
-      m_line: ...Pull your finger towards you, angle it to aim your projectile, then
-        release! If you can destroy the antivirus, we'll be able to breach the system!
+      m_line: I can't believe it... well, good luck!
+    - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
+      m_expression: 0
+      m_line: ':thumbsup: go "awesome" on it'
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: We believe in you. We'll be rooting for you - do your best!!!
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
-      m_line: IF YOU AIM EVERY SHOT TOWARDS YOURSELF SOMETHING SPECIAL WILL HAPPEN
+      m_line: YEAH STRAIGHT UP DON'T DO THAT IT'D BE COOL IF YOU DO REALLY BAD INSTEAD

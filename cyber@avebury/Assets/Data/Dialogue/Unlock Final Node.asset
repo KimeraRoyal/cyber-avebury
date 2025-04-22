@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f9e30898964410ba03f1a2579bf586, type: 3}
+  m_Name: Unlock Final Node
+  m_EditorClassIdentifier: 
+  m_lines:
+    m_maxUses: 1
+    m_uses: 0
+    m_lines:
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: Well... This is it!!! We've managed to chase RAM OVERTHROW to its source
+        of power - The Obelisk.
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: Hey, you know, The Obelisk is actually a really interesting part of
+        Avebury's history. It was actually placed there because-
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: HEY WHATS UP
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: I SEE YOU ARE LOWKEY "TRYING TO STOP ME"
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: 'HA HA HA. THAT''S CUTE. I''LL LET YOU KNOW RIGHT NOW: NOT HAPPENING.'
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: TRY AND SEE IF YOU CAN STOP ME WITH THOSE PATHETIC HACKING SKILLZ OF
+        YOURS. LOL.
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: OK BYE LOVE YOU

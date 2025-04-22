@@ -23,6 +23,8 @@ namespace CyberAvebury
             public FrameAnimation GetTalk()
                 => m_talking[Random.Range(0, m_talking.Length)];
         }
+
+        [SerializeField] private string m_name = "Name";
         
         [SerializeField] private PortraitGroup[] m_portraits;
 
@@ -31,6 +33,8 @@ namespace CyberAvebury
         [SerializeField] private Vector2 m_portraitSize = Vector2.one * 150;
         [SerializeField] private Color m_portraitColor = Color.green;
         [SerializeField] private bool m_portraitMaskable = true;
+
+        public string Name => m_name;
 
         public float LetterDuration => m_letterDuration;
 

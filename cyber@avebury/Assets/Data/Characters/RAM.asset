@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed1a7190c1b41b48b23f953e821bb79, type: 3}
   m_Name: RAM
   m_EditorClassIdentifier: 
+  m_name: RAM OVERTHROW
   m_portraits:
   - m_idle: {fileID: 11400000, guid: 10eb3e340a2e1d548a2625b6c5511a96, type: 2}
     m_talking:
@@ -19,7 +20,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c9c0eadcf8862084b823df67f6867207, type: 2}
     - {fileID: 11400000, guid: 6bf68dc36fbcf2941bd06d02d571bf76, type: 2}
     - {fileID: 11400000, guid: 23864b61c2777b04ca4bb416dd919809, type: 2}
-  m_letterDuration: 0.06
+  m_letterDuration: 0.055
   m_portraitSize: {x: 300, y: 300}
   m_portraitColor: {r: 1, g: 0, b: 1, a: 1}
   m_portraitMaskable: 0

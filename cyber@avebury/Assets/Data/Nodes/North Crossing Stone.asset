@@ -18,6 +18,6 @@ MonoBehaviour:
   m_defaultState: 0
   m_minigame: {fileID: 532597550852094343, guid: 6b129d3019a2d07489c61a5e93a987c4, type: 3}
   m_minigameDifficulty: 0.224
-  m_unlockedLines: {fileID: 0}
+  m_unlockedLines: {fileID: 11400000, guid: 916299837e223b940bef0fe4f1d1f216, type: 2}
   m_selectedLines: {fileID: 0}
   m_completedLines: {fileID: 0}

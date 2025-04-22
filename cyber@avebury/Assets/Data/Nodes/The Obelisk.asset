@@ -17,6 +17,6 @@ MonoBehaviour:
   m_defaultState: 0
   m_minigame: {fileID: 532597550852094343, guid: 6b129d3019a2d07489c61a5e93a987c4, type: 3}
   m_minigameDifficulty: 1
-  m_unlockedLines: {fileID: 0}
-  m_selectedLines: {fileID: 0}
-  m_completedLines: {fileID: 0}
+  m_unlockedLines: {fileID: 11400000, guid: ba1a8c5a6896da446ab8e34f3811a0ec, type: 2}
+  m_selectedLines: {fileID: 11400000, guid: cf2cb19d12b99ed4186ff430551da86f, type: 2}
+  m_completedLines: {fileID: 11400000, guid: acb70d04e56c6d748a55d225626b4676, type: 2}

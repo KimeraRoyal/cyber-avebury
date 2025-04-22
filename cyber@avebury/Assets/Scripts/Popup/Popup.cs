@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,6 +7,8 @@ namespace CyberAvebury
     [RequireComponent(typeof(Animator))]
     public class Popup : MonoBehaviour
     {
+        private Dialogue m_dialogue;
+
         private static readonly int c_showVariable = Animator.StringToHash("Show");
         private Animator m_animator;
 
@@ -21,6 +22,8 @@ namespace CyberAvebury
         
         private void Awake()
         {
+            m_dialogue = FindAnyObjectByType<Dialogue>();
+
             m_animator = GetComponent<Animator>();
         }
 
@@ -44,6 +47,8 @@ namespace CyberAvebury
 
         public void Hide()
         {
+            m_dialogue.AddLine(m_currentPopup.OnClosedDialogue.GetLine());
+
             m_animator.SetBool(c_showVariable, false);
 
             m_willShow = false;

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc0643aff4df7bc49a81c411f4cfe0b2, type: 3}
-  m_Name: Mainframe Fail
+  m_Name: Antivirus Fail
   m_EditorClassIdentifier: 
   m_lines:
   - m_maxUses: -1
@@ -18,21 +18,18 @@ MonoBehaviour:
     m_lines:
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
-      m_line: 'WOW. I''M SO SORRY FOR YOU. HERE''S A TIP:'
-    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
-      m_expression: 0
-      m_line: NEXT TIME, CONSIDER WINNING INSTEAD!
-  - m_maxUses: -1
-    m_uses: 0
-    m_lines:
-    - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
-      m_expression: 0
-      m_line: HMnmbmb... A Set Back? No matter................ our Plans cannot be
-        Stopped once put into Motion
+      m_line: DID YOU TRY MY THING. AIMING AT YOURSELF? HAHAHAHA
   - m_maxUses: -1
     m_uses: 0
     m_lines:
     - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
       m_expression: 0
-      m_line: Hey - keep it up! The sooner you press rings, the more effect your
-        commands will have, so try to be fast!
+      m_line: If you leave the antivirus for too long, it'll fly off, which can make
+        your shots miss. Try aiming for newer ones instead!
+  - m_maxUses: -1
+    m_uses: 0
+    m_lines:
+    - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
+      m_expression: 0
+      m_line: No..... No.. This isnt'g good at all. Our Machinations require ytou
+        to get this one right. Come onnnnn

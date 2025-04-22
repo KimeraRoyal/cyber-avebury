@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f9e30898964410ba03f1a2579bf586, type: 3}
+  m_Name: B-44RK
+  m_EditorClassIdentifier: 
+  m_lines:
+    m_maxUses: 1
+    m_uses: 0
+    m_lines:
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: You know, all along, B-44 was actually short for something...
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: Heh. That's right. "Bark-44". I'm actually a dog.
+    - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
+      m_expression: 0
+      m_line: (gasps)_
+    - m_character: {fileID: 11400000, guid: a10e3babbe9e47a43807858bd018eea1, type: 2}
+      m_expression: 0
+      m_line: Talk about a wolf in sheep's clothing, right? Hahahaha...
+    - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
+      m_expression: 0
+      m_line: I, XCan't Believi this. Wow. A bretrayla. Lies. Who would EVER betray
+        us (friends). All along ?
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: No don't worry haha I'm just joking!!! Can you imagine though
+    - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
+      m_expression: 0
+      m_line: ok cool

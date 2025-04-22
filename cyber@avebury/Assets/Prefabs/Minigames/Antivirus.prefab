@@ -514,9 +514,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa0b5bbd7c963749a621cd1fe0894f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_beginDialogue: {fileID: 0}
+  m_beginDialogue: {fileID: 11400000, guid: 2ef28e871878bcd4fbda7e18f0da8f75, type: 2}
   m_passDialogue: {fileID: 0}
-  m_failDialogue: {fileID: 0}
+  m_failDialogue: {fileID: 11400000, guid: 82bfdd0e295f8d34f9e6fa480743f37c, type: 2}
 --- !u!114 &3111846850808715973
 MonoBehaviour:
   m_ObjectHideFlags: 0
