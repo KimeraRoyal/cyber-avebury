@@ -49,10 +49,6 @@ namespace Niantic.Lightship.Maps.SampleAssets.Player
         {
             _lightshipMapView.MapOriginChanged += OnMapViewOriginChanged;
             _currentMapPosition = _targetMapPosition = transform.position;
-        }
-
-        private void OnEnable()
-        {
             StartCoroutine(UpdateGpsLocation());
         }
 
