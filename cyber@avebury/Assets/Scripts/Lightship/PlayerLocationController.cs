@@ -3,6 +3,7 @@
 using System;
 using System.Collections;
 using Niantic.Lightship.Maps.Core.Coordinates;
+using TMPro;
 using UnityEngine;
 
 #if UNITY_ANDROID
@@ -28,6 +29,9 @@ namespace Niantic.Lightship.Maps.SampleAssets.Player
 
         [SerializeField]
         private Camera _camera;
+
+        [SerializeField] private float m_accuracy = 10.0f;
+        [SerializeField] private float m_updateDistance = 10.0f;
 
         private double _lastGpsUpdateTime;
         private Vector3 _targetMapPosition;
@@ -85,6 +89,7 @@ namespace Niantic.Lightship.Maps.SampleAssets.Player
                     }
                 }
 #endif
+                
                 // Check if the user has location service enabled.
                 if (!Input.location.isEnabledByUser)
                 {
@@ -92,8 +97,9 @@ namespace Niantic.Lightship.Maps.SampleAssets.Player
                     yield break;
                 }
 
+                Debug.Log($"Starting Location Service, Service is: {Input.location.status}");
                 // Starts the location service.
-                Input.location.Start();
+                Input.location.Start(m_accuracy, m_updateDistance);
 
                 // Waits until the location service initializes
                 int maxWait = 20;

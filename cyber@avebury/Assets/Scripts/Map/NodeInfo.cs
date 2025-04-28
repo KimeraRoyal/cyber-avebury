@@ -1,6 +1,5 @@
 ﻿using CyberAvebury.Minigames;
 using Niantic.Lightship.Maps.Core.Coordinates;
-using NUnit.Framework;
 using UnityEngine;
 
 namespace CyberAvebury

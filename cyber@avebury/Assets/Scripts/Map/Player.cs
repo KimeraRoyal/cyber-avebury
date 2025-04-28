@@ -7,8 +7,6 @@ namespace CyberAvebury
     {
         private LightshipMapView m_view;
 
-        [SerializeField] private Transform m_target;
-
         private void Awake()
         {
             m_view = FindAnyObjectByType<LightshipMapView>();
