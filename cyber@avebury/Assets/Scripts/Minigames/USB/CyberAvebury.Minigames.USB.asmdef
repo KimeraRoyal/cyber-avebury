@@ -1,0 +1,14 @@
+{
+    "name": "CyberAvebury.Minigames.USB",
+    "rootNamespace": "CyberAvebury",
+    "references": ["GUID:cadf558670814054398d22cba5d0ff53"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

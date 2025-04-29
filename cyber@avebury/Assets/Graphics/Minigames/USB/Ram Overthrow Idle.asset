@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae03ad3b28724e24b97b03b09296fa1b, type: 3}
+  m_Name: Ram Overthrow Idle
+  m_EditorClassIdentifier: 
+  m_fps: 6
+  m_loopMode: 1
+  m_frames:
+  - {fileID: 1627412840, guid: 0ffe94894e554b34a832b8f6ff41281e, type: 3}
+  - {fileID: -1766126481, guid: 0ffe94894e554b34a832b8f6ff41281e, type: 3}
