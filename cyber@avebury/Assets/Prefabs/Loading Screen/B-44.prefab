@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 3371518819620858066}
   - component: {fileID: 6832502470226194103}
   - component: {fileID: 1634568227854110747}
+  - component: {fileID: 5071538083395864485}
   m_Layer: 11
   m_Name: Fill
   m_TagString: Untagged
@@ -83,8 +84,6 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -135,6 +134,25 @@ MonoBehaviour:
   m_animation: {fileID: 11400000, guid: 359f58b81af286d42b5899b4d3af0e3c, type: 2}
   m_speed: 1
   m_frameOffset: 0
+--- !u!114 &5071538083395864485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4641089424672082391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61ba86c6a4893ca499fefbac19732f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_minSpeed: 0.5
+  m_maxSpeed: 2
+  m_minRandomizeSpeedInterval: 0.05
+  m_maxRandomizeSpeedInterval: 0.3
+  m_minRandomizeFrameInterval: 0.1
+  m_maxRandomizeFrameInterval: 0.2
+  m_glitching: 0
 --- !u!1 &5153316064816002553
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,6 +164,7 @@ GameObject:
   - component: {fileID: 4418715747970450358}
   - component: {fileID: 6654240219431284342}
   - component: {fileID: 9212558090466562363}
+  - component: {fileID: 3635008420453835333}
   m_Layer: 11
   m_Name: Outline
   m_TagString: Untagged
@@ -185,8 +204,6 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -237,3 +254,22 @@ MonoBehaviour:
   m_animation: {fileID: 11400000, guid: 57db8aeeab2b7674684fb55a47b563c4, type: 2}
   m_speed: 1
   m_frameOffset: 0
+--- !u!114 &3635008420453835333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5153316064816002553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61ba86c6a4893ca499fefbac19732f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_minSpeed: 0.5
+  m_maxSpeed: 2
+  m_minRandomizeSpeedInterval: 0.1
+  m_maxRandomizeSpeedInterval: 0.3
+  m_minRandomizeFrameInterval: 0.2
+  m_maxRandomizeFrameInterval: 0.4
+  m_glitching: 1

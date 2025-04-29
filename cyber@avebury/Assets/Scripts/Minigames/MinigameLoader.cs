@@ -19,8 +19,10 @@ namespace CyberAvebury
             m_currentMinigame.OnEnd.AddListener(UnloadMinigame);
             m_currentMinigame.gameObject.SetActive(false);
 
-            LoadingScreen.Instance.ShowScreen(1.0f, () =>
+            LoadingScreen.Instance.ShowScreen(m_currentMinigame.LoadingScreenLength, () =>
             {
+                LoadingScreen.Instance.GlitchScreen(m_currentMinigame.GlitchLoadingScreen);
+
                 m_currentMinigame.gameObject.SetActive(true);
                 OnMinigameLoaded?.Invoke(m_currentMinigame);
             });
@@ -32,6 +34,7 @@ namespace CyberAvebury
         {
             m_currentMinigame.OnEnd.RemoveListener(UnloadMinigame);
 
+            LoadingScreen.Instance.GlitchScreen(false);
             LoadingScreen.Instance.ShowScreen(1.0f, () =>
             {
                 OnMinigameUnloaded?.Invoke(m_currentMinigame);

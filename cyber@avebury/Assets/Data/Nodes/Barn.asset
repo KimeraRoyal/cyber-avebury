@@ -16,7 +16,7 @@ MonoBehaviour:
   m_connections:
   - {fileID: 11400000, guid: 4300c0b3eb2b4464dac3f817345490fc, type: 2}
   m_defaultState: 1
-  m_minigame: {fileID: 532597550852094343, guid: 6b129d3019a2d07489c61a5e93a987c4, type: 3}
+  m_minigame: {fileID: 7651910518853734279, guid: 95e452da05829414d888da587b9bdc48, type: 3}
   m_minigameDifficulty: 0
   m_unlockedLines: {fileID: 0}
   m_selectedLines: {fileID: 11400000, guid: a516cfda58055a14288b9151e75c5830, type: 2}

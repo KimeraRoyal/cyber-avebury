@@ -14,10 +14,17 @@ namespace CyberAvebury
         [SerializeField] private float m_postDialogueWaitDuration = 0.1f;
 
         private bool m_isWriting;
+        private bool m_break;
 
         private Coroutine m_currentCoroutine;
 
         public bool IsWriting => m_isWriting;
+
+        public bool Break
+        {
+            get => m_break;
+            set => m_break = value;
+        }
 
         public UnityEvent<string> OnLineStarted;
         public UnityEvent<string> OnLineFinished;
@@ -66,6 +73,8 @@ namespace CyberAvebury
                 m_text.text = lineText + "<alpha=#00>" + unwrittenText;
                 OnWordWritten?.Invoke(word);
                 OnLineUpdated?.Invoke(lineText);
+
+                if (m_break) { break; }
                 
                 yield return new WaitForSeconds(_letterDuration * word.Length);
                 yield return new WaitUntil(() => !LoadingScreen.Instance.IsOpened);
@@ -74,7 +83,14 @@ namespace CyberAvebury
             }
 
             OnLineFinished?.Invoke(_line);
-            yield return new WaitForSeconds(m_postDialogueWaitDuration);
+            if (m_break)
+            {
+                m_break = false;
+            }
+            else
+            {
+                yield return new WaitForSeconds(m_postDialogueWaitDuration);
+            }
             
             m_isWriting = false;
         }

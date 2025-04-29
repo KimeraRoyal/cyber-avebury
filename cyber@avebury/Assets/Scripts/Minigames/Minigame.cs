@@ -21,6 +21,9 @@ namespace CyberAvebury.Minigames
         [SerializeField] [Range(0.0f, 1.0f)] private float m_difficulty;
         private bool m_isDifficultySet;
 
+        [SerializeField] private float m_loadingScreenLength = 1.0f;
+        [SerializeField] private bool m_glitchLoadingScreen;
+
         [SerializeField] private float m_finishedHoldDuration = 1.0f;
 
         private bool m_isPlaying;
@@ -30,6 +33,9 @@ namespace CyberAvebury.Minigames
 
         public float Difficulty => m_difficulty;
         public bool IsDifficultySet => m_isDifficultySet;
+
+        public float LoadingScreenLength => m_loadingScreenLength;
+        public bool GlitchLoadingScreen => m_glitchLoadingScreen;
 
         public bool IsPlaying => m_isPlaying && !IsPaused && !LoadingScreen.Instance.IsOpened;
         public bool IsPaused => m_pauseCount > 0;

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace CyberAvebury
 {
@@ -17,11 +16,19 @@ namespace CyberAvebury
 
         private DialogueLineBase m_currentDialogue;
         private bool m_isWriting;
+        [SerializeField] private bool m_break;
         private int m_currentLineIndex;
 
         public DialogueLineBase CurrentDialogue => m_currentDialogue;
         public bool HasDialogue => CurrentDialogue != null;
         public bool IsWriting => m_isWriting;
+
+        public bool Break
+        {
+            get => m_break;
+            set => m_break = value;
+        }
+        
         public int CurrentLineIndex => m_currentLineIndex;
         
         public UnityEvent<DialogueLineBase> OnNewDialogue;
@@ -50,6 +57,12 @@ namespace CyberAvebury
 
         private void Update()
         {
+            if (m_isWriting && Input.GetKeyDown(KeyCode.B))
+            {
+                m_break = true;
+                m_writer.Break = true;
+            }
+            
             if(m_currentDialogue != null) { return; }
             NextDialogue();
         }
@@ -80,7 +93,7 @@ namespace CyberAvebury
             yield return new WaitForSeconds(m_openWaitTime);
 
             var lineCount = m_currentDialogue.GetLineCount();
-            for (var i = 0; i < lineCount; i++)
+            for (var i = 0; i < lineCount && !m_break; i++)
             {
                 ChangeLine(i);
                 yield return new WaitUntil(() => !m_writer.IsWriting);
@@ -91,6 +104,7 @@ namespace CyberAvebury
             yield return new WaitForSeconds(m_closeWaitTime);
             
             m_currentDialogue = null;
+            m_break = false;
         }
     }
 }

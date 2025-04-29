@@ -53,6 +53,9 @@ namespace CyberAvebury
             return true;
         }
 
+        public void GlitchScreen(bool _glitch)
+            => m_animator.SetBool("Glitching", _glitch);
+
         private IEnumerator Present(float _duration, Action OnLoad)
         {
             m_showing = true;

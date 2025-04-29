@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 10
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,12 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414738, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,6 +67,9 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -511,7 +515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1437765823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,7 +591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1588224879
 Transform:
   m_ObjectHideFlags: 0
@@ -765,6 +769,58 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 751082121683199207, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_maxRandomizeFrameInterval
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 751082121683199207, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_maxRandomizeSpeedInterval
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 751082121683199207, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_minRandomizeFrameInterval
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 751082121683199207, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_minRandomizeSpeedInterval
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465924234784862760, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2510796829833007979, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_maxRandomizeFrameInterval
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2510796829833007979, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_maxRandomizeSpeedInterval
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2510796829833007979, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_minRandomizeFrameInterval
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2510796829833007979, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_minRandomizeSpeedInterval
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918384922021065017, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_maxRandomizeFrameInterval
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918384922021065017, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_maxRandomizeSpeedInterval
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918384922021065017, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_minRandomizeFrameInterval
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918384922021065017, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_minRandomizeSpeedInterval
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4018239429762216943, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -805,9 +861,97 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4387530803747690494, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_maxRandomizeFrameInterval
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387530803747690494, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_maxRandomizeSpeedInterval
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387530803747690494, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_minRandomizeFrameInterval
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387530803747690494, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_minRandomizeSpeedInterval
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255764431243997726, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_maxRandomizeFrameInterval
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255764431243997726, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_maxRandomizeSpeedInterval
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255764431243997726, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_minRandomizeFrameInterval
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255764431243997726, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_minRandomizeSpeedInterval
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5815538940831515566, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6183486961743033104, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
       propertyPath: m_Name
       value: Loading Screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254296516404901515, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_maxRandomizeFrameInterval
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254296516404901515, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_maxRandomizeSpeedInterval
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254296516404901515, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_minRandomizeFrameInterval
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254296516404901515, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_minRandomizeSpeedInterval
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670871725958403289, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_maxRandomizeFrameInterval
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670871725958403289, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_maxRandomizeSpeedInterval
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670871725958403289, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_minRandomizeFrameInterval
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670871725958403289, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_minRandomizeSpeedInterval
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930418035815351922, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115282174005444871, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_maxRandomizeFrameInterval
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115282174005444871, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_maxRandomizeSpeedInterval
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115282174005444871, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_minRandomizeFrameInterval
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115282174005444871, guid: ce86a9ad846144647adcd519440b29cb, type: 3}
+      propertyPath: m_minRandomizeSpeedInterval
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
