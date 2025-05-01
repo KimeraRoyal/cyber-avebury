@@ -16,8 +16,10 @@ namespace CyberAvebury
 
         private DialogueLineBase m_currentDialogue;
         private bool m_isWriting;
-        [SerializeField] private bool m_break;
         private int m_currentLineIndex;
+        
+        private bool m_break;
+        private bool m_pause;
 
         public DialogueLineBase CurrentDialogue => m_currentDialogue;
         public bool HasDialogue => CurrentDialogue != null;
@@ -27,6 +29,12 @@ namespace CyberAvebury
         {
             get => m_break;
             set => m_break = value;
+        }
+
+        public bool Pause
+        {
+            get => m_pause;
+            set => m_pause = value;
         }
         
         public int CurrentLineIndex => m_currentLineIndex;
@@ -87,7 +95,7 @@ namespace CyberAvebury
         {
             m_isWriting = true;
 
-            yield return new WaitUntil(() => !LoadingScreen.Instance.IsOpened);
+            yield return new WaitUntil(() => !LoadingScreen.Instance.IsOpened && !m_pause);
 
             OnNewDialogue?.Invoke(m_currentDialogue);
             yield return new WaitForSeconds(m_openWaitTime);
@@ -98,6 +106,8 @@ namespace CyberAvebury
                 ChangeLine(i);
                 yield return new WaitUntil(() => !m_writer.IsWriting);
             }
+            
+            yield return new WaitUntil(() => !m_pause);
 
             m_isWriting = false;
             OnEndDialogue?.Invoke();
