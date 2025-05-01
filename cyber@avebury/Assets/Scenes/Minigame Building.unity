@@ -2253,10 +2253,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: OBELISK
       objectReference: {fileID: 0}
-    - target: {fileID: 5501033850600583511, guid: 9d8ecaa497c71934aa28c0f0c3df559d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8166132507030202240, guid: 9d8ecaa497c71934aa28c0f0c3df559d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
