@@ -19,6 +19,12 @@ namespace CyberAvebury
 
         private Projectile m_projectile;
 
+        public Vector3 DistanceFactor
+        {
+            get => m_distanceFactor;
+            set => m_distanceFactor = value;
+        }
+
         private void Awake()
         {
             m_pool = GetComponentInParent<ProjectilePool>();

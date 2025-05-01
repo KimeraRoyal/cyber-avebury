@@ -31,7 +31,7 @@ namespace CyberAvebury
         private Sequence m_flyingSequence;
         private bool m_flyingOff;
         
-        public UnityEvent OnDespawn;
+        public UnityEvent<Enemy> OnDespawn;
 
         public void MoveToPosition(Vector3 _position)
         {
@@ -83,7 +83,7 @@ namespace CyberAvebury
         private void OnHit(Projectile _projectile)
         {
             m_antivirus.ChangeScore(1);
-            OnDespawn?.Invoke();
+            OnDespawn?.Invoke(this);
         }
 
         private void OnDifficultySet(float _difficulty)
@@ -91,7 +91,7 @@ namespace CyberAvebury
             m_lifetime = m_lifetimeDifficulty.GetValue(_difficulty);
         }
 
-        private void FlyOff()
+        public void FlyOff()
         {
             if(m_flyingOff) { return; }
             m_flyingOff = true;
@@ -104,7 +104,7 @@ namespace CyberAvebury
             var duration = Random.Range(m_failAscendDurationMin, m_failAscendDurationMax);
             
             m_flyingSequence.Append(transform.DOMove(endPosition, duration).SetEase(m_failAscendEase));
-            m_flyingSequence.AppendCallback(() => OnDespawn?.Invoke());
+            m_flyingSequence.AppendCallback(() => OnDespawn?.Invoke(this));
         }
     }
 }

@@ -1,0 +1,4 @@
+{
+	"name": "CyberAvebury.Minigames.Antivirus.Boss",
+	"references":[ "GUID:a27cf28b5cd41974499d7d1c149bbb88", "GUID:cd2d1422d38b4a54c8706b685de7c3ab", "GUID:58293e28e079a9644a08838808618da9", "GUID:94c53555a0088524b9930beba51709c2", "GUID:13eb272cfd101264a97f9d9c56d27cc5" ]
+}

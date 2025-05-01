@@ -1618,7 +1618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3103938395097331204, guid: 95e452da05829414d888da587b9bdc48, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8378060057902739335, guid: 95e452da05829414d888da587b9bdc48, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2539,10 +2539,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Antivirus (Boss Fight)
       objectReference: {fileID: 0}
-    - target: {fileID: 6715336558039373909, guid: 846d50935b2a80d45bef3940ce1db00f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6952965522901346657, guid: 846d50935b2a80d45bef3940ce1db00f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2582,14 +2578,6 @@ PrefabInstance:
     - target: {fileID: 6952965522901346657, guid: 846d50935b2a80d45bef3940ce1db00f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8266802904630537430, guid: 846d50935b2a80d45bef3940ce1db00f, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 9186614319944808232, guid: 846d50935b2a80d45bef3940ce1db00f, type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

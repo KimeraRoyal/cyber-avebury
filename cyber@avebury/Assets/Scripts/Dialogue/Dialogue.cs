@@ -22,7 +22,7 @@ namespace CyberAvebury
         private bool m_pause;
 
         public DialogueLineBase CurrentDialogue => m_currentDialogue;
-        public bool HasDialogue => CurrentDialogue != null;
+        public bool HasDialogue => CurrentDialogue != null || m_upcomingDialogue.Count > 0;
         public bool IsWriting => m_isWriting;
 
         public bool Break

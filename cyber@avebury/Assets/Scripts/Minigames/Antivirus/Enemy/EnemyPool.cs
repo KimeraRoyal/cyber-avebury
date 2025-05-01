@@ -23,7 +23,7 @@ namespace CyberAvebury
         private Enemy Create()
         {
             var enemy = Instantiate(m_enemyPrefab, transform);
-            enemy.OnDespawn.AddListener(() => Release(enemy));
+            enemy.OnDespawn.AddListener(Release);
             return enemy;
         }
 

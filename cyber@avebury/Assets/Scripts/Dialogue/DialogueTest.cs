@@ -14,8 +14,8 @@ namespace CyberAvebury
             m_dialogue = FindAnyObjectByType<Dialogue>();
         }
 
-        [Button(name: "Test Lines")]
-        private void TestLines()
+        [Button(name: "Add Lines")]
+        public void AddLines()
         {
             if(!m_dialogue) { return; }
             m_dialogue.AddLine(new DialogueLines(m_lines));

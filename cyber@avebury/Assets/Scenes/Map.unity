@@ -907,6 +907,55 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue
       objectReference: {fileID: 0}
+    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
+      propertyPath: m_lines.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
+      propertyPath: m_lines.Array.data[0].m_line
+      value: h,... I've Connectedd You on a Privoate Line ., NNoone can Intercenpt
+        our Scheming Here (Important)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
+      propertyPath: m_lines.Array.data[1].m_line
+      value: I Gotta Tell You Something... this WHoel World is Freaked Up. Right
+        up[ the Badness Threshold
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
+      propertyPath: m_lines.Array.data[2].m_line
+      value: And,m well......... I've Got something to say about it.. A ha ha...
+        AH AHAH HAHAHA
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
+      propertyPath: m_lines.Array.data[3].m_line
+      value: I'm bisexual. I'm not ready to tell the others yet, but I felt you should
+        know, as one of my close friends.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
+      propertyPath: m_lines.Array.data[4].m_line
+      value: So.... .Can I Trust You? AHahhhahah........ This Whole Freaking World
+        Won't Even see whwat's Coming.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
+      propertyPath: m_lines.Array.data[0].m_character
+      value: 
+      objectReference: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
+    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
+      propertyPath: m_lines.Array.data[2].m_character
+      value: 
+      objectReference: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
+    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
+      propertyPath: m_lines.Array.data[3].m_character
+      value: 
+      objectReference: {fileID: 11400000, guid: f1280c41f3653bf43afcfc0e29c3df33, type: 2}
+    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
+      propertyPath: m_lines.Array.data[4].m_character
+      value: 
+      objectReference: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
+    - target: {fileID: 8714990651278437775, guid: 9178c6779412ec640a84037067045783, type: 3}
+      propertyPath: m_lines.Array.data[2].m_expression
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
