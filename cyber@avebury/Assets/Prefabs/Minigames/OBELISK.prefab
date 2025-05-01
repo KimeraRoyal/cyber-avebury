@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 2860104398432076673}
   - component: {fileID: 4861723944629682605}
   - component: {fileID: 7293639339398577912}
+  - component: {fileID: 837273745952075494}
   - component: {fileID: 8742138676616839904}
   - component: {fileID: 6403355291042013480}
   - component: {fileID: 2202976429217431059}
@@ -185,9 +186,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ScaleFactor: 2.5
   m_ReferenceResolution: {x: 480, y: 800}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
@@ -196,6 +197,21 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!114 &837273745952075494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3890805454415599673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d71642d91cec53b439c48f994128810a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_comparisonAxis: 0
+  m_scaleFactor: 2.5
+  m_referenceLength: 480
 --- !u!114 &8742138676616839904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,6 +624,7 @@ MonoBehaviour:
   m_finalSubgame: {fileID: 7651910518853734279, guid: 95e452da05829414d888da587b9bdc48, type: 3}
   m_minigameLoadDelay: 2
   m_minigameLoadTime: 5
+  m_failureDialogue: {fileID: 11400000, guid: a3cf2db1e4de5a1488f48dfff5100ef0, type: 2}
   OnSubgamesAssigned:
     m_PersistentCalls:
       m_Calls: []

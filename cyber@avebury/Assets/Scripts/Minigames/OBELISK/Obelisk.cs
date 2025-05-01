@@ -31,6 +31,8 @@ namespace CyberAvebury
         [SerializeField] private float m_minigameLoadDelay = 1.0f;
         [SerializeField] private float m_minigameLoadTime = 1.0f;
 
+        [SerializeField] private DialogueLineObjectBase m_failureDialogue;
+
         [ShowInInspector] [ReadOnly]
         private int m_currentSubgameIndex;
 
@@ -176,6 +178,7 @@ namespace CyberAvebury
         public void FailSubgame()
         {
             OnSubgameFailed?.Invoke(m_currentSubgameIndex);
+            m_dialogue.AddLine(m_failureDialogue.GetLine());
         }
     }
 }

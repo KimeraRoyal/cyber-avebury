@@ -8,6 +8,8 @@ namespace CyberAvebury
     [RequireComponent(typeof(TMP_Text))]
     public class WordWriter : MonoBehaviour
     {
+        private static readonly char[] s_separators = new char[] { ' ', '\n', '.', ',', '!', '?' };
+        
         private TMP_Text m_text;
 
         [SerializeField] private float m_preDialogueWaitDuration = 0.1f;
@@ -58,28 +60,34 @@ namespace CyberAvebury
             OnLineStarted?.Invoke(_line);
             
             // TODO: Maybe handle this per-letter rather than with a substring?
-            var words = _line.Split(' ');
+            var words = _line.Split(s_separators);
 
             yield return new WaitForSeconds(m_preDialogueWaitDuration);
 
             var cursor = 0;
-            foreach (var word in words)
+
+            for(var i = 0; i < words.Length; i++)
             {
-                cursor += word.Length;
-                
-                var lineText = _line[..cursor];
-                var unwrittenText = _line.Substring(cursor, _line.Length - cursor);
-                
-                m_text.text = lineText + "<alpha=#00>" + unwrittenText;
-                OnWordWritten?.Invoke(word);
-                OnLineUpdated?.Invoke(lineText);
+                var word = words[i];
+                if (word.Length > 0)
+                {
+                    var lineText = IncrementCursor(word.Length);
+                    OnWordWritten?.Invoke(word);
+                    OnLineUpdated?.Invoke(lineText);
+                }
 
                 if (m_break) { break; }
+
+                for (var j = 0; j < 20 && i + 1 < words.Length && words[i + 1].Length < 1; j++)
+                {
+                    IncrementCursor(1);
+                    i++;
+                    yield return null;
+                }
+                IncrementCursor(1);
                 
                 yield return new WaitForSeconds(_letterDuration * word.Length);
                 yield return new WaitUntil(() => !LoadingScreen.Instance.IsOpened);
-
-                cursor++;
             }
 
             OnLineFinished?.Invoke(_line);
@@ -93,6 +101,26 @@ namespace CyberAvebury
             }
             
             m_isWriting = false;
+            
+            yield break;
+
+            string IncrementCursor(int _amount)
+            {
+                cursor += _amount;
+
+                if (cursor >= _line.Length)
+                {
+                    m_text.text = _line;
+                    return _line;
+                }
+                
+                var lineText = _line[..cursor];
+                var unwrittenText = _line.Substring(cursor, _line.Length - cursor);
+                
+                m_text.text = lineText + "<alpha=#00>" + unwrittenText;
+
+                return lineText;
+            }
         }
     }
 }

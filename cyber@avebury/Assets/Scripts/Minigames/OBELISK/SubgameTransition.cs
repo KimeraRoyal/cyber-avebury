@@ -17,6 +17,8 @@ namespace CyberAvebury
         private static readonly int s_transition = Animator.StringToHash("Transition");
         private static readonly int s_type = Animator.StringToHash("Type");
 
+        private Dialogue m_dialogue;
+        
         private Animator m_animator;
 
         private bool m_triggerSceneChange;
@@ -24,6 +26,8 @@ namespace CyberAvebury
 
         private void Awake()
         {
+            m_dialogue = FindAnyObjectByType<Dialogue>();
+            
             m_animator = GetComponent<Animator>();
         }
 
@@ -35,6 +39,7 @@ namespace CyberAvebury
                 StopCoroutine(m_transitionCoroutine);
             }
             m_animator.SetInteger(s_type, (int)_type);
+            m_dialogue.Pause = true;
             m_transitionCoroutine = StartCoroutine(WaitForTransition(_changeScene));
         }
 
@@ -47,6 +52,7 @@ namespace CyberAvebury
             
             m_triggerSceneChange = false;
             _changeScene?.Invoke();
+            m_dialogue.Pause = false;
         }
         
         public void TriggerSceneChange()
