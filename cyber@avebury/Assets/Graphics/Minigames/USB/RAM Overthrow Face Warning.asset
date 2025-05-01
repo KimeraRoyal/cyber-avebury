@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae03ad3b28724e24b97b03b09296fa1b, type: 3}
-  m_Name: RAM Overthrow Face Normal
+  m_Name: RAM Overthrow Face Warning
   m_EditorClassIdentifier: 
   m_fps: 12
   m_loopMode: 1
   m_frames:
-  - {fileID: 49407210, guid: 44d772844ab216f4ca4a548e51feb337, type: 3}
-  - {fileID: 1462360610, guid: 44d772844ab216f4ca4a548e51feb337, type: 3}
-  - {fileID: 987211919, guid: 44d772844ab216f4ca4a548e51feb337, type: 3}
+  - {fileID: -2137143761, guid: 44d772844ab216f4ca4a548e51feb337, type: 3}
+  - {fileID: -1899184204, guid: 44d772844ab216f4ca4a548e51feb337, type: 3}
+  - {fileID: -209466561, guid: 44d772844ab216f4ca4a548e51feb337, type: 3}

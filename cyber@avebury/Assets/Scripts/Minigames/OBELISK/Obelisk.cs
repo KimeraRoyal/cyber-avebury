@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 namespace CyberAvebury
 {
+    [RequireComponent(typeof(Minigame))]
     public class Obelisk : MonoBehaviour
     {
         private enum MinigameState
@@ -18,10 +19,16 @@ namespace CyberAvebury
         
         private Dialogue m_dialogue;
 
+        private Minigame m_minigame;
+
+        private SubgameTransition m_transition;
+
         [SerializeField] private GameObject m_graphics;
         
         [SerializeField] private Minigame[] m_subgamePrefabs;
+        [SerializeField] private Minigame m_finalSubgame;
 
+        [SerializeField] private float m_minigameLoadDelay = 1.0f;
         [SerializeField] private float m_minigameLoadTime = 1.0f;
 
         [ShowInInspector] [ReadOnly]
@@ -30,6 +37,7 @@ namespace CyberAvebury
         private bool m_loadingGame;
         
         private Minigame m_currentMinigame;
+        private Minigame m_previousMinigame;
         private MinigameState m_currentState;
 
         public int CurrentSubgameIndex => m_currentSubgameIndex;
@@ -41,9 +49,15 @@ namespace CyberAvebury
         public UnityEvent<int> OnSubgamePassed;
         public UnityEvent<int> OnSubgameFailed;
 
+        public UnityEvent OnAllSubgamesCleared;
+
         private void Awake()
         {
             m_dialogue = FindAnyObjectByType<Dialogue>();
+
+            m_minigame = GetComponent<Minigame>();
+
+            m_transition = GetComponentInChildren<SubgameTransition>();
         }
 
         private void Start()
@@ -53,7 +67,7 @@ namespace CyberAvebury
 
         private void Update()
         {
-            if (m_loadingGame || m_currentMinigame || LoadingScreen.Instance.IsOpened || m_dialogue.IsWriting) { return; }
+            if (m_loadingGame || m_currentMinigame || m_previousMinigame || LoadingScreen.Instance.IsOpened || m_dialogue.IsWriting) { return; }
 
             StartCoroutine(LoadSubgame(m_currentSubgameIndex));
         }
@@ -61,25 +75,32 @@ namespace CyberAvebury
         private IEnumerator LoadSubgame(int _index)
         {
             m_loadingGame = true;
+
+            yield return new WaitForSeconds(m_minigameLoadDelay);
+            yield return new WaitUntil(() => !LoadingScreen.Instance.IsOpened && !m_dialogue.IsWriting);
+            
             OnBeginLoadingSubgame?.Invoke(_index);
             
             yield return new WaitForSeconds(m_minigameLoadTime);
 
             m_currentMinigame = Instantiate(m_subgamePrefabs[m_currentSubgameIndex], transform);
+            m_currentMinigame.gameObject.SetActive(false);
             
             m_currentMinigame.OnPassed.AddListener(OnMinigamePassed);
             m_currentMinigame.OnFailed.AddListener(OnMinigameFailed);
             m_currentMinigame.OnEnd.AddListener(OnMinigameFinished);
             
-            m_graphics.SetActive(false);
-            m_currentMinigame.Begin(1.0f);
-            
-            // Any Loading Screen + Pausing / Unpausing Here
-            
-            //m_currentMinigame.OnEnd.AddListener(UnloadMinigame);
-            //OnMinigameLoaded?.Invoke(m_currentMinigame);
+            m_transition.BeginTransition(BeginSubgame, SubgameTransition.TransitionType.FromInterlude);
             
             m_loadingGame = false;
+        }
+
+        private void BeginSubgame()
+        {
+            m_graphics.SetActive(false);
+            
+            m_currentMinigame.gameObject.SetActive(true);
+            m_currentMinigame.Begin(1.0f);
         }
 
         private void OnMinigamePassed()
@@ -94,10 +115,22 @@ namespace CyberAvebury
 
         private void OnMinigameFinished()
         {
-            m_graphics.SetActive(true);
+            m_previousMinigame = m_currentMinigame;
             
-            Destroy(m_currentMinigame.gameObject);
-            m_currentMinigame = null;
+            var transitionType = SubgameTransition.TransitionType.ToInterlude;
+            if (m_currentState == MinigameState.Passed && m_currentSubgameIndex + 1 >= m_subgamePrefabs.Length)
+            {
+                OnAllSubgamesCleared?.Invoke();
+                SpawnFinalMinigame();
+                transitionType = SubgameTransition.TransitionType.BetweenSubgames;
+            }
+            m_transition.BeginTransition(FinishMinigame, transitionType);
+        }
+
+        private void FinishMinigame()
+        {
+            Destroy(m_previousMinigame.gameObject);
+            m_previousMinigame = null;
 
             switch (m_currentState)
             {
@@ -113,6 +146,23 @@ namespace CyberAvebury
                     throw new ArgumentOutOfRangeException();
             }
             m_currentState = MinigameState.None;
+            
+            if (m_currentSubgameIndex >= m_subgamePrefabs.Length)
+            {
+                BeginSubgame();
+            }
+            else
+            {
+                m_graphics.SetActive(true);
+            }
+        }
+
+        private void SpawnFinalMinigame()
+        {
+            m_currentMinigame = Instantiate(m_finalSubgame, transform);
+            m_currentMinigame.gameObject.SetActive(false);
+            
+            m_currentMinigame.OnPassed.AddListener(m_minigame.Pass);
         }
 
         [Button("Pass Subgame")]

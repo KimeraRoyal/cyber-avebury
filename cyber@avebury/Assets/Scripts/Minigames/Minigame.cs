@@ -54,9 +54,10 @@ namespace CyberAvebury.Minigames
         public void Pass()
         {
             if(!m_isPlaying) { return; }
+            m_isPlaying = false;
             
             OnPassed?.Invoke();
-            StartCoroutine(Finish());
+            Finish();
         }
 
         public void Fail()
@@ -64,15 +65,21 @@ namespace CyberAvebury.Minigames
             if(!m_isPlaying) { return; }
             
             OnFailed?.Invoke();
-            StartCoroutine(Finish());
+            Finish();
         }
 
-        private IEnumerator Finish()
+        private void Finish()
         {
             m_isPlaying = false;
+            StartCoroutine(HoldForFinish());
+        }
+
+        private IEnumerator HoldForFinish()
+        {
             OnFinished?.Invoke();
 
             yield return new WaitForSeconds(m_finishedHoldDuration);
+            
             OnEnd?.Invoke();
         }
 
