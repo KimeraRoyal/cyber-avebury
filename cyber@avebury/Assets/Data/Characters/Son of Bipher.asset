@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed1a7190c1b41b48b23f953e821bb79, type: 3}
+  m_Name: Son of Bipher
+  m_EditorClassIdentifier: 
+  m_name: Son of Bipher
+  m_portraits:
+  - m_idle: {fileID: 11400000, guid: ef002c588285fa749804bf97dfda70e3, type: 2}
+    m_talking:
+    - {fileID: 11400000, guid: a10c75e1dfa4e564b9abb8dd028d2d25, type: 2}
+    - {fileID: 11400000, guid: b4077f467c3146240979a7b102fc7bc3, type: 2}
+  m_letterDuration: 0.06
+  m_portraitSize: {x: 150, y: 150}
+  m_portraitColor: {r: 0, g: 1, b: 0, a: 1}
+  m_portraitMaskable: 1
