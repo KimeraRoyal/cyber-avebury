@@ -78,6 +78,8 @@ namespace CyberAvebury
         {
             m_defeated = true;
             OnDefeated?.Invoke();
+            
+            m_minigame.FinishedHoldDuration = 4.0f;
         }
     }
 }

@@ -2255,7 +2255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5501033850600583511, guid: 9d8ecaa497c71934aa28c0f0c3df559d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8166132507030202240, guid: 9d8ecaa497c71934aa28c0f0c3df559d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2538,6 +2538,10 @@ PrefabInstance:
     - target: {fileID: 6715336558039373909, guid: 846d50935b2a80d45bef3940ce1db00f, type: 3}
       propertyPath: m_Name
       value: Antivirus (Boss Fight)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715336558039373909, guid: 846d50935b2a80d45bef3940ce1db00f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6952965522901346657, guid: 846d50935b2a80d45bef3940ce1db00f, type: 3}
       propertyPath: m_LocalPosition.x

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9f9e30898964410ba03f1a2579bf586, type: 3}
-  m_Name: OBELISK Chase
+  m_Name: OBELISK Chase 3
   m_EditorClassIdentifier: 
   m_lines:
     m_maxUses: 1
@@ -18,10 +18,4 @@ MonoBehaviour:
     m_lines:
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
-      m_line: ENOUGH!
-    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
-      m_expression: 0
-      m_line: LET'S FINISH THIS. ONCE AND FOR ALL.
-    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
-      m_expression: 0
-      m_line: WOW THAT FELT COOL TO SAY. "TOP 10 AWESOME FINAL BOSS QUOTES" SCRUNCHMOJO
+      m_line: HEY I HOPE THIS ISN'T DISTRACTING OR ANYTHING

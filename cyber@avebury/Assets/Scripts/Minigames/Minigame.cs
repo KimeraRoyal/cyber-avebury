@@ -37,6 +37,12 @@ namespace CyberAvebury.Minigames
         public float LoadingScreenLength => m_loadingScreenLength;
         public bool GlitchLoadingScreen => m_glitchLoadingScreen;
 
+        public float FinishedHoldDuration
+        {
+            get => m_finishedHoldDuration;
+            set => m_finishedHoldDuration = value;
+        }
+
         public bool IsPlaying => m_isPlaying && !IsPaused && !LoadingScreen.Instance.IsOpened;
         public bool IsPaused => m_pauseCount > 0;
 

@@ -5,11 +5,15 @@ namespace CyberAvebury
 {
     public class BossSwitcher : MonoBehaviour
     {
+        private static readonly int s_flash = Animator.StringToHash("Flash");
+        
         private Dialogue m_dialogue;
 
         private Antivirus m_antivirus;
 
         private EnemySpawner m_enemySpawner;
+
+        private Flash m_flash;
 
         [SerializeField] private DialogueLineObjectBase m_switchDialogue;
         
@@ -28,6 +32,7 @@ namespace CyberAvebury
             m_antivirus = GetComponentInParent<Antivirus>();
 
             m_enemySpawner = m_antivirus.GetComponentInChildren<EnemySpawner>();
+            m_flash = m_antivirus.GetComponentInChildren<Flash>();
             
             m_antivirus.OnScoreUpdated.AddListener(OnScoreUpdated);
         }
@@ -42,17 +47,24 @@ namespace CyberAvebury
                 disableObject.SetActive(false);
             }
 
-            foreach (var enemy in m_enemySpawner.Enemies)
-            {
-                enemy.FlyOff();
-            }
-            m_enemySpawner.Pause = true;
-
             StartCoroutine(WaitForDialogue());
         }
 
         private IEnumerator WaitForDialogue()
         {
+            var progress = false;
+            
+            m_dialogue.AddLine(m_switchDialogue.GetLine());
+            
+            m_flash.BeginFlash(() => progress = true);
+            yield return new WaitUntil(() => progress);
+            
+            foreach (var enemy in m_enemySpawner.Enemies)
+            {
+                enemy.FlyOff();
+            }
+            m_enemySpawner.Pause = true;
+            
             var score = m_antivirus.TargetScore;
             for (var i = 0; i < score; i++)
             {
@@ -60,7 +72,6 @@ namespace CyberAvebury
                 yield return new WaitForSeconds(m_scoreResetDelay);
             }
             
-            m_dialogue.AddLine(m_switchDialogue.GetLine());
             yield return new WaitUntil(() => !m_dialogue.HasDialogue);
             
             foreach(var enableObject in m_enableOnSwitch)
