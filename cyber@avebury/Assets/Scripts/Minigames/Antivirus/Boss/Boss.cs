@@ -52,7 +52,7 @@ namespace CyberAvebury
                 return;
             }
             
-            if(!m_minigame.IsPlaying) { return; }
+            if(!m_minigame.IsPlayingNoPause) { return; }
             
             m_movementTimer += Time.deltaTime;
             transform.localPosition = Vector3.Lerp(m_startPosition, m_finishPosition, m_movementCurve.Evaluate(MovementProgress));
