@@ -10,11 +10,13 @@ namespace CyberAvebury
         [SerializeField] [TextArea(3, 5)] private string m_description = "Description";
 
         [SerializeField] private DialogueLineObjectBase m_onClosedDialogue;
+        [SerializeField] private PopupInfo m_nextPopup;
 
         public string Title => m_title;
         public Sprite Image => m_image;
         public string Description => m_description;
 
         public DialogueLineObjectBase OnClosedDialogue => m_onClosedDialogue;
+        public PopupInfo NextPopup => m_nextPopup;
     }
 }
