@@ -10,10 +10,24 @@ namespace CyberAvebury
         private Player m_player;
 
         [SerializeField] private float m_maxDistanceMeters = 30.0f;
+        private float m_maxDistance = -1.0f;
         
         private Node m_selectedNode;
 
         private bool m_passedDirty;
+
+        public float MaxDistance
+        {
+            get
+            {
+                if (m_maxDistance < 0.0f)
+                {
+                    m_maxDistance = m_player.MetersToScene(m_maxDistanceMeters);
+                }
+                return m_maxDistance;
+            }
+        }
+        public float MaxDistanceMeters => m_maxDistanceMeters;
 
         public UnityEvent<Node> OnNodeSelected;
         public UnityEvent<Minigame> OnNodeMinigameLoaded;

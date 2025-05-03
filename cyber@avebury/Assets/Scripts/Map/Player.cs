@@ -1,4 +1,5 @@
 using Niantic.Lightship.Maps;
+using Sirenix.OdinInspector.Editor.Drawers;
 using UnityEngine;
 
 namespace CyberAvebury
@@ -14,10 +15,23 @@ namespace CyberAvebury
 
         public float GetDistanceToPoint(Vector3 _point)
         {
-            var distance = Vector3.Distance(transform.position, _point);
-            var latLng = m_view.SceneToLatLng(transform.position);
-
-            return (float) m_view.SceneToMeters(distance, latLng.Latitude);
+            var distance = Vector2.Distance(GetFlatPosition(), new Vector2(_point.x, _point.z));
+            return SceneToMeters(distance);
         }
+
+        public float SceneToMeters(float _value)
+        {
+            var latLng = m_view.SceneToLatLng(transform.position);
+            return (float) m_view.SceneToMeters(_value, latLng.Latitude);
+        }
+
+        public float MetersToScene(float _value)
+        {
+            var latLng = m_view.SceneToLatLng(transform.position);
+            return (float) m_view.MetersToScene(_value, latLng.Latitude);
+        }
+
+        public Vector2 GetFlatPosition()
+            => new (transform.position.x, transform.position.z);
     }
 }
