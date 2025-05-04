@@ -1088,6 +1088,16 @@ MonoBehaviour:
   - run "clear logs"
   - run "dummy logs"
   - rootSplicer.sh
+  - '- [I AM ERROR]'
+  - '- [PRESS ANY KEY TO RESTART]'
+  - insertInstallDisc
+  - '- [SYSTEM MAY BE BUSY OR MELTING INTO SLAG]'
+  - save
+  - quit
+  - '- [THREAT LEVEL UPGRADED TO JELLY ROLL 1]'
+  - runQueryIdentification
+  - port open 25565
+  - server connect *.*
   m_minLines: 1
   m_maxLines: 3
   m_linesMult: 0.75
