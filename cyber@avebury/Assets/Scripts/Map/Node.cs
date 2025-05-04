@@ -98,5 +98,8 @@ namespace CyberAvebury
                 connection.Unlock();
             }
         }
+
+        public Vector2 GetFlatPosition()
+            => new (transform.position.x, transform.position.z);
     }
 }

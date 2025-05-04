@@ -8,8 +8,10 @@ namespace CyberAvebury
     public class Nodes : MonoBehaviour
     {
         private Dictionary<string, Node> m_nodes;
+        private List<Node> m_nodeList;
 
         public IReadOnlyDictionary<string, Node> RegisteredNodes => m_nodes;
+        public IReadOnlyList<Node> NodeList => m_nodeList;
 
         public UnityEvent<Node> OnNodeRegistered;
         public UnityEvent OnFinishedRegistering;
@@ -20,6 +22,7 @@ namespace CyberAvebury
         private void Awake()
         {
             m_nodes = new Dictionary<string, Node>();
+            m_nodeList = new List<Node>();
         }
 
         public void RegisterNodes(Node[] _nodes)
@@ -36,6 +39,7 @@ namespace CyberAvebury
         private void RegisterNode(Node _node)
         {
             m_nodes.Add(_node.name, _node);
+            m_nodeList.Add(_node);
             _node.OnStateChanged.AddListener(_state => OnNodeStateChanged(_node, _state));
 
             OnNodeRegistered?.Invoke(_node);

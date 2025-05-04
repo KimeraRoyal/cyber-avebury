@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CyberAvebury
 {
-    public class NodeBoundary : MonoBehaviour
+    public class PlayerBoundary : MonoBehaviour
     {
         private enum ApproachState
         {
@@ -13,6 +13,8 @@ namespace CyberAvebury
         }
 
         private NodeSelection m_selection;
+        private Nodes m_nodes;
+        
         private Player m_player;
 
         private SpriteRenderer[] m_renderers;
@@ -27,18 +29,25 @@ namespace CyberAvebury
         private void Awake()
         {
             m_selection = FindAnyObjectByType<NodeSelection>();
-            m_player = FindAnyObjectByType<Player>();
+            m_nodes = FindAnyObjectByType<Nodes>();
+            
+            m_player = GetComponentInParent<Player>();
 
             m_renderers = GetComponentsInChildren<SpriteRenderer>();
+            
+            m_nodes.OnFinishedRegistering.AddListener(OnFinishedRegisteringNodes);
         }
 
         private void Start()
         {
             transform.localScale = m_scale * m_selection.MaxDistance;
-            
-            CalculateDistance(true);
         }
 
+        private void OnFinishedRegisteringNodes()
+        {
+            CalculateDistance(true);
+        }
+        
         private void Update()
         {
             CalculateDistance(false);
@@ -46,15 +55,28 @@ namespace CyberAvebury
 
         private void CalculateDistance(bool _forceStateChange)
         {
-            var distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), m_player.GetFlatPosition());
+            Node closestNode = null;
+            var closestDistance = float.MaxValue;
+            foreach (var node in m_nodes.NodeList)
+            {
+                if(node.CurrentState == NodeState.Locked) { continue; }
+                
+                var distanceToNode = Vector2.Distance(node.GetFlatPosition(), m_player.GetFlatPosition());
+                if(distanceToNode >= closestDistance) { continue; }
+
+                closestNode = node;
+                closestDistance = distanceToNode;
+            }
+            
+            if(!closestNode) { return; }
 
             var state = ApproachState.Far;
-            if (distance <= m_selection.MaxDistance) { state = ApproachState.Near; }
-            else if (distance <= m_selection.MaxDistance * m_visibleRange) { state = ApproachState.Approaching; }
+            if (closestDistance <= m_selection.MaxDistance) { state = ApproachState.Near; }
+            else if (closestDistance <= m_selection.MaxDistance * m_visibleRange) { state = ApproachState.Approaching; }
 
             if (!_forceStateChange && state == m_currentState && state != ApproachState.Approaching) { return; }
 
-            UpdateState(state, distance);
+            UpdateState(state, closestDistance);
         }
 
         private void UpdateState(ApproachState _state, float _distance)
