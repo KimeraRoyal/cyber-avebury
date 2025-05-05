@@ -11,7 +11,12 @@ namespace CyberAvebury
 
         public bool CanUse => m_maxUses < 0 || m_uses < m_maxUses;
         public int MaxUses => m_maxUses;
-        public int Uses => m_uses;
+
+        public int Uses
+        {
+            get => m_uses;
+            set => m_uses = value;
+        }
         
         public abstract DialogueLineContent GetContent(int _lineIndex);
         
