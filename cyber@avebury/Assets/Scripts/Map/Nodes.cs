@@ -9,9 +9,11 @@ namespace CyberAvebury
     {
         private Dictionary<string, Node> m_nodes;
         private List<Node> m_nodeList;
+        private bool m_registrationComplete;
 
         public IReadOnlyDictionary<string, Node> RegisteredNodes => m_nodes;
         public IReadOnlyList<Node> NodeList => m_nodeList;
+        public bool RegistrationComplete => m_registrationComplete;
 
         public UnityEvent<Node> OnNodeRegistered;
         public UnityEvent OnFinishedRegistering;
@@ -33,6 +35,7 @@ namespace CyberAvebury
             }
             ConnectNodes();
                 
+            m_registrationComplete = true;
             OnFinishedRegistering?.Invoke();
         }
 

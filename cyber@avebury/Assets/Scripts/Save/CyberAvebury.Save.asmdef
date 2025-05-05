@@ -1,7 +1,7 @@
 {
     "name": "CyberAvebury.Save",
     "rootNamespace": "CyberAvebury",
-    "references": ["GUID:93f7b5b5efcb16047b2a158e785ef741","GUID:94c53555a0088524b9930beba51709c2"],
+    "references": ["GUID:93f7b5b5efcb16047b2a158e785ef741","GUID:94c53555a0088524b9930beba51709c2","GUID:571e5101c2e9872458477a9157438114"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

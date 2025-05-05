@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace CyberAvebury
 {
@@ -7,6 +8,8 @@ namespace CyberAvebury
         private Nodes m_nodes;
         
         private Nodes Nodes => m_nodes ??= FindAnyObjectByType<Nodes>();
+
+        private Coroutine m_coroutine;
         
         private void Awake()
         {
@@ -29,6 +32,17 @@ namespace CyberAvebury
 
         private void Load(SaveData _saveData)
         {
+            if (m_coroutine != null)
+            {
+                StopCoroutine(m_coroutine);
+                m_coroutine = null;
+            }
+            m_coroutine = StartCoroutine(LoadWhenReady(_saveData));
+        }
+
+        private IEnumerator LoadWhenReady(SaveData _saveData)
+        {
+            yield return new WaitUntil(() => Nodes.RegistrationComplete);
             foreach (var node in Nodes.NodeList)
             {
                 if(!_saveData.NodeStates.TryGetValue(node.Info.name, out var state)) { continue; }
