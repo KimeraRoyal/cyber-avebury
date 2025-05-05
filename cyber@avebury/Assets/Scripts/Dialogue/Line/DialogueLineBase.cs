@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CyberAvebury
 {
@@ -9,6 +10,9 @@ namespace CyberAvebury
         [SerializeField] private int m_maxUses = -1;
         [SerializeField] private int m_uses;
 
+        [SerializeField] private bool m_shouldLoadNextScene;
+        [SerializeField] private int m_loadSceneIndex = -1;
+
         public bool CanUse => m_maxUses < 0 || m_uses < m_maxUses;
         public int MaxUses => m_maxUses;
 
@@ -17,6 +21,9 @@ namespace CyberAvebury
             get => m_uses;
             set => m_uses = value;
         }
+
+        public bool ShouldLoadNextScene => m_shouldLoadNextScene;
+        public int LoadSceneIndex => m_loadSceneIndex;
         
         public abstract DialogueLineContent GetContent(int _lineIndex);
         

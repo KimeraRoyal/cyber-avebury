@@ -15,12 +15,14 @@ MonoBehaviour:
   m_lines:
   - m_maxUses: -1
     m_uses: 0
+    m_loadSceneIndex: -1
     m_lines:
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: DID YOU TRY MY THING. AIMING AT YOURSELF? HAHAHAHA
   - m_maxUses: -1
     m_uses: 0
+    m_loadSceneIndex: -1
     m_lines:
     - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
       m_expression: 0
@@ -28,6 +30,7 @@ MonoBehaviour:
         your shots miss. Try aiming for newer ones instead!
   - m_maxUses: -1
     m_uses: 0
+    m_loadSceneIndex: -1
     m_lines:
     - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
       m_expression: 0

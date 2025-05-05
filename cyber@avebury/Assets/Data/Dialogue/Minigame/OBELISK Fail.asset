@@ -15,6 +15,7 @@ MonoBehaviour:
   m_lines:
   - m_maxUses: -1
     m_uses: 0
+    m_loadSceneIndex: -1
     m_lines:
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0

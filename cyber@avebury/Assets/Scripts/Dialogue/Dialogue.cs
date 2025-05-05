@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace CyberAvebury
 {
@@ -112,6 +113,12 @@ namespace CyberAvebury
             m_isWriting = false;
             OnEndDialogue?.Invoke();
             yield return new WaitForSeconds(m_closeWaitTime);
+
+            if (m_currentDialogue.ShouldLoadNextScene)
+            {
+                var loadSceneIndex = m_currentDialogue.LoadSceneIndex;
+                LoadingScreen.Instance.ShowScreen(1.0f, () => SceneManager.LoadScene(loadSceneIndex));
+            }
             
             m_currentDialogue = null;
             m_break = false;
