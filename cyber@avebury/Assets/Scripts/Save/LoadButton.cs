@@ -27,6 +27,12 @@ namespace CyberAvebury
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
+        private void Start()
+        {
+            if(m_behaviour != Behaviour.Load) { return; }
+            m_button.interactable = Saving.Instance.SaveExistsOnDisk;
+        }
+
         private void OnClick()
         {
             m_primed = true;

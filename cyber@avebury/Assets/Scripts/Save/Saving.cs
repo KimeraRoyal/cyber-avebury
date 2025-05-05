@@ -31,6 +31,7 @@ namespace CyberAvebury
         }
 
         public bool HasSaveData => m_saveData != null;
+        public bool SaveExistsOnDisk => DoesFileExist(m_saveFileName);
 
         public UnityEvent<SaveData> OnSave;
         public UnityEvent<SaveData> OnLoad;
@@ -94,5 +95,8 @@ namespace CyberAvebury
 
         private static string GetFilePath(string _localPath)
             => Path.GetFullPath(Path.Combine(Application.persistentDataPath, _localPath));
+
+        private static bool DoesFileExist(string _localPath)
+            => File.Exists(GetFilePath(_localPath));
     }
 }

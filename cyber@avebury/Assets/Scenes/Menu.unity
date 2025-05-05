@@ -6665,10 +6665,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8149044042654234836, guid: 3058f79db5cf0c94398e3e1549fc725f, type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -7997,6 +7993,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3895714177419410241, guid: 3058f79db5cf0c94398e3e1549fc725f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4446679583390080756, guid: 3058f79db5cf0c94398e3e1549fc725f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7868089942469685191, guid: 3058f79db5cf0c94398e3e1549fc725f, type: 3}
       propertyPath: m_Name
       value: Button
@@ -8004,10 +8008,6 @@ PrefabInstance:
     - target: {fileID: 7868089942469685191, guid: 3058f79db5cf0c94398e3e1549fc725f, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8149044042654234836, guid: 3058f79db5cf0c94398e3e1549fc725f, type: 3}
-      propertyPath: m_Interactable
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
