@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae03ad3b28724e24b97b03b09296fa1b, type: 3}
   m_Name: Son of Cipher Talk 1
   m_EditorClassIdentifier: 
-  m_fps: 10
+  m_fps: 14
   m_loopMode: 0
   m_frames:
-  - {fileID: -1489234191, guid: 94bd269c8519d2c4b89f8ecbf083229b, type: 3}
-  - {fileID: 641575976, guid: 94bd269c8519d2c4b89f8ecbf083229b, type: 3}
+  - {fileID: -2109141455, guid: 84d1917c3b8ab4b4f8b658fa6d6ef632, type: 3}
+  - {fileID: -492616052, guid: 84d1917c3b8ab4b4f8b658fa6d6ef632, type: 3}
+  - {fileID: 636943347, guid: 84d1917c3b8ab4b4f8b658fa6d6ef632, type: 3}

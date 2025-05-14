@@ -15,5 +15,5 @@ MonoBehaviour:
   m_fps: 12
   m_loopMode: 1
   m_frames:
-  - {fileID: 641575976, guid: 94bd269c8519d2c4b89f8ecbf083229b, type: 3}
-  - {fileID: -1288480031, guid: 94bd269c8519d2c4b89f8ecbf083229b, type: 3}
+  - {fileID: 636943347, guid: 84d1917c3b8ab4b4f8b658fa6d6ef632, type: 3}
+  - {fileID: 1024497476, guid: 84d1917c3b8ab4b4f8b658fa6d6ef632, type: 3}
