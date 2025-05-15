@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc0643aff4df7bc49a81c411f4cfe0b2, type: 3}
+  m_Name: Splicer Fail
+  m_EditorClassIdentifier: 
+  m_lines:
+  - m_maxUses: -1
+    m_uses: 0
+    m_shouldLoadNextScene: 0
+    m_loadSceneIndex: 0
+    m_lines:
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: OHHHHH TOO BAD. WOW. THAT'S A SHAME. IT'S OKAY TO GIVE UP IF YOU'RE
+        NOT UP TO IT
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: I'D RECOMMEND IT, INFACT. IT'S PROBABLY A BEAUTIFUL DAY. I CAN'T TELL.
+  - m_maxUses: -1
+    m_uses: 0
+    m_shouldLoadNextScene: 0
+    m_loadSceneIndex: 0
+    m_lines:
+    - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
+      m_expression: 0
+      m_line: Oh no! Remember to be patient - missing will send your worm backwards,
+        so make sure you tap when it counts!
+  - m_maxUses: -1
+    m_uses: 0
+    m_shouldLoadNextScene: 0
+    m_loadSceneIndex: 0
+    m_lines:
+    - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
+      m_expression: 0
+      m_line: I Heard iff UYou cut a worm in Half it becomes 2 worms :) but I think
+        It Might Be A Mythg So DOn't Do It Ok?

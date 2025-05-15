@@ -313,9 +313,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa0b5bbd7c963749a621cd1fe0894f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_beginDialogue: {fileID: 0}
+  m_beginDialogue: {fileID: 11400000, guid: 66bdedcd78aaf6e4788c2934bec98450, type: 2}
   m_passDialogue: {fileID: 0}
-  m_failDialogue: {fileID: 0}
+  m_failDialogue: {fileID: 11400000, guid: f24235b4cb8cf3949b317b3ada4c9b96, type: 2}
 --- !u!1 &6682805616455051213
 GameObject:
   m_ObjectHideFlags: 0
