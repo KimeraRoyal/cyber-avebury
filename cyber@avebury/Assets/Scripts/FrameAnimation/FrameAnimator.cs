@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace KR
 {
@@ -13,6 +14,8 @@ namespace KR
 
         private int m_currentFrame;
         private float m_timer;
+
+        private bool m_playing = true;
 
         public FrameAnimation Animation
         {
@@ -44,12 +47,15 @@ namespace KR
             }
         }
 
+        public UnityEvent OnFinished;
+
         public void ResetAnimation()
         {
             if(!m_animation) { return; }
             
             m_timer = 0.0f;
             m_currentFrame = 0;
+            m_playing = true;
             ChangeFrame(0);
         }
 
@@ -71,6 +77,13 @@ namespace KR
                 updateFrame = true;
             }
             if(!updateFrame) { return; }
+
+            var playing = !m_animation.IsLastFrame(m_currentFrame);
+            if (m_playing != playing)
+            {
+                m_playing = playing;
+                OnFinished?.Invoke();
+            }
 
             ChangeFrame(m_currentFrame++);
         }

@@ -11,6 +11,8 @@ namespace CyberAvebury
     {
         private Minigame m_minigame;
         private Antivirus m_antivirus;
+
+        private ExplosionPool m_explosions;
         
         private ProjectileTarget m_target;
 
@@ -29,7 +31,7 @@ namespace CyberAvebury
         private float m_timer;
 
         private Sequence m_flyingSequence;
-        private bool m_flyingOff;
+        private bool m_despawning;
         
         public UnityEvent<Enemy> OnDespawn;
 
@@ -46,6 +48,8 @@ namespace CyberAvebury
         {
             m_minigame = GetComponentInParent<Minigame>();
             m_antivirus = m_minigame.GetComponent<Antivirus>();
+
+            m_explosions = m_minigame.GetComponentInChildren<ExplosionPool>();
             
             m_minigame.OnDifficultySet.AddListener(OnDifficultySet);
             m_minigame.OnFailed.AddListener(FlyOff);
@@ -67,12 +71,12 @@ namespace CyberAvebury
             m_timer = 0.0f;
 
             if(m_flyingSequence is {active: true}) { m_flyingSequence?.Kill(); }
-            m_flyingOff = false;
+            m_despawning = false;
         }
 
         private void Update()
         {
-            if(!m_target.Hittable || m_flyingOff) { return; }
+            if(!m_target.Hittable || m_despawning) { return; }
             
             m_timer += Time.deltaTime;
             if(m_timer < m_lifetime) { return; }
@@ -83,7 +87,7 @@ namespace CyberAvebury
         private void OnHit(Projectile _projectile)
         {
             m_antivirus.ChangeScore(1);
-            OnDespawn?.Invoke(this);
+            Explode();
         }
 
         private void OnDifficultySet(float _difficulty)
@@ -93,8 +97,8 @@ namespace CyberAvebury
 
         public void FlyOff()
         {
-            if(m_flyingOff) { return; }
-            m_flyingOff = true;
+            if(m_despawning) { return; }
+            m_despawning = true;
             
             if(m_flyingSequence is {active: true}) { m_flyingSequence?.Kill(); }
             
@@ -105,6 +109,17 @@ namespace CyberAvebury
             
             m_flyingSequence.Append(transform.DOMove(endPosition, duration).SetEase(m_failAscendEase));
             m_flyingSequence.AppendCallback(() => OnDespawn?.Invoke(this));
+        }
+
+        public void Explode()
+        {
+            if(m_despawning) { return; }
+            m_despawning = true;
+            
+            var explosion = m_explosions.Get();
+            explosion.transform.position = transform.position;
+            
+            OnDespawn?.Invoke(this);
         }
     }
 }

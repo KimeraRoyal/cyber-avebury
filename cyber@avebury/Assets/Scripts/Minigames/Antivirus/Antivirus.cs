@@ -26,6 +26,8 @@ namespace CyberAvebury
 
         public void ChangeScore(int _amount)
         {
+            if(!m_minigame.IsPlaying) { return; }
+            
             m_currentScore = Math.Max(0, m_currentScore + _amount);
             OnScoreUpdated?.Invoke(m_currentScore);
             

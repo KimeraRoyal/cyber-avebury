@@ -24,7 +24,7 @@ namespace KR
         public int FPS => m_fps;
 
         public Sprite[] Frames => m_frames;
-
+        
         public Sprite GetFrame(int _currentFrame)
             => m_frames[m_frames.Length <= 1 ? 0 : m_loopMode switch
             {
@@ -35,6 +35,18 @@ namespace KR
                 LoopMode.RandomNoRepeat => GetRandomFrameNoRepeat(_currentFrame),
                 _ => throw new ArgumentOutOfRangeException()
             }];
+
+        public bool IsLastFrame(int _currentFrame)
+        {
+            switch (m_loopMode)
+            {
+                case LoopMode.None:
+                    return _currentFrame >= m_frames.Length - 1;
+                    break;
+                default:
+                    return false;
+            }
+        }
 
         private int GetPingPongFrameIndex(int _currentFrame)
         {

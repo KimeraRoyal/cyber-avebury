@@ -198,6 +198,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.05882353
       objectReference: {fileID: 0}
+    - target: {fileID: 4939644927281248700, guid: f1327d47be86b5c4389d553a2f9add2e, type: 3}
+      propertyPath: m_explosionPrefab
+      value: 
+      objectReference: {fileID: 8164563494075132300, guid: 4941628fcde17274d9348fde378432bd, type: 3}
     - target: {fileID: 5749360240123511910, guid: f1327d47be86b5c4389d553a2f9add2e, type: 3}
       propertyPath: m_shieldPrefab
       value: 

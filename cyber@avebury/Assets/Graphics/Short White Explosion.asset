@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae03ad3b28724e24b97b03b09296fa1b, type: 3}
+  m_Name: Short White Explosion
+  m_EditorClassIdentifier: 
+  m_fps: 16
+  m_loopMode: 0
+  m_frames:
+  - {fileID: 718367149, guid: eee2da9c4da6e1843a69e728eed22e99, type: 3}
+  - {fileID: -329064692, guid: eee2da9c4da6e1843a69e728eed22e99, type: 3}
+  - {fileID: -1335120149, guid: eee2da9c4da6e1843a69e728eed22e99, type: 3}
+  - {fileID: -1699291736, guid: eee2da9c4da6e1843a69e728eed22e99, type: 3}
+  - {fileID: 1629452648, guid: eee2da9c4da6e1843a69e728eed22e99, type: 3}
+  - {fileID: 226199036, guid: eee2da9c4da6e1843a69e728eed22e99, type: 3}
+  - {fileID: -1317177870, guid: eee2da9c4da6e1843a69e728eed22e99, type: 3}
+  - {fileID: -1103613618, guid: eee2da9c4da6e1843a69e728eed22e99, type: 3}
+  - {fileID: 1498739359, guid: eee2da9c4da6e1843a69e728eed22e99, type: 3}
+  - {fileID: -1741943465, guid: eee2da9c4da6e1843a69e728eed22e99, type: 3}
+  - {fileID: -2006970933, guid: eee2da9c4da6e1843a69e728eed22e99, type: 3}
+  - {fileID: 1601700009, guid: eee2da9c4da6e1843a69e728eed22e99, type: 3}
+  - {fileID: -1877126538, guid: eee2da9c4da6e1843a69e728eed22e99, type: 3}
+  - {fileID: -1520357135, guid: eee2da9c4da6e1843a69e728eed22e99, type: 3}
+  - {fileID: 21300000, guid: 98bed5a94c4b41440863f771ba3e6bad, type: 3}

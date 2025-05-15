@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91b2056808a46619e68fda3f2ebca81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_spawnDialogue: {fileID: 11400000, guid: 48af232ea2167774db9f7c0e7794df80, type: 2}
+  m_dialogues: []
   m_defeatDialogue: {fileID: 11400000, guid: 9f10d2abaabea694ab9d06eb1905566e, type: 2}
 --- !u!1 &4579580083427284221
 GameObject:
@@ -453,7 +453,7 @@ Transform:
   m_GameObject: {fileID: 8351282807498240420}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
