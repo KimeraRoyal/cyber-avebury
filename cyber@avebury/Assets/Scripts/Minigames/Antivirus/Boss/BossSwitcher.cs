@@ -68,9 +68,10 @@ namespace CyberAvebury
             var score = m_antivirus.TargetScore;
             for (var i = 0; i < score; i++)
             {
-                m_antivirus.ChangeScore(-1);
+                m_antivirus.ChangeScore(-1, true);
                 yield return new WaitForSeconds(m_scoreResetDelay);
             }
+            m_antivirus.ChangeScore(0, true);
             
             yield return new WaitUntil(() => !m_dialogue.HasDialogue);
             

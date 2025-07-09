@@ -24,11 +24,22 @@ namespace CyberAvebury
         public UnityEvent<int> OnTargetScoreInitialized;
         public UnityEvent<int> OnScoreUpdated;
 
-        public void ChangeScore(int _amount)
+        public void ChangeScore(int _amount, bool _ignorePlayCheck = false)
         {
-            if(!m_minigame.IsPlaying) { return; }
+            if(!m_minigame.IsPlaying && !_ignorePlayCheck) { return; }
             
             m_currentScore = Math.Max(0, m_currentScore + _amount);
+            OnScoreUpdated?.Invoke(m_currentScore);
+            
+            if(m_currentScore < m_targetScore) { return; }
+            m_minigame.Pass();
+        }
+
+        public void SetScore(int _amount, bool _ignorePlayCheck = false)
+        {
+            if(!m_minigame.IsPlaying && !_ignorePlayCheck) { return; }
+            
+            m_currentScore = Math.Clamp(_amount, 0, m_targetScore);
             OnScoreUpdated?.Invoke(m_currentScore);
             
             if(m_currentScore < m_targetScore) { return; }
