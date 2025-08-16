@@ -693,6 +693,9 @@ MonoBehaviour:
   m_animation: {fileID: 11400000, guid: eb211e0ca51cbbe489effaaf699139a1, type: 2}
   m_speed: 1
   m_frameOffset: 0
+  OnFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &285824084
 GameObject:
   m_ObjectHideFlags: 0
@@ -6850,6 +6853,9 @@ MonoBehaviour:
   m_animation: {fileID: 11400000, guid: eb211e0ca51cbbe489effaaf699139a1, type: 2}
   m_speed: 1
   m_frameOffset: 0
+  OnFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1230798559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7005,6 +7011,9 @@ MonoBehaviour:
   m_animation: {fileID: 11400000, guid: eb211e0ca51cbbe489effaaf699139a1, type: 2}
   m_speed: 1
   m_frameOffset: 0
+  OnFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1347048479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8167,22 +8176,25 @@ MonoBehaviour:
 
     Developed in Unity 2023.2.20f1, (C) Unity Technologies
 
-    Niantic
-    Lightship & Maps (C) Niantic Inc
+    DOTween
+    (C) Demigiant
 
-    DOTween (C) Demigiant
-
-    Odin Inspector
-    & Serializer (C) Sirenix ApS
+    Odin Inspector & Serializer (C) Sirenix ApS
 
 
-    - SCRIPTS -
+    - SCRIPTS
+    -
 
-    Unity shader stories - Rendering
-    the wireframe over an object (C) Firnox (https://www.youtube.com/watch?v=nr5QmPo-HxY)
+    Unity shader stories - Rendering the wireframe over an object (C) Firnox
+    (https://www.youtube.com/watch?v=nr5QmPo-HxY)
 
-    Unity
-    Sprite Shader Radial Fill (C) Njrwolf (https://github.com/Nrjwolf/unity-shader-sprite-radial-fill)
+    Unity Sprite Shader Radial
+    Fill (C) Njrwolf (https://github.com/Nrjwolf/unity-shader-sprite-radial-fill)
+
+    UnityGPSConverter
+    originally by Michael Taylor
+
+    https://github.com/MichaelTaylor3D/UnityGPSConverter/tree/master
 
 
     -
