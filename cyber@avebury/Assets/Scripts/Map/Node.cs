@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using CyberAvebury.Minigames;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -79,6 +80,7 @@ namespace CyberAvebury
         }
 
         // TODO: It'd be cool to point the camera at nodes and unlock them one by one. But like. lol
+        [Button("Unlock Node")]
         public void Unlock()
         {
             if (CurrentState != NodeState.Locked) { return; }
@@ -88,6 +90,7 @@ namespace CyberAvebury
             Complete();
         }
 
+        [Button("Complete")]
         public void Complete()
         {
             if(CurrentState == NodeState.Completed) { return; }
