@@ -48,10 +48,10 @@ namespace CyberAvebury
         {
             if(_node && m_player.GetDistanceToPoint(_node.transform.position) > m_maxDistanceMeters) { return; }
 
+            m_selectedNode?.Deselect();
             m_selectedNode = _node;
-            
-            _node?.Select();
-            OnNodeSelected?.Invoke(_node);
+            m_selectedNode?.Select();
+            OnNodeSelected?.Invoke(m_selectedNode);
         }
 
         public void LoadSelectedMinigame()

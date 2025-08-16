@@ -45,6 +45,7 @@ namespace CyberAvebury
         public static Action<Node, Node> OnNodesConnected;
 
         public UnityEvent OnSelected;
+        public UnityEvent OnDeselected;
 
         public UnityEvent<NodeState> OnStateChanged;
 
@@ -70,6 +71,11 @@ namespace CyberAvebury
         public void Select()
         {
             OnSelected?.Invoke();
+        }
+
+        public void Deselect()
+        {
+            OnDeselected?.Invoke();
         }
 
         // TODO: It'd be cool to point the camera at nodes and unlock them one by one. But like. lol
