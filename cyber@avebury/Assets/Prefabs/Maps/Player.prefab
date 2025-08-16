@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8850949312802809396}
   - component: {fileID: 3460673973428951640}
-  - component: {fileID: 4919946582429681169}
   - component: {fileID: 133979539120343319}
   m_Layer: 8
   m_Name: Player
@@ -57,23 +56,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4919946582429681169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2963093512880059790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eff025434e0af14f99583394999dfca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lightshipMapView: {fileID: 0}
-  _editorMovementSpeed: 15
-  _camera: {fileID: 0}
-  m_accuracy: 10
-  m_updateDistance: 10
 --- !u!114 &133979539120343319
 MonoBehaviour:
   m_ObjectHideFlags: 0

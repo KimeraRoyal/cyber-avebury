@@ -7,6 +7,8 @@ namespace CyberAvebury
     public class NodeSelection : MonoBehaviour
     {
         private MinigameLoader m_loader;
+
+        private GPS m_gps;
         private Player m_player;
 
         [SerializeField] private float m_maxDistanceMeters = 30.0f;
@@ -22,7 +24,7 @@ namespace CyberAvebury
             {
                 if (m_maxDistance < 0.0f)
                 {
-                    m_maxDistance = m_player.MetersToScene(m_maxDistanceMeters);
+                    m_maxDistance = m_gps.MetersToScene(m_maxDistanceMeters);
                 }
                 return m_maxDistance;
             }
@@ -38,6 +40,7 @@ namespace CyberAvebury
             m_loader.OnMinigameLoaded.AddListener(OnMinigameLoaded);
             m_loader.OnMinigameUnloaded.AddListener(OnMinigameUnloaded);
 
+            m_gps = FindAnyObjectByType<GPS>();
             m_player = FindAnyObjectByType<Player>();
         }
 

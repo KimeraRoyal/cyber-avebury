@@ -1,5 +1,4 @@
 ﻿using CyberAvebury.Minigames;
-using Niantic.Lightship.Maps.Core.Coordinates;
 using UnityEngine;
 
 namespace CyberAvebury
@@ -15,7 +14,7 @@ namespace CyberAvebury
         [SerializeField] private NodeState m_defaultState = NodeState.Locked;
 
         [SerializeField] private Minigame m_minigame;
-        [SerializeField] [UnityEngine.Range(0.0f, 1.0f)] private float m_minigameDifficulty = 0.0f;
+        [SerializeField] [Range(0.0f, 1.0f)] private float m_minigameDifficulty = 0.0f;
 
         [SerializeField] private DialogueLinesObject m_unlockedLines;
         [SerializeField] private DialogueLinesObject m_selectedLines;

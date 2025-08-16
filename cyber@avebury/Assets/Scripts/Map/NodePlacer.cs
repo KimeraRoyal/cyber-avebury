@@ -1,4 +1,3 @@
-using Niantic.Lightship.Maps.MapLayers.Components;
 using UnityEngine;
 
 namespace CyberAvebury
@@ -6,14 +5,18 @@ namespace CyberAvebury
     [RequireComponent(typeof(Nodes))]
     public class NodePlacer : MonoBehaviour
     {
-        private Nodes m_nodes;
+        private GPS m_gps;
         
-        [SerializeField] private LayerGameObjectPlacement m_spawner;
+        private Nodes m_nodes;
 
+        [SerializeField] private Node m_nodePrefab;
+        
         [SerializeField] private NodeInfo[] m_nodeInfo;
 
         private void Awake()
         {
+            m_gps = FindAnyObjectByType<GPS>();
+            
             m_nodes = GetComponent<Nodes>();
         }
 
@@ -23,10 +26,9 @@ namespace CyberAvebury
             for(var i = 0; i < m_nodeInfo.Length; i++)
             {
                 var nodeInfo = m_nodeInfo[i];
-                
-                var placedObject = m_spawner.PlaceInstance(nodeInfo.Coordinates, Quaternion.identity);
-                
-                var placedNode = placedObject.Value.GetComponent<Node>();
+
+                var placedNode = m_gps.PlaceObjectAt(m_nodePrefab, nodeInfo.Coordinates, Quaternion.identity);
+                placedNode.transform.parent = transform;
                 placedNode.AssignInformation(nodeInfo);
                 nodes[i] = placedNode;
             }
