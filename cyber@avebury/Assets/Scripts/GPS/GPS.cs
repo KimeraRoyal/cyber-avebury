@@ -9,6 +9,8 @@ namespace CyberAvebury
 
         public LatLng Origin => m_origin;
 
+        public float MapScale => m_mapScale;
+
         private void Awake()
         {
             GPSEncoder.SetLocalOrigin(m_origin);

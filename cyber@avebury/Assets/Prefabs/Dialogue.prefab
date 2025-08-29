@@ -130,6 +130,9 @@ MonoBehaviour:
   m_animation: {fileID: 0}
   m_speed: 1
   m_frameOffset: 0
+  OnFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6664689672929413825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1104,7 +1107,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &2938993827094882053
 MonoBehaviour:
@@ -1319,6 +1322,9 @@ MonoBehaviour:
   m_animation: {fileID: 11400000, guid: 44db7b40f17295d4faa4e8b841293254, type: 2}
   m_speed: 1
   m_frameOffset: 0
+  OnFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4061359794925602113
 MonoBehaviour:
   m_ObjectHideFlags: 0

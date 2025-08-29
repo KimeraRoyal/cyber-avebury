@@ -6,11 +6,21 @@ namespace CyberAvebury
 {
     public class PlayerController : MonoBehaviour
     {
+        public enum GPSState
+        {
+            Default,
+            Initialising,
+            Failed,
+            Active,
+            Disconnected
+        }
+        
         private GPS m_gps;
 
         [SerializeField] private float m_accuracy = 10.0f;
         [SerializeField] private float m_updateDistance = 10.0f;
 
+        private GPSState m_state;
         private double m_lastUpdateTime;
 
 #if DEBUG
@@ -19,6 +29,8 @@ namespace CyberAvebury
         [SerializeField] private float m_movementSpeed = 1.0f;
         [SerializeField] private float m_rotationSpeed = 1.0f;
 #endif
+
+        public GPSState State => m_state;
 
         private void Awake()
         {
@@ -40,16 +52,23 @@ namespace CyberAvebury
 
         private IEnumerator GpsMovement()
         {
-            if (Application.isEditor) { yield break; }
+            if (Application.isEditor)
+            {
+                m_state = GPSState.Active;
+                yield break;
+            }
 
             yield return AuthorizePermission(Permission.FineLocation);
             if (!Input.location.isEnabledByUser)
             {
                 Debug.LogError("User has location services disabled.");
+                m_state = GPSState.Failed;
                 yield break;
             }
             
             Input.location.Start(m_accuracy, m_updateDistance);
+            m_state = GPSState.Initialising;
+            
             var maxWait = 20;
             while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
             {
@@ -60,15 +79,18 @@ namespace CyberAvebury
             if (maxWait < 1)
             {
                 Debug.LogError("Location services timed out.");
+                m_state = GPSState.Failed;
                 yield break;
             }
             
             if (Input.location.status == LocationServiceStatus.Failed)
             {
                 Debug.LogError("Location services failed to initialise.");
+                m_state = GPSState.Failed;
                 yield break;
             }
             
+            m_state = GPSState.Active;
             while (isActiveAndEnabled)
             {
                 var gpsInfo = Input.location.lastData;
@@ -82,6 +104,7 @@ namespace CyberAvebury
                 yield return null;
             }
             Input.location.Stop();
+            m_state = GPSState.Disconnected;
         }
 
         private void MoveToCoordinates(LatLng _coordinates)
