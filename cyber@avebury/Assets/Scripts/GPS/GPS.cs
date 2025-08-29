@@ -7,6 +7,8 @@ namespace CyberAvebury
         [SerializeField] private LatLng m_origin;
         [SerializeField] private float m_mapScale = 1.0f;
 
+        public LatLng Origin => m_origin;
+
         private void Awake()
         {
             GPSEncoder.SetLocalOrigin(m_origin);
