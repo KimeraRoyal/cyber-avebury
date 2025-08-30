@@ -166,5 +166,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: {x: 0, y: 10, z: 0}
+  m_randomStart: 1
   m_minSpeedFactor: -1
   m_maxSpeedFactor: 1

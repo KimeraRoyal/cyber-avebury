@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
-  m_Name: Stone 30
+  m_Name: Path 2
   m_EditorClassIdentifier: 
-  m_coordinates: 51.428880409712185, -1.8564340304322058
+  m_coordinates: 51.42742854467413, -1.8516857386639383
   m_connections:
-  - {fileID: 11400000, guid: c21900a6efcfb774a96121a2c42a7aea, type: 2}
+  - {fileID: 11400000, guid: 6fe0fea3c970d404093d33f4171bcab7, type: 2}
   m_defaultState: 0
-  m_minigame: {fileID: 5051228930626253067, guid: e0d23207fc09c954ebe23de5927d6285, type: 3}
+  m_minigame: {fileID: 0}
   m_minigameDifficulty: 0
   m_unlockedLines: {fileID: 0}
   m_selectedLines: {fileID: 0}
