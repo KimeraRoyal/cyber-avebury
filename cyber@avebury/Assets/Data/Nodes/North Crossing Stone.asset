@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
   m_Name: North Crossing Stone
   m_EditorClassIdentifier: 
-  m_coordinates: 51.429881530005204, -1.855232160819691
+  m_coordinates: 51.429869223515105, -1.855360556625453
   m_connections:
   - {fileID: 11400000, guid: c65eeab609b456242980cd917f894a1f, type: 2}
   m_defaultState: 0

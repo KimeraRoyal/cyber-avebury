@@ -7,10 +7,13 @@ Shader "Unmoving Plaid/Unmoving Plaid (Unlit)"
         _Color("Color", Color) = (1, 1, 1, 1)
         
         _FitAspectRatio("Fit to Aspect Ratio", Integer) = 1
+        
+        [Enum(UnityEngine.Rendering.CullMode)] _Cull ("Cull", Float) = 0
     }
     SubShader
     {
         Tags { "RenderType"="Opaque" }
+        Cull [_Cull]
         LOD 100
 
         Pass

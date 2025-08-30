@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Subnode Orb
+  m_Name: Mini-Node Orb
   m_Shader: {fileID: 4800000, guid: ac6ee88e526ee6d4ab38fcae1c90e727, type: 3}
   m_Parent: {fileID: 2100000, guid: 429e50863b8338741b36b768520d1d3e, type: 2}
   m_ModifiedSerializedProperties: 0
@@ -26,5 +26,5 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 0.115384616, g: 0.3, b: 0.115384616, a: 1}
+    - _Color: {r: 0, g: 0.5, b: 0, a: 1}
   m_BuildTextureStacks: []

@@ -7,21 +7,37 @@ namespace CyberAvebury
     public class FeaturePlacer : MonoBehaviour
     {
         [Serializable]
-        private class PlaceableFeature
+        public class FeatureInfo
         {
-            [SerializeField] private LatLng m_coordinates;
-            [SerializeField] private Feature m_featurePrefab;
+            [SerializeField] private string m_coordinates;
+            [SerializeField] private float m_rotation;
 
-            public Feature Place(GPS _gps, Transform _parent)
+            public string Coordinates => m_coordinates;
+            public float Rotation => m_rotation;
+        }
+
+        [Serializable]
+        public class FeatureSet
+        {
+            [SerializeField] private Feature m_featurePrefab;
+            [SerializeField] private FeatureInfo[] m_features;
+
+            public void PlaceFeatures(GPS _gps, List<Feature> _features, Transform _parent)
             {
-                var feature = Instantiate(m_featurePrefab, _gps.GetScenePosition(m_coordinates), Quaternion.identity, _parent);
-                return feature;
+                foreach (var featureInfo in m_features)
+                {
+                    if(!LatLng.FromString(featureInfo.Coordinates, out var coordinates)) { continue; }
+                    
+                    var rotation = Quaternion.Euler(0.0f, -featureInfo.Rotation, 0.0f);
+                    var feature = Instantiate(m_featurePrefab, _gps.GetScenePosition(coordinates), rotation, _parent);
+                    _features.Add(feature);
+                }
             }
         }
 
         private GPS m_gps;
         
-        [SerializeField] private PlaceableFeature[] m_features;
+        [SerializeField] private FeatureSet[] m_featureSets;
 
         private List<Feature> m_placedFeatures;
 
@@ -36,10 +52,9 @@ namespace CyberAvebury
 
         private void Start()
         {
-            foreach (var feature in m_features)
+            foreach (var featureSet in m_featureSets)
             {
-                var placedFeature = feature.Place(m_gps, transform);
-                m_placedFeatures.Add(placedFeature);
+                featureSet.PlaceFeatures(m_gps, m_placedFeatures, transform);
             }
         }
     }
