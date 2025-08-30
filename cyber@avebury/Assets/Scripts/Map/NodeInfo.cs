@@ -42,12 +42,8 @@ namespace CyberAvebury
 
         private void ConvertCoordinates(string _coordinates)
         {
-            var splitCoordinates = _coordinates.Split(", ");
-            if(splitCoordinates.Length != 2) { return; }
-            
-            if(!double.TryParse(splitCoordinates[0], out var latitude)) { return; }
-            if(!double.TryParse(splitCoordinates[1], out var longitude)) { return; }
-            m_storedCoordinates = new LatLng(latitude, longitude);
+            if(!LatLng.FromString(_coordinates, out var coordinates)) { return; }
+            m_storedCoordinates = coordinates;
         }
     }
 }
