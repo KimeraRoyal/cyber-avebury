@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5925127029541059623}
   - component: {fileID: 7204671507350692452}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 6018248022863787521}
   - component: {fileID: 8299676621979173290}
   - component: {fileID: 8661897575917310666}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,15 +371,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2409230445982889649, guid: 0f25e951877a43e498d0b443d7c21b8a, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2920341062885504948, guid: 0f25e951877a43e498d0b443d7c21b8a, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6791554827598046312, guid: 0f25e951877a43e498d0b443d7c21b8a, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8474522264964033233, guid: 0f25e951877a43e498d0b443d7c21b8a, type: 3}
       propertyPath: m_Color.g
