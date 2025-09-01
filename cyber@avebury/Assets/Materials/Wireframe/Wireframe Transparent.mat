@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wireframe Building
+  m_Name: Wireframe Transparent
   m_Shader: {fileID: 4800000, guid: ac6ee88e526ee6d4ab38fcae1c90e727, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -130,6 +130,7 @@ Material:
     - _WireframeAliasing: 2.1
     - _ZWrite: 1
     m_Colors:
+    - _BackColor: {r: 0.0034161867, g: 0.15, b: 0, a: 1}
     - _BaseColor: {r: 0.4627451, g: 0.06666667, b: 0.7137255, a: 1}
     - _Color: {r: 0, g: 1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
