@@ -9,6 +9,8 @@ namespace CyberAvebury
         [SerializeField] private string m_coordinates;
         private LatLng? m_storedCoordinates;
 
+        [SerializeField] private Node m_prefab;
+        
         [SerializeField] private NodeInfo[] m_connections;
 
         [SerializeField] private NodeState m_defaultState = NodeState.Locked;
@@ -19,6 +21,8 @@ namespace CyberAvebury
         [SerializeField] private DialogueLinesObject m_unlockedLines;
         [SerializeField] private DialogueLinesObject m_selectedLines;
         [SerializeField] private DialogueLinesObject m_completedLines;
+
+        public Node Prefab => m_prefab;
         
         public LatLng Coordinates
         {

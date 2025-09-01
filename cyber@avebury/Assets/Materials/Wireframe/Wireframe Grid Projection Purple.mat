@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wireframe Grid Projection
+  m_Name: Wireframe Grid Projection Purple
   m_Shader: {fileID: 4800000, guid: 35e697090bfdf00458458c71cf19ea35, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -96,7 +96,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossinessSource: 0
     - _GlossyReflections: 1
-    - _HueShift: 0
+    - _HueShift: -0.7
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1

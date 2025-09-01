@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: The Obelisk
   m_EditorClassIdentifier: 
   m_coordinates: 51.42808437350428, -1.8535187706686593
+  m_prefab: {fileID: 6619601620042256070, guid: f46b15a56a421bd4bb4025154b1b8f65, type: 3}
   m_connections: []
   m_defaultState: 0
   m_minigame: {fileID: 3900144578656284558, guid: 9d8ecaa497c71934aa28c0f0c3df559d, type: 3}

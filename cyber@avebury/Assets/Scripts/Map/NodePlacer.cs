@@ -26,8 +26,9 @@ namespace CyberAvebury
             for(var i = 0; i < m_nodeInfo.Length; i++)
             {
                 var nodeInfo = m_nodeInfo[i];
-
-                var placedNode = m_gps.PlaceObjectAt(m_nodePrefab, nodeInfo.Coordinates, Quaternion.identity);
+                var prefab = nodeInfo.Prefab ? nodeInfo.Prefab : m_nodePrefab;
+                
+                var placedNode = m_gps.PlaceObjectAt(prefab, nodeInfo.Coordinates, Quaternion.identity);
                 placedNode.transform.parent = transform;
                 placedNode.AssignInformation(nodeInfo);
                 nodes[i] = placedNode;

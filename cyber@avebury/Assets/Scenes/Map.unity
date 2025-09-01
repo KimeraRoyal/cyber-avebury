@@ -2242,6 +2242,8 @@ MonoBehaviour:
       m_rotation: 0
     - m_coordinates: 51.42874501535221, -1.8534388696248223
       m_rotation: 0
+    - m_coordinates: 51.429924609016616, -1.855155480437299
+      m_rotation: 0
   - m_featurePrefab: {fileID: 8362520852798491240, guid: 23255fd08811aea4eb87ddc9634ec5fd, type: 3}
     m_features:
     - m_coordinates: 51.428483085096005, -1.8538962819877878
@@ -2268,6 +2270,68 @@ MonoBehaviour:
     m_features:
     - m_coordinates: 51.427708548924606, -1.8571052643512247
       m_rotation: 19.0514
+  - m_featurePrefab: {fileID: 3315211102131117992, guid: d2dfcf8c7e745734e870d114c27e00ae, type: 3}
+    m_features:
+    - m_coordinates: 51.42996937084177, -1.8553028322046436
+      m_rotation: 0
+    - m_coordinates: 51.42989580472682, -1.8551995593818242
+      m_rotation: 0
+    - m_coordinates: 51.429889533670895, -1.8552632618459681
+      m_rotation: 0
+    - m_coordinates: 51.429813444790575, -1.8555019784484432
+      m_rotation: 0
+    - m_coordinates: 51.42956122915223, -1.8560034008210429
+      m_rotation: 0
+    - m_coordinates: 51.429484925733675, -1.8560995966893243
+      m_rotation: 0
+    - m_coordinates: 51.42939221793468, -1.8561699252114898
+      m_rotation: 0
+    - m_coordinates: 51.42800676962751, -1.8561704457799473
+      m_rotation: 0
+    - m_coordinates: 51.4279522707351, -1.8560880609396628
+      m_rotation: 0
+    - m_coordinates: 51.42790027747836, -1.8560106995652599
+      m_rotation: 0
+    - m_coordinates: 51.427846404884804, -1.8559313288045147
+      m_rotation: 0
+    - m_coordinates: 51.42776496944848, -1.8558298547939416
+      m_rotation: 0
+    - m_coordinates: 51.427692930287655, -1.855714315078936
+      m_rotation: 0
+    - m_coordinates: 51.427624649586924, -1.8555937518980605
+      m_rotation: 0
+    - m_coordinates: 51.427496982106206, -1.8553524903190972
+      m_rotation: 0
+    - m_coordinates: 51.42737044293655, -1.8551083498778236
+      m_rotation: 0
+    - m_coordinates: 51.42737044293655, -1.855103326411954
+      m_rotation: 0
+    - m_coordinates: 51.42726708147361, -1.8548883220727264
+      m_rotation: 0
+    - m_coordinates: 51.42714346802005, -1.8536542509948868
+      m_rotation: 0
+    - m_coordinates: 51.42811853685585, -1.8541417746871396
+      m_rotation: 0
+    - m_coordinates: 51.42801976698909, -1.8541327459767123
+      m_rotation: 0
+    - m_coordinates: 51.427918949858324, -1.8541146885558584
+      m_rotation: 0
+    - m_coordinates: 51.42768534866298, -1.8538227624897987
+      m_rotation: 0
+    - m_coordinates: 51.42772541091056, -1.8536230257070982
+      m_rotation: 0
+    - m_coordinates: 51.427867766085576, -1.853576182275041
+      m_rotation: 0
+    - m_coordinates: 51.42789181895073, -1.8534842535870566
+      m_rotation: 0
+    - m_coordinates: 51.42790000715727, -1.853586852569182
+      m_rotation: 0
+    - m_coordinates: 51.427941459930274, -1.853389041731644
+      m_rotation: 0
+    - m_coordinates: 51.4281431762346, -1.8536544726727249
+      m_rotation: 0
+    - m_coordinates: 51.42815750551622, -1.8535953756590207
+      m_rotation: 0
 --- !u!1 &1045225641
 GameObject:
   m_ObjectHideFlags: 0
