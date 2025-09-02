@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_coordinates: 51.429234945401184, -1.851632686479023
   m_connections:
-  - {fileID: 11400000, guid: 00e47e8a6058a054994de614c8c9d1d9, type: 2}
+  - {fileID: 11400000, guid: d712cc42e1ddf584ea56a1205ad4d77b, type: 2}
   m_defaultState: 0
   m_minigame: {fileID: 532597550852094343, guid: 6b129d3019a2d07489c61a5e93a987c4, type: 3}
   m_minigameDifficulty: 0.52

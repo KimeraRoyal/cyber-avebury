@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
+  m_Name: Path 1
+  m_EditorClassIdentifier: 
+  m_coordinates: 51.42906065792395, -1.8509342919566762
+  m_connections:
+  - {fileID: 11400000, guid: 00e47e8a6058a054994de614c8c9d1d9, type: 2}
+  m_defaultState: 0
+  m_minigame: {fileID: 0}
+  m_minigameDifficulty: 0
+  m_unlockedLines: {fileID: 0}
+  m_selectedLines: {fileID: 0}
+  m_completedLines: {fileID: 0}

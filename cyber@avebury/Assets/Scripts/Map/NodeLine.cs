@@ -11,20 +11,30 @@ namespace CyberAvebury
 
         [SerializeField] [Range(2, 10)] private int m_segments = 2;
 
-        [SerializeField] private Color m_lockedMainColor;
-        [SerializeField] private Color m_lockedSecondaryColor;
+        [SerializeField] private float m_colorTransitionDuration = 1.0f;
 
-        [SerializeField] private Color m_unlockedMainColor;
-        [SerializeField] private Color m_unlockedSecondaryColor;
-
-        [SerializeField] private Color m_completedMainColor;
-        [SerializeField] private Color m_completedSecondaryColor;
+        [SerializeField] private NodeLineColors m_defaultColors;
         
         private Vector3[] m_positions;
         private bool m_colorsDirty;
         
         private Node m_a;
         private Node m_b;
+
+        private Tween m_colorTransition;
+        private float m_colorTransitionProgress;
+        private GradientColorKey[] m_colorsFrom;
+        private GradientColorKey[] m_colorsTo;
+
+        private float ColorTransitionProgress
+        {
+            get => m_colorTransitionProgress;
+            set
+            {
+                m_colorTransitionProgress = value;
+                UpdateColorTransition();
+            }
+        }
 
         public void Connect(Node _a, Node _b)
         {
@@ -39,7 +49,9 @@ namespace CyberAvebury
             
             m_a.OnStateChanged.AddListener(OnNodeStateChanged);
             m_b.OnStateChanged.AddListener(OnNodeStateChanged);
+            
             m_colorsDirty = true;
+            UpdateColors(false);
         }
 
         private void Awake()
@@ -53,7 +65,6 @@ namespace CyberAvebury
             
             UpdateSegmentCount();
             UpdateLinePositions();
-            UpdateColors();
         }
 
         private void UpdateLinePositions()
@@ -82,11 +93,10 @@ namespace CyberAvebury
         private void OnNodeStateChanged(NodeState _node)
         {
             m_colorsDirty = true;
-            UpdateColors();
+            UpdateColors(false);
         }
 
-        // TODO: Animate this gradient change
-        private void UpdateColors()
+        private void UpdateColors(bool _instant)
         {
             if(!m_colorsDirty) { return; }
             
@@ -100,35 +110,45 @@ namespace CyberAvebury
                 state = NodeState.Unlocked;
             }
 
-            Color mainColor;
-            Color secondaryColor;
-            switch (state)
-            {
-                case NodeState.Locked:
-                    mainColor = m_lockedMainColor;
-                    secondaryColor = m_lockedSecondaryColor;
-                    break;
-                case NodeState.Unlocked:
-                    mainColor = m_unlockedMainColor;
-                    secondaryColor = m_unlockedSecondaryColor;
-                    break;
-                case NodeState.Completed:
-                    mainColor = m_completedMainColor;
-                    secondaryColor = m_completedSecondaryColor;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            var aLineColors = m_a.Info.OverwriteLineColors ? m_a.Info.LineColors : m_defaultColors;
+            aLineColors.GetColors(state, out var aMainColor, out var aSecondaryColor);
+            
+            var bLineColors = m_b.Info.OverwriteLineColors ? m_b.Info.LineColors : m_defaultColors;
+            bLineColors.GetColors(state, out var bMainColor, out var bSecondaryColor);
 
             var gradient = m_lineRenderer.colorGradient;
-            var colorKeys = gradient.colorKeys;
-            colorKeys[0].color = mainColor;
-            colorKeys[1].color = secondaryColor;
-            colorKeys[2].color = mainColor;
-            gradient.SetKeys(colorKeys, gradient.alphaKeys);
-            m_lineRenderer.colorGradient = gradient;
+            m_colorsFrom = gradient.colorKeys;
+            m_colorsTo = gradient.colorKeys;
+            m_colorsTo[0].color = aMainColor;
+            m_colorsTo[1].color = Color.Lerp(aSecondaryColor, bSecondaryColor, 0.5f);
+            m_colorsTo[2].color = bMainColor;
+            
+            if (_instant)
+            {
+                gradient.SetKeys(m_colorsTo, gradient.alphaKeys);
+                m_lineRenderer.colorGradient = gradient;
+            }
+            else
+            {
+                if(m_colorTransition is { active: true }) { m_colorTransition.Kill(); }
+
+                m_colorTransitionProgress = 0.0f;
+                m_colorTransition = DOTween.To(() => ColorTransitionProgress, _value => ColorTransitionProgress = _value, 1.0f, m_colorTransitionDuration);
+            }
             
             m_colorsDirty = false;
+        }
+
+        private void UpdateColorTransition()
+        {
+            var gradient = m_lineRenderer.colorGradient;
+            var colorKeys = gradient.colorKeys;
+            for (var i = 0; i < colorKeys.Length; i++)
+            {
+                colorKeys[i].color = Color.Lerp(m_colorsFrom[i].color, m_colorsTo[i].color, m_colorTransitionProgress);
+            }
+            gradient.SetKeys(colorKeys, gradient.alphaKeys);
+            m_lineRenderer.colorGradient = gradient;
         }
     }
 }

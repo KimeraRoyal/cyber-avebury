@@ -17,8 +17,13 @@ namespace CyberAvebury
             public DialogueLineBase GetDialogue(float _progress)
             {
                 if (m_played || _progress < m_progress) { return null; }
+
+                m_played = true;
                 return m_dialogue.GetLine(); 
             }
+
+            public void DeclarePlayed()
+                => m_played = true;
         }
         
         private Dialogue m_dialogue;
@@ -44,7 +49,10 @@ namespace CyberAvebury
             foreach (var dialogue in m_dialogues)
             {
                 var line = dialogue.GetDialogue(_progress);
-                if(line != null) { m_dialogue.AddLine(line); }
+                if(line == null) { return; }
+                
+                m_dialogue.AddLine(line);
+                dialogue.DeclarePlayed();
             }
         }
 

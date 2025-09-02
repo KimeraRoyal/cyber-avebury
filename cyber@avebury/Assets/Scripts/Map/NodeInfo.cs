@@ -9,6 +9,8 @@ namespace CyberAvebury
         [SerializeField] private string m_coordinates;
         private LatLng? m_storedCoordinates;
 
+        [SerializeField] private Node m_prefab;
+        
         [SerializeField] private NodeInfo[] m_connections;
 
         [SerializeField] private NodeState m_defaultState = NodeState.Locked;
@@ -19,6 +21,11 @@ namespace CyberAvebury
         [SerializeField] private DialogueLinesObject m_unlockedLines;
         [SerializeField] private DialogueLinesObject m_selectedLines;
         [SerializeField] private DialogueLinesObject m_completedLines;
+
+        [SerializeField] private bool m_overwriteLineColors;
+        [SerializeField] private NodeLineColors m_lineColors;
+
+        public Node Prefab => m_prefab;
         
         public LatLng Coordinates
         {
@@ -40,14 +47,13 @@ namespace CyberAvebury
         public DialogueLinesObject SelectedLines => m_selectedLines;
         public DialogueLinesObject CompletedLines => m_completedLines;
 
+        public bool OverwriteLineColors => m_overwriteLineColors;
+        public NodeLineColors LineColors => m_lineColors;
+
         private void ConvertCoordinates(string _coordinates)
         {
-            var splitCoordinates = _coordinates.Split(", ");
-            if(splitCoordinates.Length != 2) { return; }
-            
-            if(!double.TryParse(splitCoordinates[0], out var latitude)) { return; }
-            if(!double.TryParse(splitCoordinates[1], out var longitude)) { return; }
-            m_storedCoordinates = new LatLng(latitude, longitude);
+            if(!LatLng.FromString(_coordinates, out var coordinates)) { return; }
+            m_storedCoordinates = coordinates;
         }
     }
 }

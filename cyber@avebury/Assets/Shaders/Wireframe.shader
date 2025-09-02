@@ -5,13 +5,15 @@ Shader "Unlit/Wireframe"
         _Color("Wire Color", Color) = (1, 1, 1, 1)
         
         _WireframeAliasing("Wireframe Aliasing", Float) = 1.5
+        
+        [Enum(UnityEngine.Rendering.CullMode)] _Cull ("Cull", Float) = 0
     }
     SubShader
     {
         Tags { "RenderType"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
         ZWrite Off
         Blend SrcAlpha OneMinusSrcAlpha
-        Cull Back
+        Cull [_Cull]
         LOD 100
 
         Pass

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
   m_Name: Southern Entrance
   m_EditorClassIdentifier: 
-  m_coordinates: 51.427202846191314, -1.8532847988112988
+  m_coordinates: 51.4271854189652, -1.8533302479420386
   m_connections:
   - {fileID: 11400000, guid: 4f943238fe8d84a4682aec7c2576c145, type: 2}
   m_defaultState: 0
