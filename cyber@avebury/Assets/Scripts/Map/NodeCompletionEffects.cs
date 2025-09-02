@@ -27,6 +27,7 @@ namespace CyberAvebury
 
         private void OnNodeCompleted(Node _node)
         {
+            if(_node.IsSubNode) { return; }
             StartCoroutine(SpawnCompletedEffect(_node));
         }
 
