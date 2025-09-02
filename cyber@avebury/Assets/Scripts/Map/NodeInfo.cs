@@ -22,6 +22,9 @@ namespace CyberAvebury
         [SerializeField] private DialogueLinesObject m_selectedLines;
         [SerializeField] private DialogueLinesObject m_completedLines;
 
+        [SerializeField] private bool m_overwriteLineColors;
+        [SerializeField] private NodeLineColors m_lineColors;
+
         public Node Prefab => m_prefab;
         
         public LatLng Coordinates
@@ -43,6 +46,9 @@ namespace CyberAvebury
         public DialogueLinesObject UnlockedLines => m_unlockedLines;
         public DialogueLinesObject SelectedLines => m_selectedLines;
         public DialogueLinesObject CompletedLines => m_completedLines;
+
+        public bool OverwriteLineColors => m_overwriteLineColors;
+        public NodeLineColors LineColors => m_lineColors;
 
         private void ConvertCoordinates(string _coordinates)
         {

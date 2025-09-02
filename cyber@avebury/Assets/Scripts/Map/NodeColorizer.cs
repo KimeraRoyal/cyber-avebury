@@ -31,6 +31,11 @@ namespace CyberAvebury
                 OnColorUpdated?.Invoke(m_currentColor);
             }
         }
+
+        public Color LockedColor => m_lockedColor;
+        public Color UnlockedColor => m_unlockedColor;
+        public Color UnlockedSubnodeColor => m_unlockedSubnodeColor;
+        public Color CompletedColor => m_completedColor;
         
         private void Awake()
         {

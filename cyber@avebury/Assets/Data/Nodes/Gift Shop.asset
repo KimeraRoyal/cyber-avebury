@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Gift Shop
   m_EditorClassIdentifier: 
   m_coordinates: 51.428863825033964, -1.8568842242303194
+  m_prefab: {fileID: 0}
   m_connections:
   - {fileID: 11400000, guid: 862dcd1c237ff8c4ea229c7ec9ff6a93, type: 2}
   - {fileID: 11400000, guid: 0c0dcaa5c58498b4ea078275144e2712, type: 2}
@@ -22,3 +23,11 @@ MonoBehaviour:
   m_unlockedLines: {fileID: 0}
   m_selectedLines: {fileID: 0}
   m_completedLines: {fileID: 11400000, guid: 9c632fa91629eca4fafa66fd0b612768, type: 2}
+  m_overwriteLineColors: 0
+  m_lineColors:
+    m_lockedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_lockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+    m_unlockedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_unlockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+    m_completedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_completedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
