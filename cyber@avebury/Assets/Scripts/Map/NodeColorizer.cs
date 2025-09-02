@@ -2,6 +2,7 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 namespace CyberAvebury
 {
@@ -14,6 +15,7 @@ namespace CyberAvebury
         [SerializeField] private Color m_unlockedSubnodeColor;
         [SerializeField] private Color m_completedColor;
 
+        [SerializeField] private float m_colorChangeDelayMin, m_colorChangeDelayMax;
         [SerializeField] private float m_colorChangeDuration = 0.5f;
         
         public UnityEvent<Color> OnColorUpdated;
@@ -21,7 +23,7 @@ namespace CyberAvebury
         private bool m_isSubnode;
 
         private Color m_currentColor;
-        private Tween m_colorChangeTween;
+        private Sequence m_colorChangeTween;
 
         public Color CurrentColor
         {
@@ -75,7 +77,12 @@ namespace CyberAvebury
                 _ => throw new ArgumentOutOfRangeException(nameof(_state), _state, null)
             };
 
-            m_colorChangeTween = DOTween.To(() => CurrentColor, _color => CurrentColor = _color, color, m_colorChangeDuration);
+            m_colorChangeTween = DOTween.Sequence();
+            if (m_colorChangeDelayMax > 0.0001f)
+            {
+                m_colorChangeTween.AppendInterval(Random.Range(m_colorChangeDelayMin, m_colorChangeDelayMax));
+            }
+            m_colorChangeTween.Append(DOTween.To(() => CurrentColor, _color => CurrentColor = _color, color, m_colorChangeDuration));
         }
     }
 }

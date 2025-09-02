@@ -129,6 +129,8 @@ MonoBehaviour:
   m_unlockedColor: {r: 1, g: 0, b: 1, a: 1}
   m_unlockedSubnodeColor: {r: 0, g: 0, b: 0, a: 0}
   m_completedColor: {r: 0, g: 1, b: 0, a: 1}
+  m_colorChangeDelayMin: 0.01
+  m_colorChangeDelayMax: 0.4
   m_colorChangeDuration: 1
   OnColorUpdated:
     m_PersistentCalls:
