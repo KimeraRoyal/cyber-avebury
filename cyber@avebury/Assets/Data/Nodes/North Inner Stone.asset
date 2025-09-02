@@ -13,11 +13,20 @@ MonoBehaviour:
   m_Name: North Inner Stone
   m_EditorClassIdentifier: 
   m_coordinates: 51.42949167412177, -1.853700983876067
+  m_prefab: {fileID: 0}
   m_connections:
   - {fileID: 11400000, guid: fc97bb9ceb876044ba1313e0b84cf4e3, type: 2}
   m_defaultState: 0
   m_minigame: {fileID: 2098161506435210981, guid: f1327d47be86b5c4389d553a2f9add2e, type: 3}
   m_minigameDifficulty: 0.393
-  m_unlockedLines: {fileID: 11400000, guid: 916299837e223b940bef0fe4f1d1f216, type: 2}
+  m_unlockedLines: {fileID: 0}
   m_selectedLines: {fileID: 0}
-  m_completedLines: {fileID: 0}
+  m_completedLines: {fileID: 11400000, guid: 186c0c19a1c79c1448659973f4792a87, type: 2}
+  m_overwriteLineColors: 0
+  m_lineColors:
+    m_lockedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_lockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+    m_unlockedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_unlockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+    m_completedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_completedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}

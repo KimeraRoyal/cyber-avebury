@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Stone 30
   m_EditorClassIdentifier: 
   m_coordinates: 51.428880409712185, -1.8564340304322058
+  m_prefab: {fileID: 0}
   m_connections:
   - {fileID: 11400000, guid: c21900a6efcfb774a96121a2c42a7aea, type: 2}
   m_defaultState: 0
@@ -20,4 +21,12 @@ MonoBehaviour:
   m_minigameDifficulty: 0
   m_unlockedLines: {fileID: 0}
   m_selectedLines: {fileID: 0}
-  m_completedLines: {fileID: 0}
+  m_completedLines: {fileID: 11400000, guid: a26c2b6e7eb53e54ab36bc979b5d3c5a, type: 2}
+  m_overwriteLineColors: 0
+  m_lineColors:
+    m_lockedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_lockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+    m_unlockedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_unlockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+    m_completedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_completedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}

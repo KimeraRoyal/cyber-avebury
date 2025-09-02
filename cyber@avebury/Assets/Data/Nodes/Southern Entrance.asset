@@ -13,11 +13,20 @@ MonoBehaviour:
   m_Name: Southern Entrance
   m_EditorClassIdentifier: 
   m_coordinates: 51.4271854189652, -1.8533302479420386
+  m_prefab: {fileID: 0}
   m_connections:
   - {fileID: 11400000, guid: 4f943238fe8d84a4682aec7c2576c145, type: 2}
   m_defaultState: 0
   m_minigame: {fileID: 2098161506435210981, guid: f1327d47be86b5c4389d553a2f9add2e, type: 3}
   m_minigameDifficulty: 0.747
-  m_unlockedLines: {fileID: 11400000, guid: 86a899e58cbc924499353c2710950853, type: 2}
+  m_unlockedLines: {fileID: 0}
   m_selectedLines: {fileID: 0}
-  m_completedLines: {fileID: 0}
+  m_completedLines: {fileID: 11400000, guid: ccc56a9cce8a9fa418b737b98a033712, type: 2}
+  m_overwriteLineColors: 0
+  m_lineColors:
+    m_lockedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_lockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+    m_unlockedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_unlockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+    m_completedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_completedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}

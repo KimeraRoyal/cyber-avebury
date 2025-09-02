@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Southern Inner Crossing Stone
   m_EditorClassIdentifier: 
   m_coordinates: 51.42775126567875, -1.8539464595260546
+  m_prefab: {fileID: 0}
   m_connections:
   - {fileID: 11400000, guid: 61606213a0f578848a05499d4e657fbf, type: 2}
   m_defaultState: 0
@@ -20,4 +21,12 @@ MonoBehaviour:
   m_minigameDifficulty: 1
   m_unlockedLines: {fileID: 0}
   m_selectedLines: {fileID: 0}
-  m_completedLines: {fileID: 0}
+  m_completedLines: {fileID: 11400000, guid: 86a899e58cbc924499353c2710950853, type: 2}
+  m_overwriteLineColors: 0
+  m_lineColors:
+    m_lockedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_lockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+    m_unlockedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_unlockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+    m_completedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_completedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
