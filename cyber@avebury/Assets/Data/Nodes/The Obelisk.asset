@@ -29,3 +29,10 @@ MonoBehaviour:
     m_unlockedSecondaryColor: {r: 0.39215687, g: 0, b: 0.39215687, a: 1}
     m_completedMainColor: {r: 0, g: 1, b: 0, a: 1}
     m_completedSecondaryColor: {r: 0.78431374, g: 1, b: 0.78431374, a: 1}
+  m_music:
+    Guid:
+      Data1: 1710856445
+      Data2: 1246754850
+      Data3: 1932901547
+      Data4: -2057018615
+    Path: event:/Music/ram

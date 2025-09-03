@@ -128,8 +128,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5822415441165960279}
   - component: {fileID: 9120975436880120461}
-  - component: {fileID: 163537879942741046}
   - component: {fileID: 482759636181508333}
+  - component: {fileID: 7257555162717316354}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -203,14 +203,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &163537879942741046
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1947114791612881958}
-  m_Enabled: 1
 --- !u!114 &482759636181508333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +223,20 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!114 &7257555162717316354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947114791612881958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &2687263058407229105
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,6 +802,9 @@ MonoBehaviour:
   m_animation: {fileID: 11400000, guid: d32a3f9f12e2e6b499e58ad1d6a9068f, type: 2}
   m_speed: 1
   m_frameOffset: 0
+  OnFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6392326484627831444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1124,9 @@ MonoBehaviour:
   m_animation: {fileID: 11400000, guid: fc02da5387075074fa547fa8b7e6f7f6, type: 2}
   m_speed: 1
   m_frameOffset: 0
+  OnFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8530000248934031134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,6 +1388,9 @@ MonoBehaviour:
   m_animation: {fileID: 11400000, guid: ec5f3e2e2d7e5544a870c8578daab517, type: 2}
   m_speed: 1
   m_frameOffset: 0
+  OnFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &7859475280061520148
 PrefabInstance:
   m_ObjectHideFlags: 0

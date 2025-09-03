@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_ringPrefab
       value: 
       objectReference: {fileID: 8274860733030100824, guid: 4453b3ef71d3e9e429be245ab9bf2f30, type: 3}
+    - target: {fileID: 3458191831087362854, guid: 6b129d3019a2d07489c61a5e93a987c4, type: 3}
+      propertyPath: m_targetScoreDifficulty.m_hardestValue
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3493560553315107447, guid: 6b129d3019a2d07489c61a5e93a987c4, type: 3}
       propertyPath: m_Name
       value: Mainframe Boss Fight Variant

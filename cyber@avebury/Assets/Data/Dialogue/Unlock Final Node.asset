@@ -15,29 +15,79 @@ MonoBehaviour:
   m_lines:
     m_maxUses: 1
     m_uses: 0
+    m_shouldLoadNextScene: 0
     m_loadSceneIndex: -1
     m_lines:
     - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
       m_expression: 0
       m_line: Well... This is it!!! We've managed to chase RAM OVERTHROW to its source
         of power - The Obelisk.
+      m_music:
+        Guid:
+          Data1: 0
+          Data2: 0
+          Data3: 0
+          Data4: 0
+        Path: 
     - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
       m_expression: 0
-      m_line: Hey, you know, The Obelisk is actually a really interesting part of
-        Avebury's history. It was actually placed there because-
+      m_line: Hey, you know, The Obelisk is a really interesting part of Avebury's
+        history. It was placed there because-
+      m_music:
+        Guid:
+          Data1: 0
+          Data2: 0
+          Data3: 0
+          Data4: 0
+        Path: 
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: HEY WHATS UP
+      m_music:
+        Guid:
+          Data1: 0
+          Data2: 0
+          Data3: 0
+          Data4: 0
+        Path: 
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: I SEE YOU ARE LOWKEY "TRYING TO STOP ME"
+      m_music:
+        Guid:
+          Data1: 0
+          Data2: 0
+          Data3: 0
+          Data4: 0
+        Path: 
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: 'HA HA HA. THAT''S CUTE. I''LL LET YOU KNOW RIGHT NOW: NOT HAPPENING.'
+      m_music:
+        Guid:
+          Data1: 0
+          Data2: 0
+          Data3: 0
+          Data4: 0
+        Path: 
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: TRY AND SEE IF YOU CAN STOP ME WITH THOSE PATHETIC HACKING SKILLZ OF
         YOURS. LOL.
+      m_music:
+        Guid:
+          Data1: 0
+          Data2: 0
+          Data3: 0
+          Data4: 0
+        Path: 
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: OK BYE LOVE YOU
+      m_music:
+        Guid:
+          Data1: 0
+          Data2: 0
+          Data3: 0
+          Data4: 0
+        Path: 

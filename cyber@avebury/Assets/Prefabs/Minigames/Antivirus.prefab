@@ -705,7 +705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2012648225758405743}
   - component: {fileID: 7303217576423763359}
-  - component: {fileID: 8737214219917509713}
+  - component: {fileID: 966934315587345255}
   m_Layer: 10
   m_Name: Camera
   m_TagString: Untagged
@@ -779,14 +779,20 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &8737214219917509713
-AudioListener:
+--- !u!114 &966934315587345255
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7281011198497596182}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1001 &1873695387411010478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -877,6 +883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: {x: 0, y: 0, z: 5}
+  m_randomStart: 0
   m_minSpeedFactor: 1
   m_maxSpeedFactor: 1
 --- !u!4 &2128528593424659525 stripped

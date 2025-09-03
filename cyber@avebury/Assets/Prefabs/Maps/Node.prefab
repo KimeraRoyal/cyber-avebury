@@ -5526,6 +5526,7 @@ GameObject:
   - component: {fileID: 1022354229934869107}
   - component: {fileID: 8964072195280024228}
   - component: {fileID: 1386726422226292952}
+  - component: {fileID: 1907702153110090056}
   m_Layer: 0
   m_Name: Node
   m_TagString: Untagged
@@ -5643,6 +5644,8 @@ MonoBehaviour:
   m_unlockedColor: {r: 0, g: 1, b: 0, a: 1}
   m_unlockedSubnodeColor: {r: 0.27450982, g: 0.5882353, b: 0.27450982, a: 1}
   m_completedColor: {r: 0, g: 1, b: 0, a: 1}
+  m_colorChangeDelayMin: 0
+  m_colorChangeDelayMax: 0
   m_colorChangeDuration: 2
   OnColorUpdated:
     m_PersistentCalls:
@@ -5657,6 +5660,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a2729708f7946bd8cb327bf1d7e6f0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1907702153110090056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9061987643114116526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bbb79fc54691c848bb08e7245e3cc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &4220261632585781964

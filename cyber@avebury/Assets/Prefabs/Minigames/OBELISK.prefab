@@ -407,6 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: {x: 0, y: 10, z: 20}
+  m_randomStart: 0
   m_minSpeedFactor: 1
   m_maxSpeedFactor: 1
 --- !u!1 &4723018321538943626
@@ -545,6 +546,7 @@ GameObject:
   - component: {fileID: 3900144578656284558}
   - component: {fileID: 7164387274100318110}
   - component: {fileID: 6723336311389488531}
+  - component: {fileID: -9041105271383839815}
   m_Layer: 6
   m_Name: OBELISK
   m_TagString: Untagged
@@ -655,6 +657,25 @@ MonoBehaviour:
   m_beginDialogue: {fileID: 11400000, guid: 045252dedce92024c9c4e6cff87fcf53, type: 2}
   m_passDialogue: {fileID: 0}
   m_failDialogue: {fileID: 0}
+--- !u!114 &-9041105271383839815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5501033850600583511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28a17bc00a505747b32e549d2854a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_music:
+    Guid:
+      Data1: -927784005
+      Data2: 1154417883
+      Data3: 1172365488
+      Data4: -1672037599
+    Path: event:/Music/obelisk
 --- !u!1 &5730933765439358420
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,6 +777,9 @@ MonoBehaviour:
   m_animation: {fileID: 11400000, guid: b675e79ae21b93f4d96118cb1493819c, type: 2}
   m_speed: 1
   m_frameOffset: 0
+  OnFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &272876970441349780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5629,6 +5653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: {x: 0, y: 0, z: 15}
+  m_randomStart: 0
   m_minSpeedFactor: 1
   m_maxSpeedFactor: 1
 --- !u!1 &6496985577533054279
@@ -15431,8 +15456,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8691969802140078526}
   - component: {fileID: 8635075455192893656}
-  - component: {fileID: 4867335673533075311}
   - component: {fileID: 7426476522772779134}
+  - component: {fileID: -3931346508762774094}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -15506,14 +15531,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4867335673533075311
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8769926057679672281}
-  m_Enabled: 1
 --- !u!114 &7426476522772779134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15534,3 +15551,17 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!114 &-3931346508762774094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8769926057679672281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}

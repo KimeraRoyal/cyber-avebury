@@ -1,4 +1,5 @@
 ﻿using CyberAvebury.Minigames;
+using FMODUnity;
 using UnityEngine;
 
 namespace CyberAvebury
@@ -25,6 +26,8 @@ namespace CyberAvebury
         [SerializeField] private bool m_overwriteLineColors;
         [SerializeField] private NodeLineColors m_lineColors;
 
+        [SerializeField] private EventReference m_music;
+
         public Node Prefab => m_prefab;
         
         public LatLng Coordinates
@@ -49,6 +52,8 @@ namespace CyberAvebury
 
         public bool OverwriteLineColors => m_overwriteLineColors;
         public NodeLineColors LineColors => m_lineColors;
+
+        public EventReference Music => m_music;
 
         private void ConvertCoordinates(string _coordinates)
         {
