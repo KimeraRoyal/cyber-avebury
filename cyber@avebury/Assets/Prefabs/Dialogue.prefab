@@ -447,6 +447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3858814958733543609}
   - component: {fileID: 75172343705394517}
+  - component: {fileID: 1731101161607409216}
   m_Layer: 0
   m_Name: Icon
   m_TagString: Untagged
@@ -487,6 +488,25 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1731101161607409216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3064642215005055679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e69825ac056f34880c2ad302a958a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_noiseSfx:
+    Guid:
+      Data1: -1543215420
+      Data2: 1155357337
+      Data3: -744048976
+      Data4: 1379587484
+    Path: event:/SFX/glitch_static
 --- !u!1 &3238585809808579570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,14 +1242,35 @@ MonoBehaviour:
   - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
     m_expression: 0
     m_line: Could it be possible - a traitor in our midst, ready to betray us?
+    m_music:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
   - m_character: {fileID: 11400000, guid: c1449a1ce24cef741b58a3905f1cd9f1, type: 2}
     m_expression: 0
     m_line: PERHAPS. But it would NEVER be me. I would NEVER betray anyone. You are
       all, my FRIENDS. I lover you guys so much :))) I would never ever betray you.
       EVER.
+    m_music:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
   - m_character: {fileID: 11400000, guid: 49f8bf0d53d507641afd9478512fa21c, type: 2}
     m_expression: 1
     m_line: That's... concerning...
+    m_music:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!1 &7473018598754777549
 GameObject:
   m_ObjectHideFlags: 0

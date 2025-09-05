@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace CyberAvebury
@@ -15,12 +16,29 @@ namespace CyberAvebury
             
             m_node = GetComponent<Node>();
             m_node.OnStateChanged.AddListener(OnStateChanged);
+            m_node.OnEntered.AddListener(OnEntered);
+        }
+
+        private void OnEntered()
+        {
+            m_music.PlaySong(m_node.Info.EnteredMusic);
         }
 
         private void OnStateChanged(NodeState _state)
         {
-            if(_state != NodeState.Unlocked) { return; }
-            m_music.PlaySong(m_node.Info.Music);
+            switch (_state)
+            {
+                case NodeState.Locked:
+                    break;
+                case NodeState.Unlocked:
+                    m_music.PlaySong(m_node.Info.Music);
+                    break;
+                case NodeState.Completed:
+                    m_music.PlaySong(m_node.Info.CompletedMusic);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(_state), _state, null);
+            }
         }
     }
 }

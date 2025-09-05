@@ -12,6 +12,7 @@ namespace CyberAvebury
     public class Node : MonoBehaviour
     {
         [SerializeField] private Transform m_lineAnchor;
+        [SerializeField] private float m_completionDelay = 1.0f;
         [SerializeField] private float m_completionUnlockDelay = 1.0f;
 
         private NodeState m_currentState;
@@ -48,6 +49,8 @@ namespace CyberAvebury
         public UnityEvent OnSelected;
         public UnityEvent OnDeselected;
 
+        public UnityEvent OnEntered;
+
         public UnityEvent<NodeState> OnStateChanged;
 
         private void Awake()
@@ -79,6 +82,11 @@ namespace CyberAvebury
             OnDeselected?.Invoke();
         }
 
+        public void Enter()
+        {
+            OnEntered?.Invoke();
+        }
+
         // TODO: It'd be cool to point the camera at nodes and unlock them one by one. But like. lol
         [Button("Unlock Node")]
         public void Unlock()
@@ -94,8 +102,19 @@ namespace CyberAvebury
         public void Complete()
         {
             if(CurrentState == NodeState.Completed) { return; }
+            StartCoroutine(WaitForLoadingScreen());
+        }
+
+        private IEnumerator WaitForLoadingScreen()
+        {
+            if (!IsSubNode)
+            {
+                yield return new WaitForSeconds(m_completionDelay);
+                yield return new WaitUntil(() => !LoadingScreen.Instance.IsOpened);
+            }
+            
             CurrentState = NodeState.Completed;
-            StartCoroutine(UnlockNeighbours());
+            yield return UnlockNeighbours();
         }
 
         private IEnumerator UnlockNeighbours()

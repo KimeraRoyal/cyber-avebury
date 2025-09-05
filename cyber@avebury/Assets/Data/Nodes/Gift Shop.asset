@@ -31,3 +31,17 @@ MonoBehaviour:
     m_unlockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
     m_completedMainColor: {r: 0, g: 0, b: 0, a: 0}
     m_completedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+  m_music:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  m_completedMusic:
+    Guid:
+      Data1: -285855811
+      Data2: 1241702082
+      Data3: 183523739
+      Data4: -600585148
+    Path: event:/Music/overworld

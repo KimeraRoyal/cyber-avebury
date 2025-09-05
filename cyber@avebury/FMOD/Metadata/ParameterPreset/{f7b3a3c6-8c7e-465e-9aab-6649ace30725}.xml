@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{f7b3a3c6-8c7e-465e-9aab-6649ace30725}">
+		<property name="name">
+			<value>Fade Out Static</value>
+		</property>
+		<relationship name="folder">
+			<destination>{420a2944-6643-439a-820a-4ee9d43c0723}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{49a8180d-1301-40d1-ac0e-7285c327a63f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{49a8180d-1301-40d1-ac0e-7285c327a63f}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>False</value>
+			<value>True</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

@@ -199,7 +199,7 @@
 			<value>0</value>
 		</property>
 		<property name="releaseTime">
-			<value>5000</value>
+			<value>0</value>
 		</property>
 		<property name="finalValue">
 			<value>-80</value>
@@ -216,7 +216,7 @@
 			<value>0</value>
 		</property>
 		<property name="releaseTime">
-			<value>4000</value>
+			<value>0</value>
 		</property>
 		<property name="finalValue">
 			<value>-80</value>
@@ -233,7 +233,7 @@
 			<value>0</value>
 		</property>
 		<property name="releaseTime">
-			<value>5000</value>
+			<value>0</value>
 		</property>
 		<property name="finalValue">
 			<value>-80</value>

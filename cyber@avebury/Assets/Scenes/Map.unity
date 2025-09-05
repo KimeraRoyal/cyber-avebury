@@ -2136,6 +2136,30 @@ MonoBehaviour:
       m_rotation: 0
     - m_coordinates: 51.42815750551622, -1.8535953756590207
       m_rotation: 0
+--- !u!1 &971420761 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3238585809808579570, guid: 9178c6779412ec640a84037067045783, type: 3}
+  m_PrefabInstance: {fileID: 1144381936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &971420769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971420761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e69825ac056f34880c2ad302a958a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_noiseSfx:
+    Guid:
+      Data1: -1543215420
+      Data2: 1155357337
+      Data3: -744048976
+      Data4: 1379587484
+    Path: event:/SFX/glitch_static
 --- !u!1 &1045225641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2704,10 +2728,14 @@ PrefabInstance:
       propertyPath: m_lines.Array.data[2].m_expression
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1731101161607409216, guid: 9178c6779412ec640a84037067045783, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3238585809808579570, guid: 9178c6779412ec640a84037067045783, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 971420769}
   m_SourcePrefab: {fileID: 100100000, guid: 9178c6779412ec640a84037067045783, type: 3}
 --- !u!1 &1161608551
 GameObject:
@@ -2784,6 +2812,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f03567e5007589d4cbab9366e5bf5af9, type: 2}
   - {fileID: 11400000, guid: fb1b341e11bd5af4e8f6f02dd09f86d6, type: 2}
   - {fileID: 11400000, guid: 246a07f888bdfbc44a66c6ad61add993, type: 2}
+  - {fileID: 11400000, guid: 9847a5dff0f53bf4a890236cf8a298e9, type: 2}
 --- !u!114 &1161608554
 MonoBehaviour:
   m_ObjectHideFlags: 0

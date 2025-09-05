@@ -27,6 +27,8 @@ namespace CyberAvebury
         [SerializeField] private NodeLineColors m_lineColors;
 
         [SerializeField] private EventReference m_music;
+        [SerializeField] private EventReference m_enteredMusic;
+        [SerializeField] private EventReference m_completedMusic;
 
         public Node Prefab => m_prefab;
         
@@ -54,6 +56,8 @@ namespace CyberAvebury
         public NodeLineColors LineColors => m_lineColors;
 
         public EventReference Music => m_music;
+        public EventReference EnteredMusic => m_enteredMusic;
+        public EventReference CompletedMusic => m_completedMusic;
 
         private void ConvertCoordinates(string _coordinates)
         {

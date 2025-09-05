@@ -36,3 +36,17 @@ MonoBehaviour:
       Data3: 1932901547
       Data4: -2057018615
     Path: event:/Music/ram
+  m_enteredMusic:
+    Guid:
+      Data1: -927784005
+      Data2: 1154417883
+      Data3: 1172365488
+      Data4: -1672037599
+    Path: event:/Music/obelisk
+  m_completedMusic:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 

@@ -5567,7 +5567,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_lineAnchor: {fileID: 5970838409457953940}
-  m_completionUnlockDelay: 2.5
+  m_completionDelay: 1
+  m_completionUnlockDelay: 1.5
   OnSelected:
     m_PersistentCalls:
       m_Calls:

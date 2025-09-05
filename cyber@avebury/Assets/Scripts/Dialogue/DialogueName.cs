@@ -1,6 +1,10 @@
+using System;
+using FMOD.Studio;
+using FMODUnity;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace CyberAvebury
 {
@@ -13,7 +17,7 @@ namespace CyberAvebury
         private Dialogue m_dialogue;
 
         private TMP_Text m_text;
-
+        
         [SerializeField] private float m_scrambleDelay = 0.1f;
 
         private string m_characterName;

@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
+  m_Name: Cafe
+  m_EditorClassIdentifier: 
+  m_coordinates: 51.42911285310576, -1.8568962834153169
+  m_prefab: {fileID: 0}
+  m_connections:
+  - {fileID: 11400000, guid: 4300c0b3eb2b4464dac3f817345490fc, type: 2}
+  m_defaultState: 0
+  m_minigame: {fileID: 5051228930626253067, guid: e0d23207fc09c954ebe23de5927d6285, type: 3}
+  m_minigameDifficulty: 0
+  m_unlockedLines: {fileID: 0}
+  m_selectedLines: {fileID: 0}
+  m_completedLines: {fileID: 11400000, guid: 28dfc9ad82b7b14488139b51b54dd41a, type: 2}
+  m_overwriteLineColors: 0
+  m_lineColors:
+    m_lockedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_lockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+    m_unlockedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_unlockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+    m_completedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_completedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+  m_music:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  m_completedMusic:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 

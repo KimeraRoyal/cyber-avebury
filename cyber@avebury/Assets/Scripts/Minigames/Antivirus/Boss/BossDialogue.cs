@@ -49,7 +49,7 @@ namespace CyberAvebury
             foreach (var dialogue in m_dialogues)
             {
                 var line = dialogue.GetDialogue(_progress);
-                if(line == null) { return; }
+                if(line == null) { continue; }
                 
                 m_dialogue.AddLine(line);
                 dialogue.DeclarePlayed();

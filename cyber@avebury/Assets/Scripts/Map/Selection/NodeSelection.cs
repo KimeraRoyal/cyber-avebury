@@ -31,6 +31,8 @@ namespace CyberAvebury
         }
         public float MaxDistanceMeters => m_maxDistanceMeters;
 
+        public Node SelectedNode => m_selectedNode;
+
         public UnityEvent<Node> OnNodeSelected;
         public UnityEvent<Minigame> OnNodeMinigameLoaded;
 

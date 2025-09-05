@@ -22,13 +22,18 @@ namespace CyberAvebury
                     m_currentSong.start();
                     return;
                 }
-                
-                m_currentSong.stop(STOP_MODE.ALLOWFADEOUT);
-                m_currentSong.release();
+                StopSong();
             }
             m_currentSong = RuntimeManager.CreateInstance(_song);
             m_currentSongGuid = _song.Guid;
             m_currentSong.start();
+        }
+
+        public void StopSong()
+        {
+            if(!m_currentSong.hasHandle()) { return; }
+            m_currentSong.stop(STOP_MODE.ALLOWFADEOUT);
+            m_currentSong.release();
         }
     }
 }
