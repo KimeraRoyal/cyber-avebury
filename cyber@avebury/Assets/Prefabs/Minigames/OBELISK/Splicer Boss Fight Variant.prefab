@@ -135,6 +135,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: -3948319568382316460, guid: e0d23207fc09c954ebe23de5927d6285, type: 3}
+      propertyPath: m_passDialogue
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -3948319568382316460, guid: e0d23207fc09c954ebe23de5927d6285, type: 3}
       propertyPath: m_beginDialogue
       value: 
       objectReference: {fileID: 0}

@@ -24,3 +24,10 @@ MonoBehaviour:
   m_portraitSize: {x: 300, y: 300}
   m_portraitColor: {r: 1, g: 0, b: 1, a: 1}
   m_portraitMaskable: 0
+  m_voiceSfx:
+    Guid:
+      Data1: 796635691
+      Data2: 1149173792
+      Data3: 1434331031
+      Data4: 1041827828
+    Path: event:/SFX/Voice/RAM

@@ -626,6 +626,9 @@ MonoBehaviour:
   m_finalSubgame: {fileID: 7651910518853734279, guid: 95e452da05829414d888da587b9bdc48, type: 3}
   m_minigameLoadDelay: 2
   m_minigameLoadTime: 5
+  m_passDialogues:
+  - {fileID: 11400000, guid: 292092aa727776b40bf57245787023aa, type: 2}
+  - {fileID: 11400000, guid: e6e7a5b8d323f23418fbeab1dfc4661f, type: 2}
   m_failureDialogue: {fileID: 11400000, guid: a3cf2db1e4de5a1488f48dfff5100ef0, type: 2}
   OnSubgamesAssigned:
     m_PersistentCalls:

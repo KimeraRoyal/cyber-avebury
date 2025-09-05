@@ -31,6 +31,7 @@ namespace CyberAvebury
         [SerializeField] private float m_minigameLoadDelay = 1.0f;
         [SerializeField] private float m_minigameLoadTime = 1.0f;
 
+        [SerializeField] private DialogueLineObjectBase[] m_passDialogues;
         [SerializeField] private DialogueLineObjectBase m_failureDialogue;
 
         [ShowInInspector] [ReadOnly]
@@ -171,6 +172,10 @@ namespace CyberAvebury
         public void PassSubgame()
         {
             OnSubgamePassed?.Invoke(m_currentSubgameIndex);
+            if (m_passDialogues.Length > m_currentSubgameIndex)
+            {
+                m_dialogue.AddLine(m_passDialogues[m_currentSubgameIndex]?.GetLine());
+            }
             m_currentSubgameIndex++;
         }
 

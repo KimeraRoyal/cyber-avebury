@@ -16,6 +16,8 @@ namespace CyberAvebury
         private EventInstance m_noiseSfxInstance;
         private PARAMETER_ID m_noiseFadeId;
 
+        private DialogueCharacter m_currentCharacter;
+
         private void Awake()
         {
             m_dialogue = GetComponentInParent<Dialogue>();
@@ -24,8 +26,8 @@ namespace CyberAvebury
             m_dialogue.OnNewDialogue.AddListener(_ => NewDialogue());
             m_dialogue.OnEndDialogue.AddListener(EndDialogue);
             
-            m_writer.OnLineStarted.AddListener(_ => PlayStatic());
-            m_writer.OnWordWritten.AddListener(_ => StopStatic());
+            m_writer.OnLineStarted.AddListener(_ => OnLineStarted());
+            m_writer.OnWordWritten.AddListener(_ => OnWordWritten());
             m_writer.OnLineFinished.AddListener(_ => StopStatic());
         }
 
@@ -54,6 +56,18 @@ namespace CyberAvebury
         {
             m_noiseSfxInstance.setParameterByID(m_noiseFadeId, 1);
             PlayStatic();
+        }
+
+        private void OnLineStarted()
+        {
+            m_currentCharacter = m_dialogue.CurrentDialogue.GetCharacter(m_dialogue.CurrentLineIndex);
+            PlayStatic();
+        }
+
+        private void OnWordWritten()
+        {
+            m_currentCharacter.PlayVoiceSfx();
+            StopStatic();
         }
 
         private void PlayStatic()

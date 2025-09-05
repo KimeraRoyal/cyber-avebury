@@ -88,8 +88,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.25
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 2.42
+  m_Center: {x: 0, y: 1.22, z: 0}
 --- !u!114 &1200906246881123388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hitsPerScore: 5
   m_defeatedMovementSpeed: {x: 0, y: 0, z: 0}
-  m_movementDuration: 25
+  m_movementDuration: 27
   m_startPosition: {x: 0, y: 18, z: 70}
   m_finishPosition: {x: 0, y: 2, z: 0}
   m_movementCurve:

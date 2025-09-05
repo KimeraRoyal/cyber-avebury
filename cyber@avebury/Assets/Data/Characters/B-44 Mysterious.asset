@@ -23,3 +23,10 @@ MonoBehaviour:
   m_portraitSize: {x: 150, y: 150}
   m_portraitColor: {r: 0, g: 1, b: 0, a: 1}
   m_portraitMaskable: 1
+  m_voiceSfx:
+    Guid:
+      Data1: 1006769170
+      Data2: 1181240224
+      Data3: -532218978
+      Data4: 2138503126
+    Path: event:/SFX/Voice/B-44

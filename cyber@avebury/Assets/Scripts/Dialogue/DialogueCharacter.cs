@@ -1,7 +1,10 @@
 ﻿using System;
+using FMOD.Studio;
+using FMODUnity;
 using KR;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace CyberAvebury
 {
@@ -33,6 +36,9 @@ namespace CyberAvebury
         [SerializeField] private Vector2 m_portraitSize = Vector2.one * 150;
         [SerializeField] private Color m_portraitColor = Color.green;
         [SerializeField] private bool m_portraitMaskable = true;
+        
+        [SerializeField] private EventReference m_voiceSfx;
+        private EventInstance m_voiceSfxInstance;
 
         public string Name => m_name;
 
@@ -42,10 +48,34 @@ namespace CyberAvebury
         public Color PortraitColor => m_portraitColor;
         public bool PortraitMaskable => m_portraitMaskable;
 
+        public EventInstance VoiceSfx
+        {
+            get
+            {
+                if (!m_voiceSfx.IsNull && !m_voiceSfxInstance.isValid())
+                {
+                    m_voiceSfxInstance = RuntimeManager.CreateInstance(m_voiceSfx);
+                }
+                return m_voiceSfxInstance;
+            }
+        }
+
         public FrameAnimation GetPortrait(int _expression, bool _isTalking)
         {
             if (_expression >= m_portraits.Length) { _expression = 0; }
             return m_portraits[_expression].GetPortait(_isTalking);
+        }
+
+        public void PlayVoiceSfx()
+        {
+            if (m_voiceSfx.IsNull || !VoiceSfx.isValid()) { return; }
+            
+            VoiceSfx.getPlaybackState(out var playbackState);
+            if (playbackState == PLAYBACK_STATE.PLAYING)
+            {
+                VoiceSfx.stop(STOP_MODE.IMMEDIATE);
+            }
+            VoiceSfx.start();
         }
     }
 }
