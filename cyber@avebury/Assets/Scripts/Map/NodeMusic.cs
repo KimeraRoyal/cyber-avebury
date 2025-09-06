@@ -16,7 +16,14 @@ namespace CyberAvebury
             
             m_node = GetComponent<Node>();
             m_node.OnStateChanged.AddListener(OnStateChanged);
+            m_node.OnBeginComplete.AddListener(OnBeginComplete);
             m_node.OnEntered.AddListener(OnEntered);
+        }
+
+        private void OnBeginComplete()
+        {
+            if(!m_node.Info.StopCurrentSongOnCompletion) { return; }
+            m_music.StopSong();
         }
 
         private void OnEntered()

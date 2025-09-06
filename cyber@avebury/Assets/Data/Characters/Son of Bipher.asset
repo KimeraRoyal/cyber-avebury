@@ -23,3 +23,10 @@ MonoBehaviour:
   m_portraitSize: {x: 150, y: 150}
   m_portraitColor: {r: 0, g: 1, b: 0, a: 1}
   m_portraitMaskable: 1
+  m_voiceSfx:
+    Guid:
+      Data1: 223163312
+      Data2: 1324278161
+      Data3: -1161775694
+      Data4: 1406215241
+    Path: event:/SFX/Voice/Cipher

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{966888a5-88cf-4bd1-a7c3-1d52897e907b}">
+		<property name="assetPath">
+			<value>High Quality Hotel Mario Intro - Ratmus1 (youtube)-08.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.87780045351473923</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d9ce4074-6268-4f35-9c94-72c2af7d6593}</destination>
+		</relationship>
+	</object>
+</objects>

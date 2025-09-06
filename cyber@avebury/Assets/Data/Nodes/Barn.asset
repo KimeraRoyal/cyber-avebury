@@ -37,6 +37,13 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
+  m_enteredMusic:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   m_completedMusic:
     Guid:
       Data1: 0
@@ -44,3 +51,4 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
+  m_stopCurrentSongOnCompletion: 0

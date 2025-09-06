@@ -50,9 +50,10 @@ namespace CyberAvebury
         public UnityEvent OnDeselected;
 
         public UnityEvent OnEntered;
-
+        
         public UnityEvent<NodeState> OnStateChanged;
-
+        public UnityEvent OnBeginComplete;
+        
         private void Awake()
         {
             m_connections = new HashSet<Node>();
@@ -102,6 +103,7 @@ namespace CyberAvebury
         public void Complete()
         {
             if(CurrentState == NodeState.Completed) { return; }
+            OnBeginComplete?.Invoke();
             StartCoroutine(WaitForLoadingScreen());
         }
 

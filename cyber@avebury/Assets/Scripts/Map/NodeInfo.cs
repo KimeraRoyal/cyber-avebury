@@ -29,6 +29,7 @@ namespace CyberAvebury
         [SerializeField] private EventReference m_music;
         [SerializeField] private EventReference m_enteredMusic;
         [SerializeField] private EventReference m_completedMusic;
+        [SerializeField] private bool m_stopCurrentSongOnCompletion;
 
         public Node Prefab => m_prefab;
         
@@ -58,6 +59,7 @@ namespace CyberAvebury
         public EventReference Music => m_music;
         public EventReference EnteredMusic => m_enteredMusic;
         public EventReference CompletedMusic => m_completedMusic;
+        public bool StopCurrentSongOnCompletion => m_stopCurrentSongOnCompletion;
 
         private void ConvertCoordinates(string _coordinates)
         {

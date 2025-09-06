@@ -64,6 +64,7 @@ namespace CyberAvebury
             m_minigame.Fail();
         }
 
+        // TODO: This mysteriously doesn't work sometimes
         private void OnHit(Projectile _projectile)
         {
             m_currentHits++;

@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hitsPerScore: 5
   m_defeatedMovementSpeed: {x: 0, y: 0, z: 0}
-  m_movementDuration: 27
+  m_movementDuration: 30
   m_startPosition: {x: 0, y: 18, z: 70}
   m_finishPosition: {x: 0, y: 2, z: 0}
   m_movementCurve:
@@ -245,7 +245,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91b2056808a46619e68fda3f2ebca81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dialogues: []
+  m_dialogues:
+  - m_progress: 0
+    m_dialogue: {fileID: 11400000, guid: 48af232ea2167774db9f7c0e7794df80, type: 2}
+  - m_progress: 0.3
+    m_dialogue: {fileID: 11400000, guid: b67d99c0ae33f9c44b65888d78a859d9, type: 2}
+  - m_progress: 0.6
+    m_dialogue: {fileID: 11400000, guid: 7d6f7b29e705e52498a653ea858079ca, type: 2}
+  - m_progress: 0.9
+    m_dialogue: {fileID: 11400000, guid: 7d3102d1166afc54ba6937a25d9d955b, type: 2}
   m_defeatDialogue: {fileID: 11400000, guid: 9f10d2abaabea694ab9d06eb1905566e, type: 2}
 --- !u!1 &4579580083427284221
 GameObject:
