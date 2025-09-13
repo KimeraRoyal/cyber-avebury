@@ -392,6 +392,10 @@ PrefabInstance:
       value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 6319610958111747301, guid: 2058ec095b7669445a7a0992aee9ff8d, type: 3}
+      propertyPath: m_hitsPerScore
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319610958111747301, guid: 2058ec095b7669445a7a0992aee9ff8d, type: 3}
       propertyPath: m_movementDuration
       value: 27
       objectReference: {fileID: 0}

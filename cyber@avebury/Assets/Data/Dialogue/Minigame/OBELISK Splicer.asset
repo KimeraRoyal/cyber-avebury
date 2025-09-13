@@ -20,11 +20,5 @@ MonoBehaviour:
     m_lines:
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
-      m_line: THIS NEXT ONE WILL PUT YOU IN A BIT OF A "SPIN"
-      m_music:
-        Guid:
-          Data1: 0
-          Data2: 0
-          Data3: 0
-          Data4: 0
-        Path: 
+      m_line: DO YOU LIKE TO PLAY THE SPINAROUND GAME?!
+      m_music: 0

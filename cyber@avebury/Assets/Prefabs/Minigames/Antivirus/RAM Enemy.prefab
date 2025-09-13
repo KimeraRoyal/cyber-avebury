@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hitsPerScore: 5
   m_defeatedMovementSpeed: {x: 0, y: 0, z: 0}
-  m_movementDuration: 30
+  m_movementDuration: 27
   m_startPosition: {x: 0, y: 18, z: 70}
   m_finishPosition: {x: 0, y: 2, z: 0}
   m_movementCurve:

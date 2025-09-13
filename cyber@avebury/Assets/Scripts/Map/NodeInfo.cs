@@ -26,9 +26,10 @@ namespace CyberAvebury
         [SerializeField] private bool m_overwriteLineColors;
         [SerializeField] private NodeLineColors m_lineColors;
 
-        [SerializeField] private EventReference m_music;
-        [SerializeField] private EventReference m_enteredMusic;
-        [SerializeField] private EventReference m_completedMusic;
+        [SerializeField] private MusicPlayer.State m_music;
+        [SerializeField] private MusicPlayer.State m_enteredMusic;
+        [SerializeField] private MusicPlayer.State m_completedMusic;
+        [SerializeField] private bool m_playCompletedMusicImmediately;
         [SerializeField] private bool m_stopCurrentSongOnCompletion;
 
         public Node Prefab => m_prefab;
@@ -56,9 +57,10 @@ namespace CyberAvebury
         public bool OverwriteLineColors => m_overwriteLineColors;
         public NodeLineColors LineColors => m_lineColors;
 
-        public EventReference Music => m_music;
-        public EventReference EnteredMusic => m_enteredMusic;
-        public EventReference CompletedMusic => m_completedMusic;
+        public MusicPlayer.State Music => m_music;
+        public MusicPlayer.State EnteredMusic => m_enteredMusic;
+        public MusicPlayer.State CompletedMusic => m_completedMusic;
+        public bool PlayCompletedMusicImmediately => m_playCompletedMusicImmediately;
         public bool StopCurrentSongOnCompletion => m_stopCurrentSongOnCompletion;
 
         private void ConvertCoordinates(string _coordinates)

@@ -67,11 +67,13 @@ namespace CyberAvebury
         // TODO: This mysteriously doesn't work sometimes
         private void OnHit(Projectile _projectile)
         {
+            if (m_antivirus.CurrentScore >= m_antivirus.TargetScore) { return; }
+            
             m_currentHits++;
             if(m_currentHits < m_hitsPerScore) { return; }
             m_currentHits = 0;
             
-            m_antivirus.ChangeScore(1);
+            m_antivirus.ChangeScore(1, true);
             OnHurt?.Invoke();
         }
 

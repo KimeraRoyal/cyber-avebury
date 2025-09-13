@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{05db741f-2807-4ddd-a01b-55c729c2d2e4}">
+		<property name="name">
+			<value>Spinning</value>
+		</property>
+		<relationship name="folder">
+			<destination>{420a2944-6643-439a-820a-4ee9d43c0723}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{230ad303-3eaf-41ad-9ba1-b42746cc2503}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{230ad303-3eaf-41ad-9ba1-b42746cc2503}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Off</value>
+			<value>On</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

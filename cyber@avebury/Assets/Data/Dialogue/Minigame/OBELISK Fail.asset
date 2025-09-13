@@ -15,17 +15,21 @@ MonoBehaviour:
   m_lines:
   - m_maxUses: -1
     m_uses: 0
+    m_shouldLoadNextScene: 0
     m_loadSceneIndex: -1
     m_lines:
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: LOST???
+      m_music: 0
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: FRIGHTENED????
+      m_music: 0
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: CONFUSED???????
+      m_music: 0
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: 'GOOD!!!!!!
@@ -38,3 +42,61 @@ MonoBehaviour:
 
         HA
         HA'
+      m_music: 0
+  - m_maxUses: -1
+    m_uses: 0
+    m_shouldLoadNextScene: 0
+    m_loadSceneIndex: -1
+    m_lines:
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: DO YOU FIND ME OVER OVER OVERWHELMING?
+      m_music: 0
+  - m_maxUses: -1
+    m_uses: 0
+    m_shouldLoadNextScene: 0
+    m_loadSceneIndex: -1
+    m_lines:
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: CHIN UP, BUDDY!
+      m_music: 0
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: THERE'S NO-ONE HERE BUT YOU AND ME!!!
+      m_music: 0
+  - m_maxUses: -1
+    m_uses: 0
+    m_shouldLoadNextScene: 0
+    m_loadSceneIndex: -1
+    m_lines:
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: ON AND ON AND ON AND ON
+      m_music: 0
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: WE PLAY THE SPINAROUND GAME!!!
+      m_music: 0
+  - m_maxUses: -1
+    m_uses: 0
+    m_shouldLoadNextScene: 0
+    m_loadSceneIndex: -1
+    m_lines:
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: CHANNEL FLIPPING, CHANNEL FLIPPING
+      m_music: 0
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: IT'S AN ETERNITY OF RERUNS!!!
+      m_music: 0
+  - m_maxUses: -1
+    m_uses: 0
+    m_shouldLoadNextScene: 0
+    m_loadSceneIndex: -1
+    m_lines:
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: IT WAS NEVER GOING TO GO ANY OTHER WAY
+      m_music: 0

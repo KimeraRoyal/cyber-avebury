@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 namespace CyberAvebury
@@ -26,6 +27,9 @@ namespace CyberAvebury
             set => m_grabbable = value;
         }
 
+        public UnityEvent OnGrabbed;
+        public UnityEvent OnReleased;
+
         private void Awake()
         {
             m_raycaster = GetComponentInParent<MouseRaycaster>();
@@ -50,6 +54,7 @@ namespace CyberAvebury
                 m_dummy.SetActive(true);
                 m_graphic.SetActive(false);
                 m_grabbed = true;
+                OnGrabbed?.Invoke();
             }
 
             if (m_grabbed && Input.GetMouseButtonUp(0))
@@ -68,6 +73,7 @@ namespace CyberAvebury
                 m_dummy.SetActive(false);
                 m_graphic.SetActive(true);
                 m_grabbed = false;
+                OnReleased?.Invoke();
             }
         }
 

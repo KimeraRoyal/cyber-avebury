@@ -3,19 +3,15 @@ using UnityEngine;
 
 namespace CyberAvebury
 {
-    [RequireComponent(typeof(MusicPlayer))]
+    [RequireComponent(typeof(Dialogue))]
     public class DialogueMusic : MonoBehaviour
     {
         private Dialogue m_dialogue;
 
-        private MusicPlayer m_music;
-
         private void Awake()
         {
-            m_dialogue = FindAnyObjectByType<Dialogue>();
+            m_dialogue = GetComponent<Dialogue>();
 
-            m_music = GetComponent<MusicPlayer>();
-            
             m_dialogue.OnNewLine.AddListener(OnDialogueLine);
         }
 
@@ -24,7 +20,7 @@ namespace CyberAvebury
             var content = _line.GetContent(_lineIndex);
             if(content == null) { return; }
             
-            m_music.PlaySong(content.Music);
+            MusicPlayer.Instance.ChangeMusicState(content.Music);
         }
     }
 }

@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5463700457894972924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8322233765886359060}
+  - component: {fileID: 419008080476436234}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8322233765886359060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5463700457894972924}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &419008080476436234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5463700457894972924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4387714eb404b744490436d69fe65037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_state: 0
+  m_titleTheme:
+    m_event:
+      Guid:
+        Data1: -1615593014
+        Data2: 1182840899
+        Data3: 1477248917
+        Data4: 1373082574
+      Path: event:/Music/connected
+  m_overworldTheme:
+    m_event:
+      Guid:
+        Data1: -285855811
+        Data2: 1241702082
+        Data3: 183523739
+        Data4: -600585148
+      Path: event:/Music/overworld
+  m_troubleTheme:
+    m_event:
+      Guid:
+        Data1: 1710856445
+        Data2: 1246754850
+        Data3: 1932901547
+        Data4: -2057018615
+      Path: event:/Music/ram
+  m_obeliskTheme:
+    m_event:
+      Guid:
+        Data1: -927784005
+        Data2: 1154417883
+        Data3: 1172365488
+        Data4: -1672037599
+      Path: event:/Music/obelisk
+  m_bossTheme:
+    m_event:
+      Guid:
+        Data1: -122112201
+        Data2: 1250596253
+        Data3: -1137366595
+        Data4: -1554458414
+      Path: event:/Music/boss
+  m_usbTheme:
+    m_event:
+      Guid:
+        Data1: -1410638317
+        Data2: 1086185488
+        Data3: -1407583609
+        Data4: 1574253776
+      Path: event:/Music/usb

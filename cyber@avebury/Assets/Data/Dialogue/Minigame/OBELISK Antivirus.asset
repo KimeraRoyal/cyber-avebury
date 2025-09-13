@@ -20,11 +20,13 @@ MonoBehaviour:
     m_lines:
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
-      m_line: GET OUT OF MY HOUSE
-      m_music:
-        Guid:
-          Data1: 0
-          Data2: 0
-          Data3: 0
-          Data4: 0
-        Path: 
+      m_line: WE'VE HAD SOME FUN HERE TODAY, HAVEN'T WE?
+      m_music: 0
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: NOW GET OUT OF MY HOUSE.
+      m_music: 0
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: GET OUT OF MY HOUSE!!!
+      m_music: 0

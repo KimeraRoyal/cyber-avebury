@@ -12,14 +12,14 @@ namespace CyberAvebury
         
         [SerializeField] [TextArea(3, 5)] private string m_line;
 
-        [SerializeField] private EventReference m_music;
+        [SerializeField] private MusicPlayer.State m_music;
 
         public DialogueCharacter Character => m_character;
         public int Expression => m_expression;
         
         public string Line => m_line;
 
-        public EventReference Music => m_music;
+        public MusicPlayer.State Music => m_music;
 
         public DialogueLineContent(DialogueCharacter _character, int _expression, string _line)
         {

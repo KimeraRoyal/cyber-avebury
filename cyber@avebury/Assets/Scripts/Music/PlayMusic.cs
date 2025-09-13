@@ -5,11 +5,11 @@ namespace CyberAvebury
 {
     public class PlayMusic : MonoBehaviour
     {
-        [SerializeField] private EventReference m_music;
+        [SerializeField] private MusicPlayer.State m_music;
 
         private void Start()
         {
-            FindAnyObjectByType<MusicPlayer>().PlaySong(m_music);
+            MusicPlayer.Instance.ChangeMusicState(m_music);
         }
     }
 }

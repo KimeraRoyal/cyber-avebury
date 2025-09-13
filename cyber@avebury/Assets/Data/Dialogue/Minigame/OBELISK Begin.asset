@@ -23,73 +23,31 @@ MonoBehaviour:
       m_line: 'LISTEN UP: I''LL ONLY TELL YOU ONCE
 
 '
-      m_music:
-        Guid:
-          Data1: 0
-          Data2: 0
-          Data3: 0
-          Data4: 0
-        Path: 
+      m_music: 0
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: YOU'RE IN MY TURF NOW. THIS OBELISK? IT'S ALLLLL UNDER MY CONTROL!
-      m_music:
-        Guid:
-          Data1: 0
-          Data2: 0
-          Data3: 0
-          Data4: 0
-        Path: 
+      m_music: 0
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: I REALLY DON'T BELIEVE YOU CAN GET THROUGH ALL THREE OF MY "SHIELDS"
-      m_music:
-        Guid:
-          Data1: 0
-          Data2: 0
-          Data3: 0
-          Data4: 0
-        Path: 
+      m_music: 0
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: BUT JUST TO BE SAFE... YOU'LL FIND ALL OF MY SAFETY PROTOCOLS ARE WORKING
         AT MAX CAPACITY
-      m_music:
-        Guid:
-          Data1: 0
-          Data2: 0
-          Data3: 0
-          Data4: 0
-        Path: 
+      m_music: 0
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: NO SAVING INBETWEEN. NO DIFFICULTY MODIFIERS. NOBODY'S COMING TO HELP
         YOU WHILE YOU'RE IN HERE
-      m_music:
-        Guid:
-          Data1: 0
-          Data2: 0
-          Data3: 0
-          Data4: 0
-        Path: 
+      m_music: 0
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: 'ANYWAY. HERE''S MY TIP TO YOU:'
-      m_music:
-        Guid:
-          Data1: 0
-          Data2: 0
-          Data3: 0
-          Data4: 0
-        Path: 
+      m_music: 0
     - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
       m_expression: 0
       m_line: IF YOU HOLD YOUR PHONE'S POWER BUTTON DOWN LONG ENOUGH, IT'LL SAVE
         YOU A WHOOOOLE WORLD OF HURT. TRY IT!
-      m_music:
-        Guid:
-          Data1: -122112201
-          Data2: 1250596253
-          Data3: -1137366595
-          Data4: -1554458414
-        Path: event:/Music/boss
+      m_music: 6

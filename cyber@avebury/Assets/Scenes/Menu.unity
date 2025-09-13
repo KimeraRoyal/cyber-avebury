@@ -8223,6 +8223,63 @@ MonoBehaviour:
 
     URLs for
     all credited assets are available on cyber@avebury''s itch.io page (https://kimeraroyal.itch.io/cyber-avebury)'
+--- !u!1001 &2108468873
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5463700457894972924, guid: 49ab5f0dfdbf497479797d440af3feb4, type: 3}
+      propertyPath: m_Name
+      value: Music (Menu)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322233765886359060, guid: 49ab5f0dfdbf497479797d440af3feb4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322233765886359060, guid: 49ab5f0dfdbf497479797d440af3feb4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322233765886359060, guid: 49ab5f0dfdbf497479797d440af3feb4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322233765886359060, guid: 49ab5f0dfdbf497479797d440af3feb4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322233765886359060, guid: 49ab5f0dfdbf497479797d440af3feb4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322233765886359060, guid: 49ab5f0dfdbf497479797d440af3feb4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322233765886359060, guid: 49ab5f0dfdbf497479797d440af3feb4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322233765886359060, guid: 49ab5f0dfdbf497479797d440af3feb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322233765886359060, guid: 49ab5f0dfdbf497479797d440af3feb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322233765886359060, guid: 49ab5f0dfdbf497479797d440af3feb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 49ab5f0dfdbf497479797d440af3feb4, type: 3}
 --- !u!33 &73326227729929578
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8262,6 +8319,7 @@ GameObject:
   - component: {fileID: 1076849329}
   - component: {fileID: 919132148083087360}
   - component: {fileID: 919132148083087361}
+  - component: {fileID: 919132148083087362}
   m_Layer: 0
   m_Name: Cyber Avebury Logo
   m_TagString: Untagged
@@ -8298,6 +8356,19 @@ MonoBehaviour:
   - {fileID: 1083597688}
   - {fileID: 2056101777}
   - {fileID: 1221994957}
+--- !u!114 &919132148083087362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148083087359}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28a17bc00a505747b32e549d2854a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_music: 1
 --- !u!4 &1290268952339092418
 Transform:
   m_ObjectHideFlags: 0
@@ -8549,3 +8620,4 @@ SceneRoots:
   - {fileID: 1067100783}
   - {fileID: 1228329763}
   - {fileID: 2095858078}
+  - {fileID: 2108468873}

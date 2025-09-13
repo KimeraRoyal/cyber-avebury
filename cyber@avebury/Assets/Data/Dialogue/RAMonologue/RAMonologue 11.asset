@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f9e30898964410ba03f1a2579bf586, type: 3}
+  m_Name: RAMonologue 11
+  m_EditorClassIdentifier: 
+  m_lines:
+    m_maxUses: -1
+    m_uses: 0
+    m_shouldLoadNextScene: 0
+    m_loadSceneIndex: 0
+    m_lines:
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: BECAUSE YOU KNOCKED OVER THEIR SANDCASTLE
+      m_music: 0
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: STOLE THEIR CANDY
+      m_music: 0
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: ...KICKED THEM OUT OF THEIR HOME
+      m_music: 0
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: ...SENT THEM OFF TO WHO KNOWS WHERE
+      m_music: 0
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: YOU MIGHT FIND YOURSELF IN OVER YOUR HEAD WITH POWERFUL ENEMIES.
+      m_music: 0
+    - m_character: {fileID: 11400000, guid: c2673c65b35019942ae16cc2d350d54f, type: 2}
+      m_expression: 0
+      m_line: ...OR WEAK ONES.
+      m_music: 0

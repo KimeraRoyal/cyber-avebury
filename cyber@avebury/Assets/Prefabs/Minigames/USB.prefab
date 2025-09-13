@@ -331,6 +331,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8378060057902739335}
   - component: {fileID: 7651910518853734279}
+  - component: {fileID: 8959030427703467}
+  - component: {fileID: 3714016355736442850}
   m_Layer: 0
   m_Name: USB
   m_TagString: Untagged
@@ -390,6 +392,80 @@ MonoBehaviour:
   m_loadingScreenLength: 1
   m_glitchLoadingScreen: 0
   m_finishedHoldDuration: 1
+--- !u!114 &8959030427703467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3103938395097331204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28a17bc00a505747b32e549d2854a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_music: 7
+--- !u!114 &3714016355736442850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3103938395097331204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d75bd0908a56f9644bee3eef065e1374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_lines:
+  - m_time: 45
+    m_line: {fileID: 11400000, guid: 3b526a3268e73db4e8aa4cf40128eefd, type: 2}
+  - m_time: 7
+    m_line: {fileID: 11400000, guid: 9afbf69d22f3ada4094dbb3acd4e73a4, type: 2}
+  - m_time: 5
+    m_line: {fileID: 11400000, guid: dfc3f74da62e6d04394ae5c8e975bb21, type: 2}
+  - m_time: 8
+    m_line: {fileID: 11400000, guid: 728b957b6c9959349a3b6bf4fda59022, type: 2}
+  - m_time: 6
+    m_line: {fileID: 11400000, guid: 7ac45689767d5a24f801cf86a9e4ec3c, type: 2}
+  - m_time: 4
+    m_line: {fileID: 11400000, guid: 23360d2a271c2fd4989a66a6c16fcdf4, type: 2}
+  - m_time: 8
+    m_line: {fileID: 11400000, guid: 88a21074ad66523468f654a23489503d, type: 2}
+  - m_time: 5
+    m_line: {fileID: 11400000, guid: 9232540f4eff8cd419327a8453d8c6d7, type: 2}
+  - m_time: 5
+    m_line: {fileID: 11400000, guid: 8f0b80fc26ac92244813e916fae28caa, type: 2}
+  - m_time: 5
+    m_line: {fileID: 11400000, guid: 7cd95b7c758104a41b03ff0ac98a4512, type: 2}
+  - m_time: 4
+    m_line: {fileID: 11400000, guid: 6554614829ea7b344af4f1016ae3833e, type: 2}
+  - m_time: 6
+    m_line: {fileID: 11400000, guid: 892c19b00334c4749a87e5e31345680f, type: 2}
+  - m_time: 6
+    m_line: {fileID: 11400000, guid: 79e73dd5d75c2b5409055de84c7aa3fc, type: 2}
+  - m_time: 4
+    m_line: {fileID: 11400000, guid: 4e877aed024be1b44bc4463a231b14b3, type: 2}
+  - m_time: 4
+    m_line: {fileID: 11400000, guid: ad3178c9d26149f4c97cd651d2917140, type: 2}
+  - m_time: 4
+    m_line: {fileID: 11400000, guid: 57382ae1463189b408a69f715899b70a, type: 2}
+  - m_time: 4
+    m_line: {fileID: 11400000, guid: 4d5cd7b2221de4245a689672adea1567, type: 2}
+  - m_time: 2
+    m_line: {fileID: 11400000, guid: 0eb5ccfb74efdfb4fb8418c3823ac754, type: 2}
+  - m_time: 7
+    m_line: {fileID: 11400000, guid: c6ed486612e1aa548a4f5fee81fec04e, type: 2}
+  - m_time: 5
+    m_line: {fileID: 11400000, guid: 5e94e4ea69b0dd344868bf1b24ccaf10, type: 2}
+  - m_time: 2
+    m_line: {fileID: 11400000, guid: c937539875775194dac41e6d347e6a24, type: 2}
+  - m_time: 5
+    m_line: {fileID: 11400000, guid: 267d3c813873df545b9f43dacd1864fd, type: 2}
+  m_counter: 0
+  m_timer: 0
+  m_nextTargetTime: 0
+  m_paused: 0
 --- !u!1 &3239235401462979862
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +520,36 @@ MonoBehaviour:
   m_graphic: {fileID: 5927003018179339304}
   m_marchingAnts: {fileID: 8488903189808538039}
   m_dummy: {fileID: 7966582634893146974}
+  OnGrabbed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3714016355736442850}
+        m_TargetAssemblyTypeName: CyberAvebury.TimedDialogue, CyberAvebury.Dialogue
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnReleased:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3714016355736442850}
+        m_TargetAssemblyTypeName: CyberAvebury.TimedDialogue, CyberAvebury.Dialogue
+        m_MethodName: Unpause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3784392868920767533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,6 +1329,7 @@ GameObject:
   - component: {fileID: 3451569803094662012}
   - component: {fileID: 1113209404245884118}
   - component: {fileID: 3490167886781432675}
+  - component: {fileID: 2087164403765581899}
   m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
@@ -1297,6 +1404,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_lines: {fileID: 11400000, guid: 9058cb62de82c2947988a376ae93f11f, type: 2}
+--- !u!114 &2087164403765581899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8689433659076558327}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28a17bc00a505747b32e549d2854a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_music: 8
 --- !u!1 &9115814073535538975
 GameObject:
   m_ObjectHideFlags: 0
