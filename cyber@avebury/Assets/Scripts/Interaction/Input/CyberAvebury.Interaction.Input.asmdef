@@ -1,10 +1,8 @@
 {
-    "name": "CyberAvebury.Camera",
+    "name": "CyberAvebury.Interaction.Input",
     "rootNamespace": "CyberAvebury",
     "references": [
-        "GUID:4307f53044263cf4b835bd812fc161a4",
-        "GUID:93f7b5b5efcb16047b2a158e785ef741",
-        "GUID:8f21d1f777b041740897113092ad04c2"
+        "GUID:55c11286d33d9f842956e75ce9f48954"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
