@@ -1,6 +1,9 @@
 using System.Collections;
+using DG.Tweening;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Android;
+using UnityEngine.Events;
 
 namespace CyberAvebury
 {
@@ -20,17 +23,29 @@ namespace CyberAvebury
         [SerializeField] private float m_accuracy = 10.0f;
         [SerializeField] private float m_updateDistance = 10.0f;
 
+        [SerializeField] private float m_movementDurationPerMeter = 1.0f;
+        [SerializeField] private float m_lookDurationPercentage = 1.0f;
+        [SerializeField] private float m_maxTweenDistance = 100.0f;
+        
         private GPSState m_state;
         private double m_lastUpdateTime;
 
+        private Sequence m_movementSequence;
+
 #if DEBUG
         [SerializeField] private LatLng m_debugPosition;
+
+        [SerializeField] private Vector3 m_moveBy;
 
         [SerializeField] private float m_movementSpeed = 1.0f;
         [SerializeField] private float m_rotationSpeed = 1.0f;
 #endif
 
         public GPSState State => m_state;
+
+        public UnityEvent<LocationInfo> OnLocationInfoUpdated;
+        public UnityEvent<LatLng> OnLocationUpdated;
+        public UnityEvent<Vector3> OnWorldPositionUpdated;
 
         private void Awake()
         {
@@ -90,15 +105,20 @@ namespace CyberAvebury
                 yield break;
             }
             
+            var gpsInfo = Input.location.lastData;
+            var location = new LatLng(gpsInfo.latitude, gpsInfo.longitude);
+            UpdateLocation(location, true);
+            
             m_state = GPSState.Active;
             while (isActiveAndEnabled)
             {
-                var gpsInfo = Input.location.lastData;
+                gpsInfo = Input.location.lastData;
                 if (gpsInfo.timestamp > m_lastUpdateTime)
                 {
                     m_lastUpdateTime = gpsInfo.timestamp;
-                    var location = new LatLng(gpsInfo.latitude, gpsInfo.longitude);
-                    MoveToCoordinates(location);
+                    location = new LatLng(gpsInfo.latitude, gpsInfo.longitude);
+                    UpdateLocation(location);
+                    OnLocationInfoUpdated?.Invoke(gpsInfo);
                 }
 
                 yield return null;
@@ -107,10 +127,42 @@ namespace CyberAvebury
             m_state = GPSState.Disconnected;
         }
 
-        private void MoveToCoordinates(LatLng _coordinates)
+        private void UpdateLocation(LatLng _coordinates, bool _immediate = false)
         {
+            OnLocationUpdated?.Invoke(_coordinates);
+            
             var position = m_gps.GetScenePosition(_coordinates);
-            transform.position = position;
+            MoveTo(position, _immediate);
+            OnWorldPositionUpdated?.Invoke(position);
+        }
+
+        [Button("Move")]
+        public void DebugMove()
+        {
+#if DEBUG
+            MoveTo(transform.position + m_moveBy);
+            OnWorldPositionUpdated?.Invoke(m_moveBy);
+#endif
+        }
+
+        private void MoveTo(Vector3 _targetPosition, bool _immediate = false)
+        {
+            if(m_movementSequence is { active: true }) { m_movementSequence.Kill(); }
+
+            var difference = _targetPosition - transform.position;
+            var distance = difference.magnitude;
+            
+            if (_immediate || distance > m_maxTweenDistance)
+            {
+                transform.position = _targetPosition;
+                return;
+            }
+            
+            var duration = m_movementDurationPerMeter * distance;
+
+            m_movementSequence = DOTween.Sequence();
+            m_movementSequence.Append(transform.DOMove(_targetPosition, duration)); 
+            m_movementSequence.Insert(0.0f, transform.DOLookAt(_targetPosition, duration * m_lookDurationPercentage)); 
         }
 
         private void KeyboardMovement()

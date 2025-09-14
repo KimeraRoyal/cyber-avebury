@@ -53,6 +53,11 @@ namespace CyberAvebury
             {
                 m_text.text = m_gpsFailedText;
             }
+
+            if (Debug.isDebugBuild)
+            {
+                valid = true;
+            }
             
             if(valid == m_wasValid) { return; }
 

@@ -24,6 +24,9 @@ namespace CyberAvebury
         public static implicit operator LatLng(Vector2 _position)
             => new(_position.x, _position.y);
 
+        public override string ToString()
+            => $"{m_latitude}, {m_longitude}";
+
         public static bool FromString(string _coordinates, out LatLng o_coordinates)
         {
             o_coordinates = new LatLng();
