@@ -3616,10 +3616,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_zoom: 0.5
-  m_zoomSpeed: 0.4
+  m_zoomSpeed: -0.55
   m_zoomDamping: 0.1
   m_rotation: 0
-  m_rotateSpeed: 180
+  m_zoomRotationSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 60
+      inSlope: 18.497927
+      outSlope: 18.497927
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.08988764
+    - serializedVersion: 3
+      time: 1
+      value: 90
+      inSlope: 38.164642
+      outSlope: 38.164642
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.046348333
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_zoomMaxRotationSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 40
+      inSlope: 2.829165
+      outSlope: 2.829165
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.12921348
+    - serializedVersion: 3
+      time: 1
+      value: 45
+      inSlope: 9.120031
+      outSlope: 9.120031
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.081460655
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_zoomRotationDampingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0.11
+      inSlope: 0.02494877
+      outSlope: 0.02494877
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.09831458
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   m_scrollSpeed: -0.05
   m_zoomYCurve:
     serializedVersion: 2
@@ -4237,7 +4308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1898193651
 RectTransform:
   m_ObjectHideFlags: 0
