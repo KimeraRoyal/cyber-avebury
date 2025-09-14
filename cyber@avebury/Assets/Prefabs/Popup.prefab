@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4338841669288959939}
   - component: {fileID: 7245394589610512168}
   - component: {fileID: 6500478199593932153}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,8 +69,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: This is a notice providing important information to the player. Or is it?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6e452fac6623c384cbca00ef9c4fe0b7, type: 2}
-  m_sharedMaterial: {fileID: 3807224454638569574, guid: 6e452fac6623c384cbca00ef9c4fe0b7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c1f799ecf0ab89044bf228988f4682f1, type: 2}
+  m_sharedMaterial: {fileID: 2149980166001934474, guid: c1f799ecf0ab89044bf228988f4682f1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 8292531163512851793}
   - component: {fileID: 4443067415899164775}
   - component: {fileID: 6053344227253489620}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 2415354571725777048}
   - component: {fileID: 1452924304756843528}
   - component: {fileID: 512646874272768398}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Popup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 800}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2415354571725777048
 CanvasRenderer:
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 6721754511450827951}
   - component: {fileID: 8008268924285883600}
   - component: {fileID: 3407547503176161716}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 2947830500667061917}
   - component: {fileID: 1545708003723686936}
   - component: {fileID: 435226429909980387}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1370620921955627192}
   - component: {fileID: 4579923744056691430}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,7 +697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5884145154436933062}
   - component: {fileID: 6717081990341227045}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Confirm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,7 @@ GameObject:
   - component: {fileID: 2685362628969806860}
   - component: {fileID: 196372246443926880}
   - component: {fileID: 1067937704037442725}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Popup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -909,7 +909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8021021875484042103}
   - component: {fileID: 1304085897312296193}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -968,7 +968,7 @@ GameObject:
   - component: {fileID: 962358340870229958}
   - component: {fileID: 1924797576543015474}
   - component: {fileID: 8988905248235531164}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,7 +1040,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5489860226260531210}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -1055,7 +1055,7 @@ GameObject:
   - component: {fileID: 925989113393226869}
   - component: {fileID: 8129322805271306396}
   - component: {fileID: 8829027753882197983}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}

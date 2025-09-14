@@ -56,6 +56,9 @@ namespace CyberAvebury
             OnNodeSelected?.Invoke(m_selectedNode);
         }
 
+        public void DeselectNode()
+            => SelectNode(null);
+
         public void LoadSelectedMinigame()
         {
             if(!m_selectedNode) { return; }

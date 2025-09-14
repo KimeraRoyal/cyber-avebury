@@ -4918,6 +4918,7 @@ GameObject:
   - component: {fileID: 8176522046931327660}
   - component: {fileID: 7255639446713419533}
   - component: {fileID: 4417038343895045123}
+  - component: {fileID: 782401941868851371}
   m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
@@ -5054,6 +5055,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_scaleIfSubnode: {x: 5, y: 5, z: 5}
+--- !u!114 &782401941868851371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738479288247569994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a878a6ff128243dfb1d89ca0273f059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStateChange:
+    m_PersistentCalls:
+      m_Calls: []
+  basicEditor: 0
+  generalProps: 0
+  limitsProps: 0
+  advancedProps: 0
+  minPointers: 0
+  maxPointers: 0
+  useSendMessage: 0
+  sendStateChangeMessages: 0
+  sendMessageTarget: {fileID: 0}
+  useUnityEvents: 0
+  sendStateChangeEvents: 0
+  requireGestureToFail: {fileID: 0}
+  friendlyGestures: []
+  OnTap:
+    m_PersistentCalls:
+      m_Calls: []
+  numberOfTapsRequired: 1
+  timeLimit: Infinity
+  distanceLimit: Infinity
+  combinePointers: 0
+  combinePointersInterval: 0.3
 --- !u!1 &4129948051971959396
 GameObject:
   m_ObjectHideFlags: 0
@@ -5522,7 +5559,6 @@ GameObject:
   m_Component:
   - component: {fileID: 86182894732706499}
   - component: {fileID: 1250913657308787851}
-  - component: {fileID: 7622452289610344525}
   - component: {fileID: 1022354229934869107}
   - component: {fileID: 8964072195280024228}
   - component: {fileID: 1386726422226292952}
@@ -5599,22 +5635,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnEntered:
+    m_PersistentCalls:
+      m_Calls: []
   OnStateChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7622452289610344525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9061987643114116526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e21b9823c7b54d10948ae399cf469292, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnClicked:
+  OnBeginComplete:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1022354229934869107
