@@ -56,10 +56,10 @@ namespace CyberAvebury
             m_transposer.m_Heading.m_Bias = bias;
         }
 
-        private void RotateCamera(float _delta)
+        private void RotateCamera(Vector2 _delta)
         {
             var maxSpeed = m_zoomMaxRotationSpeedCurve.Evaluate(m_zoom);
-            m_currentBias = Mathf.Clamp(m_currentBias + _delta, -maxSpeed, maxSpeed);
+            m_currentBias = Mathf.Clamp(m_currentBias + _delta.x, -maxSpeed, maxSpeed);
         }
 
         private void Zoom(float _delta)

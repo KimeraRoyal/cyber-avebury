@@ -6,6 +6,8 @@ namespace CyberAvebury
     [RequireComponent(typeof(Camera))]
     public abstract class Mouse : MonoBehaviour
     {
+        private InputHandling m_input;
+        
         private Camera m_camera;
 
         private int m_lock;
@@ -24,14 +26,16 @@ namespace CyberAvebury
 
         protected virtual void Awake()
         {
+            m_input = FindAnyObjectByType<InputHandling>();
+            m_input.OnPress.AddListener(OnMousePressed);
+            
             m_camera = GetComponent<Camera>();
         }
 
-        protected virtual void Update()
+        private void OnMousePressed(Vector2 _mousePosition)
         {
-            if (Locked || !Input.GetMouseButtonDown(0)) { return; }
-
-            var mousePos = Input.mousePosition;
+            if (Locked) { return; }
+            var mousePos = _mousePosition;
             Cast(mousePos);
             OnMouseClicked?.Invoke(new Vector2Int((int) mousePos.x, (int) mousePos.y));
         }

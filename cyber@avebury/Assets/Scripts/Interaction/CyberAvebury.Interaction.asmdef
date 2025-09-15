@@ -1,7 +1,7 @@
 {
     "name": "CyberAvebury.Interaction",
     "rootNamespace": "CyberAvebury",
-    "references": [],
+    "references": ["GUID:8f21d1f777b041740897113092ad04c2"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

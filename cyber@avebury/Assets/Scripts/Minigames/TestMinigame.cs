@@ -17,12 +17,10 @@ namespace CyberAvebury
             m_minigame = GetComponent<Minigame>();
         }
 
-#if UNITY_EDITOR
         private void Start()
         {
-            if (m_testOnStart) { BeginGame(); }
+            if (Debug.isDebugBuild && m_testOnStart) { BeginGame(); }
         }
-#endif
 
         [Button(name: "Begin Game")]
         public void BeginGame()

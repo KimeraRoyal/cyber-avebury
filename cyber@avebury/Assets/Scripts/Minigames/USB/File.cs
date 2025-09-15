@@ -1,24 +1,26 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
 
 namespace CyberAvebury
 {
-    public class File : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class File : MonoBehaviour
     {
+        private InputHandling m_input;
+        
+        private Canvas m_canvas;
         private MouseRaycaster m_raycaster;
         
         private FileRegion m_currentRegion;
 
         private RectTransform m_rect;
-        
-        [SerializeField] private GameObject m_graphic;
-        [SerializeField] private GameObject m_marchingAnts;
-        
-        [SerializeField] private GameObject m_dummy;
 
-        private bool m_grabbable = true;
-        private bool m_selected;
+        [SerializeField] private RectTransform m_graphic;
+        [SerializeField] private GameObject m_marchingAnts;
+
+        [SerializeField] private RectTransform m_mouse;
+        [SerializeField] private RectTransform m_dummy;
+
+        [SerializeField] private bool m_grabbable = true;
         private bool m_grabbed;
         
         public bool Grabbable
@@ -32,62 +34,71 @@ namespace CyberAvebury
 
         private void Awake()
         {
+            m_input = FindAnyObjectByType<InputHandling>();
+            m_input.OnPress.AddListener(OnMousePressed);
+            m_input.OnUnpress.AddListener(OnMouseReleased);
+            
+            m_canvas = GetComponentInParent<Canvas>();
             m_raycaster = GetComponentInParent<MouseRaycaster>();
             
             m_currentRegion = GetComponentInParent<FileRegion>();
             
             m_rect = GetComponent<RectTransform>();
         }
-
+        
         private void Start()
         { 
             m_marchingAnts.SetActive(false);
-            m_dummy.SetActive(false);
+            
+            m_dummy.transform.SetParent(m_rect);
+            m_dummy.anchoredPosition = Vector2.zero;
+            m_dummy.gameObject.SetActive(false);
         }
 
-        private void Update()
+        private void OnMousePressed(Vector2 _position)
         {
-            if (m_grabbable && !m_grabbed && m_selected && Input.GetMouseButtonDown(0))
-            {
-                m_dummy.transform.position = transform.position;
-                
-                m_dummy.SetActive(true);
-                m_graphic.SetActive(false);
-                m_grabbed = true;
-                OnGrabbed?.Invoke();
-            }
-
-            if (m_grabbed && Input.GetMouseButtonUp(0))
-            {
-                var newRegion = m_raycaster.GetFirstRaycastComponent<FileRegion>();
-                if (newRegion)
-                {
-                    m_currentRegion = newRegion;
-                    transform.parent = m_currentRegion.transform;
-                    m_currentRegion.AddFile(this);
-                }
-                
-                transform.position = RoundVector(m_dummy.transform.position);
-                m_currentRegion.ClampRect(m_rect);
-                
-                m_dummy.SetActive(false);
-                m_graphic.SetActive(true);
-                m_grabbed = false;
-                OnReleased?.Invoke();
-            }
-        }
-
-        public void OnPointerEnter(PointerEventData eventData)
-        {
+            if (!m_grabbable || m_grabbed) { return; }
+            
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(m_graphic, _position, null, out var localPoint);
+            var contains =
+                localPoint.x >= m_graphic.rect.xMin && localPoint.x <= m_graphic.rect.xMax &&
+                localPoint.y >= m_graphic.rect.yMin && localPoint.y <= m_graphic.rect.yMax;
+            if(!contains) { return; }
+            
             m_marchingAnts.SetActive(true);
-            m_selected = true;
+            
+            m_mouse.anchoredPosition = m_input.PointerPosition / m_canvas.scaleFactor;
+            m_dummy.transform.SetParent(m_mouse);
+            m_dummy.gameObject.SetActive(true);
+            
+            m_graphic.gameObject.SetActive(false);
+            m_grabbed = true;
+            OnGrabbed?.Invoke();
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        private void OnMouseReleased(Vector2 _position)
         {
-            if(m_grabbed) { return; }
+            if (!m_grabbed) { return; }
             m_marchingAnts.SetActive(false);
-            m_selected = false;
+            
+            var newRegion = m_raycaster.GetFirstRaycastComponent<FileRegion>();
+            if (newRegion)
+            {
+                m_currentRegion = newRegion;
+                transform.SetParent(m_currentRegion.transform);
+                m_currentRegion.AddFile(this);
+            }
+                
+            transform.position = RoundVector(m_dummy.transform.position);
+            m_currentRegion.ClampRect(m_rect);
+                
+            m_dummy.transform.SetParent(m_rect);
+            m_dummy.anchoredPosition = Vector2.zero;
+            m_dummy.gameObject.SetActive(false);
+            
+            m_graphic.gameObject.SetActive(true);
+            m_grabbed = false;
+            OnReleased?.Invoke();
         }
 
         private Vector2 RoundVector(Vector2 _value)

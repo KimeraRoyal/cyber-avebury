@@ -7,6 +7,8 @@ namespace CyberAvebury
 {
     public class TwistRings : MonoBehaviour
     {
+        private InputHandling m_input;
+        
         private Minigame m_minigame;
 
         private TwistRing[] m_rings;
@@ -32,6 +34,9 @@ namespace CyberAvebury
 
         private void Awake()
         {
+            m_input = FindAnyObjectByType<InputHandling>();
+            m_input.OnPress.AddListener(OnMousePressed);
+            
             m_minigame = GetComponentInParent<Minigame>();
             m_minigame.OnFinished.AddListener(OnMinigameFinished);
 
@@ -46,9 +51,9 @@ namespace CyberAvebury
             }
         }
 
-        private void Update()
+        private void OnMousePressed(Vector2 _arg0)
         {
-            if (!m_minigame.IsPlaying || m_minigame.IsPaused || !Input.GetMouseButtonDown(0)) { return; }
+            if (!m_minigame.IsPlaying || m_minigame.IsPaused) { return; }
 
             if (CurrentRing.IsAngleValid)
             {

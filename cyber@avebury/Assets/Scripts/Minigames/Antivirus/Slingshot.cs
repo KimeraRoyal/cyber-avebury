@@ -4,6 +4,8 @@ namespace CyberAvebury
 {
     public class Slingshot : MonoBehaviour
     {
+        private InputHandling m_input;
+        
         [SerializeField] private Camera m_camera;
 
         private ProjectilePool m_pool;
@@ -27,6 +29,10 @@ namespace CyberAvebury
 
         private void Awake()
         {
+            m_input = FindAnyObjectByType<InputHandling>();
+            m_input.OnPress.AddListener(OnMousePressed);
+            m_input.OnUnpress.AddListener(OnMouseReleased);
+            
             m_pool = GetComponentInParent<ProjectilePool>();
         }
 
@@ -35,13 +41,21 @@ namespace CyberAvebury
             m_distanceToCamera = (transform.position - m_camera.transform.position).magnitude;
         }
 
+        private void OnMousePressed(Vector2 _position)
+        {
+            m_aimCenter = GetMouseWorldPosition();
+            m_aiming = true;
+        }
+
+        private void OnMouseReleased(Vector2 _position)
+        {
+            Fire();
+            m_aiming = false;
+        }
+
         private void Update()
         {
             if (!m_projectile) { SpawnProjectile(); }
-            
-            if(Input.GetMouseButtonDown(0)) { m_aimCenter = GetMouseWorldPosition(); }
-            if(Input.GetMouseButtonUp(0)) { Fire(); }
-            m_aiming = Input.GetMouseButton(0);
             
             if(!m_aiming) { return; }
             Aim(GetMouseWorldPosition());
@@ -76,6 +90,6 @@ namespace CyberAvebury
         }
 
         private Vector2 GetMouseWorldPosition()
-            => m_camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, m_distanceToCamera));
+            => m_camera.ScreenToWorldPoint(new Vector3(m_input.PointerPosition.x, m_input.PointerPosition.y, m_distanceToCamera));
     }
 }
