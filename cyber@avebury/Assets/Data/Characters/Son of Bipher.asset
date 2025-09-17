@@ -25,8 +25,8 @@ MonoBehaviour:
   m_portraitMaskable: 1
   m_voiceSfx:
     Guid:
-      Data1: 223163312
-      Data2: 1324278161
-      Data3: -1161775694
-      Data4: 1406215241
-    Path: event:/SFX/Voice/Cipher
+      Data1: -589157784
+      Data2: 1185122517
+      Data3: -309681265
+      Data4: 1642353133
+    Path: event:/SFX/Voice/Bipher

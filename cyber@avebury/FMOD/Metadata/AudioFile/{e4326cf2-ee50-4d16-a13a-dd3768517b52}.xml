@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{e4326cf2-ee50-4d16-a13a-dd3768517b52}">
 		<property name="assetPath">
-			<value>OBELISK.wav</value>
+			<value>Music/OBELISK.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

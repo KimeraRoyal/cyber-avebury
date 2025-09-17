@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{375f898a-b579-481c-8a3f-6e37ea6b5ade}">
 		<property name="assetPath">
-			<value>732437__icedphoenix49__fm-radio-static-brown-noise.flac</value>
+			<value>SFX/732437__icedphoenix49__fm-radio-static-brown-noise.flac</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{b56a1488-a2f5-4bb0-8f2f-f0989b18efcc}">
+		<property name="assetPath">
+			<value>SFX/Voice/Cipher/Son of Cipher - Bisexual #14.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>2.1249886621315195</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d9ce4074-6268-4f35-9c94-72c2af7d6593}</destination>
+		</relationship>
+	</object>
+</objects>

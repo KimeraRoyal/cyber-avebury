@@ -90,7 +90,6 @@
 			<destination>{cb9e4f9b-af6e-4cd6-b935-be731538fd85}</destination>
 			<destination>{bfe569f7-b19e-437d-b4fc-987452373512}</destination>
 			<destination>{f163e27f-3581-4050-adf1-cd8d7c845091}</destination>
-			<destination>{35ff3591-f98e-44ab-9e87-0e47028f5d2e}</destination>
 			<destination>{54bf1289-b248-43e8-a25d-4fdd5fe38779}</destination>
 			<destination>{f332397d-ba42-4add-8e8e-9966d6de9c57}</destination>
 			<destination>{22cd1abd-eeae-40ce-8122-1c97b56fe616}</destination>
@@ -104,8 +103,6 @@
 			<destination>{39b5d22e-989c-4793-89af-2c84a6f408b4}</destination>
 			<destination>{1555235e-bfa4-4e9f-908d-a849494ab66c}</destination>
 			<destination>{4d21c833-cf14-4385-ae81-5db559024bd1}</destination>
-			<destination>{0bdb5c9c-bdf0-4cb1-8a45-c387a624e44f}</destination>
-			<destination>{c7b0320e-0c14-47b9-a4b1-a09a2f335020}</destination>
 			<destination>{645c3fef-c00e-41e6-9243-e2026ff914c0}</destination>
 			<destination>{abceed8e-be90-4a02-8059-4ba6c9441323}</destination>
 			<destination>{ba407a15-e3e9-46d2-a643-761fe819f285}</destination>
@@ -130,7 +127,6 @@
 			<destination>{cb9e4f9b-af6e-4cd6-b935-be731538fd85}</destination>
 			<destination>{bfe569f7-b19e-437d-b4fc-987452373512}</destination>
 			<destination>{f163e27f-3581-4050-adf1-cd8d7c845091}</destination>
-			<destination>{35ff3591-f98e-44ab-9e87-0e47028f5d2e}</destination>
 			<destination>{54bf1289-b248-43e8-a25d-4fdd5fe38779}</destination>
 			<destination>{f332397d-ba42-4add-8e8e-9966d6de9c57}</destination>
 			<destination>{22cd1abd-eeae-40ce-8122-1c97b56fe616}</destination>
@@ -144,8 +140,6 @@
 			<destination>{39b5d22e-989c-4793-89af-2c84a6f408b4}</destination>
 			<destination>{1555235e-bfa4-4e9f-908d-a849494ab66c}</destination>
 			<destination>{4d21c833-cf14-4385-ae81-5db559024bd1}</destination>
-			<destination>{0bdb5c9c-bdf0-4cb1-8a45-c387a624e44f}</destination>
-			<destination>{c7b0320e-0c14-47b9-a4b1-a09a2f335020}</destination>
 			<destination>{645c3fef-c00e-41e6-9243-e2026ff914c0}</destination>
 			<destination>{abceed8e-be90-4a02-8059-4ba6c9441323}</destination>
 			<destination>{ba407a15-e3e9-46d2-a643-761fe819f285}</destination>
@@ -322,20 +316,6 @@
 		</property>
 		<property name="volume">
 			<value>-5</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{cb5536c7-dbbb-407c-8bf7-f9eb74052fc4}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{35ff3591-f98e-44ab-9e87-0e47028f5d2e}">
-		<property name="start">
-			<value>58.378374999999998</value>
-		</property>
-		<property name="length">
-			<value>36.756750000000004</value>
-		</property>
-		<property name="timelockedOffset">
-			<value>58.378374999999998</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{cb5536c7-dbbb-407c-8bf7-f9eb74052fc4}</destination>
@@ -557,34 +537,6 @@
 		</property>
 		<property name="volume">
 			<value>-5</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{cb5536c7-dbbb-407c-8bf7-f9eb74052fc4}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{0bdb5c9c-bdf0-4cb1-8a45-c387a624e44f}">
-		<property name="start">
-			<value>95.135125000000002</value>
-		</property>
-		<property name="length">
-			<value>0.23649999999999238</value>
-		</property>
-		<property name="timelockedOffset">
-			<value>95.135125000000002</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{cb5536c7-dbbb-407c-8bf7-f9eb74052fc4}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{c7b0320e-0c14-47b9-a4b1-a09a2f335020}">
-		<property name="start">
-			<value>95.371624999999995</value>
-		</property>
-		<property name="length">
-			<value>18.79055187074831</value>
-		</property>
-		<property name="timelockedOffset">
-			<value>95.371624999999995</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{cb5536c7-dbbb-407c-8bf7-f9eb74052fc4}</destination>

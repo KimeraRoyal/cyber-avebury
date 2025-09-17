@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{5b6db295-dc62-42ed-8893-e11dd1cc314a}">
 		<property name="assetPath">
-			<value>SPINNINGINPLACE.wav</value>
+			<value>Music/SPINNINGINPLACE.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

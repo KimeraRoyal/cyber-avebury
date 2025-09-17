@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{17e5e65f-548b-49cf-a834-9bbe17141aa2}">
 		<property name="assetPath">
-			<value>ramboss.wav</value>
+			<value>Music/ramboss.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

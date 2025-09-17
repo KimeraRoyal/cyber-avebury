@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{270f7106-2867-4d15-96d3-b32fb9e0f3ba}">
 		<property name="assetPath">
-			<value>CANYOUFEELTHECYBER.wav</value>
+			<value>Music/CANYOUFEELTHECYBER.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

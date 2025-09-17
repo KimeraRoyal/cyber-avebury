@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{6e0e0e98-f24a-46e9-979b-366121a56fde}">
 		<property name="assetPath">
-			<value>AREWECONNECTEDWINTRO.wav</value>
+			<value>Music/AREWECONNECTEDWINTRO.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
