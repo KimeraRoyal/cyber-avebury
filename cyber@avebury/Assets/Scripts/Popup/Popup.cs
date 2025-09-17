@@ -39,7 +39,7 @@ namespace CyberAvebury
 
         private IEnumerator ShowAfterLoadingScreen(PopupInfo _info)
         {
-            yield return new WaitUntil(() => !LoadingScreen.Instance.IsOpened);
+            yield return new WaitUntil(() => !LoadingScreen.LoadingScreen.Instance.IsOpened);
             if (!m_willShow) { yield break; }
 
             m_animator.SetBool(c_showVariable, true);

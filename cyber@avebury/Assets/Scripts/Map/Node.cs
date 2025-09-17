@@ -112,7 +112,7 @@ namespace CyberAvebury
             if (!IsSubNode)
             {
                 yield return new WaitForSeconds(m_completionDelay);
-                yield return new WaitUntil(() => !LoadingScreen.Instance.IsOpened);
+                yield return new WaitUntil(() => !LoadingScreen.LoadingScreen.Instance.IsOpened);
             }
             
             CurrentState = NodeState.Completed;

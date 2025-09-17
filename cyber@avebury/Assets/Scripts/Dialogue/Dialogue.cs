@@ -96,7 +96,7 @@ namespace CyberAvebury
         {
             m_isWriting = true;
 
-            yield return new WaitUntil(() => !LoadingScreen.Instance.IsOpened && !m_pause);
+            yield return new WaitUntil(() => !LoadingScreen.LoadingScreen.Instance.IsOpened && !m_pause);
 
             OnNewDialogue?.Invoke(m_currentDialogue);
             yield return new WaitForSeconds(m_openWaitTime);
@@ -117,7 +117,7 @@ namespace CyberAvebury
             if (m_currentDialogue.ShouldLoadNextScene)
             {
                 var loadSceneIndex = m_currentDialogue.LoadSceneIndex;
-                LoadingScreen.Instance.ShowScreen(1.0f, () => SceneManager.LoadScene(loadSceneIndex));
+                LoadingScreen.LoadingScreen.Instance.ShowScreen(1.0f, () => SceneManager.LoadScene(loadSceneIndex));
             }
             
             m_currentDialogue = null;

@@ -70,7 +70,7 @@ namespace CyberAvebury
 
         private void Update()
         {
-            if (m_loadingGame || m_currentMinigame || m_previousMinigame || LoadingScreen.Instance.IsOpened || m_dialogue.IsWriting) { return; }
+            if (m_loadingGame || m_currentMinigame || m_previousMinigame || LoadingScreen.LoadingScreen.Instance.IsOpened || m_dialogue.IsWriting) { return; }
 
             StartCoroutine(LoadSubgame(m_currentSubgameIndex));
         }
@@ -80,7 +80,7 @@ namespace CyberAvebury
             m_loadingGame = true;
 
             yield return new WaitForSeconds(m_minigameLoadDelay);
-            yield return new WaitUntil(() => !LoadingScreen.Instance.IsOpened && !m_dialogue.IsWriting);
+            yield return new WaitUntil(() => !LoadingScreen.LoadingScreen.Instance.IsOpened && !m_dialogue.IsWriting);
             
             OnBeginLoadingSubgame?.Invoke(_index);
             

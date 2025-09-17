@@ -43,8 +43,8 @@ namespace CyberAvebury.Minigames
             set => m_finishedHoldDuration = value;
         }
 
-        public bool IsPlaying => m_isPlaying && !IsPaused && !LoadingScreen.Instance.IsOpened;
-        public bool IsPlayingNoPause => m_isPlaying && !LoadingScreen.Instance.IsOpened;
+        public bool IsPlaying => m_isPlaying && !IsPaused && !LoadingScreen.LoadingScreen.Instance.IsOpened;
+        public bool IsPlayingNoPause => m_isPlaying && !LoadingScreen.LoadingScreen.Instance.IsOpened;
         public bool IsPaused => m_pauseCount > 0;
 
         public void Begin(float _difficulty)

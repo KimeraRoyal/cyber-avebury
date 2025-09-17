@@ -36,7 +36,7 @@ namespace CyberAvebury
         private void OnClick()
         {
             m_primed = true;
-            LoadingScreen.Instance.ShowScreen(1.0f, () => SceneManager.LoadScene(1));
+            LoadingScreen.LoadingScreen.Instance.ShowScreen(1.0f, () => SceneManager.LoadScene(1));
         }
 
         private void OnSceneLoaded(Scene _scene, LoadSceneMode _mode)
