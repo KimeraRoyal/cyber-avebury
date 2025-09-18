@@ -1,11 +1,10 @@
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace CyberAvebury
 {
     [RequireComponent(typeof(Button))]
-    public class CreditsButton : MonoBehaviour
+    public class CommandButton : MonoBehaviour
     {
         private MenuScreens m_screens;
         
@@ -13,6 +12,7 @@ namespace CyberAvebury
 
         private Button m_button;
 
+        [SerializeField] private MenuScreens.MenuState m_newState;
         [SerializeField] private string m_command;
 
         private void Awake()
@@ -28,7 +28,7 @@ namespace CyberAvebury
             m_menuConsole.ReturnBehaviour = ReturnBehaviour.EndOfLine;
             m_menuConsole.AddLine(m_command);
 
-            m_screens.ChangeState(MenuScreens.MenuState.Credits);
+            m_screens.ChangeState(m_newState);
         }
     }
 }

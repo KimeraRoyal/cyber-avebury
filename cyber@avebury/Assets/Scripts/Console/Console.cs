@@ -108,7 +108,7 @@ namespace CyberAvebury
 
         private void OnEnable()
         {
-            if(!m_addedStartLines) { return; }
+            if(!m_addedStartLines || m_enabledLines.Length < 1) { return; }
             AddLines(m_enabledLines);
         }
 

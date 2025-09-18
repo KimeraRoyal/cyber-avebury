@@ -11,7 +11,8 @@ namespace CyberAvebury
         public enum MenuState
         {
             MainMenu,
-            Credits
+            Credits,
+            Options
         }
 
         private Animator m_animator;
