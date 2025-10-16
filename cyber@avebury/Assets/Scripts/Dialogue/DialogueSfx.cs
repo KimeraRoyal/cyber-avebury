@@ -1,8 +1,5 @@
 using System;
-using FMOD.Studio;
-using FMODUnity;
 using UnityEngine;
-using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace CyberAvebury
 {
@@ -11,13 +8,14 @@ namespace CyberAvebury
         private Dialogue m_dialogue;
         private WordWriter m_writer;
         
-        [SerializeField] private EventReference m_noiseSfx;
+        /*[SerializeField] private EventReference m_noiseSfx;
 
         private EventInstance m_noiseSfxInstance;
-        private PARAMETER_ID m_noiseFadeId;
+        private PARAMETER_ID m_noiseFadeId;*/
 
         private DialogueCharacter m_currentCharacter;
 
+        /*
         private void Awake()
         {
             m_dialogue = GetComponentInParent<Dialogue>();
@@ -25,7 +23,7 @@ namespace CyberAvebury
 
             m_dialogue.OnNewDialogue.AddListener(_ => NewDialogue());
             m_dialogue.OnEndDialogue.AddListener(EndDialogue);
-            
+
             m_writer.OnLineStarted.AddListener(_ => OnLineStarted());
             m_writer.OnWordWritten.AddListener(_ => OnWordWritten());
             m_writer.OnLineFinished.AddListener(_ => StopStatic());
@@ -79,5 +77,6 @@ namespace CyberAvebury
         {
             m_noiseSfxInstance.stop(STOP_MODE.ALLOWFADEOUT);
         }
+        */
     }
 }

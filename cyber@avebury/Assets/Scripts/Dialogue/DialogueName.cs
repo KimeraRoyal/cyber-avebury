@@ -1,10 +1,7 @@
 using System;
-using FMOD.Studio;
-using FMODUnity;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
-using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace CyberAvebury
 {

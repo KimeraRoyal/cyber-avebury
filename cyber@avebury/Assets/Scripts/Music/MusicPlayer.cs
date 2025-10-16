@@ -1,9 +1,6 @@
 using System;
-using FMOD.Studio;
-using FMODUnity;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace CyberAvebury
 {
@@ -25,6 +22,7 @@ namespace CyberAvebury
         [Serializable]
         private class Track
         {
+            /*
             [SerializeField] private EventReference m_event;
             
             private EventInstance m_instance;
@@ -40,7 +38,7 @@ namespace CyberAvebury
                     }
                     return m_instance;
                 }
-            }
+            }*/
         }
         
         private static MusicPlayer s_instance;
@@ -58,7 +56,7 @@ namespace CyberAvebury
         [SerializeField] private State m_state;
 
         [SerializeField] private Track m_titleTheme;
-        private PARAMETER_DESCRIPTION m_connectedState;
+        //private PARAMETER_DESCRIPTION m_connectedState;
         
         [SerializeField] private Track m_overworldTheme;
         [SerializeField] private Track m_troubleTheme;
@@ -66,13 +64,14 @@ namespace CyberAvebury
         [SerializeField] private Track m_bossTheme;
         
         [SerializeField] private Track m_usbTheme;
-        private PARAMETER_DESCRIPTION m_spinning;
+        //private PARAMETER_DESCRIPTION m_spinning;
 
         private State m_currentState;
-        private EventInstance m_currentSong;
+        //private EventInstance m_currentSong;
 
         private void Awake()
         {
+            /*
             if (Instance && Instance != this)
             {
                 Destroy(gameObject);
@@ -83,20 +82,24 @@ namespace CyberAvebury
             
             m_connectedState = GetParameterDescription(m_titleTheme.Event, "Connected State");
             m_spinning = GetParameterDescription(m_usbTheme.Event, "Spinning");
+            */
         }
 
         private void OnNewState()
         {
+            /*
             if (m_state == State.None)
             { 
                 StopSong();
                 return;
             }
             ChangeMusicState(m_state);
+            */
         }
 
         public void ChangeMusicState(State _state, bool _restartIfSame = false)
         {
+            /*
             if(_state == State.None) { return; }
             
             Debug.Log($"[{gameObject.name}]: {m_currentState} -> {_state}");
@@ -124,8 +127,10 @@ namespace CyberAvebury
 
             m_currentState = _state;
             m_state = _state;
+            */
         }
 
+        /*
         private void PlaySong(EventInstance _song)
         {
             if(!_song.hasHandle()) { return; }
@@ -137,15 +142,19 @@ namespace CyberAvebury
             m_currentSong = _song;
             m_currentSong.start();
         }
+        */
 
         public void StopSong()
         {
+            /*
             if(!m_currentSong.hasHandle()) { return; }
 
             m_currentSong.stop(STOP_MODE.ALLOWFADEOUT);
             m_currentState = State.None;
+            */
         }
 
+        /*
         private EventInstance GetSongFromState(State _state)
         {
             var track = _state switch
@@ -167,5 +176,6 @@ namespace CyberAvebury
             var result = description.getParameterDescriptionByName(_parameterName, out var parameter);
             return parameter;
         }
+        */
     }
 }

@@ -1,6 +1,4 @@
 using System;
-using FMOD.Studio;
-using FMODUnity;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +11,7 @@ namespace CyberAvebury
         
         [SerializeField] private string m_channelPath;
         
-        private VCA m_channel;
+        /*private VCA m_channel;
 
         private void Awake()
         {
@@ -32,6 +30,6 @@ namespace CyberAvebury
         private void OnValueChanged(float _value)
         {
             m_channel.setVolume(m_slider.value);
-        }
+        }*/
     }
 }
