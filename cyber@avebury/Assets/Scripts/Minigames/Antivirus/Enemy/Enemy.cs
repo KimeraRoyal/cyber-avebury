@@ -16,6 +16,9 @@ namespace CyberAvebury
         
         private ProjectileTarget m_target;
 
+        [SerializeField] private int m_pointsOnKill = 1;
+        [SerializeField] private int m_pointsOnEscape = -1;
+
         [SerializeField] private Vector3 m_startingPosition;
         [SerializeField] private float m_movementDuration = 1.0f;
         [SerializeField] private Ease m_movementEase = Ease.Linear;
@@ -80,13 +83,13 @@ namespace CyberAvebury
             
             m_timer += Time.deltaTime;
             if(m_timer < m_lifetime) { return; }
-            m_antivirus.ChangeScore(-1);
+            m_antivirus.ChangeScore(m_pointsOnEscape);
             FlyOff();
         }
 
         private void OnHit(Projectile _projectile)
         {
-            m_antivirus.ChangeScore(1);
+            m_antivirus.ChangeScore(m_pointsOnKill);
             Explode();
         }
 

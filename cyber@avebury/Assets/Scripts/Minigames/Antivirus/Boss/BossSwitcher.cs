@@ -79,6 +79,7 @@ namespace CyberAvebury
             {
                 enableObject.SetActive(true);
             }
+            m_antivirus.LockWin = false;
         }
     }
 }

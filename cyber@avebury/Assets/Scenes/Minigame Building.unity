@@ -1892,7 +1892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3103938395097331204, guid: 95e452da05829414d888da587b9bdc48, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8378060057902739335, guid: 95e452da05829414d888da587b9bdc48, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1959,13 +1959,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e69825ac056f34880c2ad302a958a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_noiseSfx:
-    Guid:
-      Data1: -1543215420
-      Data2: 1155357337
-      Data3: -744048976
-      Data4: 1379587484
-    Path: event:/SFX/glitch_static
 --- !u!1 &1651750291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2953,7 +2946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6715336558039373909, guid: 846d50935b2a80d45bef3940ce1db00f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6952965522901346657, guid: 846d50935b2a80d45bef3940ce1db00f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2995,7 +2988,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3617377119841613670, guid: 846d50935b2a80d45bef3940ce1db00f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
