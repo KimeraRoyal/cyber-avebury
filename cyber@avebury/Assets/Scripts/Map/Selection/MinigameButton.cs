@@ -1,9 +1,11 @@
+using System;
+using TouchScript.Gestures;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace CyberAvebury
 {
-    [RequireComponent(typeof(Button))]
+    [RequireComponent(typeof(Button), typeof(TapGesture))]
     public class MinigameButton : MonoBehaviour
     {
         private Dialogue m_dialogue;
@@ -11,6 +13,7 @@ namespace CyberAvebury
         private NodeSelection m_selection;
         
         private Button m_button;
+        private TapGesture m_tap;
 
         private void Awake()
         {
@@ -20,7 +23,13 @@ namespace CyberAvebury
             m_selection.OnNodeSelected.AddListener(OnNodeSelected);
 
             m_button = GetComponent<Button>();
-            m_button.onClick.AddListener(ClickButton);
+            m_tap = GetComponent<TapGesture>();
+            m_tap.Tapped += OnTapped;
+        }
+
+        private void OnTapped(object _sender, EventArgs _e)
+        {
+            ClickButton();
         }
 
         private void OnNodeSelected(Node _node)
