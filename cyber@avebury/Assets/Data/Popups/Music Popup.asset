@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00525e098c762641ab27a73f7871ab3, type: 3}
+  m_Name: Music Popup
+  m_EditorClassIdentifier: 
+  m_title: MUSIC AND SOUND
+  m_image: {fileID: 0}
+  m_description: 'This game includes music and sound effects. For the sake of other
+    visitors, please only enable these if you are wearing earphones. Your setting
+    may be changed in the options menu.
+
+
+    Please be aware of your surroundings
+    at all times, and disable noise cancelling in your earphones while playing.'
+  m_onClosedDialogue: {fileID: 0}
+  m_nextPopup: {fileID: 0}
