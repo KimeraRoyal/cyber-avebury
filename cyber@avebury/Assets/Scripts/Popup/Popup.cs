@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,6 +8,8 @@ namespace CyberAvebury
     [RequireComponent(typeof(Animator))]
     public class Popup : MonoBehaviour
     {
+        [SerializeField] private bool m_showOnStart;
+        
         private Dialogue m_dialogue;
 
         private static readonly int c_showVariable = Animator.StringToHash("Show");
@@ -20,6 +23,7 @@ namespace CyberAvebury
         public PopupInfo CurrentPopup => m_currentPopup;
 
         public UnityEvent<PopupInfo> OnPopupShown;
+        public UnityEvent OnPopupHidden;
         
         private void Awake()
         {
@@ -27,7 +31,14 @@ namespace CyberAvebury
 
             m_animator = GetComponent<Animator>();
             
+            if(!m_dialogue) { return; }
             m_dialogue.OnEndDialogue.AddListener(OnEndDialogue);
+        }
+
+        private void Start()
+        {
+            if(!m_showOnStart) { return; }
+            Show(null);
         }
 
         public void Show(PopupInfo _info)
@@ -64,6 +75,7 @@ namespace CyberAvebury
 
             m_willShow = false;
             m_currentPopup = null;
+            OnPopupHidden?.Invoke();
         }
 
         private void OnEndDialogue()

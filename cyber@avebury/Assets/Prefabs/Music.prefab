@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8322233765886359060}
   - component: {fileID: 419008080476436234}
+  - component: {fileID: 3291351216554734602}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -93,3 +94,17 @@ MonoBehaviour:
         Data3: -1407583609
         Data4: 1574253776
       Path: event:/Music/usb
+--- !u!114 &3291351216554734602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5463700457894972924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ae49679a5c5e64c9b84fa47844ca5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isMuted: 1
+  m_channelPath: vca:/Mute
