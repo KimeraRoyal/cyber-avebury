@@ -593,8 +593,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ff29b1d6c6a09c749af002c28d2f1ce1, type: 2}
-  - {fileID: 2100000, guid: 642f6bf0ed051f843a5753e1ea6f6030, type: 2}
+  - {fileID: 2100000, guid: 9bdf46c96a1787d4aa11087983a36d3e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -700,8 +699,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09e258fac69cd954493a6526a40f745d, type: 2}
-  - {fileID: 2100000, guid: a0ae328cd02abfb44b9caf2a6dfad117, type: 2}
+  - {fileID: 2100000, guid: 5237802fde58d07459b1aec881e05286, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1913,8 +1911,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09e258fac69cd954493a6526a40f745d, type: 2}
-  - {fileID: 2100000, guid: a0ae328cd02abfb44b9caf2a6dfad117, type: 2}
+  - {fileID: 2100000, guid: 5237802fde58d07459b1aec881e05286, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2052,8 +2049,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09e258fac69cd954493a6526a40f745d, type: 2}
-  - {fileID: 2100000, guid: a0ae328cd02abfb44b9caf2a6dfad117, type: 2}
+  - {fileID: 2100000, guid: 5237802fde58d07459b1aec881e05286, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2583,8 +2579,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09e258fac69cd954493a6526a40f745d, type: 2}
-  - {fileID: 2100000, guid: a0ae328cd02abfb44b9caf2a6dfad117, type: 2}
+  - {fileID: 2100000, guid: 5237802fde58d07459b1aec881e05286, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3587,7 +3582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1459851461}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268346, y: -1e-45, z: -0, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268346, y: 3e-45, z: -1e-45, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 62, z: -60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4934,7 +4929,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107544955}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268346, y: -1e-45, z: -0, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268346, y: 3e-45, z: -1e-45, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 62, z: -60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5639,6 +5634,10 @@ PrefabInstance:
       propertyPath: _lightshipMapView
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5519915702864464682, guid: 2280ab4fbcf73834daa7f5d626883009, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 260ef1af2b181da4c93d4c67384863c9, type: 2}
     - target: {fileID: 8850949312802809396, guid: 2280ab4fbcf73834daa7f5d626883009, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

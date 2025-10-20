@@ -4969,7 +4969,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 429e50863b8338741b36b768520d1d3e, type: 2}
+  - {fileID: 2100000, guid: c9acf925100aa9447ac2066e85848c7c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5041,7 +5041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_materialIndex: 1
-  m_propertyName: _Color
+  m_propertyName: _WireColor
 --- !u!114 &4417038343895045123
 MonoBehaviour:
   m_ObjectHideFlags: 0
