@@ -790,7 +790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8943582134558844354, guid: 8d1a4b1fc73c8054bb0a5577c9058ca1, type: 3}
       propertyPath: m_text
-      value: Sound Effects
+      value: SFX
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9870,6 +9870,14 @@ PrefabInstance:
     - target: {fileID: 8943582134558844354, guid: 8d1a4b1fc73c8054bb0a5577c9058ca1, type: 3}
       propertyPath: m_text
       value: Master
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943582134558844354, guid: 8d1a4b1fc73c8054bb0a5577c9058ca1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943582134558844354, guid: 8d1a4b1fc73c8054bb0a5577c9058ca1, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 1024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
