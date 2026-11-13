@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
   m_Name: East Crossing Stone
   m_EditorClassIdentifier: 
-  m_coordinates: 51.429234945401184, -1.851632686479023
+  m_coordinates: 51.533075899192035, -0.4735520010856381
   m_prefab: {fileID: 0}
   m_connections:
   - {fileID: 11400000, guid: d712cc42e1ddf584ea56a1205ad4d77b, type: 2}
@@ -30,3 +30,8 @@ MonoBehaviour:
     m_unlockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
     m_completedMainColor: {r: 0, g: 0, b: 0, a: 0}
     m_completedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+  m_music: 0
+  m_enteredMusic: 0
+  m_completedMusic: 0
+  m_playCompletedMusicImmediately: 0
+  m_stopCurrentSongOnCompletion: 0

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
   m_Name: Path 2
   m_EditorClassIdentifier: 
-  m_coordinates: 51.42742854467413, -1.8516857386639383
+  m_coordinates: 51.53228245669312, -0.47510357271267883
+  m_prefab: {fileID: 0}
   m_connections:
   - {fileID: 11400000, guid: 6fe0fea3c970d404093d33f4171bcab7, type: 2}
   m_defaultState: 0
@@ -21,3 +22,16 @@ MonoBehaviour:
   m_unlockedLines: {fileID: 0}
   m_selectedLines: {fileID: 0}
   m_completedLines: {fileID: 0}
+  m_overwriteLineColors: 0
+  m_lineColors:
+    m_lockedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_lockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+    m_unlockedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_unlockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+    m_completedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_completedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+  m_music: 0
+  m_enteredMusic: 0
+  m_completedMusic: 0
+  m_playCompletedMusicImmediately: 0
+  m_stopCurrentSongOnCompletion: 0

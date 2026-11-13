@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
   m_Name: Southern Inner Crossing Stone
   m_EditorClassIdentifier: 
-  m_coordinates: 51.42775126567875, -1.8539464595260546
+  m_coordinates: 51.5329655835757, -0.4791435002198529
   m_prefab: {fileID: 0}
   m_connections:
   - {fileID: 11400000, guid: 61606213a0f578848a05499d4e657fbf, type: 2}
@@ -30,3 +30,8 @@ MonoBehaviour:
     m_unlockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
     m_completedMainColor: {r: 0, g: 0, b: 0, a: 0}
     m_completedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+  m_music: 0
+  m_enteredMusic: 0
+  m_completedMusic: 0
+  m_playCompletedMusicImmediately: 0
+  m_stopCurrentSongOnCompletion: 0

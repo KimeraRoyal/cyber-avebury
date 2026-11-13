@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
   m_Name: Barn
   m_EditorClassIdentifier: 
-  m_coordinates: 51.42923711236433, -1.8572285672076394
+  m_coordinates: 51.531226709942416, -0.4799286692606779
   m_prefab: {fileID: 0}
   m_connections:
   - {fileID: 11400000, guid: 9847a5dff0f53bf4a890236cf8a298e9, type: 2}
@@ -30,25 +30,8 @@ MonoBehaviour:
     m_unlockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
     m_completedMainColor: {r: 0, g: 0, b: 0, a: 0}
     m_completedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
-  m_music:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  m_enteredMusic:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  m_completedMusic:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+  m_music: 0
+  m_enteredMusic: 0
+  m_completedMusic: 0
+  m_playCompletedMusicImmediately: 0
   m_stopCurrentSongOnCompletion: 0

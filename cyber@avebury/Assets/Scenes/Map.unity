@@ -2398,13 +2398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e69825ac056f34880c2ad302a958a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_noiseSfx:
-    Guid:
-      Data1: -1543215420
-      Data2: 1155357337
-      Data3: -744048976
-      Data4: 1379587484
-    Path: event:/SFX/glitch_static
 --- !u!1 &1045225641
 GameObject:
   m_ObjectHideFlags: 0
@@ -4272,8 +4265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_origin:
-    m_latitude: 51.42857566603644
-    m_longitude: -1.8542200475548134
+    m_latitude: 51.53287151425204
+    m_longitude: -0.47829678074714554
   m_mapScale: 1
 --- !u!114 &1845399004
 MonoBehaviour:

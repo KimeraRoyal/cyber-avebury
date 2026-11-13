@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
   m_Name: South West Path 1
   m_EditorClassIdentifier: 
-  m_coordinates: 51.42786399738864, -1.8558956487974243
+  m_coordinates: 51.53247337153875, -0.4803531764859903
+  m_prefab: {fileID: 0}
   m_connections:
   - {fileID: 11400000, guid: fb1b341e11bd5af4e8f6f02dd09f86d6, type: 2}
   - {fileID: 11400000, guid: 0b95069915f65454f9e475942635b5df, type: 2}
@@ -22,3 +23,16 @@ MonoBehaviour:
   m_unlockedLines: {fileID: 0}
   m_selectedLines: {fileID: 0}
   m_completedLines: {fileID: 0}
+  m_overwriteLineColors: 0
+  m_lineColors:
+    m_lockedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_lockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+    m_unlockedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_unlockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+    m_completedMainColor: {r: 0, g: 0, b: 0, a: 0}
+    m_completedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+  m_music: 0
+  m_enteredMusic: 0
+  m_completedMusic: 0
+  m_playCompletedMusicImmediately: 0
+  m_stopCurrentSongOnCompletion: 0

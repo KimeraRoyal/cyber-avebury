@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
   m_Name: Cafe
   m_EditorClassIdentifier: 
-  m_coordinates: 51.42911285310576, -1.8568962834153169
+  m_coordinates: 51.53131206375663, -0.4804229139204238
   m_prefab: {fileID: 0}
   m_connections:
   - {fileID: 11400000, guid: 4300c0b3eb2b4464dac3f817345490fc, type: 2}
@@ -30,17 +30,8 @@ MonoBehaviour:
     m_unlockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
     m_completedMainColor: {r: 0, g: 0, b: 0, a: 0}
     m_completedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
-  m_music:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  m_completedMusic:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+  m_music: 0
+  m_enteredMusic: 0
+  m_completedMusic: 0
+  m_playCompletedMusicImmediately: 0
+  m_stopCurrentSongOnCompletion: 0

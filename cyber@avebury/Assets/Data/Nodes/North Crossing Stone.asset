@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
   m_Name: North Crossing Stone
   m_EditorClassIdentifier: 
-  m_coordinates: 51.429869223515105, -1.855360556625453
+  m_coordinates: 51.53310337747099, -0.475274742535589
   m_prefab: {fileID: 0}
   m_connections:
   - {fileID: 11400000, guid: 364610bf1a83b814293730d760b38786, type: 2}
@@ -30,3 +30,8 @@ MonoBehaviour:
     m_unlockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
     m_completedMainColor: {r: 0, g: 0, b: 0, a: 0}
     m_completedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+  m_music: 0
+  m_enteredMusic: 0
+  m_completedMusic: 0
+  m_playCompletedMusicImmediately: 0
+  m_stopCurrentSongOnCompletion: 0

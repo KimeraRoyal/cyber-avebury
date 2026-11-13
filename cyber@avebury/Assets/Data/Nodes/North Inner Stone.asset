@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
   m_Name: North Inner Stone
   m_EditorClassIdentifier: 
-  m_coordinates: 51.42949167412177, -1.853700983876067
+  m_coordinates: 51.53317550787933, -0.4737397357309029
   m_prefab: {fileID: 0}
   m_connections:
   - {fileID: 11400000, guid: fc97bb9ceb876044ba1313e0b84cf4e3, type: 2}
@@ -30,3 +30,8 @@ MonoBehaviour:
     m_unlockedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
     m_completedMainColor: {r: 0, g: 0, b: 0, a: 0}
     m_completedSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+  m_music: 0
+  m_enteredMusic: 0
+  m_completedMusic: 0
+  m_playCompletedMusicImmediately: 0
+  m_stopCurrentSongOnCompletion: 0

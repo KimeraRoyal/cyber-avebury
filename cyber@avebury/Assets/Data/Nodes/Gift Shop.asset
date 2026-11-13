@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e9025eb93d43d3ae19a51296726f20, type: 3}
   m_Name: Gift Shop
   m_EditorClassIdentifier: 
-  m_coordinates: 51.428863825033964, -1.8568842242303194
+  m_coordinates: 51.53171752371331, -0.48014396418269994
   m_prefab: {fileID: 0}
   m_connections:
   - {fileID: 11400000, guid: 862dcd1c237ff8c4ea229c7ec9ff6a93, type: 2}
@@ -34,4 +34,5 @@ MonoBehaviour:
   m_music: 0
   m_enteredMusic: 0
   m_completedMusic: 3
+  m_playCompletedMusicImmediately: 0
   m_stopCurrentSongOnCompletion: 1
